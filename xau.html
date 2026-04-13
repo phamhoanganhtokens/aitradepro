@@ -3,159 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI TRADING - Khuyến Nghị Giao Dịch</title>
+    <title>AI Trade Pro v2.0 - Recommendation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-bg': '#fcfcfc',
-                        'accent-blue': '#0056b3',
-                        'charcoal': '#333333',
-                        'trade-sell': '#dc2626',
-                        'trade-buy': '#16a34a',
-                        'trade-wait': '#d97706',
-                    },
-                    fontFamily: {
-                        'serif': ['"Times New Roman"', 'Times', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #343a40;
+            --text-muted: #6c757d;
+            --accent-sell: #dc3545;
+            --accent-buy: #28a745;
+            --accent-info: #007bff;
+            --accent-warning: #ffc107;
+        }
+
         body {
+            background-color: var(--primary-bg);
+            color: var(--text-main);
             font-family: "Times New Roman", Times, serif;
-            background-color: #f0f2f5;
-            color: #333333;
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+
+        .container-glass {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 850px;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.8s ease-out;
         }
-        .justify-text {
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .justified-text {
             text-align: justify;
+            text-justify: inter-word;
         }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-buy { background-color: rgba(40, 167, 69, 0.1); color: var(--accent-buy); }
+        .status-sell { background-color: rgba(220, 53, 69, 0.1); color: var(--accent-sell); }
+        .status-info { background-color: rgba(0, 123, 155, 0.1); color: var(--accent-info); }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .data-item {
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .data-item:hover {
+            border-color: var(--accent-info);
+        }
+
+        .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
         .section-title {
-            border-bottom: 2px solid #0056b3;
-            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             margin-bottom: 1.5rem;
-            padding-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-left: 3px solid var(--accent-info);
+            padding-left: 0.75rem;
         }
-        .pulse-animation {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+        .header-main {
+            border-bottom: 2px solid #f1f3f5;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .8; }
+
+        .agent-pill {
+            background: #f1f3f5;
+            border-radius: 4px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .container-glass {
+                padding: 1.5rem;
+            }
+            .value {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body>
 
-    <div class="max-w-4xl mx-auto">
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl md:text-5xl font-bold text-accent-blue uppercase tracking-tight">
-                AI TRADING - Khuyến Nghị Giao Dịch
-            </h1>
-            <div class="h-1 w-24 bg-accent-blue mx-auto mt-4 rounded-full"></div>
-        </header>
-
-        <!-- Summary Section -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="glass-card rounded-xl p-6 transition-transform hover:scale-105">
-                <p class="text-sm text-gray-500 uppercase font-bold tracking-wider">Mã Giao Dịch</p>
-                <p class="text-3xl font-bold text-accent-blue">XAU</p>
+    <main class="container-glass">
+        <!-- System Header -->
+        <div class="header-main flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight text-slate-800">HỆ THỐNG CỐ VẤN VÀO LỆNH</h1>
+                <p class="text-sm text-slate-500 mt-1">AI Trade Pro v2.0 • Symbol: XAU (Gold)</p>
             </div>
-            <div class="glass-card rounded-xl p-6 transition-transform hover:scale-105">
-                <p class="text-sm text-gray-500 uppercase font-bold tracking-wider">Số Dư Tài Khoản</p>
-                <p class="text-3xl font-bold text-accent-blue">$200</p>
-            </div>
-            <div class="glass-card rounded-xl p-6 transition-transform hover:scale-105">
-                <p class="text-sm text-gray-500 uppercase font-bold tracking-wider">Phần Trăm Rủi Ro</p>
-                <p class="text-3xl font-bold text-accent-blue">20%</p>
+            <div class="status-badge status-sell">
+                <span class="mr-2">🚨</span> KHUYẾN NGHỊ: SELL (BÁN)
             </div>
         </div>
 
-        <!-- Main Recommendation Details Section -->
-        <main class="glass-card rounded-2xl p-8 md:p-12 mb-10">
-            <h2 class="text-2xl font-bold text-accent-blue section-title">Chi Tiết Khuyến Nghị</h2>
-            
-            <!-- Action Display -->
-            <div class="flex flex-col items-center justify-center py-8 border-b border-gray-100 mb-8">
-                <p class="text-lg text-gray-600 mb-2 font-bold uppercase tracking-widest">Hành Động Khuyến Nghị</p>
-                <div class="text-5xl md:text-6xl font-bold text-trade-sell uppercase tracking-tighter pulse-animation">
-                    CHƯA ĐỦ ĐIỀU KIỆN VÀO LỆNH
-                </div>
-                <p class="mt-4 text-trade-sell italic font-bold">⚠️ TÍNH TOÁN SAI LỆCH RỦI RO NGHIÊM TRỌNG</p>
-            </div>
-
-            <!-- Parameters Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 mb-10">
-                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
-                    <span class="font-bold text-gray-600">Trạng thái:</span>
-                    <span class="text-lg font-bold text-trade-sell">STOP / WAIT</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
-                    <span class="font-bold text-gray-600">Điểm vào (Entry):</span>
-                    <span class="text-lg font-bold">N/A</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
-                    <span class="font-bold text-gray-600">Lot Size (Đề xuất sai):</span>
-                    <span class="text-lg font-bold text-trade-sell">10.0 lot</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
-                    <span class="font-bold text-gray-600">Confidence Score:</span>
-                    <span class="text-lg font-bold text-trade-sell">0% (High Risk)</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
-                    <span class="font-bold text-gray-600">Mục tiêu TP:</span>
-                    <span class="text-lg font-bold">Cancelled</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
-                    <span class="font-bold text-gray-600">Cắt lỗ SL:</span>
-                    <span class="text-lg font-bold">Cancelled</span>
+        <!-- Psychology Guard Alert Output -->
+        <section class="mb-10">
+            <div class="section-title">KIỂM TRA HỆ THỐNG BẢO VỆ TÂM LÝ</div>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg">
+                <h2 class="text-xl font-bold mb-2 flex items-center text-blue-800">
+                    ✓ Trạng thái tâm lý hiện tại: Bình thường
+                </h2>
+                <div class="justified-text text-blue-900 leading-relaxed">
+                    Dựa trên các thông số đầu vào: Số trận thắng liên tiếp là 0, số trận thua liên tiếp là 0, mức sụt giảm tài khoản tối đa là 0%, lỗ ngày và lỗ tuần đều ở mức 0%.
+                    <br><br>
+                    <strong>Kết quả:</strong> Các chỉ số đều nằm trong giới hạn an toàn. Không phát hiện trạng thái tâm lý Tilt, hưng phấn quá độ (Euphoria) hay tâm lý phục thù (Revenge). Hệ thống xác nhận người dùng đủ điều kiện ổn định để thực hiện các quyết định giao dịch mới.
                 </div>
             </div>
+        </section>
 
-            <!-- Rationale Section -->
+        <!-- Consensus Section -->
+        <section class="mb-10">
+            <div class="section-title">ĐÁNH GIÁ SỰ ĐỒNG THUẬN GIỮA CÁC ĐẠI LÝ</div>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="agent-pill">AGENT 0</span>
+                    <p class="justified-text text-sm"><strong>Phân tích thị trường:</strong> Đồng thuận. Ghi nhận xu hướng giảm ngắn hạn do áp lực từ đồng USD mạnh và tình hình địa chính trị căng thẳng tại eo biển Hormuz.</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="agent-pill">AGENT 1</span>
+                    <p class="justified-text text-sm"><strong>Quét kỹ thuật:</strong> Đồng thuận. Các khung thời gian M15, H1, H4 đều đang trong xu hướng giảm.</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="agent-pill">AGENT 2</span>
+                    <p class="justified-text text-sm"><strong>Phân tích nâng cao:</strong> Đồng thuận. Tín hiệu Bán (SELL) được đưa ra với mức độ tin cậy 80% dựa trên mô hình tiếp diễn giảm.</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="agent-pill">AGENT 3</span>
+                    <p class="justified-text text-sm"><strong>Quản trị rủi ro:</strong> Đồng thuận. Kế hoạch giao dịch đáp ứng tỷ lệ Rủi ro/Lợi nhuận trên 1:2 với mức tin cậy 80%.</p>
+                </div>
+                <div class="mt-4 p-3 bg-slate-50 rounded border border-slate-200 text-center font-bold text-slate-700">
+                    Kết luận: Đạt được sự đồng thuận từ 4/4 đại lý. Độ tin cậy: 80%
+                </div>
+            </div>
+        </section>
+
+        <!-- Trade Details Grid -->
+        <section class="mb-10">
+            <div class="section-title">ĐỀ XUẤT CHI TIẾT GIAO DỊCH</div>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="label">Điểm vào lệnh (Entry)</span>
+                    <span class="value">4.735 USD</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Khối lượng (Lot size)</span>
+                    <span class="value">0.01 lot</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Chốt lời 1 (TP1)</span>
+                    <span class="value" style="color: var(--accent-buy);">4.668 USD</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Chốt lời 2 (TP2)</span>
+                    <span class="value" style="color: var(--accent-buy);">4.600 USD</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Dừng lỗ (SL)</span>
+                    <span class="value" style="color: var(--accent-sell);">4.768 USD</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Tỷ lệ rủi ro (R:R)</span>
+                    <span class="value">1:2,03 ($40)</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Độ tin cậy</span>
+                    <span class="value">80%</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Account Balance</span>
+                    <span class="value">$200.00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rationale Section -->
+        <section class="mb-8">
+            <div class="section-title">LÝ DO CHI TIẾT</div>
             <div class="space-y-6">
-                <h3 class="text-xl font-bold text-charcoal border-l-4 border-accent-blue pl-4">Lý do (Rationale)</h3>
-                <div class="justify-text text-lg space-y-4 text-gray-700">
-                    <p class="font-bold text-trade-sell">
-                        Căn cứ vào dữ liệu tổng hợp từ các Agent và thiết lập tài khoản hiện tại, hệ thống đưa ra thông báo khẩn cấp sau:
-                    </p>
-                    <p class="font-bold text-xl uppercase">
-                        THÔNG BÁO: KÍCH HOẠT TRẠNG THÁI TILT CRITICAL
-                    </p>
-                    <p>
-                        Hệ thống đã phát hiện các vi phạm nghiêm trọng đối với các quy tắc bảo mật và quản lý rủi ro tâm lý. Cụ thể, việc đề xuất giao dịch lên tới 10.0 lot đối với số dư tài khoản chỉ $200 là một sai lệch cực kỳ nguy hiểm. Tổng giá trị vị thế (Position Value) ước tính đạt 4.750.000 USD, vượt xa khả năng ký quỹ và đòn bẩy cho phép. Đây là dấu hiệu rõ ràng của tình trạng tính toán sai lầm hoặc tâm lý giao dịch quá đà (Tilt).
-                    </p>
-                    <p>
-                        Thiết lập mức rủi ro 20% trên tổng tài khoản cho một lệnh giao dịch đơn lẻ vi phạm các nguyên tắc quản trị rủi ro cơ bản. Với mức sụt giảm này, tài khoản đối diện với nguy cơ mất trắng chỉ sau 5 lệnh thua liên tiếp hoặc ngay lập tức nếu thị trường biến động mạnh. Tỷ lệ Rủi ro/Lợi nhuận (Risk/Reward) chỉ đạt 0.8, thấp hơn nhiều so với tiêu chuẩn tối thiểu là 1.8.
-                    </p>
-                    <p>
-                        Điều này đồng nghĩa với việc rủi ro đang cao hơn lợi nhuận tiềm năng, tạo ra một kỳ vọng toán học âm cho tài khoản. Do các giới hạn về tâm lý và an toàn vốn đã bị kích hoạt, hệ thống quyết định ngăn chặn việc thực hiện lệnh để bảo toàn số dư còn lại.
-                    </p>
+                <div class="justified-text text-slate-700">
+                    <strong class="text-slate-900 block mb-2">Về kỹ thuật:</strong>
+                    Thị trường đang duy trì cấu trúc giảm điểm rõ rệt sau khi phá vỡ ngưỡng hỗ trợ quan trọng tại vùng 4.750 USD. Biểu đồ ngắn hạn đang hình thành mô hình tiếp diễn giảm với các chỉ báo động lượng như RSI và MACD đều cho thấy áp lực bán đang chiếm ưu thế tuyệt đối. Điểm vào lệnh tại 4.735 USD được tính toán dựa trên nhịp hồi phục kỹ thuật kiểm tra lại vùng kháng cự mới để tối ưu hóa vị thế và tỷ lệ rủi ro. Mức dừng lỗ được thiết lập dựa trên biến động ATR hiện tại (27,74) nhằm bảo vệ vị thế trước các biến động cực cao của thị trường.
+                </div>
+                <div class="justified-text text-slate-700">
+                    <strong class="text-slate-900 block mb-2">Về cơ bản:</strong>
+                    Giá vàng đang chịu sức ép lớn từ việc đồng USD mạnh lên khi thị trường lo ngại lạm phát năng lượng do lệnh phong tỏa eo biển Hormuz. Sự thất bại trong các cuộc đàm phán hạt nhân quốc tế thúc đẩy dòng tiền trú ẩn vào đồng USD thay vì vàng trong ngắn hạn. Kết hợp với việc Fed có khả năng duy trì lãi suất cao lâu hơn (Hawkish), triển vọng giá vàng trong ngày hôm nay nghiêng hẳn về phía giảm.
                 </div>
             </div>
-        </main>
+        </section>
 
-        <!-- Company Info -->
-        <div class="text-center pb-12">
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-500 italic text-sm">
-                <span>Website: <a href="www.phamhoanganhtokens.com" target="_blank" class="text-accent-blue hover:underline">www.phamhoanganhtokens.com</a></span>
-                <span class="hidden md:inline">|</span>
-                <span>Công ty: AI Design</span>
+        <!-- Footer Call to Action -->
+        <div class="mt-12 pt-6 border-t border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-green-600 font-bold italic">
+                <span class="animate-pulse">●</span>
+                HỆ THỐNG GHI NHẬN: ĐỦ ĐIỀU KIỆN VÀO LỆNH.
             </div>
+            <button onclick="window.print()" class="text-xs text-slate-400 hover:text-slate-600 transition-colors uppercase tracking-widest font-semibold">
+                Xuất báo cáo (PDF)
+            </button>
         </div>
-    </div>
+    </main>
 
+    <script>
+        // Subtle interaction for data items
+        document.querySelectorAll('.data-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-2px)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
