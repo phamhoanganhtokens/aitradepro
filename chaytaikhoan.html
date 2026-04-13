@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - System Alert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'trade-bg': '#f8f9fa',
+                        'trade-charcoal': '#343a40',
+                        'trade-muted': '#6c757d',
+                        'trade-red': '#dc3545',
+                        'trade-amber': '#ffc107',
+                        'trade-blue': '#007bff'
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.6s ease-out forwards'
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Times New Roman", Times, serif;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <div class="max-w-3xl w-full animate-slide-up">
+        <!-- Header Branding -->
+        <div class="mb-6 text-center">
+            <h1 class="text-xs tracking-[0.2em] font-bold text-trade-muted uppercase">
+                AI Trade Pro v2.0
+            </h1>
+        </div>
+
+        <!-- Main Content Card -->
+        <main class="glass-card rounded-xl overflow-hidden bg-white">
+            
+            <!-- Alert Banner -->
+            <div class="bg-trade-red/10 border-b border-trade-red/20 p-6 md:p-8 text-center">
+                <div class="flex items-center justify-center space-x-3 text-trade-red animate-pulse-slow">
+                    <span class="text-3xl">🚨</span>
+                    <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-tight">
+                        TILT NGHIÊM TRỌNG!
+                    </h2>
+                </div>
+                <p class="mt-2 text-lg font-bold text-trade-red">
+                    Đóng tất cả vị thế, nghỉ ít nhất 24h.
+                </p>
+            </div>
+
+            <div class="p-6 md:p-10 space-y-8">
+                
+                <!-- System ID Section -->
+                <div class="border-l-4 border-trade-charcoal pl-4">
+                    <p class="text-sm font-bold text-trade-muted uppercase tracking-wider">Hệ thống quản trị giao dịch chiến thuật</p>
+                    <h3 class="text-xl font-bold italic">Agent 4: Cố vấn vào lệnh (Entry Advisor)</h3>
+                </div>
+
+                <!-- Secondary Alert Message -->
+                <div class="bg-trade-amber/5 border-l-4 border-trade-amber p-4 rounded-r-lg">
+                    <div class="flex items-start">
+                        <span class="mr-3 mt-0.5">⚠️</span>
+                        <p class="font-bold text-trade-charcoal">
+                            Đã chạm giới hạn lỗ ngày. Không giao dịch thêm!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Data Grid (Metrics) -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-gray-100">
+                    <div class="flex flex-col">
+                        <span class="text-xs text-trade-muted uppercase font-bold mb-1">Cặp Tiền</span>
+                        <span class="text-xl font-bold text-trade-charcoal">XAU</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-trade-muted uppercase font-bold mb-1">Số Dư (USD)</span>
+                        <span class="text-xl font-bold text-trade-charcoal">$200.00</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-trade-muted uppercase font-bold mb-1">Lỗ Ngày</span>
+                        <span class="text-xl font-bold text-trade-red">100%</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-trade-muted uppercase font-bold mb-1">Thua Liên Tiếp</span>
+                        <span class="text-xl font-bold text-trade-red">2 Lệnh</span>
+                    </div>
+                </div>
+
+                <!-- Rationale Section -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-trade-muted uppercase tracking-widest flex items-center">
+                        <span class="mr-2">■</span> Phân Tích Hệ Thống
+                    </h4>
+                    <div class="justified-text text-lg text-trade-charcoal leading-relaxed opacity-90">
+                        Dựa trên các thông số dữ liệu đầu vào, tài khoản hiện đang ghi nhận mức sụt giảm tối đa (Max Drawdown) lên tới 100%, đồng thời tỷ lệ lỗ ngày và lỗ tuần cũng đã đạt ngưỡng 100%. Đây là trạng thái vi phạm nghiêm trọng các quy tắc an toàn và quản trị rủi ro tối cao của hệ thống. Theo quy tắc vận hành, mọi đề xuất giao dịch sẽ bị vô hiệu hóa để đảm bảo an toàn tuyệt đối cho người dùng.
+                    </div>
+                </div>
+
+                <!-- Footer Conclusion -->
+                <div class="pt-8 flex flex-col items-center justify-center border-t border-gray-100 space-y-4">
+                    <div class="text-center">
+                        <p class="text-xs text-trade-muted uppercase font-bold mb-1 tracking-widest">Kết Luận</p>
+                        <p class="text-2xl font-bold text-trade-charcoal">
+                            Chưa đủ điều kiện vào lệnh.
+                        </p>
+                    </div>
+                    
+                    <button onclick="window.location.reload()" class="px-8 py-3 bg-trade-charcoal text-white rounded font-bold hover:bg-black transition-colors duration-300 text-sm tracking-widest uppercase">
+                        Cập nhật dữ liệu hệ thống
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- System Footnote -->
+        <div class="mt-6 flex justify-between items-center px-2">
+            <div class="flex items-center space-x-2">
+                <span class="h-2 w-2 rounded-full bg-trade-red animate-pulse"></span>
+                <span class="text-[10px] text-trade-muted font-bold uppercase tracking-tighter">Psychology Guard Active</span>
+            </div>
+            <div class="text-[10px] text-trade-muted font-bold uppercase tracking-tighter">
+                Ref: Entry-Guard-Block-2024
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple micro-interaction for the card
+        document.querySelector('main').addEventListener('mousemove', (e) => {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 50;
+            const rotateY = (centerX - x) / 50;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        document.querySelector('main').addEventListener('mouseleave', (e) => {
+            e.currentTarget.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+            e.currentTarget.style.transition = 'transform 0.5s ease';
+        });
+
+        document.querySelector('main').addEventListener('mouseenter', (e) => {
+            e.currentTarget.style.transition = 'none';
+        });
+    </script>
+</body>
+</html>
