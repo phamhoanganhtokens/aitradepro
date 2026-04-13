@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI TRADING - Khuyến Nghị Giao Dịch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#fcfcfc',
+                        'accent-blue': '#0056b3',
+                        'charcoal': '#333333',
+                        'trade-sell': '#dc2626',
+                        'trade-buy': '#16a34a',
+                        'trade-wait': '#d97706',
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f0f2f5;
+            color: #333333;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        .justify-text {
+            text-align: justify;
+        }
+        .section-title {
+            border-bottom: 2px solid #0056b3;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+        }
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .8; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-accent-blue uppercase tracking-tight">
+                AI TRADING - Khuyến Nghị Giao Dịch
+            </h1>
+            <div class="h-1 w-24 bg-accent-blue mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <!-- Summary Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="glass-card rounded-xl p-6 transition-transform hover:scale-105">
+                <p class="text-sm text-gray-500 uppercase font-bold tracking-wider">Mã Giao Dịch</p>
+                <p class="text-3xl font-bold text-accent-blue">XAU</p>
+            </div>
+            <div class="glass-card rounded-xl p-6 transition-transform hover:scale-105">
+                <p class="text-sm text-gray-500 uppercase font-bold tracking-wider">Số Dư Tài Khoản</p>
+                <p class="text-3xl font-bold text-accent-blue">$200</p>
+            </div>
+            <div class="glass-card rounded-xl p-6 transition-transform hover:scale-105">
+                <p class="text-sm text-gray-500 uppercase font-bold tracking-wider">Phần Trăm Rủi Ro</p>
+                <p class="text-3xl font-bold text-accent-blue">20%</p>
+            </div>
+        </div>
+
+        <!-- Main Recommendation Details Section -->
+        <main class="glass-card rounded-2xl p-8 md:p-12 mb-10">
+            <h2 class="text-2xl font-bold text-accent-blue section-title">Chi Tiết Khuyến Nghị</h2>
+            
+            <!-- Action Display -->
+            <div class="flex flex-col items-center justify-center py-8 border-b border-gray-100 mb-8">
+                <p class="text-lg text-gray-600 mb-2 font-bold uppercase tracking-widest">Hành Động Khuyến Nghị</p>
+                <div class="text-5xl md:text-6xl font-bold text-trade-sell uppercase tracking-tighter pulse-animation">
+                    CHƯA ĐỦ ĐIỀU KIỆN VÀO LỆNH
+                </div>
+                <p class="mt-4 text-trade-sell italic font-bold">⚠️ TÍNH TOÁN SAI LỆCH RỦI RO NGHIÊM TRỌNG</p>
+            </div>
+
+            <!-- Parameters Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 mb-10">
+                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
+                    <span class="font-bold text-gray-600">Trạng thái:</span>
+                    <span class="text-lg font-bold text-trade-sell">STOP / WAIT</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
+                    <span class="font-bold text-gray-600">Điểm vào (Entry):</span>
+                    <span class="text-lg font-bold">N/A</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
+                    <span class="font-bold text-gray-600">Lot Size (Đề xuất sai):</span>
+                    <span class="text-lg font-bold text-trade-sell">10.0 lot</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
+                    <span class="font-bold text-gray-600">Confidence Score:</span>
+                    <span class="text-lg font-bold text-trade-sell">0% (High Risk)</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
+                    <span class="font-bold text-gray-600">Mục tiêu TP:</span>
+                    <span class="text-lg font-bold">Cancelled</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-50 pb-2">
+                    <span class="font-bold text-gray-600">Cắt lỗ SL:</span>
+                    <span class="text-lg font-bold">Cancelled</span>
+                </div>
+            </div>
+
+            <!-- Rationale Section -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-charcoal border-l-4 border-accent-blue pl-4">Lý do (Rationale)</h3>
+                <div class="justify-text text-lg space-y-4 text-gray-700">
+                    <p class="font-bold text-trade-sell">
+                        Căn cứ vào dữ liệu tổng hợp từ các Agent và thiết lập tài khoản hiện tại, hệ thống đưa ra thông báo khẩn cấp sau:
+                    </p>
+                    <p class="font-bold text-xl uppercase">
+                        THÔNG BÁO: KÍCH HOẠT TRẠNG THÁI TILT CRITICAL
+                    </p>
+                    <p>
+                        Hệ thống đã phát hiện các vi phạm nghiêm trọng đối với các quy tắc bảo mật và quản lý rủi ro tâm lý. Cụ thể, việc đề xuất giao dịch lên tới 10.0 lot đối với số dư tài khoản chỉ $200 là một sai lệch cực kỳ nguy hiểm. Tổng giá trị vị thế (Position Value) ước tính đạt 4.750.000 USD, vượt xa khả năng ký quỹ và đòn bẩy cho phép. Đây là dấu hiệu rõ ràng của tình trạng tính toán sai lầm hoặc tâm lý giao dịch quá đà (Tilt).
+                    </p>
+                    <p>
+                        Thiết lập mức rủi ro 20% trên tổng tài khoản cho một lệnh giao dịch đơn lẻ vi phạm các nguyên tắc quản trị rủi ro cơ bản. Với mức sụt giảm này, tài khoản đối diện với nguy cơ mất trắng chỉ sau 5 lệnh thua liên tiếp hoặc ngay lập tức nếu thị trường biến động mạnh. Tỷ lệ Rủi ro/Lợi nhuận (Risk/Reward) chỉ đạt 0.8, thấp hơn nhiều so với tiêu chuẩn tối thiểu là 1.8.
+                    </p>
+                    <p>
+                        Điều này đồng nghĩa với việc rủi ro đang cao hơn lợi nhuận tiềm năng, tạo ra một kỳ vọng toán học âm cho tài khoản. Do các giới hạn về tâm lý và an toàn vốn đã bị kích hoạt, hệ thống quyết định ngăn chặn việc thực hiện lệnh để bảo toàn số dư còn lại.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Company Info -->
+        <div class="text-center pb-12">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-500 italic text-sm">
+                <span>Website: <a href="www.phamhoanganhtokens.com" target="_blank" class="text-accent-blue hover:underline">www.phamhoanganhtokens.com</a></span>
+                <span class="hidden md:inline">|</span>
+                <span>Công ty: AI Design</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
