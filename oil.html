@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        trade: {
+                            buy: '#28a745',
+                            sell: '#dc3545',
+                            warning: '#ffc107',
+                            info: '#007bff',
+                            dark: '#343a40',
+                            gray: '#6c757d',
+                            bg: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Times New Roman", Times, serif;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 1);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .justified-text {
+            text-align: justify;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            background-color: #e9ecef;
+        }
+        .grid-detail-item {
+            border-bottom: 1px solid #f1f3f5;
+            padding: 0.75rem 0;
+        }
+        @media (min-width: 640px) {
+            .grid-detail-item {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12 min-h-screen flex flex-col items-center">
+
+    <div class="w-full max-w-4xl space-y-8">
+        
+        <!-- Header Section -->
+        <header class="text-center space-y-2 mb-8">
+            <h1 class="text-xs tracking-[0.2em] uppercase text-trade-gray font-bold">AI Trade Pro v2.0</h1>
+            <div class="h-1 w-20 bg-trade-info mx-auto rounded-full"></div>
+            <p class="text-lg font-bold mt-4">AGENT 4: ENTRY ADVISOR</p>
+        </header>
+
+        <!-- Main Recommendation Card -->
+        <main class="glass-card overflow-hidden">
+            
+            <!-- Psychology Guard Header -->
+            <div class="bg-slate-50 border-b border-slate-100 p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 bg-trade-buy rounded-full animate-pulse"></div>
+                    <h2 class="text-sm font-bold uppercase tracking-wide">Psychology Guard System</h2>
+                </div>
+                <div class="status-badge text-trade-buy">
+                    ✓ TRẠNG THÁI: BÌNH THƯỜNG
+                </div>
+            </div>
+
+            <!-- Trade Signal Header -->
+            <div class="p-8 text-center border-b border-slate-100">
+                <div class="text-trade-buy text-6xl font-black mb-2 tracking-tighter">BUY</div>
+                <h3 class="text-2xl font-bold text-slate-800">WTI CRUDE OIL</h3>
+                <p class="text-trade-gray mt-1 font-medium">Khối lượng đề xuất: <span class="text-slate-900">0.01 Lot</span></p>
+            </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 p-8 bg-white">
+                <div class="grid-detail-item flex justify-between items-center sm:block">
+                    <span class="text-trade-gray text-xs uppercase tracking-wider block">Entry Price</span>
+                    <span class="text-lg font-bold text-slate-900">104.50 USD</span>
+                </div>
+                <div class="grid-detail-item flex justify-between items-center sm:block">
+                    <span class="text-trade-gray text-xs uppercase tracking-wider block">Stop Loss (SL)</span>
+                    <span class="text-lg font-bold text-trade-sell">95.75 USD</span>
+                </div>
+                <div class="grid-detail-item flex justify-between items-center sm:block">
+                    <span class="text-trade-gray text-xs uppercase tracking-wider block">Confidence Score</span>
+                    <span class="text-lg font-bold text-trade-info">90%</span>
+                </div>
+                <div class="grid-detail-item flex justify-between items-center sm:block">
+                    <span class="text-trade-gray text-xs uppercase tracking-wider block">Take Profit (TP1)</span>
+                    <span class="text-lg font-bold text-trade-buy">110.00 USD</span>
+                </div>
+                <div class="grid-detail-item flex justify-between items-center sm:block">
+                    <span class="text-trade-gray text-xs uppercase tracking-wider block">Take Profit (TP2)</span>
+                    <span class="text-lg font-bold text-trade-buy">117.63 USD</span>
+                </div>
+                <div class="grid-detail-item flex justify-between items-center sm:block">
+                    <span class="text-trade-gray text-xs uppercase tracking-wider block">Risk:Reward</span>
+                    <span class="text-lg font-bold text-slate-900">1 : 1.5</span>
+                </div>
+            </div>
+
+            <!-- Psychology Report Details -->
+            <div class="px-8 py-6 bg-slate-50/50 border-t border-slate-100">
+                <h4 class="text-xs font-bold uppercase text-slate-500 mb-4 tracking-widest">Kiểm tra tâm lý chi tiết</h4>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                    <div>
+                        <p class="text-trade-gray">Lỗ ngày</p>
+                        <p class="font-bold">0%</p>
+                    </div>
+                    <div>
+                        <p class="text-trade-gray">Lỗ tuần</p>
+                        <p class="font-bold">0%</p>
+                    </div>
+                    <div>
+                        <p class="text-trade-gray">Win/Loss Streak</p>
+                        <p class="font-bold text-trade-info">0 / 0</p>
+                    </div>
+                    <div>
+                        <p class="text-trade-gray">Max Drawdown</p>
+                        <p class="font-bold">0%</p>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm italic text-slate-600 justified-text">
+                    Hệ thống xác nhận người dùng đủ điều kiện để tiến hành phân tích và xem xét các vị thế giao dịch mới. Không ghi nhận dấu hiệu Tilt.
+                </p>
+            </div>
+
+            <!-- Rationale Section -->
+            <div class="p-8 space-y-6">
+                <div>
+                    <h4 class="flex items-center gap-2 text-sm font-bold uppercase text-slate-800 mb-3 tracking-widest">
+                        <span class="w-1.5 h-4 bg-trade-info rounded-full"></span>
+                        Cơ sở kỹ thuật
+                    </h4>
+                    <p class="justified-text text-slate-700 leading-relaxed">
+                        Giá dầu WTI đã chính thức xác nhận xu hướng tăng mạnh trên toàn bộ các khung thời gian từ 15 phút đến 1 ngày. Việc bứt phá thành công khỏi vùng tích lũy 90-95 USD kèm theo khoảng trống giá tăng (Gap) lớn tại vùng 96 USD và khối lượng giao dịch tăng đột biến phản ánh áp lực mua chủ động cực mạnh. Hệ thống các đường trung bình động EMA đang dốc lên và phân tách rộng, khẳng định đà tăng trưởng đang trong giai đoạn sung sức nhất.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="flex items-center gap-2 text-sm font-bold uppercase text-slate-800 mb-3 tracking-widest">
+                        <span class="w-1.5 h-4 bg-trade-warning rounded-full"></span>
+                        Cơ sở cơ bản & Địa chính trị
+                    </h4>
+                    <p class="justified-text text-slate-700 leading-relaxed">
+                        Tình trạng sốc cung đang diễn ra trên quy mô toàn cầu sau khi Hoa Kỳ thực hiện phong tỏa eo biển Hormuz – tuyến vận tải năng lượng huyết mạch của thế giới. Căng thẳng địa chính trị liên quan đến Iran đã lấn át hoàn toàn các dữ liệu kinh tế vĩ mô thông thường, tạo ra động lực tăng giá phi mã và đẩy giá dầu vượt qua các ngưỡng kháng cự tâm lý quan trọng một cách thuyết phục.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                    <h4 class="flex items-center gap-2 text-sm font-bold uppercase text-slate-800 mb-3 tracking-widest">
+                        <span class="w-1.5 h-4 bg-slate-400 rounded-full"></span>
+                        Quản trị rủi ro
+                    </h4>
+                    <p class="justified-text text-slate-700 leading-relaxed text-sm">
+                        Mặc dù tỷ lệ rủi ro trên lợi nhuận thực tế (1.5) hiện đang thấp hơn mức khuyến nghị tối thiểu của hệ thống (1.8), tuy nhiên do độ tin cậy từ các phân tích kỹ thuật và địa chính trị đạt mức rất cao (90%), quyết định vào lệnh vẫn được phê duyệt. Khối lượng giao dịch được duy trì ở mức tối thiểu 0.01 Lot nhằm bảo vệ tài khoản trước biên độ biến động ATR đang ở mức cao đáng kể (6.5 - 7.2 USD).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Risk Warning Footer within card -->
+            <div class="bg-trade-dark p-4 text-center">
+                <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em]">Institutional Grade Analysis • Risk Percentage: 3.83%</p>
+            </div>
+        </main>
+
+        <!-- Account Snapshot -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 text-center">
+                <p class="text-xs text-trade-gray uppercase">Số dư</p>
+                <p class="text-lg font-bold">$200.00</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 text-center">
+                <p class="text-xs text-trade-gray uppercase">Rủi ro/Lệnh</p>
+                <p class="text-lg font-bold">20%</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 text-center">
+                <p class="text-xs text-trade-gray uppercase">Symbol</p>
+                <p class="text-lg font-bold">WTI OIL</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 text-center">
+                <p class="text-xs text-trade-gray uppercase">Hợp nhất</p>
+                <p class="text-lg font-bold text-trade-buy">>65%</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Adding subtle hover effects for interactivity
+        document.querySelectorAll('.grid-detail-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.backgroundColor = '#f8f9fa';
+                item.style.transition = 'background-color 0.3s ease';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>
