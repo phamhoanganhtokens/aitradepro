@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary-green: #28a745;
+            --primary-red: #dc3545;
+            --primary-blue: #007bff;
+            --bg-soft: #f8f9fa;
+            --text-main: #343a40;
+            --text-muted: #6c757d;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .premium-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 850px;
+            margin: 2rem auto;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .header-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #343a40 100%);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .action-banner {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+
+        .grid-detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            background: #fff;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #f1f1f1;
+            padding-bottom: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+
+        .detail-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .rationale-container {
+            padding: 0 2.5rem 2.5rem 2.5rem;
+            text-align: justify;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+            color: #1a1a1a;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 15px;
+        }
+
+        .psychology-badge {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-green);
+        }
+
+        .buy-theme { color: var(--primary-green); border-bottom-color: var(--primary-green); }
+        .sell-theme { color: var(--primary-red); border-bottom-color: var(--primary-red); }
+
+        @media (max-width: 640px) {
+            .header-gradient { padding: 1.5rem 1rem; }
+            .action-banner { font-size: 1.8rem; }
+            .rationale-container { padding: 0 1.5rem 1.5rem 1.5rem; }
+            .grid-detail { padding: 1.5rem; }
+        }
+
+        .justified-p {
+            text-align: justify;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="premium-card animate-fade-in">
+        <!-- Main Header -->
+        <div class="header-gradient">
+            <p class="text-xs tracking-[0.3em] opacity-70 mb-2 uppercase">Hệ Thống Cố Vấn Giao Dịch v2.0</p>
+            <h1 class="action-banner buy-theme">✓ MUA (BUY)</h1>
+            <h2 class="text-xl font-light opacity-90 tracking-wide">XAU/USD • 0.01 Lot</h2>
+            <div class="status-pill bg-green-500/20 text-green-400 border border-green-500/30">
+                <span class="mr-2">●</span> Đã xác thực đồng thuận
+            </div>
+        </div>
+
+        <div class="p-6 md:p-10">
+            <!-- Psychology Check -->
+            <div class="psychology-badge">
+                <h3 class="font-bold text-lg mb-2 flex items-center">
+                    <span class="mr-2">🧠</span> KIỂM TRA TÂM LÝ GIAO DỊCH
+                </h3>
+                <p class="text-sm text-gray-700 italic mb-2">Trạng thái: <strong>Bình thường</strong></p>
+                <p class="justified-p text-sm leading-relaxed">
+                    Dựa trên dữ liệu ghi nhận, số trận thắng liên tiếp là 0, số trận thua liên tiếp là 0, mức sụt giảm tài khoản tối đa là 0%, phần trăm lỗ ngày và lỗ tuần đều ở mức 0%. Các chỉ số đều nằm trong ngưỡng an toàn, không có dấu hiệu của trạng thái Tilt, hưng phấn quá đà hay tâm lý gỡ lỗ. Hệ thống xác nhận người dùng đang ở trạng thái tâm lý ổn định để thực hiện giao dịch.
+                </p>
+            </div>
+
+            <!-- Detailed Grid -->
+            <div class="section-title">THÔNG SỐ LỆNH</div>
+            <div class="grid-detail mb-8">
+                <div class="detail-item">
+                    <span class="label">Entry Point</span>
+                    <span class="value">4.773,48 USD</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Take Profit 1</span>
+                    <span class="value text-green-600">4.815,00 USD</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Take Profit 2</span>
+                    <span class="value text-green-600">4.858,48 USD</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Stop Loss</span>
+                    <span class="value text-red-600">4.730,98 USD</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Risk Amount</span>
+                    <span class="value">20% ($40.00)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Confidence</span>
+                    <span class="value text-blue-600">85%</span>
+                </div>
+            </div>
+
+            <!-- Consensus and Rationale -->
+            <div class="section-title">KẾT QUẢ ĐÁNH GIÁ SỰ ĐỒNG THUẬN</div>
+            <p class="justified-p mb-8">
+                Hệ thống ghi nhận sự đồng nhất hoàn toàn từ 4 Agent thành viên. Agent dữ liệu thị trường và Agent quét thị trường báo cáo xu hướng tăng trưởng (Bullish) đồng nhất trên tất cả các khung thời gian từ ngắn hạn đến dài hạn. Agent phân tích nâng cao và Agent quản trị rủi ro đều đưa ra mức độ tin cậy cao là 85%. Điều kiện về sự đồng thuận (ít nhất 3/4 Agent có độ tin cậy trên 65%) đã được thỏa mãn đầy đủ.
+            </p>
+
+            <div class="section-title">LÝ DO CHI TIẾT</div>
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold mb-1 text-gray-800">1. Phân Tích Kỹ Thuật</h4>
+                    <p class="justified-p">
+                        Cấu trúc thị trường XAU/USD đang duy trì đà tăng mạnh mẽ trên mọi khung thời gian. Giá hiện đang vận động ổn định phía trên các đường trung bình động EMA 9, 21, 50 và 200, cho thấy sức mạnh của xu hướng tăng hiện tại là rất bền vững. Các chỉ báo kỹ thuật như RSI đang ở mức 56 (tích cực và còn dư địa tăng) và MACD xuất hiện giao cắt hướng lên đã củng cố thêm tín hiệu mua vào. Dải Bollinger đang mở rộng dần lên phía trên, báo hiệu khả năng giá sẽ tiếp tục tìm đến các vùng kháng cự cao hơn.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-1 text-gray-800">2. Yếu Tố Cơ Bản</h4>
+                    <p class="justified-p">
+                        Vàng đang được hưởng lợi lớn từ vai trò tài sản trú ẩn an toàn do những căng thẳng địa chính trị mới phát sinh giữa Mỹ và Iran. Ngoài ra, dòng tiền đang có xu hướng đổ vào vàng để phòng ngừa rủi ro trước thềm công bố chỉ số PPI của Mỹ, phản ánh tâm lý thận trọng của thị trường đối với sức mạnh của đồng USD và lộ trình lãi suất của Fed.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-1 text-gray-800">3. Quản Trị Rủi Ro</h4>
+                    <p class="justified-p">
+                        Chiến lược được thiết lập với tỷ lệ rủi ro trên lợi nhuận (Risk/Reward) đạt mức 1:2.0, đảm bảo hiệu quả lợi nhuận trên mỗi đơn vị rủi ro. Khối lượng giao dịch đã được điều chỉnh về mức tối thiểu 0.01 Lot để phù hợp với quy mô tài khoản và mức biến động ATR hiện tại, giúp bảo vệ tài khoản trước các biến động bất ngờ của thị trường trong bối cảnh độ lệch giá trung bình đang ở mức cao (42,50 USD).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Message -->
+            <div class="mt-12 p-6 bg-blue-50 border border-blue-100 rounded-lg text-center">
+                <p class="text-blue-800 font-bold italic">
+                    Hệ thống khuyến nghị thực hiện đúng kế hoạch giao dịch và theo dõi sát sao các mốc giá kháng cự quan trọng tại vùng 4.800 – 4.850 USD.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple interactive effect for detail items
+        document.querySelectorAll('.detail-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.borderColor = '#007bff';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.borderColor = '#f1f1f1';
+            });
+        });
+    </script>
+</body>
+</html>
