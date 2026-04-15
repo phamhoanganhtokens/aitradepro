@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Recommendation Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#f8f9fa',
+                            card: '#ffffff',
+                            text: '#343a40',
+                            muted: '#6c757d',
+                            buy: '#28a745',
+                            sell: '#dc3545',
+                            warning: '#ffc107',
+                            info: '#007bff',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .justified-text {
+            text-align: justify;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .action-gradient-buy {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+        }
+        .action-gradient-sell {
+            background: linear-gradient(135deg, #dc3545 0%, #bd2130 100%);
+        }
+        .grid-item-border {
+            border-bottom: 1px solid #e9ecef;
+        }
+        @media (min-width: 768px) {
+            .grid-item-border:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12 min-h-screen flex items-center justify-center">
+
+    <div class="max-w-4xl w-full mx-auto fade-in">
+        <!-- Main Card Container -->
+        <div class="bg-white rounded-2xl shadow-premium overflow-hidden border border-gray-100">
+            
+            <!-- Header Section -->
+            <div class="p-6 md:p-10 border-b border-gray-50 text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <div class="h-2 w-2 rounded-full bg-brand-buy animate-pulse"></div>
+                    <span class="text-xs font-bold tracking-widest uppercase text-brand-muted">AI Trade Pro v2.0</span>
+                </div>
+                <h1 class="text-2xl md:text-3xl font-bold uppercase tracking-tight text-brand-text mb-2">
+                    BÁO CÁO CỐ VẤN VÀO LỆNH
+                </h1>
+                <p class="text-brand-muted italic text-sm">AGENT 4: ENTRY ADVISOR – NGÀY 15/04/2026</p>
+            </div>
+
+            <!-- Psychology Guard Alert Output -->
+            <div class="px-6 md:px-10 py-6 bg-gray-50/50 border-b border-gray-100">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="text-2xl">✓</span>
+                    <h2 class="text-lg md:text-xl font-bold uppercase tracking-wide">KIỂM TRA TÂM LÝ GIAO DỊCH</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                        <span class="text-brand-muted text-sm uppercase font-semibold">Trạng thái:</span>
+                        <span class="text-brand-buy font-bold">ỔN ĐỊNH (STABLE)</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                        <span class="text-brand-muted text-sm uppercase font-semibold">Lỗ ngày:</span>
+                        <span class="font-bold">0%</span>
+                    </div>
+                </div>
+                
+                <p class="justified-text text-brand-text leading-relaxed text-sm md:text-base border-l-4 border-brand-buy pl-4 py-1 italic">
+                    Dựa trên các chỉ số đầu vào, hệ thống xác nhận người dùng hiện đang ở trạng thái tâm lý cân bằng, không có dấu hiệu bị ảnh hưởng bởi tâm lý Tilt, hưng phấn quá đà hoặc tâm lý phục thù. Người dùng hoàn toàn đủ điều kiện để thực hiện các bước tiếp theo.
+                </p>
+            </div>
+
+            <!-- Recommendation Output -->
+            <div class="p-6 md:p-10">
+                <!-- Action Header -->
+                <div class="action-gradient-buy rounded-xl p-6 text-white mb-8 shadow-lg transform hover:scale-[1.01] transition-transform">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="text-center md:text-left mb-4 md:mb-0">
+                            <span class="text-xs font-bold uppercase tracking-[0.2em] opacity-80">Khuyến nghị thực hiện</span>
+                            <h3 class="text-4xl md:text-5xl font-black">MUA (BUY)</h3>
+                        </div>
+                        <div class="text-center md:text-right border-t md:border-t-0 md:border-l border-white/20 pt-4 md:pt-0 md:pl-8">
+                            <span class="text-xs font-bold uppercase tracking-[0.2em] opacity-80">Sản phẩm & Khối lượng</span>
+                            <div class="text-2xl font-bold uppercase">XAU/USD — 0.01 Lot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Details Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 mb-10">
+                    <div class="flex justify-between items-center py-3 grid-item-border">
+                        <span class="text-brand-muted font-bold text-sm uppercase tracking-wider">Điểm vào lệnh (Entry)</span>
+                        <span class="text-lg font-bold">4.809,46 USD</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 grid-item-border">
+                        <span class="text-brand-muted font-bold text-sm uppercase tracking-wider">Độ tin cậy (Confidence)</span>
+                        <span class="text-lg font-bold text-brand-info">85%</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 grid-item-border">
+                        <span class="text-brand-muted font-bold text-sm uppercase tracking-wider">Chốt lời (TP)</span>
+                        <span class="text-lg font-bold text-brand-buy">4.960,00 USD</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 grid-item-border">
+                        <span class="text-brand-muted font-bold text-sm uppercase tracking-wider">Dừng lỗ (SL)</span>
+                        <span class="text-lg font-bold text-brand-sell">4.734,00 USD</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 grid-item-border">
+                        <span class="text-brand-muted font-bold text-sm uppercase tracking-wider">Tỷ lệ rủi ro (Risk)</span>
+                        <span class="text-lg font-bold">40 USD / 20%</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 grid-item-border">
+                        <span class="text-brand-muted font-bold text-sm uppercase tracking-wider">Tỷ lệ R:R</span>
+                        <span class="text-lg font-bold">1.99</span>
+                    </div>
+                </div>
+
+                <!-- Rationale Section -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2 border-b border-gray-100 pb-2">
+                        <span class="text-brand-info text-xl font-bold">LÝ DO CHI TIẾT (RATIONALE)</span>
+                    </div>
+                    
+                    <div class="space-y-4 text-brand-text">
+                        <div class="justified-text leading-relaxed">
+                            <strong class="text-brand-text uppercase text-xs tracking-widest block mb-1">Về mặt kỹ thuật:</strong>
+                            Xu hướng tăng trưởng (Bullish) đang được củng cố vững chắc trên các khung thời gian lớn như Daily và H4 với cấu trúc thị trường tăng dần đều đặn. Tại khung H1, giá đã hoàn thiện nhịp điều chỉnh cần thiết và đang tích lũy trong mô hình Cờ tăng (Bull Flag), đây là tín hiệu điển hình cho việc tiếp diễn xu hướng tăng mạnh mẽ. Các đường EMA đóng vai trò là các vùng hỗ trợ động cực kỳ an toàn.
+                        </div>
+
+                        <div class="justified-text leading-relaxed">
+                            <strong class="text-brand-text uppercase text-xs tracking-widest block mb-1">Về mặt cơ bản:</strong>
+                            Giá vàng đang nhận được động lực kép từ thị trường vĩ mô. Sự suy yếu của đồng USD (DXY) cùng những bất ổn địa chính trị căng thẳng giữa Mỹ và Iran đã tạo ra một ngưỡng cầu bền vững, xác lập vị thế của vàng là tài sản trú ẩn an toàn tối ưu.
+                        </div>
+
+                        <div class="justified-text leading-relaxed p-4 bg-blue-50/50 rounded-lg border-l-4 border-brand-info">
+                            <strong class="text-brand-text uppercase text-xs tracking-widest block mb-1">Về quản trị rủi ro:</strong>
+                            Kế hoạch đạt tỷ lệ R:R đạt 1,99, đáp ứng hoàn hảo tiêu chuẩn hệ thống. Điểm dừng lỗ được tính toán dựa trên ATR (75,40 USD), đảm bảo khoảng cách an toàn trước các biến động nhiễu.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Verdict -->
+                <div class="mt-10 pt-8 border-t border-gray-100">
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-4xl mb-2">🚨</span>
+                        <h4 class="text-xl font-bold text-brand-text mb-2">KẾT LUẬN CUỐI CÙNG</h4>
+                        <p class="justified-text text-brand-muted max-w-xl italic">
+                            Tổng hợp các yếu tố kỹ thuật, cơ bản và rủi ro đều cho thấy tín hiệu Mua vào rất khả quan. Đủ điều kiện vào lệnh theo kế hoạch đề xuất.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meta Info / Footer removed as per instructions -->
+    </div>
+
+    <script>
+        // Subtle interaction: Add a hover tilt effect to the main card
+        const card = document.querySelector('.bg-white');
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth < 768) return;
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 100;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 100;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        document.addEventListener('mouseenter', () => {
+            card.style.transition = 'none';
+        });
+
+        document.addEventListener('mouseleave', () => {
+            card.style.transition = 'all 0.5s ease';
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    </script>
+</body>
+</html>
