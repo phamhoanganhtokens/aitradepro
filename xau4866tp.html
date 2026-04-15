@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Recommendation Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #343a40;
+            --text-muted: #6c757d;
+            --accent-buy: #28a745;
+            --accent-sell: #dc3545;
+            --accent-warning: #ffc107;
+            --accent-info: #007bff;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .premium-card {
+            background: var(--card-bg);
+            max-width: 850px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 8px rgba(0, 0, 0, 0.02);
+            padding: 2.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .justified-text {
+            text-align: justify;
+        }
+
+        .heading-display {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-success { background: #e7f5ea; color: var(--accent-buy); }
+        .badge-info { background: #e7f1ff; color: var(--accent-info); }
+
+        .grid-detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .detail-item {
+            border-bottom: 1px solid #f1f3f5;
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .detail-value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .action-header {
+            border-left: 6px solid var(--accent-buy);
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .rationale-section {
+            background: #fafbfc;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px dashed #dee2e6;
+            margin-top: 2rem;
+        }
+
+        .psych-check {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f1f3f5;
+            border-radius: 6px;
+        }
+
+        .consensus-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .consensus-fill {
+            height: 100%;
+            background: var(--accent-buy);
+            width: 85%;
+            transition: width 1s ease-in-out;
+        }
+
+        @media (max-width: 640px) {
+            .premium-card { padding: 1.5rem; }
+            .grid-detail { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .detail-value { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="premium-card">
+        <!-- System ID & Header -->
+        <div class="mb-8 border-b pb-6">
+            <p class="text-xs font-bold text-blue-600 mb-1 heading-display uppercase tracking-widest">AI Trade Pro v2.0 • System Terminal</p>
+            <h1 class="text-2xl font-bold heading-display">BÁO CÁO PHÂN TÍCH & QUYẾT ĐỊNH GIAO DỊCH</h1>
+            <p class="text-gray-500 text-sm italic">Agent 4: Entry Advisor Analysis</p>
+        </div>
+
+        <!-- Psychology Guard Section -->
+        <section class="mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold flex items-center">
+                    <span class="mr-2">✓</span> HỆ THỐNG BẢO VỆ TÂM LÝ
+                </h2>
+                <span class="status-badge badge-success">Bình Thường</span>
+            </div>
+            <div class="psych-check justified-text">
+                <p><strong>Kết quả kiểm tra chi tiết:</strong> Không phát hiện dấu hiệu <em>Euphoria</em> hoặc <em>Revenge Trading</em>. Drawdown hiện tại ở mức 0% (Dưới ngưỡng 8%). Người dùng duy trì trạng thái ổn định, đủ điều kiện thực hiện giao dịch.</p>
+            </div>
+        </section>
+
+        <!-- Consensus Section -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 flex items-center">
+                <span class="mr-2">📊</span> SỰ ĐỒNG THUẬN GIỮA CÁC ĐẠI LÝ
+            </h2>
+            <div class="consensus-bar">
+                <div class="consensus-fill"></div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2 justified-text">
+                Đạt được sự đồng thuận tuyệt đối từ <strong>4/4 Agent</strong>. Mức độ tin cậy trung bình: <span class="font-bold text-green-600">85%</span> (Yêu cầu tối thiểu: 65%). Hệ thống phê duyệt chiến lược.
+            </p>
+        </section>
+
+        <!-- Recommendation Header -->
+        <header class="action-header">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <div>
+                    <span class="text-sm uppercase tracking-widest text-gray-500 font-semibold">Khuyến nghị hiện tại</span>
+                    <h2 class="text-5xl font-black text-green-600 heading-display">BUY <span class="text-gray-800">XAU/USD</span></h2>
+                </div>
+                <div class="text-left md:text-right">
+                    <span class="detail-label">Lot Size</span>
+                    <span class="text-2xl font-bold">0.01 Lot</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Trade Data Grid -->
+        <div class="grid-detail">
+            <div class="detail-item">
+                <span class="detail-label">Entry Price</span>
+                <span class="detail-value text-blue-600">4,842.50</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Take Profit 1</span>
+                <span class="detail-value text-green-600">4,866.50</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Take Profit 2</span>
+                <span class="detail-value text-green-600">4,890.50</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Stop Loss</span>
+                <span class="detail-value text-red-600">4,818.50</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Risk Amount</span>
+                <span class="detail-value">$40.00</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Confidence</span>
+                <span class="detail-value">85%</span>
+            </div>
+        </div>
+
+        <!-- Rationale Section -->
+        <section class="rationale-section">
+            <h3 class="text-base font-bold mb-4 uppercase tracking-wider flex items-center border-b pb-2">
+                <span class="mr-2">🔍</span> Lý do chi tiết (Rationale)
+            </h3>
+            <div class="space-y-4 justified-text">
+                <p>
+                    <strong>Về kỹ thuật:</strong> Vàng hiện đang duy trì xu hướng tăng trưởng bền vững trên các khung thời gian chính từ M15 đến Daily. Trên khung H1, giá đã hoàn tất giai đoạn tích lũy sau một đà tăng mạnh mẽ, hình thành mô hình tiếp diễn dạng Lá cờ (Flag). Các chỉ báo RSI và MACD đều đang xác nhận động lượng mua chiếm ưu thế tuyệt đối, đồng thời giá duy trì ổn định phía trên các đường trung bình động quan trọng.
+                </p>
+                <p>
+                    <strong>Về cơ bản:</strong> Sự suy yếu của đồng USD bắt nguồn từ những căng thẳng địa chính trị phức tạp là yếu tố then chốt đẩy giá vàng lên cao. Các lo ngại về lạm phát quay trở lại do biến động giá năng lượng và sự thiếu chắc chắn trong chính sách lãi suất của Fed đã thúc đẩy dòng tiền chảy vào các tài sản trú ẩn an toàn.
+                </p>
+                <p>
+                    <strong>Về rủi ro:</strong> Chiến lược được thiết kế với tỷ lệ Rủi ro/Lợi nhuận tối ưu là 1:2.0. Mức dừng lỗ được thiết lập dựa trên chỉ số ATR Daily (19,16 USD) nhân với hệ số an toàn 1.25, giúp bảo vệ vị thế trước các biến động nhiễu của thị trường.
+                </p>
+            </div>
+        </section>
+
+        <!-- Final Confirmation -->
+        <div class="mt-8 pt-6 border-t text-center">
+            <p class="text-sm font-bold text-gray-400 heading-display uppercase tracking-tighter">
+                Advisor xác nhận lệnh giao dịch khả thi. Chúc quý nhà đầu tư thành công.
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Smooth reveal of elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fill = document.querySelector('.consensus-fill');
+            setTimeout(() => {
+                fill.style.width = '85%';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
