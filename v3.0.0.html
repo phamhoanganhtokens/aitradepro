@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v3.0.0 - XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#1e40af',
+                            accent: '#3b82f6',
+                            surface: '#f8fafc',
+                            border: '#e2e8f0'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .recommendation-p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .data-item {
+            padding: 1rem;
+            border-left: 4px solid #1e40af;
+            background: #f8fafc;
+        }
+        .label {
+            font-weight: bold;
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #64748b;
+        }
+        .value {
+            font-size: 1.25rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+        .pulse-dot {
+            height: 8px;
+            width: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        @media (max-width: 640px) {
+            .recommendation-p {
+                text-align: left; /* Better for very narrow screens but instruction said justify */
+                text-align: justify; 
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4">
+
+    <!-- Header Section -->
+    <header class="max-w-4xl mx-auto text-center mb-12">
+        <div class="inline-flex items-center space-x-2 bg-blue-50 px-4 py-1 rounded-full mb-4 border border-blue-100">
+            <span class="pulse-dot"></span>
+            <span class="text-blue-700 font-bold text-sm uppercase tracking-widest">System Active</span>
+        </div>
+        <h1 class="text-5xl font-extrabold mb-2 tracking-tight text-brand-dark">AI Trade pro v3.0.0</h1>
+        <h2 class="text-xl text-brand-primary opacity-80 mb-4 italic font-medium">Hệ thống AI giao dịch chuyên sâu tập trung vào Vàng (XAU/USD)</h2>
+        <div id="date-display" class="text-slate-500 font-medium"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto">
+        <article class="glass-card rounded-3xl p-8 md:p-16">
+            
+            <header class="border-b border-slate-100 pb-8 mb-8 text-center">
+                <h1 class="text-3xl md:text-4xl font-bold gradient-text uppercase tracking-wide">
+                    Khuyến nghị Giao dịch Vàng (XAU/USD)
+                </h1>
+            </header>
+
+            <div class="space-y-6">
+                <!-- Action Highlight -->
+                <div class="flex flex-col md:flex-row justify-between items-center bg-blue-900 text-white p-6 rounded-2xl shadow-lg mb-8">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <span class="block text-blue-200 text-sm uppercase">HÀNH ĐỘNG</span>
+                        <span class="text-3xl font-black">BUY LIMIT</span>
+                    </div>
+                    <div class="h-px w-full md:h-12 md:w-px bg-blue-700 my-2 md:my-0"></div>
+                    <div class="text-center">
+                        <span class="block text-blue-200 text-sm uppercase">ENTRY POINT</span>
+                        <span class="text-3xl font-black">4815.00 USD</span>
+                    </div>
+                    <div class="h-px w-full md:h-12 md:w-px bg-blue-700 my-2 md:my-0"></div>
+                    <div class="text-center md:text-right">
+                        <span class="block text-blue-200 text-sm uppercase">CONFIDENCE</span>
+                        <span class="text-3xl font-black text-emerald-400">85%</span>
+                    </div>
+                </div>
+
+                <!-- Technical Details Grid -->
+                <div class="data-grid">
+                    <div class="data-item rounded-r-lg">
+                        <span class="label">Khối lượng</span>
+                        <span class="value">0.02 LOT</span>
+                    </div>
+                    <div class="data-item rounded-r-lg border-emerald-500">
+                        <span class="label">Chốt lời (TP1)</span>
+                        <span class="value text-emerald-600">4851.00 USD</span>
+                        <p class="text-xs text-emerald-700 italic">Tỷ lệ R/R 1:1.8</p>
+                    </div>
+                    <div class="data-item rounded-r-lg border-emerald-500">
+                        <span class="label">Chốt lời (TP2)</span>
+                        <span class="value text-emerald-600">4885.00 USD</span>
+                        <p class="text-xs text-emerald-700 italic">Kháng cự cũ</p>
+                    </div>
+                    <div class="data-item rounded-r-lg border-rose-500">
+                        <span class="label">Dừng lỗ (SL)</span>
+                        <span class="value text-rose-600">4795.00 USD</span>
+                    </div>
+                    <div class="data-item rounded-r-lg">
+                        <span class="label">Rủi ro (Risk)</span>
+                        <span class="value">20% ($40.00)</span>
+                        <p class="text-xs text-slate-500 italic">Vốn: $200.00</p>
+                    </div>
+                </div>
+
+                <!-- Narrative Sections -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold mb-6 text-brand-dark border-l-4 border-brand-primary pl-4">CƠ SỞ PHÂN TÍCH (RATIONALE)</h3>
+                    <div class="recommendation-p">
+                        Dựa trên quy trình hoạt động của các Đại lý (Agents 0-4) và Hệ thống Bảo vệ Tâm lý (Psychology Guard System):
+                    </div>
+                    
+                    <div class="recommendation-p">
+                        <strong>1. Đại lý 1 (Quét thị trường):</strong> Xác nhận xu hướng tăng mạnh mẽ (Strong Bullish) trên tất cả các khung thời gian từ Daily đến M15. Giá đóng cửa tuần tại vùng đỉnh lịch sử $4,831.56 với khối lượng giao dịch tăng vọt.
+                    </div>
+
+                    <div class="recommendation-p">
+                        <strong>2. Đại lý 2 (Phân tích kỹ thuật & Cơ bản):</strong> Về mặt kỹ thuật, vùng $4,800 là ngưỡng hỗ trợ tâm lý cực kỳ quan trọng. Chỉ số ATR (14) đạt mức 115.40, cho thấy biến động cao. Về mặt cơ bản, căng thẳng địa chính trị tại eo biển Hormuz và cuộc đàm phán Mỹ-Iran đang tạo ra môi trường trú ẩn an toàn lý tưởng cho vàng.
+                    </div>
+
+                    <div class="recommendation-p">
+                        <strong>3. Đại lý 3 (Quản trị rủi ro):</strong> Với số dư tài khoản $200 và mức rủi ro 20%, số tiền rủi ro được ấn định là $40. Khoảng cách dừng lỗ 20 giá (từ $4,815 về $4,795) tương ứng với khối lượng giao dịch 0.02 Lot, đảm bảo tuân thủ nghiêm ngặt các tham số đầu vào.
+                    </div>
+
+                    <div class="recommendation-p">
+                        <strong>4. Đại lý 4 (Khuyến nghị):</strong> Lệnh Buy Limit tại vùng điều chỉnh $4,815 được ưu tiên thay vì mua đuổi tại mức giá hiện tại để tối ưu hóa tỷ lệ Lợi nhuận/Rủi ro (R/R) đạt tối thiểu 1:1.8.
+                    </div>
+                </div>
+
+                <!-- Journal Status Bento-ish Grid -->
+                <div class="mt-12 bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                    <h3 class="text-xl font-bold mb-6 text-slate-800 text-center md:text-left">TRẠNG THÁI NHẬT KÝ GIAO DỊCH</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>Hệ thống đã cập nhật bộ nhớ</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="font-bold text-slate-600">Tổng số lệnh:</span>
+                            <span>1 (Lệnh chờ)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="font-bold text-slate-600">Cặp tiền:</span>
+                            <span>XAU/USD</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="font-bold text-slate-600">Hướng:</span>
+                            <span class="text-blue-600 font-bold uppercase">Buy Limit</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="font-bold text-slate-600">Tỉ lệ thắng:</span>
+                            <span class="italic text-slate-400">N/A (Đang theo dõi)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="font-bold text-slate-600">Chuỗi:</span>
+                            <span>0 (W/L)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="mt-12 pt-8 border-t border-slate-100 text-slate-400 italic text-sm text-center">
+                    <p class="recommendation-p !mb-0 !text-center">
+                        Ghi chú: Phân tích được thực hiện bởi hệ thống AI tự động Trade pro v3.0.0. Nhà đầu tư cần lưu ý rủi ro cao khi giao dịch với mức ký quỹ 20%. Mọi quyết định giao dịch cuối cùng thuộc về bạn.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer Content -->
+    <footer class="max-w-4xl mx-auto mt-16 pb-12 text-center text-slate-500 space-y-2">
+        <p class="font-medium">Website: <a href="www.phamhoanganhtokens.com" target="_blank" class="text-brand-primary hover:underline">www.phamhoanganhtokens.com</a></p>
+        <p>Công ty: AI Trade pro</p>
+        <p>Dịch vụ: Thiết kế hệ thống giao dịch AI chuyên sâu</p>
+    </footer>
+
+    <script>
+        // Dynamic Date Insertion
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZoneName: 'short'
+            };
+            const formattedDate = now.toLocaleDateString('vi-VN', options);
+            document.getElementById('date-display').textContent = formattedDate;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        // Add subtle animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.querySelector('article');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.8s ease-out';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+
