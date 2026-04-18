@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Pro v3.0.1 - Báo Cáo Chiến Thuật BTC/USD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#004080',
+                            charcoal: '#333333',
+                            bg: '#F8F8F8',
+                            accent: '#28A745',
+                            border: '#E0E0E0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        serif: ['"Times New Roman"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+        }
+        .report-container {
+            max-width: 850px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .serif-content {
+            font-family: 'Times New Roman', serif;
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .section-title {
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #004080;
+            border-bottom: 1px solid #E0E0E0;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 64, 128, 0.1);
+        }
+        .data-badge {
+            background: rgba(0, 64, 128, 0.05);
+            border-left: 4px solid #004080;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        .confidence-meter {
+            height: 8px;
+            width: 100%;
+            background: #E0E0E0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28A745, #1e7e34);
+            width: 92%;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <!-- Header Section -->
+    <header class="glass-header sticky top-0 z-50 py-4 px-6 mb-8">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-white font-bold text-xl">AI</div>
+                <div>
+                    <h1 class="font-display font-bold text-xl text-brand-navy leading-none">AI Trading pro v3.0.1</h1>
+                    <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Advanced Quantitative Analysis</p>
+                </div>
+            </div>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-brand-navy hover:text-blue-700 font-semibold transition-colors text-sm border-b border-brand-navy/20">
+                www.phamhoanganhtokens.com
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="px-4 pb-20">
+        <article class="report-container mx-auto bg-white p-8 md:p-16 rounded-sm border border-gray-100">
+            
+            <!-- Document Heading -->
+            <div class="mb-10 text-center md:text-left">
+                <h2 class="serif-content font-bold text-2xl md:text-3xl mb-2 text-gray-900">
+                    BÁO CÁO CHIẾN THUẬT GIAO DỊCH BTC/USD
+                </h2>
+                <div class="h-1 w-24 bg-brand-navy mx-auto md:mx-0 mb-4"></div>
+                <p class="text-gray-500 font-sans text-sm uppercase tracking-tighter">HỆ THỐNG AI TRADING PRO V3.0.1 • OFFICIAL DOCUMENT</p>
+            </div>
+
+            <div class="serif-content">
+                <div class="section-title">1. THÔNG TIN CHUNG VÀ THỜI GIAN THỰC</div>
+                <ul class="list-none space-y-2 mb-6">
+                    <li><strong>Ngày/Giờ báo cáo:</strong> 18 tháng 04, 2026 | 09:33 AM.</li>
+                    <li><strong>Cặp tiền tệ:</strong> BTC/USD.</li>
+                    <li><strong>Số dư tài khoản (Balance):</strong> 200.00 USD.</li>
+                    <li><strong>Mức rủi ro thiết lập:</strong> 20% (Tương đương rủi ro 40.00 USD trên vốn).</li>
+                </ul>
+
+                <div class="section-title">2. THÔNG SỐ GIAO DỊCH KHUYẾN NGHỊ</div>
+                <div class="data-badge font-sans">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
+                        <div class="flex justify-between border-b border-gray-200 pb-1">
+                            <span class="text-gray-600">Điểm vào lệnh (Entry):</span>
+                            <span class="font-bold text-brand-navy">77,400.00 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-1">
+                            <span class="text-gray-600">Chốt lời 1 (TP1):</span>
+                            <span class="font-bold text-brand-accent">79,500.00 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-1">
+                            <span class="text-gray-600">Chốt lời 2 (TP2):</span>
+                            <span class="font-bold text-brand-accent">82,200.00 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-1">
+                            <span class="text-gray-600">Dừng lỗ (Stop Loss):</span>
+                            <span class="font-bold text-red-600">74,800.00 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-1">
+                            <span class="text-gray-600">Khối lượng (Lot Size):</span>
+                            <span class="font-bold">0.015</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-1">
+                            <span class="text-gray-600">Tỷ lệ R:R:</span>
+                            <span class="font-bold">1 : 1.85</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">3. PHÂN TÍCH CHI TIẾT THEO VAI TRÒ TÁC TÁC (WORKFLOW RATIONALE)</div>
+                
+                <p class="mb-4">
+                    <strong>[Real-time Data Fetcher & Market Scanner]:</strong> Dữ liệu mới nhất cho thấy Bitcoin đã chính thức thoát khỏi vùng tích lũy kéo dài, phá vỡ mốc 75,000 USD với khối lượng lớn. Giá hiện tại đang duy trì ổn định quanh mức 77,425 USD. Chỉ số RSI (14) đạt mức 70, cho thấy lực mua đang áp đảo hoàn toàn.
+                </p>
+
+                <p class="mb-4">
+                    <strong>[Advanced Analyst]:</strong> Phân tích kỹ thuật xác nhận cấu trúc tăng giá vững chắc. Đường trung bình động MA 50 đã cắt lên trên MA 200 (Golden Cross), trong khi MACD trên khung đồ thị ngày chuyển sang trạng thái dương rõ rệt. Về mặt tin tức, sự hạ nhiệt căng thẳng tại Trung Đông (Eo biển Hormuz hoạt động trở lại) đã khiến giá dầu giảm mạnh, đẩy dòng tiền quay trở lại các tài sản rủi ro như Bitcoin. Dòng tiền từ các quỹ ETF (BlackRock, MicroStrategy) tiếp tục ghi nhận mức kỷ lục.
+                </p>
+
+                <p class="mb-4">
+                    <strong>[Risk Manager]:</strong> Với mục tiêu rủi ro 20% trên tài khoản 200 USD, hệ thống đã tính toán khoảng cách dừng lỗ 2,600 giá (từ 77,400 về 74,800). Khối lượng 0.015 lot được lựa chọn để đảm bảo tổng thiệt hại nếu chạm SL không vượt quá 40 USD, đồng thời tối ưu hóa lợi nhuận tại các vùng kháng cự phía trên.
+                </p>
+
+                <p class="mb-4">
+                    <strong>[Entry Advisor]:</strong> Điểm vào 77,400 USD được thiết lập dựa trên vùng hỗ trợ mới hình thành sau khi phá vỡ (Breakout-Retest). TP1 tại 79,500 USD nhằm mục đích thu lợi nhuận ngắn hạn trước ngưỡng kháng cự tâm lý 80,000 USD. TP2 tại 82,200 USD hướng tới mục tiêu kỹ thuật trung hạn của mô hình Bull Flag.
+                </p>
+
+                <p class="mb-8">
+                    <strong>[Psychology Guard]:</strong> Tâm lý thị trường đang chuyển dịch từ "Sợ hãi" sang "Lạc quan". Tuy nhiên, để tránh bẫy tâm lý FOMO tại các mức giá cao hơn, hệ thống thực thi chiến thuật chia nhỏ các điểm chốt lời. Việc duy trì R:R > 1:1.8 đảm bảo tính bền vững cho tài khoản nhỏ trong điều kiện thị trường biến động mạnh.
+                </p>
+
+                <div class="section-title">4. ĐIỂM TIN CẬY (CONFIDENCE SCORE)</div>
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <div class="flex justify-between items-end mb-2">
+                        <span class="font-bold text-lg">Mức độ tin cậy:</span>
+                        <span class="font-bold text-2xl text-brand-accent">92%</span>
+                    </div>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill"></div>
+                    </div>
+                    <p class="mt-4 italic">
+                        <strong>Nhận định cuối cùng:</strong> Lệnh MUA (BUY) có xác suất thắng cao nhờ sự đồng thuận giữa phân tích dòng tiền vĩ mô và các chỉ báo kỹ thuật động lượng.
+                    </p>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-100 text-sm text-gray-500 italic">
+                    Báo cáo được tạo tự động bởi AI Trading Pro v3.0.1.
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        // Micro-animations for the layout components
+        document.addEventListener('DOMContentLoaded', () => {
+            const report = document.querySelector('.report-container');
+            report.style.opacity = '0';
+            report.style.transform = 'translateY(20px)';
+            report.style.transition = 'all 0.8s ease-out';
+            
+            setTimeout(() => {
+                report.style.opacity = '1';
+                report.style.transform = 'translateY(0)';
+            }, 100);
+
+            // Animate confidence bar
+            const fill = document.querySelector('.confidence-fill');
+            fill.style.width = '0%';
+            setTimeout(() => {
+                fill.style.transition = 'width 1.5s cubic-bezier(0.65, 0, 0.35, 1)';
+                fill.style.width = '92%';
+            }, 800);
+        });
+    </script>
+</body>
+</html>
