@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v3.0.0 - XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            deep: '#0f172a',
+                            accent: '#1e40af',
+                            soft: '#f8fafc',
+                            border: '#e2e8f0'
+                        },
+                        trading: {
+                            buy: '#059669',
+                            sell: '#dc2626',
+                            gold: '#ca8a04'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        .justified-text {
+            text-align: justify;
+            line-height: 1.8;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+        }
+        .recommendation-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+            background-color: #059669; /* Green for BUY */
+            margin-bottom: 1rem;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1.5rem;
+        }
+        .data-item-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .data-item-value {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col py-8 px-4 md:py-12">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl mx-auto mb-10 text-center">
+        <div class="mb-4 inline-flex items-center justify-center space-x-2">
+            <div class="h-px w-12 bg-brand-accent"></div>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-brand-deep uppercase">
+                AI Trade Pro v3.0.0
+            </h1>
+            <div class="h-px w-12 bg-brand-accent"></div>
+        </div>
+        <h2 class="text-xl md:text-2xl text-brand-accent mb-4 italic">
+            Hệ thống AI giao dịch chuyên sâu tập trung vào Vàng (XAU/USD)
+        </h2>
+        <p id="current-time" class="text-slate-500 font-medium"></p>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full max-w-3xl mx-auto glass-card rounded-xl overflow-hidden mb-12">
+        <div class="header-gradient p-6 text-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wide">
+                Khuyến nghị Giao dịch Vàng (XAU/USD)
+            </h1>
+        </div>
+
+        <div class="p-8 md:p-12">
+            <!-- Action Highlights -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-slate-100 pb-6">
+                <div>
+                    <span class="recommendation-badge text-lg">HÀNH ĐỘNG: BUY (MUA)</span>
+                    <p class="text-sm text-slate-500 italic">Cập nhật dựa trên phân tích đa khung thời gian</p>
+                </div>
+                <div class="mt-4 md:mt-0 text-right">
+                    <p class="text-sm text-slate-500">Mức độ tự tin</p>
+                    <p class="text-3xl font-bold text-brand-accent">85%</p>
+                </div>
+            </div>
+
+            <!-- Key Trading Data -->
+            <div class="data-grid">
+                <div>
+                    <p class="data-item-label">Entry (Vào lệnh)</p>
+                    <p class="data-item-value text-xl">4832.00 USD</p>
+                </div>
+                <div>
+                    <p class="data-item-label">Volume (Khối lượng)</p>
+                    <p class="data-item-value">0.01 Lot</p>
+                </div>
+                <div>
+                    <p class="data-item-label">Stop Loss (Cắt lỗ)</p>
+                    <p class="data-item-value text-trading-sell">4792.00 USD</p>
+                </div>
+                <div>
+                    <p class="data-item-label">Risk (Rủi ro)</p>
+                    <p class="data-item-value">20% ($40.00)</p>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <p class="data-item-label mb-2">Take Profit (Mục tiêu chốt lời)</p>
+                <div class="flex space-x-4">
+                    <div class="flex-1 bg-emerald-50 border border-emerald-100 p-3 rounded">
+                        <span class="block text-xs text-emerald-600 font-bold">TP1</span>
+                        <span class="text-xl font-bold text-emerald-700">4910.00 USD</span>
+                    </div>
+                    <div class="flex-1 bg-emerald-50 border border-emerald-100 p-3 rounded">
+                        <span class="block text-xs text-emerald-600 font-bold">TP2</span>
+                        <span class="text-xl font-bold text-emerald-700">5000.00 USD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Rationale -->
+            <div class="mb-10">
+                <h3 class="text-lg font-bold text-brand-deep mb-4 flex items-center">
+                    <span class="mr-2">LÝ DO PHÂN TÍCH (RATIONALE)</span>
+                    <div class="flex-1 h-px bg-slate-200"></div>
+                </h3>
+                <div class="justified-text text-slate-700 space-y-4">
+                    <p>
+                        Dựa trên phân tích đa khung thời gian từ Agent 1 và Agent 2, vàng (XAU/USD) đang duy trì cấu trúc tăng giá mạnh mẽ trên biểu đồ Daily và H4 sau đợt phục hồi từ biến cố "Hormuz Shock". Hiện tại, giá đóng cửa phiên thứ Sáu quanh mức 4831.61 USD, ngay sát ngưỡng kháng cự tâm lý 4850 USD. 
+                    </p>
+                    <p>
+                        Phân tích cơ bản cho thấy lạm phát tại Mỹ (CPI 3.3%) và nhu cầu vật chất từ lễ hội Akshaya Tritiya tạo nên một "sàn giá" vững chắc. Agent 3 đã xác nhận tỷ lệ Risk/Reward đạt mức 1:1.95, thỏa mãn điều kiện tối thiểu 1:1.8. Hệ thống Guard System đánh giá đây là lệnh thuận xu hướng, không bị ảnh hưởng bởi tâm lý FOMO dù rủi ro được thiết lập ở mức cao (20%) theo yêu cầu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trade Journal Status -->
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                <h3 class="text-md font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2 uppercase tracking-tight">
+                    TRẠNG THÁI NHẬT KÝ GIAO DỊCH (TRADE JOURNAL)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 text-sm">
+                    <div class="flex justify-between border-b border-slate-100 pb-1">
+                        <span class="text-slate-500">Cặp tiền:</span>
+                        <span class="font-bold">XAU/USD</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-100 pb-1">
+                        <span class="text-slate-500">Trạng thái:</span>
+                        <span class="text-blue-600 font-bold italic">01 lệnh BUY đang mở (Entry 4832)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-100 pb-1">
+                        <span class="text-slate-500">Lợi nhuận (P&L):</span>
+                        <span class="font-bold text-slate-700">0 USD</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-100 pb-1">
+                        <span class="text-slate-500">Tỷ lệ thắng:</span>
+                        <span class="font-bold text-slate-700">0%</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-100 pb-1">
+                        <span class="text-slate-500">Chuỗi thắng/thua:</span>
+                        <span class="font-bold text-slate-700">0</span>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-white rounded border border-slate-200 italic text-sm text-slate-600">
+                    <span class="font-bold not-italic text-brand-accent">Ghi chú:</span> Nhật ký đã được cập nhật với khuyến nghị mới nhất cho phiên giao dịch đầu tuần tới.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Professional Information Section -->
+    <section class="w-full max-w-4xl mx-auto mt-auto py-8 text-center border-t border-slate-200">
+        <div class="space-y-2 text-slate-600">
+            <p class="font-medium">
+                Website: <a href="www.phamhoanganhtokens.com" target="_blank" class="text-brand-accent hover:underline">www.phamhoanganhtokens.com</a>
+            </p>
+            <p class="font-bold text-brand-deep">Công ty: AI Trade pro</p>
+            <p class="text-sm italic">Dịch vụ: Thiết kế hệ thống giao dịch AI chuyên sâu</p>
+        </div>
+    </section>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            // Vietnamese locale
+            document.getElementById('current-time').textContent = now.toLocaleDateString('vi-VN', options);
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
