@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro v3.0 - Khuyến nghị giao dịch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0a192f',
+                            800: '#112240',
+                            700: '#1d2d50',
+                        },
+                        gold: {
+                            DEFAULT: '#c5a059',
+                            light: '#e9d5a1',
+                        },
+                        trading: {
+                            buy: '#10b981',
+                            sell: '#ef4444',
+                            hold: '#3b82f6',
+                            wait: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #0a192f;
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .glow-buy {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.5);
+        }
+
+        .gradient-border {
+            border-bottom: 2px solid;
+            border-image: linear-gradient(to right, transparent, #c5a059, transparent) 1;
+        }
+
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .animate-pulse-subtle {
+            animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-0 m-0">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-5xl px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/20">
+                <span class="text-navy-900 font-bold text-xl">AI</span>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold tracking-wider text-white">AI TRADE PRO <span class="text-gold text-sm align-top">v3.0</span></h1>
+        </div>
+        <a href="www.phamhoanganhtokens.com" target="_blank" class="text-gold-light hover:text-white transition-colors duration-300 text-sm italic tracking-widest border-b border-gold/30 pb-1">
+            www.phamhoanganhtokens.com
+        </a>
+    </header>
+
+    <div class="w-full max-w-4xl gradient-border mb-8 opacity-50"></div>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-4xl px-4 flex-grow">
+        
+        <!-- Recommendation Summary Section -->
+        <section class="flex flex-col items-center mb-12">
+            <div class="glass-card glow-buy rounded-3xl p-8 md:p-12 w-full text-center relative overflow-hidden">
+                <!-- Background Accent -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-trading-buy/10 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-gold-light uppercase tracking-[0.2em] text-sm mb-4">Khuyến Nghị Hiện Tại</h2>
+                <div class="text-6xl md:text-8xl font-black text-trading-buy mb-6 tracking-tighter">
+                    MUA
+                </div>
+                
+                <div class="inline-flex items-center gap-4 bg-white/5 px-6 py-3 rounded-full border border-white/10">
+                    <span class="text-gray-400 text-sm">Mức độ tin cậy:</span>
+                    <span class="text-2xl font-bold text-gold">85%</span>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-gold" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trade Parameters Section -->
+        <section class="mb-12">
+            <h3 class="text-gold border-l-4 border-gold pl-4 text-xl mb-6 font-bold uppercase tracking-widest">Thông Số Giao Dịch</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="glass-card p-5 rounded-xl border-l-2 border-gold/50 flex flex-col">
+                    <span class="text-gray-400 text-xs uppercase mb-1">Điểm vào lệnh</span>
+                    <span class="text-xl font-bold text-white">4834 USD</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-2 border-gold/50 flex flex-col">
+                    <span class="text-gray-400 text-xs uppercase mb-1">Khối lượng</span>
+                    <span class="text-xl font-bold text-white">0.01 lot</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-2 border-gold/50 flex flex-col">
+                    <span class="text-gray-400 text-xs uppercase mb-1">Mức chốt lời (TP)</span>
+                    <span class="text-xl font-bold text-trading-buy">4906 USD</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-2 border-gold/50 flex flex-col">
+                    <span class="text-gray-400 text-xs uppercase mb-1">Mức dừng lỗ (SL)</span>
+                    <span class="text-xl font-bold text-trading-sell">4794 USD</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl border-l-2 border-gold/50 flex flex-col md:col-span-2">
+                    <span class="text-gray-400 text-xs uppercase mb-1">Tổng rủi ro</span>
+                    <span class="text-xl font-bold text-white">20% / 40 USD <span class="text-gray-500 font-normal text-sm ml-2">(Tài khoản 200 USD)</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rationale Section -->
+        <section class="mb-12">
+            <h3 class="text-gold border-l-4 border-gold pl-4 text-xl mb-6 font-bold uppercase tracking-widest">Cơ Sở Phân Tích</h3>
+            <div class="glass-card p-8 md:p-10 rounded-3xl relative">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="white"><path d="M14 17h3l2-3V7h-6v7h3M6 17h3l2-3V7H5v7h3l-2 3z"/></svg>
+                </div>
+                <div class="justified-text text-gray-200 text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-gold first-letter:mr-3 first-letter:float-left">
+                    Sau khi xem xét các dữ liệu thời gian thực và kết quả phân tích thị trường XAU/USD ngày 19 tháng 4 năm 2026, chúng tôi ghi nhận xu hướng tăng giá cấu trúc vẫn được duy trì ổn định. Các yếu tố vĩ mô quan trọng như lợi suất trái phiếu Kho bạc Mỹ kỳ hạn 10 năm giảm xuống 4,23% và kỳ vọng Cục Dự trữ Liên bang Mỹ sẽ cắt giảm lãi suất đáng kể vào cuối năm 2026 đang tạo bệ đỡ vững chắc cho giá vàng.
+                </div>
+                <div class="justified-text text-gray-200 text-lg leading-relaxed mt-6">
+                    Về mặt kỹ thuật, giá đã vượt lên trên các đường trung bình động EMA quan trọng và chỉ báo MACD đang cho tín hiệu tích cực khi đường tín hiệu nằm trên trục không. Mặc dù vùng kháng cự 4850 USD vẫn tạo ra áp lực tâm lý, nhưng động thái tích lũy tại vùng 4834 USD cho thấy lực cầu đang chiếm ưu thế. 
+                </div>
+                <div class="justified-text text-gray-200 text-lg leading-relaxed mt-6">
+                    Với khối lượng 0.01 lot trên tài khoản 200 USD, việc thiết lập điểm dừng lỗ tại 4794 USD đảm bảo quản trị rủi ro ở mức 20% vốn đầu tư, đồng thời mục tiêu chốt lời tại 4906 USD giúp đạt được tỷ lệ rủi ro trên lợi nhuận tối ưu là 1:1,8. Mức độ tự tin cao từ đồng thuận của các đại lý phân tích ở mức 85% càng củng cố thêm cho quyết định thực hiện vị thế mua trong giai đoạn này nhằm đón đầu nhịp bứt phá hướng tới các vùng đỉnh cao hơn.
+                </div>
+            </div>
+        </section>
+
+        <!-- Psychology Guard Alert Section (Hidden if no warning, currently placeholder for system capability) -->
+        <section id="psychology-guard" class="hidden mb-12">
+            <div class="bg-amber-900/40 border border-amber-500/50 p-6 rounded-2xl flex items-center gap-6">
+                <div class="text-amber-500 animate-pulse">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                </div>
+                <div>
+                    <h4 class="text-amber-500 font-bold text-lg uppercase tracking-wider mb-1">PSYCHOLOGY GUARD SYSTEM v2.0</h4>
+                    <p class="text-amber-200 text-sm italic justified-text" id="guard-message">Hệ thống đang hoạt động trong trạng thái an toàn.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="w-full max-w-4xl py-10 px-4 mt-auto border-t border-white/5 text-center">
+        <div class="text-gray-500 text-sm tracking-wide mb-2">
+            © 2026 AI Trade pro. Cung cấp bởi <a href="www.phamhoanganhtokens.com" target="_blank" class="hover:text-gold transition-colors">Pham Hoang Anh Tokens</a>.
+        </div>
+        <div class="text-[10px] text-gray-600 uppercase tracking-[0.3em]">
+            Precision . Logic . Intelligence
+        </div>
+    </footer>
+
+    <script>
+        // Check for specific keywords to display Psychology Guard if needed
+        // Since the instruction says "Conditional", we can check if the rationale or recommendation implies a warning.
+        // For this specific data provided, no warning is explicitly requested as active.
+        const recommendationText = "MUA";
+        if (recommendationText.includes("Chưa đủ điều kiện")) {
+            const guardSection = document.getElementById('psychology-guard');
+            guardSection.classList.remove('hidden');
+            document.getElementById('guard-message').innerText = "CẢNH BÁO: Điều kiện thị trường hiện tại không ổn định hoặc vi phạm giới hạn tâm lý. Ngừng giao dịch để bảo toàn vốn.";
+        }
+    </script>
+</body>
+</html>
