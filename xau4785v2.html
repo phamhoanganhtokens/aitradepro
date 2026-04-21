@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Recommendation Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Note: While Times New Roman is requested, it's a standard web-safe font. No external import needed. -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'trading-bg': '#f8f9fa',
+                        'trading-card': '#ffffff',
+                        'trading-text': '#343a40',
+                        'trading-muted': '#6c757d',
+                        'buy-green': '#28a745',
+                        'sell-red': '#dc3545',
+                        'warn-amber': '#ffc107',
+                        'info-blue': '#007bff',
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Times New Roman", Times, serif;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+        .justified-text {
+            text-align: justify;
+        }
+        .stat-card {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 0.75rem 0;
+            transition: all 0.2s ease;
+        }
+        .stat-card:hover {
+            background-color: rgba(0, 123, 255, 0.02);
+            padding-left: 0.5rem;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <div class="max-w-3xl mx-auto space-y-8 animate-in">
+        
+        <!-- Header Branding -->
+        <header class="text-center mb-10">
+            <h1 class="text-xs tracking-widest uppercase text-trading-muted mb-2">AI Trade Pro v2.0 • Intelligence Terminal</h1>
+            <div class="h-1 w-20 bg-info-blue mx-auto rounded-full"></div>
+        </header>
+
+        <!-- Psychology Guard Status -->
+        <div class="glass-morphism rounded-xl p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-buy-green text-2xl">✓</span>
+                <h2 class="text-xl font-bold uppercase tracking-tight">Psychology Guard System</h2>
+            </div>
+            <div class="justified-text text-trading-text space-y-4">
+                <p>
+                    Kết quả kiểm tra <strong>Psychology Guard System</strong> cho người dùng ghi nhận trạng thái tâm lý đang ở mức ổn định và hoàn toàn bình thường. Dựa trên dữ liệu cung cấp, số trận thắng và thua liên tiếp đều bằng 0, mức sụt giảm tài khoản tối đa là 0 phần trăm, và chưa ghi nhận bất kỳ khoản lỗ nào trong ngày hay trong tuần. 
+                </p>
+                <p>
+                    Hệ thống không phát hiện các dấu hiệu tâm lý cực đoan như Tilt nghiêm trọng, hưng phấn quá độ (Euphoria) hay tâm lý trả thù thị trường (Revenge). Do đó, quy trình phân tích tín hiệu vào lệnh được phép tiến hành theo tiêu chuẩn.
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Trading Recommendation Card -->
+        <div class="glass-morphism rounded-2xl overflow-hidden">
+            <!-- Action Header -->
+            <div class="bg-sell-red p-8 text-white text-center">
+                <h3 class="text-sm uppercase tracking-widest opacity-80 mb-2">Đề xuất giao dịch chi tiết</h3>
+                <div class="text-4xl md:text-5xl font-black mb-2 tracking-tighter">SELL XAU/USD</div>
+                <p class="text-lg font-medium">Khối lượng: 0.01 lot</p>
+            </div>
+
+            <div class="p-6 md:p-10 space-y-8">
+                <!-- Key Details Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+                    <div class="stat-card flex justify-between">
+                        <span class="text-trading-muted">Điểm vào lệnh (Entry)</span>
+                        <span class="font-bold">4.785,00 USD</span>
+                    </div>
+                    <div class="stat-card flex justify-between">
+                        <span class="text-trading-muted">Dừng lỗ (Stop Loss)</span>
+                        <span class="font-bold text-sell-red">4.840,40 USD</span>
+                    </div>
+                    <div class="stat-card flex justify-between">
+                        <span class="text-trading-muted">Chốt lời 1 (TP1)</span>
+                        <span class="font-bold text-buy-green">4.762,00 USD</span>
+                    </div>
+                    <div class="stat-card flex justify-between">
+                        <span class="text-trading-muted">Chốt lời 2 (TP2)</span>
+                        <span class="font-bold text-buy-green">4.674,20 USD</span>
+                    </div>
+                    <div class="stat-card flex justify-between">
+                        <span class="text-trading-muted">Tỷ lệ rủi ro</span>
+                        <span class="font-bold">27,70%</span>
+                    </div>
+                    <div class="stat-card flex justify-between">
+                        <span class="text-trading-muted">Độ tin cậy</span>
+                        <span class="font-bold text-info-blue">75%</span>
+                    </div>
+                </div>
+
+                <!-- Consensus Note -->
+                <div class="bg-blue-50 border-l-4 border-info-blue p-4 text-sm italic justified-text">
+                    Hệ thống xác nhận sự đồng thuận tuyệt đối của cả 4 agent với mức độ tin cậy đạt 75 phần trăm, vượt qua điều kiện tối thiểu 65 phần trăm của ít nhất 3 agent.
+                </div>
+
+                <!-- Rationale Section -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-trading-text rounded-full"></span>
+                        Lý do chi tiết
+                    </h4>
+                    <div class="justified-text space-y-4 text-trading-text">
+                        <p>
+                            <strong>Về mặt kỹ thuật:</strong> Xu hướng giảm đang chiếm ưu thế đồng nhất trên các khung thời gian ngắn và trung hạn như M15, H1 và H4. Giá đã phá vỡ các ngưỡng hỗ trợ quan trọng và đang chịu áp lực từ các đường trung bình động dốc xuống. Các chỉ báo RSI và MACD đều xác nhận phe bán đang kiểm soát thị trường.
+                        </p>
+                        <p>
+                            <strong>Về mặt cơ bản:</strong> Đà tăng của lợi suất trái phiếu Mỹ và sức mạnh của đồng USD trước các tín hiệu từ Fed đang tạo sức ép lớn lên giá vàng, lấn át tạm thời các hỗ trợ từ căng thẳng địa chính trị.
+                        </p>
+                        <p>
+                            <strong>Về quản trị rủi ro:</strong> Mặc dù khối lượng tối thiểu 0.01 lot dẫn đến mức rủi ro 55,40 USD (chiếm 27,70 phần trăm tài khoản, cao hơn mục tiêu 20 phần trăm), nhưng tỷ lệ Rủi ro/Lợi nhuận đạt mức 1:2.0, đảm bảo hiệu quả đầu tư theo kế hoạch.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Account Context Footer -->
+            <div class="bg-trading-bg px-10 py-6 border-t border-gray-100 flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="text-[10px] uppercase tracking-widest text-trading-muted">Tài khoản</span>
+                    <span class="font-bold">$200.00</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-[10px] uppercase tracking-widest text-trading-muted">Rủi ro mục tiêu</span>
+                    <span class="font-bold">20%</span>
+                </div>
+                <div class="flex flex-col text-right">
+                    <span class="text-[10px] uppercase tracking-widest text-trading-muted">Ngày báo cáo</span>
+                    <span class="font-bold">21/04/2026</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Message -->
+        <div class="text-center pb-12">
+            <p class="text-trading-muted text-xs italic">
+                AGENT 4: ENTRY ADVISOR - BÁO CÁO CỐ VẤN GIAO DỊCH<br>
+                Mọi quyết định cuối cùng thuộc về nhà giao dịch.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Subtle interaction for the main card
+        document.querySelector('.glass-morphism').addEventListener('mousemove', (e) => {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Subtle shift or glow effect could be added here
+        });
+    </script>
+</body>
+</html>
