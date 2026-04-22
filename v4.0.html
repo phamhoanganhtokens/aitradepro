@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v4.0 - Financial Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap');
+
+        :root {
+            --bg-color: #fdfdfd;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --accent-gold: #b08d57;
+            --border-color: #e5e5e5;
+            --highlight-bg: #f9f7f2;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .report-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .report-container {
+                padding: 2rem 1rem;
+            }
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-section {
+            border-bottom: 2px solid var(--text-primary);
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* The recommendation card */
+        .recommendation-box {
+            background-color: var(--highlight-bg);
+            border: 1px solid var(--accent-gold);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .recommendation-box::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid rgba(176, 141, 87, 0.2);
+            pointer-events: none;
+        }
+
+        .rec-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .rec-divider {
+            color: var(--accent-gold);
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: center;
+            margin: 1rem 0;
+            opacity: 0.5;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 0.25rem;
+        }
+
+        .label {
+            font-weight: bold;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .value {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .status-badge {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 2px;
+        }
+
+        .copy-frame {
+            background: #f0f0f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #333;
+            margin-top: 2rem;
+        }
+
+        .rationale-block {
+            font-style: italic;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-container">
+        <!-- Header -->
+        <header class="header-section">
+            <h1 class="header-title">AI Trade pro v4.0</h1>
+            <p class="header-subtitle">AI Trade pro - <a href="www.phamhoanganhtokens.com" target="_blank" class="hover:underline">www.phamhoanganhtokens.com</a></p>
+        </header>
+
+        <!-- Main Report Body -->
+        <main>
+            <div class="text-center mb-8">
+                <h2 class="text-xl font-bold">BÁO CÁO CHIẾN LƯỢC GIAO DỊCH XAU/USD</h2>
+                <p class="text-sm text-gray-500 mt-2">(AGENT 4: ENTRY ADVISOR)</p>
+            </div>
+
+            <p class="mb-4"><strong>Thời gian báo cáo:</strong> 22/04/2026</p>
+            <p class="text-sm italic text-gray-600 mb-8">*Lưu ý: Nội dung báo cáo dưới đây được trình bày bằng phông chữ Times New Roman và sử dụng định dạng căn lề đều hai bên (Justified alignment).</p>
+
+            <section>
+                <h3 class="section-title">1. ĐÁNH GIÁ HỆ THỐNG BẢO VỆ TÂM LÝ</h3>
+                <div class="justified-text">
+                    <p><strong>Trạng thái:</strong> BÌNH THƯỜNG (Safe). Không phát hiện trạng thái TILT (Căng thẳng/Mất kiểm soát).</p>
+                    <p><strong>Điều kiện Thắng/Thua liên tiếp:</strong> 0 (Không ghi nhận dữ liệu tiêu cực).</p>
+                    <p><strong>Giới hạn lỗ Ngày/Tuần:</strong> Rủi ro dự kiến là 40 USD (20% tài khoản 200 USD). Theo báo cáo quản trị rủi ro, mức này nằm tại ngưỡng giới hạn tối đa cho phép nhưng chưa vi phạm.</p>
+                    <p><strong>Mức sụt giảm tài sản (Max Drawdown):</strong> Dự báo 20.0%, trong tầm kiểm soát.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="section-title">2. ĐÁNH GIÁ ĐỒNG THUẬN</h3>
+                <div class="justified-text">
+                    <p><strong>Đồng thuận hệ thống:</strong> 4/4 tác nhân (Agent) ghi nhận mức độ tin cậy > 65%.</p>
+                    <p class="flex gap-2 flex-wrap mt-2">
+                        <span class="status-badge">Advanced Analyst: 85%</span>
+                        <span class="status-badge">Market Scanner: 85%</span>
+                        <span class="status-badge">Risk Manager: 90%</span>
+                        <span class="status-badge">Entry Advisor: 87%</span>
+                    </p>
+                    <p class="mt-2"><strong>Trạng thái:</strong> HỢP LỆ (Consensus Met).</p>
+                </div>
+            </section>
+
+            <!-- RECOMMENDATION BLOCK -->
+            <article class="recommendation-box">
+                <div class="rec-divider">═══════════════════════════════════════════════════════════════════════════════</div>
+                <h3 class="rec-header">OPAL TRADE RECOMMENDATION - XAU/USD</h3>
+                
+                <div class="text-center mb-6">
+                    <p class="text-lg">KHUYẾN NGHỊ: <span class="text-red-700 font-bold underline">BÁN (SELL/SHORT)</span></p>
+                    <p class="text-sm italic text-gray-600 mt-1">Chiến lược: Bán khi giá phục hồi kỹ thuật về kiểm tra vùng kháng cự ngắn hạn, thuận theo đà giảm của mô hình Hai đỉnh (Double Top) và Cờ giảm (Bearish Flag).</p>
+                </div>
+
+                <div class="data-grid">
+                    <div class="data-item"><span class="label">Entry Point:</span> <span class="value">4.735,00 – 4.740,00</span></div>
+                    <div class="data-item"><span class="label">Lot Size:</span> <span class="value">0.01 (Cố định)</span></div>
+                    <div class="data-item"><span class="label">TP1:</span> <span class="value">4.695,00 USD</span></div>
+                    <div class="data-item"><span class="label">TP2:</span> <span class="value">4.650,00 USD</span></div>
+                    <div class="data-item"><span class="label">Stop Loss (SL):</span> <span class="value">4.775,00 USD</span></div>
+                    <div class="data-item"><span class="label">Risk Amount:</span> <span class="value">$40.00 (20%)</span></div>
+                    <div class="data-item"><span class="label">R/R Ratio:</span> <span class="value">1:2.12</span></div>
+                    <div class="data-item"><span class="label">Confidence:</span> <span class="value text-green-700">87%</span></div>
+                </div>
+
+                <div class="rec-divider">═══════════════════════════════════════════════════════════════════════════════</div>
+            </article>
+
+            <section>
+                <h3 class="section-title">5. PHÂN TÍCH TỔNG HỢP (RATIONALE)</h3>
+                <div class="justified-text">
+                    <p><strong>Phân tích Kỹ thuật:</strong> Mô hình Hai đỉnh trên H1 tại vùng 4.833,24 đã xác nhận sự đảo chiều ngắn hạn. Giao cắt tử thần (Death Cross) giữa các đường EMA và chỉ báo MACD âm củng cố động lượng giảm. RSI quanh ngưỡng 40 cho thấy phe bán đang chiếm ưu thế và chưa bước vào vùng quá bán, cho phép giá tiếp tục điều chỉnh về các ngưỡng Fibonacci thấp hơn.</p>
+                    <p><strong>Phân tích Cơ bản:</strong> Áp lực từ đồng USD mạnh và quan điểm diều hâu của Fed (giữ lãi suất ở mức 3.5% - 3.75%) đang kìm hãm vàng. Mặc dù rủi ro địa chính trị tại Trung Đông và giá dầu cao ($110/thùng) tạo ra lực đỡ tâm lý, nhưng dòng tiền hiện đang ưu tiên đồng Bạc xanh trong ngắn hạn.</p>
+                    <p><strong>Phân tích Quản trị rủi ro:</strong> Kế hoạch giao dịch sử dụng mức rủi ro tối đa cho phép (20%). Yêu cầu kỷ luật nghiêm ngặt: Tuyệt đối không vào lệnh nếu giá thấp hơn vùng Entry đề xuất để tránh nới rộng khoảng cách dừng lỗ, dẫn tới mức lỗ thực tế vượt quá 40 USD.</p>
+                </div>
+            </section>
+
+            <section class="mt-12">
+                <h3 class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-2">6. KHUNG SAO CHÉP NHANH (COPY FRAME)</h3>
+                <pre class="copy-frame">
+ASSET: XAU/USD
+DIRECTION: SELL
+ENTRY: 4735.00 - 4740.00
+LOT: 0.01
+SL: 4775.00
+TP1: 4695.00
+TP2: 4650.00
+RISK: $40.00 (20%)
+CONFIDENCE: 87%</pre>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Simple micro-interaction for the recommendation box
+        document.querySelector('.recommendation-box').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.transition = 'all 0.3s ease';
+            this.style.boxShadow = '0 15px 40px rgba(176, 141, 87, 0.1)';
+        });
+        
+        document.querySelector('.recommendation-box').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+        });
+    </script>
+</body>
+</html>
+
