@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro v5.0.0 - XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        premium: {
+                            gold: '#C5A059',
+                            darkGold: '#A67C37',
+                            navy: '#0F172A',
+                            charcoal: '#334155',
+                            lightGray: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+        body {
+            background-color: #F8FAFC;
+            font-family: 'Times New Roman', Times, serif;
+            color: #1E293B;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header-title {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        .document-layout {
+            text-align: justify;
+            line-height: 1.8;
+            max-width: 850px;
+        }
+
+        /* Overriding the provided HTML internal styles to match requirements and ensure high quality */
+        .trade-report-container {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Print-like elegance for tables */
+        table {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            color: rgba(0, 0, 0, 0.02);
+            pointer-events: none;
+            z-index: -1;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6">
+
+    <div class="watermark uppercase font-bold">Confidential</div>
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl mb-12 text-center fade-in">
+        <div class="inline-block mb-4">
+            <div class="h-1 w-24 bg-premium-gold mx-auto rounded-full"></div>
+        </div>
+        <h1 class="header-title text-4xl sm:text-5xl font-semibold text-premium-navy tracking-tight">
+            AI Trade pro <span class="text-premium-gold">v5.0.0</span>
+        </h1>
+        <p class="header-title text-sm uppercase tracking-widest text-premium-charcoal mt-3 opacity-80">
+            XAU/USD Professional Trade Recommendation
+        </p>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full max-w-4xl glass-container rounded-2xl p-8 sm:p-12 md:p-16 mb-12 fade-in shadow-2xl border-t-4 border-t-premium-gold">
+        <article class="document-layout mx-auto text-premium-charcoal">
+            
+            <!-- Provided Content Insertion -->
+            <div class="trade-report-container">
+                <div style="font-family: 'Times New Roman', Times, serif; text-align: justify; color: #333; line-height: 1.6; margin: auto;">
+                    <h2 style="text-align: center; color: #0F172A; border-bottom: 2px solid #C5A059; padding-bottom: 15px; font-size: 1.75rem; letter-spacing: 1px;">BÁO CÁO KHUYẾN NGHỊ GIAO DỊCH CHIẾN LƯỢC</h2>
+                    
+                    <div style="text-align: center; margin: 20px 0; padding: 15px; background: #F1F5F9; border-radius: 8px;">
+                        <p style="margin: 0; font-weight: bold; color: #1E293B;">Hệ thống: AI Trade pro v5.0.0 | Ngày: 23/04/2026 | Thời gian: 19:53</p>
+                        <p style="margin: 5px 0 0 0; font-weight: bold; color: #B91C1C; font-size: 1.1rem;">Tài sản: XAU/USD (Vàng/Đô la Mỹ)</p>
+                    </div>
+                
+                    <div style="margin-top: 30px;">
+                        <h3 style="background-color: #0F172A; color: #F8FAFC; padding: 8px 15px; border-left: 5px solid #C5A059; font-size: 1.1rem;">BÁO CÁO TỪ CÁC ĐẶC VỤ (AGENTS)</h3>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 12px; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong>Agent 0 (Phân tích Cơ bản):</strong> Ghi nhận áp lực giảm giá mạnh đối với Vàng. Sự cố phong tỏa eo biển Hormuz kết hợp với phiên điều trần của Kevin Warsh tại Thượng viện đang thúc đẩy lợi suất trái phiếu và chỉ số DXY tăng cao. Tâm lý thị trường hiện đang tiêu cực (Bearish) đối với kim loại quý.</li>
+                            <li style="margin-bottom: 12px; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong>Agent 1 & 2 (Phân tích Kỹ thuật):</strong> Giá giao ngay hiện tại đứng ở mức $4,701.01. Chỉ số ATR đạt $102.40, cho thấy biến động thị trường ở mức cao. Cấu trúc kỹ thuật ủng hộ lệnh bán tại vùng kháng cự phía trên.</li>
+                            <li style="margin-bottom: 12px; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong>Agent 3 (Quản trị Rủi ro):</strong> Khối lượng giao dịch được xác định ở mức 0.01 lot. Tổng rủi ro ước tính là $50.00, nằm trong giới hạn an toàn 20% của danh mục đầu tư.</li>
+                            <li style="margin-bottom: 12px; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong>Agent 4 (Giám sát Tâm lý):</strong> Trạng thái: <strong style="color: #15803D;">NORMAL</strong>. Hệ thống và nhà giao dịch ở trạng thái ổn định, đủ điều kiện thực thi lệnh.</li>
+                        </ul>
+                    </div>
+                
+                    <div style="margin-top: 35px;">
+                        <h3 style="background-color: #0F172A; color: #F8FAFC; padding: 8px 15px; border-left: 5px solid #C5A059; font-size: 1.1rem;">THÔNG SỐ GIAO DỊCH CHI TIẾT</h3>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px; background-color: white;">
+                                <thead>
+                                    <tr style="background-color: #0F172A; color: white;">
+                                        <th style="border: 1px solid #334155; padding: 12px;">Loại lệnh</th>
+                                        <th style="border: 1px solid #334155; padding: 12px;">Điểm vào (Entry)</th>
+                                        <th style="border: 1px solid #334155; padding: 12px;">Chốt lời (TP)</th>
+                                        <th style="border: 1px solid #334155; padding: 12px;">Cắt lỗ (SL)</th>
+                                        <th style="border: 1px solid #334155; padding: 12px;">Khối lượng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="text-align: center; font-weight: bold; background-color: #FFFFFF;">
+                                        <td style="border: 1px solid #E2E8F0; padding: 15px; color: #B91C1C;">SELL LIMIT</td>
+                                        <td style="border: 1px solid #E2E8F0; padding: 15px;">$4,740.00</td>
+                                        <td style="border: 1px solid #E2E8F0; padding: 15px; color: #15803D;">$4,640.00</td>
+                                        <td style="border: 1px solid #E2E8F0; padding: 15px; color: #B91C1C;">$4,790.00</td>
+                                        <td style="border: 1px solid #E2E8F0; padding: 15px;">0.01 Lot</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                
+                    <div style="margin-top: 35px; border: 2px solid #B91C1C; padding: 20px; background-color: #FFF5F5; border-radius: 8px; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; right: 0; background: #B91C1C; color: white; padding: 2px 12px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">MANDATORY</div>
+                        <h3 style="color: #B91C1C; margin-top: 0; font-size: 1.1rem; border-bottom: 1px solid rgba(185, 28, 28, 0.2); padding-bottom: 10px;">KỶ LUẬT & TÓM TẮT LÝ DO</h3>
+                        <p style="margin-top: 15px;"><strong>Lý do giao dịch:</strong> Kết hợp giữa đà tăng của đồng USD (DXY) và lợi suất trái phiếu Mỹ do các yếu tố địa chính trị và chính sách tiền tệ. Giá Vàng dự kiến sẽ điều chỉnh giảm sau khi chạm vùng kháng cự tại $4,740.00.</p>
+                        <p style="line-height: 1.8;"><strong>Quy tắc kỷ luật nghiêm ngặt:</strong>
+                            <br>1. Tuyệt đối <strong>KHÔNG</strong> giao dịch trả thù (revenge trading) dưới mọi hình thức.
+                            <br>2. Kiên nhẫn chờ đợi mức giá khớp lệnh chính xác tại <strong>$4,740.00</strong>. Không vào lệnh sớm.
+                            <br>3. Tuyệt đối <strong>KHÔNG</strong> dời điểm cắt lỗ (SL) trong bất kỳ tình huống nào.
+                            <br>4. Tuân thủ đúng khối lượng đã tính toán để bảo vệ tài khoản.</p>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 40px; border-top: 1px solid #E2E8F0; padding-top: 20px;">
+                        <div style="font-size: 0.8rem; color: #64748B;">
+                            Digital Signature: <span style="font-family: monospace;">TX-9902-XAU-PRO-V5</span>
+                        </div>
+                        <p style="text-align: right; font-style: italic; font-size: 0.95em; color: #475569;">Xác thực bởi AI Trade pro v5.0.0 Engine</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Interactive Footer Section -->
+    <div class="flex flex-col items-center gap-4 mb-12 fade-in">
+        <button onclick="window.print()" class="bg-premium-navy text-white px-8 py-3 rounded-full font-semibold transition-all hover:bg-premium-charcoal hover:shadow-lg active:scale-95 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Print Report
+        </button>
+        
+        <div class="text-center space-y-2">
+            <p class="text-premium-charcoal text-sm font-medium">
+                © 2024 <span class="font-bold">AI Trade pro</span> | <span class="text-premium-gold">Pham Hoang Anh Tokens</span>
+            </p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-premium-gold hover:text-premium-darkGold text-xs font-semibold tracking-widest uppercase transition-colors">
+                www.phamhoanganhtokens.com
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Subtle micro-interactions
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.backgroundColor = '#F8FAFC';
+                row.style.transition = 'background 0.2s ease';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>
