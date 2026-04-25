@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Pro v3.0.1 - Trade Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-navy': '#004080',
+                        'brand-dark': '#333333',
+                        'brand-bg': '#F8F8F8',
+                        'brand-accent': '#28A745',
+                        'brand-gold': '#B8860B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Arial', 'sans-serif'],
+                        serif: ['Times New Roman', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+            -webkit-font-smoothing: antialiased;
+        }
+        .report-container {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .recommendation-text {
+            font-family: 'Times New Roman', serif;
+            text-align: justify;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        .recommendation-text h2, 
+        .recommendation-text h3, 
+        .recommendation-text strong {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        .recommendation-text h2 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.25rem;
+        }
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 8rem;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+            font-weight: 900;
+        }
+        @media (max-width: 640px) {
+            .recommendation-text {
+                text-align: left;
+            }
+        }
+        /* Custom Bullet styling */
+        .recommendation-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .recommendation-text ul li::before {
+            content: "•";
+            color: #004080;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -0.2em;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+    <div class="watermark">AI TRADING PRO</div>
+
+    <!-- Header -->
+    <header class="w-full bg-white border-b border-gray-200 py-6 px-4 sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <h1 class="text-brand-navy font-bold text-xl tracking-tight flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
+                    AI Trading pro v3.0.1
+                </h1>
+                <a href="www.phamhoanganhtokens.com" target="_blank" class="text-gray-500 text-sm hover:text-brand-navy transition-colors">
+                    www.phamhoanganhtokens.com
+                </a>
+            </div>
+            <div class="hidden md:block">
+                <span class="px-3 py-1 bg-brand-navy/10 text-brand-navy text-xs font-semibold rounded-full uppercase tracking-wider">
+                    Official Report
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full py-12 px-4 relative z-0">
+        <div class="max-w-3xl mx-auto">
+            
+            <!-- Breadcrumb/Meta -->
+            <div class="mb-8 flex items-center justify-center space-x-2 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                <span>Cryptocurrency</span>
+                <span>•</span>
+                <span>Market Analysis</span>
+                <span>•</span>
+                <span>Execution Strategy</span>
+            </div>
+
+            <!-- The Report Document -->
+            <article class="report-container bg-white rounded-sm p-8 md:p-16 relative overflow-hidden">
+                <!-- Top Accent Line -->
+                <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-navy"></div>
+                
+                <div class="recommendation-text">
+                    <div class="text-center mb-10">
+                        <h2 class="!border-none !mt-0 text-2xl uppercase tracking-tighter">BÁO CÁO KHUYẾN NGHỊ GIAO DỊCH</h2>
+                        <div class="text-brand-navy font-bold tracking-widest text-sm">HỆ THỐNG AI TRADING PRO V3.0.1</div>
+                    </div>
+
+                    <h2>1. THỜI GIAN HIỆN TẠI</h2>
+                    <ul>
+                        <li><strong>Thời gian:</strong> 11:22 AM – Ngày 25/04/2026.</li>
+                        <li><strong>Tài sản:</strong> BTC/USD.</li>
+                        <li><strong>Giá thị trường hiện tại:</strong> 77.575,53 USD.</li>
+                    </ul>
+
+                    <h2>2. THÔNG SỐ GIAO DỊCH CHI TIẾT</h2>
+                    <ul>
+                        <li><strong>Loại lệnh:</strong> <span class="text-red-700 font-bold underline">SELL (Bán)</span>.</li>
+                        <li><strong>Điểm vào (Entry):</strong> 77.575,53 USD.</li>
+                        <li><strong>Cắt lỗ (Stop Loss):</strong> 81.575,50 USD (Khoảng cách: 3.999,97 USD).</li>
+                        <li><strong>Chốt lời 1 (TP1):</strong> 74.500,00 USD.</li>
+                        <li><strong>Chốt lời 2 (TP2):</strong> 70.375,50 USD.</li>
+                    </ul>
+
+                    <h2>3. QUẢN TRỊ VỐN VÀ TỶ LỆ RỦI RO</h2>
+                    <ul>
+                        <li><strong>Số dư tài khoản:</strong> 200,00 USD.</li>
+                        <li><strong>Rủi ro chấp nhận (20%):</strong> 40,00 USD.</li>
+                        <li><strong>Khối lượng giao dịch (Lot Size):</strong> 0,01.</li>
+                        <li><strong>Tỷ lệ Risk/Reward (RR):</strong> 1:1,8.</li>
+                        <li><strong>Hiệu suất kỳ vọng:</strong> Chiến lược tập trung vào việc bảo vệ vốn trong bối cảnh thị trường biến động mạnh, ưu tiên tỷ lệ RR tối ưu trên khối lượng nhỏ.</li>
+                    </ul>
+
+                    <h2>4. CƠ SỞ LÝ LUẬN VÀ PHÂN TÍCH HỆ THỐNG</h2>
+                    <p class="mb-4"><strong>Fetcher (Cập nhật dữ liệu):</strong> Ghi nhận mức giá hiện tại tại ngưỡng kháng cự tâm lý. Dòng tiền từ các quỹ ETF có dấu hiệu chững lại, tạo áp lực cung tiềm năng tại vùng giá 77k-78k.</p>
+                    
+                    <p class="mb-4"><strong>Scanner (Quét xu hướng):</strong> Khung thời gian 1H đang trong trạng thái tích lũy đi ngang (Accumulation), khung 4H chuyển dịch từ trung tính sang giảm nhẹ. Sự phân kỳ nhẹ bắt đầu xuất hiện trên các khung đồ thị ngắn hạn.</p>
+                    
+                    <p class="mb-4"><strong>Analyst (Phân tích kỹ thuật & Tâm lý):</strong> Chỉ số RSI ở mức 42,6, cho thấy áp lực bán đang chiếm ưu thế nhưng chưa rơi vào vùng quá bán. Về mặt tin tức, sự lo ngại về bảo mật quantum đối với hệ thống Blockchain đang đối trọng trực tiếp với các đợt FOMO spike ngắn hạn, tạo ra sự không chắc chắn có lợi cho phe bán.</p>
+                    
+                    <p class="mb-4"><strong>Risk Manager (Quản lý vốn):</strong> Thiết lập mức cắt lỗ tại 81.575,50 USD nhằm tránh các đợt "quét thanh khoản" (Liquidity Sweep) trước khi xu hướng giảm thực sự hình thành. Mức rủi ro 20% được áp dụng cho chiến lược mang tính đầu cơ cao.</p>
+                    
+                    <p class="mb-4"><strong>Entry Advisor (Chiến lược vào lệnh):</strong> Thực hiện lệnh SELL trực tiếp tại mức giá hiện tại khi cấu trúc giá khung 4H không thể phá vỡ đỉnh cũ, xác nhận phe mua đang kiệt sức.</p>
+                    
+                    <p class="mb-4"><strong>Psychology Guard (Cảnh báo tâm lý):</strong> Cảnh báo mức độ hưng phấn từ các đợt FOMO spike có thể gây ra các nhịp hồi phục giả (Bull Trap). Khuyến nghị giữ kỷ luật, không dời Stop Loss và tuân thủ tuyệt đối khối lượng 0,01.</p>
+
+                    <h2>5. ĐIỂM TIN CẬY (CONFIDENCE SCORE)</h2>
+                    <div class="flex items-center gap-4 my-6 p-4 bg-gray-50 border-l-4 border-brand-navy">
+                        <div class="text-4xl font-bold text-brand-navy">82%</div>
+                        <p class="text-sm italic text-gray-600">
+                            Chiến lược có độ tin cậy cao dựa trên sự đồng thuận của các chỉ báo kỹ thuật và sự suy yếu của lực cầu tại vùng giá cao.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 pt-6 border-t border-gray-100 text-sm italic text-gray-500 text-center">
+                        Báo cáo được trích xuất tự động bởi hệ thống AI Trading Pro v3.0.1. Nhà đầu tư cần cân nhắc rủi ro trước khi thực hiện giao dịch.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Decorative Elements -->
+            <div class="mt-8 flex justify-between items-center text-[10px] text-gray-400 font-mono tracking-tighter">
+                <span>SYSTEM_ID: ATP-V3-20260425-001</span>
+                <span>HASH: 8f4e2c9a...b102</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Micro-animations for the report container
+        document.addEventListener('DOMContentLoaded', () => {
+            const report = document.querySelector('.report-container');
+            report.style.opacity = '0';
+            report.style.transform = 'translateY(20px)';
+            report.style.transition = 'all 0.8s ease-out';
+            
+            setTimeout(() => {
+                report.style.opacity = '1';
+                report.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
