@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Recommendation Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#f8f9fa',
+                            card: '#ffffff',
+                            text: '#343a40',
+                            muted: '#6c757d',
+                            success: '#28a745',
+                            danger: '#dc3545',
+                            warning: '#ffc107',
+                            info: '#007bff',
+                            border: '#e9ecef'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9ecef;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .glow-red {
+            box-shadow: 0 0 15px rgba(220, 53, 69, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+        <!-- Main Analysis Container -->
+        <main class="glass-card rounded-2xl overflow-hidden mb-8">
+            
+            <!-- Header Section -->
+            <div class="bg-brand-card p-6 sm:p-8 border-b border-brand-border">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand-muted uppercase">System Report v2.0</span>
+                        <h1 class="text-2xl sm:text-3xl font-bold mt-1 text-brand-text">HỆ THỐNG CỐ VẤN VÀO LỆNH</h1>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-brand-muted">Ngày thực hiện</p>
+                        <p class="font-bold">26/04/2026</p>
+                    </div>
+                </div>
+                
+                <!-- Main Action Alert -->
+                <div class="mt-8 p-6 rounded-xl border-2 border-brand-danger bg-red-50/30 glow-red">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-2xl">🚨</span>
+                        <h2 class="text-xl sm:text-2xl font-bold text-brand-danger">CHƯA ĐỦ ĐIỀU KIỆN VÀO LỆNH</h2>
+                    </div>
+                    <p class="text-brand-text font-semibold italic">Mã giao dịch: XAU/USD (VÀNG) | Tài khoản: $200.00</p>
+                </div>
+            </div>
 
+            <!-- Content Body -->
+            <div class="p-6 sm:p-8 space-y-10">
+                
+                <!-- Section I: Psychology Guard -->
+                <section>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="p-1.5 bg-brand-info/10 rounded">🛡️</span>
+                        <h3 class="text-lg font-bold uppercase tracking-tight">I. KIỂM TRA HỆ THỐNG BẢO VỆ TÂM LÝ</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+                        <div class="p-3 bg-brand-bg rounded-lg border border-brand-border">
+                            <span class="text-xs text-brand-muted block uppercase">Chuỗi Thắng/Thua</span>
+                            <span class="font-bold text-lg">0 / 0</span>
+                        </div>
+                        <div class="p-3 bg-brand-bg rounded-lg border border-brand-border">
+                            <span class="text-xs text-brand-muted block uppercase">Max Drawdown</span>
+                            <span class="font-bold text-lg">0%</span>
+                        </div>
+                        <div class="p-3 bg-brand-bg rounded-lg border border-brand-border">
+                            <span class="text-xs text-brand-muted block uppercase">Lỗ Ngày/Tuần</span>
+                            <span class="font-bold text-lg">0% / 0%</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-green-50 rounded-lg border border-green-100">
+                        <p class="justified-text text-brand-text">
+                            <span class="font-bold text-brand-success">✓ Trạng thái: ỔN ĐỊNH.</span> Không phát hiện các dấu hiệu tâm lý tiêu cực như Tilt (Hoảng loạn), Euphoria (Hưng phấn) hay Revenge Trading. Người dùng đang ở trạng thái tối ưu.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section II: Consensus Check -->
+                <section>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="p-1.5 bg-brand-info/10 rounded">⚖️</span>
+                        <h3 class="text-lg font-bold uppercase tracking-tight">II. KIỂM TRA ĐIỀU KIỆN ĐỒNG THUẬN</h3>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 border-b border-brand-border">
+                            <span class="text-brand-muted">Agent 0: Dữ liệu thị trường</span>
+                            <span class="status-badge bg-gray-100 text-gray-500">RAW DATA</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 border-b border-brand-border">
+                            <span class="text-brand-muted">Agent 1: Kết quả quét thị trường</span>
+                            <span class="status-badge bg-gray-100 text-gray-500">TREND ONLY</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 border-b border-brand-border">
+                            <span class="text-brand-text font-medium">Agent 2: Phân tích nâng cao</span>
+                            <span class="status-badge bg-green-100 text-brand-success">75% (PASSED)</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 border-b border-brand-border">
+                            <span class="text-brand-text font-medium">Agent 3: Quản trị rủi ro</span>
+                            <span class="status-badge bg-green-100 text-brand-success">75% (PASSED)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-4 bg-orange-50 rounded-lg border border-orange-100">
+                        <p class="text-brand-text italic font-medium">
+                            ⚠️ Tổng hợp: Chỉ có 2/4 Agent đạt ngưỡng tin cậy. Quy định tối thiểu: 3/4 Agent.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section III: Final Decision -->
+                <section class="bg-brand-bg -mx-6 sm:-mx-8 p-6 sm:p-8">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="p-1.5 bg-brand-danger/10 rounded">🎯</span>
+                        <h3 class="text-lg font-bold uppercase tracking-tight">III. QUYẾT ĐỊNH CUỐI CÙNG</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-brand-danger mb-2">Lý do chi tiết:</h4>
+                            <p class="justified-text text-brand-text leading-relaxed">
+                                Mặc dù các phân tích kỹ thuật và quản trị rủi ro đang có sự đồng nhất cao về tín hiệu bán (SELL) đối với cặp XAU/USD tại vùng giá 4.728 USD, tuy nhiên hệ thống không ghi nhận đủ mức độ tin cậy định lượng từ ít nhất 3 Agent theo quy tắc đồng thuận 3/4. Để đảm bảo an toàn vốn và tính kỷ luật tuyệt đối, hệ thống từ chối đưa ra lệnh giao dịch tại thời điểm này.
+                            </p>
+                        </div>
+                        
+                        <div class="border-t border-brand-border pt-6">
+                            <h4 class="font-bold text-brand-info mb-2 uppercase text-sm">Khuyến nghị hành động:</h4>
+                            <p class="justified-text text-brand-muted italic">
+                                Nhà đầu tư nên tiếp tục theo dõi diễn biến thị trường và chờ đợi các tín hiệu xác nhận bổ sung hoặc cập nhật mới từ các thành phần dữ liệu nguồn để củng cố độ tin cậy tổng hợp trước khi thực hiện lệnh.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Dynamic Micro-interaction Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const card = document.querySelector('.glass-card');
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        </script>
+    </div>
+</body>
+</html>
