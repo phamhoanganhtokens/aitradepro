@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Pro v5.1.0 - Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+        :root {
+            --primary-bg: #fdfdfd;
+            --text-main: #1a1a1a;
+            --accent-blue: #2a64ad;
+            --warning-red: #cc0000;
+            --border-light: #e0e0e0;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Override Tailwind for specific serif requirements */
+        .serif-font {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .report-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .justified-text {
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .recommendation-card {
+            background-color: #ffffff;
+            border-left: 4px solid var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .separator-line {
+            letter-spacing: -2px;
+            color: var(--accent-blue);
+            opacity: 0.4;
+            font-family: monospace;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background-color: rgba(42, 100, 173, 0.1);
+            color: var(--accent-blue);
+        }
+
+        .warning-text {
+            color: var(--warning-red);
+            font-weight: 600;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 3rem;
+        }
+
+        h1, h2, h3 {
+            color: #111;
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .report-container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'trading-blue': '#2a64ad',
+                        'trading-red': '#cc0000',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="serif-font bg-[#f9f9f9]">
+
+    <!-- Minimal Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-trading-blue rounded-full animate-pulse"></div>
+                <span class="text-xs uppercase tracking-widest font-bold text-gray-500">AI Trading Pro v5.1.0</span>
+            </div>
+            <div class="text-xs text-gray-400 font-medium">DOCUMENT NO: 26042026-BTC</div>
+        </div>
+    </header>
+
+    <main class="report-container bg-white shadow-sm ring-1 ring-gray-200 rounded-sm my-8">
+        
+        <!-- Report Header Section -->
+        <section class="mb-10 text-left border-b border-gray-100 pb-8">
+            <h1 class="text-4xl md:text-5xl mb-4 leading-tight">Báo Cáo Phân Tích & Chiến Lược Giao Dịch</h1>
+            <div class="flex flex-wrap items-center gap-4 text-gray-600 italic">
+                <span><strong>Thời gian báo cáo:</strong> 13:41 ngày 26 tháng 04 năm 2026</span>
+                <span class="status-badge">BTC/USD Market Analysis</span>
+            </div>
+        </section>
+
+        <!-- Main Content Body -->
+        <article class="space-y-8">
+            
+            <section class="space-y-4">
+                <h2 class="text-2xl border-l-4 border-trading-blue pl-4">1. Tổng Quan Thị Trường & Dữ Liệu Nguồn</h2>
+                <p class="justified-text text-lg leading-relaxed text-gray-800">
+                    Bản báo cáo này được tổng hợp từ bốn nguồn dữ liệu phân tích độc lập nhằm cung cấp chiến lược giao dịch chi tiết cho cặp tỷ giá BTC/USD dựa trên các điều kiện thị trường hiện tại. Tại thời điểm đánh giá, giá Bitcoin đang duy trì ở mức <strong>78.109,99 USD</strong>. Qua quá trình thẩm định, hệ thống ghi nhận sự đồng thuận tuyệt đối khi cả bốn đại lý phân tích đều có mức độ tin cậy vượt ngưỡng 65 phần trăm, với điểm số trung bình đạt <strong>91 phần trăm</strong>.
+                </p>
+                <p class="justified-text text-lg leading-relaxed text-gray-800">
+                    Về mặt kỹ thuật, hành động giá đã xác nhận sự bứt phá thành công qua vùng kháng cự quan trọng tại 78.100 USD trên khung đồ thị 4 giờ, củng cố mô hình tiếp diễn xu hướng tăng mạnh mẽ. Dù tâm lý thị trường chung đang ở mức sợ hãi với chỉ số Fear và Greed đạt 33 và thị trường đang thận trọng trước cuộc họp FOMC sắp tới, nhưng các tín hiệu kỹ thuật và động lực từ chính sách Project Crypto đang tạo ra một kịch bản tăng giá đầy triển vọng.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl border-l-4 border-trading-blue pl-4">2. Kiểm soát Tâm lý & Quản trị Rủi ro (Psychology Guard)</h2>
+                <p class="justified-text text-lg leading-relaxed text-gray-800">
+                    Trong quy trình thực hiện, hệ thống đã hoàn tất các bước kiểm tra <span class="italic text-trading-blue font-semibold">Psychology Guard</span> về chuỗi thắng thua liên tiếp, mức sụt giảm tài khoản hàng ngày cũng như giới hạn sụt giảm tối đa. Kết quả cho thấy không có bất kỳ điều kiện báo động đỏ hay trạng thái tâm lý tiêu cực nào được kích hoạt. 
+                </p>
+                <div class="bg-gray-50 p-6 rounded border border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-center md:text-left">
+                        <span class="block text-xs uppercase text-gray-400 font-bold">Rủi ro thực tế</span>
+                        <span class="text-2xl font-bold">34,125 USD</span>
+                    </div>
+                    <div class="h-px w-full md:w-px md:h-10 bg-gray-200"></div>
+                    <div class="text-center md:text-left">
+                        <span class="block text-xs uppercase text-gray-400 font-bold">Hạn mức tối đa</span>
+                        <span class="text-2xl font-bold">40,000 USD</span>
+                    </div>
+                    <div class="h-px w-full md:w-px md:h-10 bg-gray-200"></div>
+                    <div class="text-center md:text-left">
+                        <span class="block text-xs uppercase text-gray-400 font-bold">Trạng thái</span>
+                        <span class="text-green-600 font-bold text-lg uppercase tracking-wide">✓ Đạt Tiêu Chuẩn</span>
+                    </div>
+                </div>
+                <p class="justified-text text-lg leading-relaxed text-gray-800 italic">
+                    <span class="warning-text">⚠️ CẢNH BÁO KỶ LUẬT:</span> Để duy trì tính kỷ luật, nhà đầu tư được yêu cầu thiết lập đầy đủ các thông số dừng lỗ và chốt lời ngay khi kích hoạt lệnh, tuyệt đối không can thiệp bằng cảm xúc cá nhân trước những biến động ngắn hạn của thị trường trong bối cảnh chỉ số biến động ATR đang ở mức cao.
+                </p>
+            </section>
+
+            <!-- Recommendation Box -->
+            <section class="mt-16 pt-8 border-t-2 border-gray-100">
+                <div class="recommendation-card p-8 rounded-lg relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.25.88-2.63.88-4.07 0-5.4-4.01-9.82-9-10.92m-2 0C6.01 3.15 2 7.57 2 12.97c0 1.44.32 2.82.88 4.07l2.6-1.53c-.3-.79-.48-1.64-.48-2.54 0-3.53 2.61-6.43 6-6.92V2.05m1 14.92c-.34 0-.67-.03-1-.08v3.08c.33.05.66.08 1 .08 3.53 0 6.43-2.61 6.92-6l-3.03-.48c-.49 2.15-2.38 3.48-3.89 3.48m-2 0c-1.51 0-3.4-.33-3.89-3.48l-3.03.48c.49 3.39 3.39 6 6.92 6 .34 0 .67-.03 1-.08v-3.08c-.33.05-.66.08-1 .08z"/></svg>
+                    </div>
+                    
+                    <div class="separator-line text-center mb-4">
+                        ══════════════════════════════════════════════════════════════════════
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-3xl font-bold tracking-tighter uppercase text-trading-blue">OPAL TRADE RECOMMENDATION</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12 text-lg">
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600">Khuyến nghị:</span>
+                            <span class="font-bold text-green-700">MUA (BUY)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600">Điểm vào lệnh:</span>
+                            <span class="font-bold">78.100,00 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600">Kích thước lô:</span>
+                            <span>0,01 lot</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600">Mức chốt lời 1:</span>
+                            <span class="text-green-700 font-bold">79.000,00 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600">Mức chốt lời 2:</span>
+                            <span class="text-green-700 font-bold">84.242,50 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600 text-trading-red">Mức dừng lỗ:</span>
+                            <span class="text-trading-red font-bold">74.687,50 USD</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600">Mức rủi ro:</span>
+                            <span>20% (40 USD)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dotted border-gray-300 pb-1">
+                            <span class="font-bold text-gray-600">Tỷ lệ R/R:</span>
+                            <span class="font-bold">1.8</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <p class="text-base text-gray-700 mb-4">
+                            <strong>Rationale:</strong> Quyết định được đưa ra dựa trên sự đồng thuận của mô hình bứt phá kỹ thuật và sự ủng hộ từ các chỉ báo động lượng EMA và MACD. Việc sử dụng kích thước lô nhỏ và tuân thủ các mức dừng lỗ chặt chẽ giúp bảo vệ tài khoản trước rủi ro biến động mạnh từ các yếu tố kinh tế vĩ mô và địa chính trị toàn cầu.
+                        </p>
+                        <div class="flex items-center justify-between mt-6 bg-blue-50/50 p-4 rounded border border-blue-100">
+                            <span class="text-sm font-bold uppercase text-blue-900">Điểm tin cậy tổng hợp:</span>
+                            <span class="text-3xl font-bold text-trading-blue">91%</span>
+                        </div>
+                    </div>
+
+                    <div class="separator-line text-center mt-6">
+                        ══════════════════════════════════════════════════════════════════════
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <!-- Signature/End area -->
+        <div class="mt-16 pt-12 flex flex-col items-end opacity-80 italic text-sm text-gray-500">
+            <p>Được phê duyệt bởi Hệ Thống AI Design</p>
+            <p>Trang chủ: www.phamhoanganhtokens.com</p>
+        </div>
+    </main>
+
+    <!-- Subtle Floating Action for Premium Feel -->
+    <div class="fixed bottom-8 right-8 hidden md:block">
+        <button onclick="window.print()" class="bg-gray-900 text-white p-3 rounded-full shadow-2xl hover:bg-black transition-all group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Print Report</span>
+        </button>
+    </div>
+
+</body>
+</html>
 
