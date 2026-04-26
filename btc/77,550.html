@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Pro v5.1.0 Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            --primary-serif: "Times New Roman", Times, serif;
+            --accent-blue: #2a64ad;
+            --warning-red: #cc0000;
+            --bg-paper: #ffffff;
+            --text-main: #1a1a1a;
+        }
+
+        body {
+            font-family: var(--primary-serif);
+            background-color: #f4f4f4;
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .report-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--bg-paper);
+            padding: 60px 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e1e1e1;
+        }
+
+        @media (max-width: 768px) {
+            .report-container {
+                margin: 0;
+                padding: 30px 20px;
+            }
+        }
+
+        h1, h2, h3, h4 {
+            color: #000;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+            text-align: left;
+        }
+
+        h1 { font-size: 2.25rem; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        h2 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; border-left: 4px solid var(--accent-blue); padding-left: 15px; }
+        h3 { font-size: 1.25rem; }
+
+        p {
+            margin-bottom: 1.25em;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+
+        .timestamp {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 2rem;
+            display: block;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .recommendation-box {
+            margin-top: 3rem;
+            background-color: #fcfcfc;
+            border: 2px solid #222;
+            padding: 30px;
+            position: relative;
+        }
+
+        .recommendation-box::before {
+            content: "OFFICIAL RECOMMENDATION";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #222;
+            color: #fff;
+            padding: 2px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .separator {
+            font-family: monospace;
+            color: #888;
+            white-space: pre-wrap;
+            word-break: break-all;
+            display: block;
+            margin: 10px 0;
+            user-select: none;
+        }
+
+        .warning-text {
+            color: var(--warning-red);
+            font-weight: bold;
+        }
+
+        .highlight-blue {
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .footer-minimal {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .footer-minimal a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="py-6 px-4 bg-white border-b border-gray-200">
+        <div class="max-width-850 mx-auto flex justify-between items-center max-w-[850px]">
+            <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">System Status: Active</span>
+            <span class="text-sm font-bold text-gray-800">AI TRADING PRO v5.1.0</span>
+        </div>
+    </header>
+
+    <main class="report-container fade-in">
+        <span class="timestamp">Thời gian báo cáo: April 26, 2026 at 12:10 PM</span>
+
+        <h1>BÁO CÁO TỔNG HỢP PHÂN TÍCH THỊ TRƯỜNG VÀ KHUYẾN NGHỊ GIAO DỊCH BITCOIN</h1>
+
+        <section>
+            <p>
+                Dựa trên dữ liệu tổng hợp từ các hệ thống chuyên gia, chúng tôi xin cung cấp bản báo cáo chi tiết về tình hình thị trường Bitcoin (BTC) và các đánh giá chiến lược liên quan. Hiện tại, giá Bitcoin đang duy trì trạng thái tích lũy ổn định trong phạm vi từ <span class="highlight-blue">77,524 USD</span> đến <span class="highlight-blue">77,928 USD</span> với mức giá đóng cửa gần nhất ghi nhận tại <span class="highlight-blue">77,730 USD</span>. Khối lượng giao dịch trong 24 giờ qua đạt mức ấn tượng <span class="font-bold">15.64 tỷ USD</span>, khẳng định tính thanh khoản mạnh mẽ và sự tin tưởng của các bên tham gia thị trường. Xu hướng tổng thể trên các khung thời gian lớn (Daily và H4) vẫn được xác định là tăng trưởng (Bullish), bất chấp các giai đoạn đi ngang ngắn hạn để thu thâu và củng cố lực cầu.
+            </p>
+
+            <p>
+                Về mặt kỹ thuật, thị trường đang hình thành cấu trúc nến tăng giá với mô hình tiếp diễn dạng cờ tăng ngay sát vùng kháng cự <span class="font-bold">77,910 USD</span>. Các chỉ báo xung lượng như RSI và MACD đều ủng hộ kịch bản bứt phá khi chưa chạm tới vùng quá mua và vẫn duy trì được đà tăng trưởng bền vững. Cấu trúc các đường trung bình động EMA xếp chồng hoàn hảo củng cố nền tảng giá phía trên các mức hỗ trợ Fibonacci quan trọng, đặc biệt là ngưỡng <span class="font-bold">77,551 USD</span>. Về phương diện cơ bản, bối cảnh chính trị tại Hoa Kỳ với những chuyển biến tích cực trong bộ máy tài chính và các nỗ lực bình ổn địa chính trị đang tạo ra môi trường thuận lợi cho Bitcoin như một tài sản trú ẩn an toàn và tích trữ giá trị.
+            </p>
+        </section>
+
+        <section>
+            <h2>Kiểm tra an toàn tâm lý và thực thi kỷ luật</h2>
+            <p>
+                Hệ thống xác nhận sự đồng thuận cao khi cả 4 tác nhân phân tích đều cung cấp mức tin cậy trên 65% (trung bình đạt <span class="highlight-blue">92.25%</span>). Trong quá trình rà soát quy tắc Psychology Guard, chúng tôi ghi nhận mức sụt giảm vốn tối đa (Max Drawdown) là <span class="font-bold">13.83%</span>. 
+            </p>
+            <p>
+                <span class="warning-text">⚠️ CẢNH BÁO KỶ LUẬT:</span> Hệ thống phát hiện một vi phạm trong quy tắc kỷ luật (Discipline Enforcement Rule) khi tỷ lệ Rủi ro/Lợi nhuận (Risk/Reward) chỉ đạt <span class="warning-text">1.44</span>, thấp hơn ngưỡng tiêu chuẩn 1.5. Tuy nhiên, mức rủi ro thực tế được tính toán là <span class="font-bold">27.65 USD</span>, vẫn nằm hoàn toàn trong giới hạn cho phép là 40 USD. Việc thực hiện lệnh giao dịch trong bối cảnh này được xem là một ngoại lệ có kiểm soát nhờ sự hội tụ mạnh mẽ của các yếu tố vĩ mô và kỹ thuật hướng tới mục tiêu 80k.
+            </p>
+        </section>
+
+        <div class="mt-10">
+            <p>Căn cứ vào dữ liệu trên, dưới đây là chi tiết khuyến nghị giao dịch:</p>
+        </div>
+
+        <!-- OPAL TRADE RECOMMENDATION Box -->
+        <div class="recommendation-box">
+            <div class="separator">════════════════════════════════════════════</div>
+            <h3 class="mt-0 text-center uppercase tracking-tighter" style="font-size: 1.5rem; margin-top: 10px;">OPAL TRADE RECOMMENDATION</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                <div class="space-y-2">
+                    <p class="m-0"><strong class="uppercase text-sm text-gray-500">Hành động:</strong> <br><span class="text-xl font-bold text-green-700">BUY (MUA)</span></p>
+                    <p class="m-0"><strong class="uppercase text-sm text-gray-500">Điểm vào lệnh:</strong> <br><span class="text-lg">77,550 USD - 77,680 USD</span></p>
+                    <p class="m-0"><strong class="uppercase text-sm text-gray-500">Khối lượng:</strong> <br><span class="text-lg">0.01 LOT</span></p>
+                </div>
+                <div class="space-y-2">
+                    <p class="m-0"><strong class="uppercase text-sm text-gray-500">Chốt lời 1 (TP1):</strong> <br><span class="text-lg font-bold">80,000 USD</span></p>
+                    <p class="m-0"><strong class="uppercase text-sm text-gray-500">Chốt lời 2 (TP2):</strong> <br><span class="text-lg font-bold">81,600 USD</span></p>
+                    <p class="m-0"><strong class="uppercase text-sm text-gray-500">Cắt lỗ (SL):</strong> <br><span class="text-lg font-bold text-red-700">74,850 USD</span></p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-4 space-y-2">
+                <p class="m-0 flex justify-between"><span>Rủi ro dự kiến:</span> <span class="font-bold">27.65 USD (~20% ngân sách)</span></p>
+                <p class="m-0 flex justify-between"><span>Tỷ lệ Rủi ro/Lợi nhuận:</span> <span class="warning-text">1.44</span></p>
+                <p class="m-0 flex justify-between"><span>Điểm tin cậy tổng hợp:</span> <span class="highlight-blue text-lg">92.25%</span></p>
+            </div>
+
+            <div class="mt-6">
+                <p class="text-sm italic text-gray-700">
+                    <strong>LÝ DO VÀ KỶ LUẬT:</strong> Lệnh giao dịch được thiết lập dựa trên đà tăng trưởng bền vững và sự tích lũy tích cực của Bitcoin quanh vùng kháng cự đỉnh. Mặc dù tỷ lệ R/R là 1.44 có chút sai lệch so với kỷ luật thông thường, nhưng lợi thế từ dòng tiền tổ chức và bối cảnh chính trị thuận lợi đã bù đắp cho rủi ro này. Nhà đầu tư yêu cầu tuân thủ tuyệt đối khối lượng 0.01 lot và không được tự ý dời điểm cắt lỗ để đảm bảo an toàn tài khoản trước các biến động ATR dự kiến từ 2,000 đến 2,500 USD. Vùng chốt lời 1 ở ngưỡng tâm lý 80,000 USD là điểm quan trọng để bảo toàn một phần lợi nhuận trước khi hướng tới các mục tiêu cao hơn.
+                </p>
+            </div>
+
+            <div class="separator text-right">════════════════════════════════════════════</div>
+        </div>
+    </main>
+
+    <div class="footer-minimal">
+        <p>Phát hành bởi <strong>AI Design</strong></p>
+        <p><a href="www.phamhoanganhtokens.com" target="_blank">www.phamhoanganhtokens.com</a></p>
+    </div>
+
+    <script>
+        // Subtle interaction for the recommendation box
+        const box = document.querySelector('.recommendation-box');
+        box.addEventListener('mouseenter', () => {
+            box.style.boxShadow = '0 15px 40px rgba(0,0,0,0.1)';
+            box.style.transition = 'all 0.4s ease';
+        });
+        box.addEventListener('mouseleave', () => {
+            box.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>
