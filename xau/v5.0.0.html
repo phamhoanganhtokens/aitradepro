@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v5.0.0 | XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-gold': '#C5A059',
+                        'brand-dark': '#1A1A1A',
+                        'brand-gray': '#F9F9F9',
+                        'brand-border': '#E5E7EB',
+                        'brand-navy': '#2C3E50',
+                        'brand-red': '#C0392B',
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Times New Roman', Times, serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .document-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #d1d5db;
+        }
+
+        .header-gradient {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C3E50 100%);
+        }
+
+        .content-area {
+            padding: 60px 80px;
+            text-align: justify;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .content-area {
+                padding: 30px 20px;
+            }
+            .document-container {
+                margin: 10px;
+            }
+        }
+
+        /* Styling the provided HTML content sections to match user style within the frame */
+        .system-v {
+            font-weight: 700;
+            color: #C0392B;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-data {
+            font-style: italic;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 8px 15px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            border-left: 4px solid #C5A059;
+        }
+
+        .warning-box {
+            border: 2px solid #e74c3c;
+            background-color: #fdf2f2;
+            padding: 25px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            color: #c0392b;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #fff;
+            padding: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .agent-tag {
+            font-weight: bold;
+            color: #2980b9;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .custom-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px double #ccc;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Ensure specific alignment for the injected content */
+        .injected-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .injected-content ul {
+            list-style-type: square;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .injected-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-brand-gray min-h-screen flex flex-col font-serif">
+
+    <!-- Header Section -->
+    <header class="header-gradient text-white py-12 px-6 text-center shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-2 opacity-95" style="font-family: 'Outfit', sans-serif;">
+                AI TRADE PRO <span class="text-brand-gold">v5.0.0</span>
+            </h1>
+            <p class="text-brand-gold font-medium tracking-widest uppercase text-sm md:text-base opacity-80" style="font-family: 'Outfit', sans-serif;">
+                XAU/USD Advanced Trade Recommendation Engine
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex items-start justify-center py-8">
+        <div class="document-container w-full">
+            <div class="content-area injected-content">
+                
+                <!-- The provided HTML content starts here -->
+                <div class="header text-center mb-10 pb-6 border-b-2 border-brand-navy">
+                    <div class="system-v">AI TRADE PRO V5.0.0 MULTI-AGENT WORKFLOW</div>
+                    <div class="text-2xl font-bold uppercase tracking-tight text-brand-navy mt-2">Báo Cáo Phân Tích Và Khuyến Nghị Giao Dịch XAU/USD</div>
+                </div>
+
+                <div class="meta-data leading-relaxed">
+                    Ngày báo cáo: 28 tháng 04, 2026<br>
+                    Thời gian hệ thống: 07:39 AM<br>
+                    Tài sản phân tích: XAU/USD (Vàng)<br>
+                    Trạng thái luồng công việc: <span class="text-green-700 font-semibold">Hoàn tất mô phỏng Agent 0-4</span>
+                </div>
+
+                <div class="section-title">1. TỔNG HỢP TIN TỨC VÀ DỮ LIỆU KINH TẾ (AGENT 0)</div>
+                <p>
+                    <span class="agent-tag">[Agent 0 - News & Data]:</span> Hiện tại, thị trường Vàng đang chịu áp lực cực lớn từ các sự kiện vĩ mô. Cuộc họp FOMC (28-29/04) đang diễn ra với dự báo lãi suất giữ nguyên từ 3.50%-3.75%, nhưng tâm lý lo ngại về lạm phát đình trệ (stagflation) vẫn hiện hữu. Căng thẳng địa chính trị tại Trung Đông, đặc biệt là xung đột Mỹ-Iran và việc đóng cửa eo biển Hormuz, đã đẩy giá dầu Brent lên trên 111 USD/thùng, duy trì "phí bảo hiểm chiến tranh" cho Vàng. Tuy nhiên, rủi ro biến động mạnh từ Fed khiến các nhà đầu tư tổ chức đang ở trạng thái phòng thủ.
+                </p>
+
+                <div class="section-title">2. PHÂN TÍCH KỸ THUẬT VÀ QUÉT THỊ TRƯỜNG (AGENT 1 & 2)</div>
+                <p>
+                    <span class="agent-tag">[Agent 1 & 2 - Market Scanner]:</span> Giá Vàng hiện tại dao động quanh mức <span class="font-bold">4.708,17 USD</span>. Xu hướng trung hạn (H4) đang ở trạng thái tích lũy/sideways trong biên độ 4.660 - 4.740 USD. Xu hướng ngắn hạn (H1) cho thấy áp lực giảm dần (Bearish momentum). Các mức hỗ trợ quan trọng được xác định tại 4.660 USD (Vùng cầu) và 4.603 USD. Mức kháng cự ngay lập tức tại 4.730 USD và 4.762 USD. Chỉ số ATR (14) đạt mức 12,53, cho thấy độ biến động nội trong ngày ở mức trung bình nhưng có khả năng bùng phát mạnh vượt 300 điểm khi tin tức Fed được công bố.
+                </p>
+
+                <div class="section-title">3. QUẢN TRỊ RỦI RO (AGENT 3)</div>
+                <div class="mb-6">
+                    <span class="agent-tag">[Agent 3 - Risk Management]:</span> Tuân thủ nghiêm ngặt tham số hệ thống:
+                    <ul class="mt-4">
+                        <li>Khối lượng giao dịch cố định: <b>0.01 Lot</b>.</li>
+                        <li>Hạn mức rủi ro tối đa: <b>20% vốn tài khoản</b>.</li>
+                        <li>Chiến lược tính toán dựa trên ATR để đặt Stop Loss (SL) và Take Profit (TP) nhằm đảm bảo tỷ lệ R/R tối ưu.</li>
+                    </ul>
+                </div>
+
+                <div class="section-title">4. BỘ PHẬN BẢO VỆ TÂM LÝ VÀ THỰC THI KỶ LUẬT (AGENT 4)</div>
+                <div class="warning-box">
+                    <div class="text-lg mb-2">TRẠNG THÁI HỆ THỐNG: <span class="underline">CRITICAL</span> (NGHIÊM TRỌNG)</div>
+                    <div class="font-normal italic mb-4">CẢNH BÁO TỪ AGENT 4:</div>
+                    "Hệ thống phát hiện mức độ rủi ro phi hệ thống vượt ngưỡng cho phép do sự trùng lặp giữa biến động kỳ họp FOMC và leo thang quân sự tại Trung Đông. Xung đột giữa xu hướng giảm H1 và tích lũy H4 tạo ra tín hiệu nhiễu cao. Theo Quy tắc Kỷ luật AI Trade pro v5.0.0, việc mở vị thế mới vào thời điểm này được đánh giá là hành vi cờ bạc, không phải giao dịch dựa trên xác suất."
+                </div>
+
+                <div class="section-title">5. TỔNG KẾT VÀ QUY TẮC KỶ LUẬT</div>
+                <p class="text-xl font-bold text-brand-red border-2 border-brand-red p-4 text-center my-6 bg-red-50">
+                    KHUYẾN NGHỊ CUỐI CÙNG: KHÔNG GIAO DỊCH (NO TRADE).
+                </p>
+                <p>
+                    <b>Lý do kỷ luật:</b> Kỷ luật là nền tảng của sự tồn tại trong thị trường tài chính. Việc tuân thủ trạng thái CRITICAL của Bộ phận Bảo vệ Tâm lý (Agent 4) giúp bảo vệ nguồn vốn trước các cơn sóng biến động không thể dự báo từ tin tức cực mạnh. AI Trade pro v5.0.0 ưu tiên việc <i>"đứng ngoài thị trường khi không có đủ lợi thế"</i> hơn là cố gắng tìm kiếm lợi nhuận trong điều kiện rủi ro cực đại. Các thông số lệnh (Entry, SL, TP) sẽ không được cung cấp khi hệ thống ở trạng thái chặn để đảm bảo người dùng không thực hiện các hành vi giao dịch cảm tính.
+                </p>
+
+                <div class="custom-footer">
+                    Báo cáo được tạo tự động bởi AI Trade pro v5.0.0<br>
+                    © 2026 AI Trade Solutions. Bảo lưu mọi quyền.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="bg-white border-t border-brand-border py-8 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-brand-navy font-semibold mb-2" style="font-family: 'Outfit', sans-serif;">
+                &copy; 2024 AI Trade Pro & <a href="www.phamhoanganhtokens.com" target="_blank" class="text-brand-gold hover:underline">Pham Hoang Anh Tokens</a>
+            </p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <div class="h-1 w-8 bg-brand-gold rounded"></div>
+                <div class="h-1 w-8 bg-brand-navy rounded"></div>
+                <div class="h-1 w-8 bg-brand-gold rounded"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Subtle interaction for the document
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.document-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
