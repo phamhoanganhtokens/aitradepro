@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v5.0.0 - XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fefcf4',
+                            100: '#fcf6e1',
+                            200: '#f7e9b7',
+                            300: '#efd581',
+                            400: '#e5bc4f',
+                            500: '#d9a12c',
+                            600: '#bf8122',
+                            700: '#9f631f',
+                            800: '#844f20',
+                            900: '#70411f',
+                        },
+                        charcoal: '#1a1a1a',
+                        softblue: '#eef2ff',
+                    },
+                    fontFamily: {
+                        'times': ['"Times New Roman"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+            font-family: 'Times New Roman', Times, serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .document-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+            padding: 60px 80px;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .document-container {
+                margin: 0;
+                padding: 40px 20px;
+                border: none;
+            }
+        }
+        .trade-content {
+            text-align: justify;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        .trade-content .header {
+            text-align: center;
+            border-bottom: 2px solid #1a1a1a;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+        .trade-content h1 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .trade-content p {
+            margin-bottom: 1.5rem;
+        }
+        .trade-content .status-clear {
+            color: #15803d;
+            font-weight: bold;
+            background: #f0fdf4;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .trade-content .section-title {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #d9a12c;
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            letter-spacing: 0.025em;
+        }
+        .trade-content .trade-details {
+            margin: 30px 0;
+            background-color: #fffdf5;
+            border: 1px solid #efd581;
+            padding: 25px;
+            border-radius: 4px;
+        }
+        .trade-content .trade-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #e5e7eb;
+            padding-bottom: 5px;
+        }
+        .trade-content .trade-details p:last-child {
+            border-bottom: none;
+        }
+        .trade-content .discipline {
+            color: #991b1b;
+            font-style: italic;
+            border: 1px solid #fee2e2;
+            padding: 20px;
+            background: #fef2f2;
+            margin-top: 40px;
+        }
+        .trade-content hr {
+            margin: 40px 0 20px 0;
+            border-top: 1px solid #e5e7eb;
+        }
+        .trade-content ul {
+            list-style-type: square;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .trade-content li {
+            margin-bottom: 0.5rem;
+        }
+        /* Custom UI Enhancements */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            color: rgba(0,0,0,0.02);
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center">
+
+    <!-- Premium Navigation Header -->
+    <header class="w-full glass-header sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-charcoal flex items-center justify-center rounded">
+                <span class="text-gold-400 font-bold text-xs">AI</span>
+            </div>
+            <div>
+                <span class="text-lg font-bold tracking-tighter text-charcoal">AI Trade pro v5.0.0</span>
+                <span class="block text-[10px] uppercase tracking-widest text-gold-600 font-semibold leading-none">XAU/USD Trade Recommendation</span>
+            </div>
+        </div>
+        <div class="hidden md:block text-xs text-gray-500 font-times">
+            SYSTEM STATUS: <span class="text-green-600 font-bold">OPERATIONAL</span>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="w-full px-4 mb-20">
+        <div class="document-container relative overflow-hidden">
+            <div class="watermark font-times font-bold">AI TRADE PRO</div>
+            
+            <div class="trade-content relative z-10">
+                <!-- Start of Injected Content -->
+                <div class="header">
+                    <h1>AI TRADE PRO V5.0.0 - BÁO CÁO CHIẾN LƯỢC GIAO DỊCH</h1>
+                    <p class="text-gray-500 italic">Ngày thực hiện: 28/04/2026 | Thời gian: 17:50 (GMT+7)</p>
+                    <p>Tài sản: <strong class="text-charcoal border-b-2 border-gold-400">XAU/USD (VÀNG)</strong></p>
+                </div>
+
+                <div class="section-title">AGENT 0: PHÂN TÍCH TIN TỨC & KINH TẾ TOÀN CẦU</div>
+                <p>
+                    Hệ thống ghi nhận bối cảnh địa chính trị cực kỳ căng thẳng giữa Hoa Kỳ và Iran, đặc biệt là các mối đe dọa liên quan đến eo biển Hormuz. Giá dầu Brent duy trì trên mức 105 USD/thùng đang thúc đẩy lo ngại về lạm phát toàn cầu. Tuy nhiên, kỳ vọng vào cuộc họp FOMC ngày mai đang tạo ra tâm lý phòng thủ cho đồng USD, gây áp lực giảm giá ngắn hạn lên Vàng. Vàng hiện đang đóng vai trò là tài sản trú ẩn nhưng bị lấn át bởi sức mạnh của chỉ số DXY.
+                </p>
+
+                <div class="section-title">AGENT 1 & 2: QUÉT THỊ TRƯỜNG & PHÂN TÍCH KỸ THUẬT</div>
+                <p>
+                    Giá hiện tại đang dao động quanh mức dao động $4,612.50 - $4,635.00. Chỉ số RSI (14) đang ở mức 23.3, cho thấy trạng thái quá bán cực độ, tạo ra cơ hội cho một đợt sóng hồi kỹ thuật. 
+                    Biên độ dao động trung bình (ATR 14 ngày) đạt mức 13.59, xác nhận độ biến động cao. 
+                    Mức hỗ trợ then chốt (S1) được xác định tại $4,600, mức kháng cự gần nhất (R1) tại $4,700.
+                </p>
+
+                <div class="section-title">AGENT 3: QUẢN TRỊ RỦI RO (RISK MANAGEMENT)</div>
+                <p>
+                    Tuân thủ nghiêm ngặt các tham số thiết lập:
+                    <ul>
+                        <li>Khối lượng lệnh: <strong class="text-charcoal">0.01 Lot</strong>.</li>
+                        <li>Giới hạn rủi ro: <strong class="text-charcoal">20% vốn tối đa</strong>.</li>
+                        <li>Tỉ lệ R:R (Rủi ro/Lợi nhuận) mục tiêu: <strong class="text-charcoal">1:3.25</strong>.</li>
+                    </ul>
+                </p>
+
+                <div class="section-title">AGENT 4: BẢO VỆ TÂM LÝ & GIÁM SÁT KỶ LUẬT</div>
+                <p>
+                    Trạng thái Psychology Guard: <span class="status-clear">CLEAR (SẴN SÀNG)</span>. <br>
+                    Hệ thống không ghi nhận dấu hiệu giao dịch trả thù hoặc hưng phấn quá đà. Mặc dù thị trường có biến động mạnh (High Volatility), nhưng các điểm vào lệnh vẫn bám sát các ngưỡng hỗ trợ kỹ thuật và quy tắc quản lý vốn của hệ thống AI Trade pro v5.0.0.
+                </p>
+
+                <div class="section-title">KHUYẾN NGHỊ CHIẾN LƯỢC CHI TIẾT</div>
+                <div class="trade-details">
+                    <p><span>Loại lệnh:</span> <strong>Buy Limit (Chờ mua)</strong></p>
+                    <p><span>Điểm vào lệnh (Entry):</span> <strong>$4,605.00</strong></p>
+                    <p><span>Chốt lời (Take Profit):</span> <strong>$4,670.00</strong></p>
+                    <p><span>Cắt lỗ (Stop Loss):</span> <strong>$4,585.00</strong></p>
+                </div>
+
+                <div class="section-title">TỔNG KẾT & QUY TẮC KỶ LUẬT</div>
+                <p class="discipline">
+                    <strong>Lưu ý kỷ luật:</strong> Đợt giao dịch này dựa trên kỳ vọng phục hồi kỹ thuật từ ngưỡng hỗ trợ tâm lý $4,600. Người dùng tuyệt đối không được tự ý nâng khối lượng vượt quá 0.01 lot. Trong trường hợp giá đóng cửa dưới mức $4,585, lệnh sẽ được cắt lỗ tự động để bảo vệ tài khoản. Không thực hiện thêm bất kỳ lệnh nào khác trước khi có kết quả từ cuộc họp FOMC. Kỷ luật là chìa khóa duy nhất để tồn tại trong điều kiện thị trường năm 2026 đầy biến động này.
+                </p>
+                
+                <hr>
+                <p class="text-gray-400 uppercase tracking-widest text-center text-xs">Hệ thống AI Trade pro v5.0.0 - Tự động hóa và Kỷ luật tối thượng.</p>
+                <!-- End of Injected Content -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Professional Footer (Custom Information Only) -->
+    <div class="w-full max-w-[850px] px-8 text-center pb-12">
+        <div class="flex flex-col items-center justify-center space-y-2">
+            <div class="h-px w-20 bg-gold-300 mb-4"></div>
+            <p class="text-sm font-times text-gray-500">© 2026 AI Trade pro | Pham Hoang Anh Tokens</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-xs font-times text-gold-700 hover:text-gold-900 transition-colors duration-300 underline underline-offset-4">www.phamhoanganhtokens.com</a>
+        </div>
+    </div>
+
+    <script>
+        // Subtle entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.document-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
