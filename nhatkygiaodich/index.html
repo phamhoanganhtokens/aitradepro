@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Journal - SMC/ICT Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#FFD700',
+                            red: '#FF4C4C',
+                            dark: '#0A0A0B',
+                            card: '#16161A',
+                            accent: '#3B82F6'
+                        }
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0B;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(22, 22, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+        .glow-red {
+            box-shadow: 0 0 20px rgba(255, 76, 76, 0.15);
+        }
+        .bento-item {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .bento-item:hover {
+            transform: translateY(-5px);
+        }
+        .status-badge {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D2D33;
+            border-radius: 10px;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <div class="hero-gradient fixed inset-0 pointer-events-none"></div>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 relative z-10">
+        <!-- Header Section -->
+        <header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-brand-accent font-mono text-sm tracking-widest uppercase">
+                    <span class="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
+                    Live Trading Report
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-white">
+                    Nhật ký <span class="text-brand-accent">Giao dịch</span>
+                </h1>
+                <p class="text-slate-400 max-w-xl text-lg">
+                    Phân tích chi tiết chiến lược SMC/ICT cho cặp XAUUSD ngày 29/04/2026.
+                </p>
+            </div>
+            <div class="glass-card px-6 py-4 flex flex-col items-end">
+                <span class="text-slate-500 text-xs font-mono uppercase">Platform</span>
+                <span class="text-2xl font-bold text-white uppercase tracking-tighter">Exness Terminal</span>
+                <span class="text-brand-red font-mono text-sm mt-1">Status: Bearish Dominance</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+            <!-- Left Panel: Summary -->
+            <div class="lg:col-span-4 flex flex-col gap-6">
+                <div class="glass-card p-8 flex-1">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Tổng quan (Overview)
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Báo cáo tóm tắt dữ liệu giao dịch từ nền tảng <span class="text-white font-semibold">Exness</span> cho tài sản <span class="text-brand-gold font-bold">XAUUSD</span>. Chiến lược trọng tâm là <span class="bg-brand-accent/10 text-brand-accent px-1 rounded">SMC/ICT</span>, tập trung vào vùng Discount PD-Array.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-slate-400 text-sm">Cặp tiền</span>
+                            <span class="text-white font-mono font-bold">XAUUSD</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-slate-400 text-sm">Win Rate</span>
+                            <span class="text-brand-red font-mono font-bold">0%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                            <span class="text-slate-400 text-sm">Max R:R Attempted</span>
+                            <span class="text-brand-accent font-mono font-bold">1:25.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-1 overflow-hidden">
+                    <div class="p-4 border-b border-white/10">
+                        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest">Figure 1: Main Chart Overview</h4>
+                    </div>
+                    <div class="w-full aspect-video relative group">
+                        <img src='https://opal.google/board/blobs/a2687a0b-0bea-460a-9841-5981a8e3c34c' alt='Main Chart' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-xs font-mono bg-black/60 px-3 py-1 rounded-full">View Full Resolution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Data Table -->
+            <div class="lg:col-span-8">
+                <div class="glass-card overflow-hidden h-full">
+                    <div class="p-6 border-b border-white/10 flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-white italic">Nhật ký Giao dịch (Trading Log)</h3>
+                        <div class="flex gap-2">
+                            <span class="h-3 w-3 rounded-full bg-red-500"></span>
+                            <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
+                            <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-white/5 text-slate-400 text-xs uppercase tracking-widest">
+                                    <th class="px-6 py-4 font-semibold">Side / Type</th>
+                                    <th class="px-6 py-4 font-semibold">Setup</th>
+                                    <th class="px-6 py-4 font-semibold text-center">Status</th>
+                                    <th class="px-6 py-4 font-semibold">R:R</th>
+                                    <th class="px-6 py-4 font-semibold">Chart Preview</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                                <!-- Row 1 -->
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-brand-accent font-bold text-sm">Long</span>
+                                            <span class="text-slate-500 text-xs font-mono">Day Trade</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-white text-sm font-medium">Bullish OB + SSL Sweep</div>
+                                        <div class="text-slate-500 text-[11px] max-w-[200px] leading-tight mt-1">Giá quét SSL và chạm OB nhưng tiếp tục giảm.</div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="status-badge">LOSS</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-brand-gold text-sm">1:3.6</td>
+                                    <td class="px-6 py-4">
+                                        <img src='https://opal.google/board/blobs/039f331d-e65a-4966-9337-cfc6dd9cbe26' class="w-20 h-12 object-cover rounded-lg border border-white/10 group-hover:scale-150 transition-transform duration-300 origin-right cursor-zoom-in" />
+                                    </td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-brand-accent font-bold text-sm">Long</span>
+                                            <span class="text-slate-500 text-xs font-mono">Day Trade</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-white text-sm font-medium">Breaker Block + ERL</div>
+                                        <div class="text-slate-500 text-[11px] max-w-[200px] leading-tight mt-1">Vào lệnh sau MSS nhỏ nhưng không có Big Boys.</div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="status-badge">LOSS</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-brand-gold text-sm">1:9.8</td>
+                                    <td class="px-6 py-4">
+                                        <img src='https://opal.google/board/blobs/7649bc8e-c8d9-4355-b583-5690691fe387' class="w-20 h-12 object-cover rounded-lg border border-white/10 group-hover:scale-150 transition-transform duration-300 origin-right cursor-zoom-in" />
+                                    </td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-brand-accent font-bold text-sm">Long</span>
+                                            <span class="text-slate-500 text-xs font-mono">Day Trade</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-white text-sm font-medium">OB + SSL Sweep (Deep)</div>
+                                        <div class="text-slate-500 text-[11px] max-w-[200px] leading-tight mt-1">Tìm sự từ chối sau đợt quét thanh khoản sâu.</div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="status-badge">LOSS</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-brand-gold text-sm">1:8.3</td>
+                                    <td class="px-6 py-4">
+                                        <img src='https://opal.google/board/blobs/d89b8390-dbfb-4823-87d6-4ab2155a6cbc' class="w-20 h-12 object-cover rounded-lg border border-white/10 group-hover:scale-150 transition-transform duration-300 origin-right cursor-zoom-in" />
+                                    </td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-brand-accent font-bold text-sm">Long</span>
+                                            <span class="text-slate-500 text-xs font-mono">Day Trade</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-white text-sm font-medium">M30 Breaker + SSL</div>
+                                        <div class="text-slate-500 text-[11px] max-w-[200px] leading-tight mt-1">Momentum giảm quá mạnh xuyên qua Breaker M30.</div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="status-badge">LOSS</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-brand-gold text-sm">1:7.7</td>
+                                    <td class="px-6 py-4">
+                                        <img src='https://opal.google/board/blobs/ba9e9d54-87e5-450c-a507-b723b5338b2c' class="w-20 h-12 object-cover rounded-lg border border-white/10 group-hover:scale-150 transition-transform duration-300 origin-right cursor-zoom-in" />
+                                    </td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr class="hover:bg-white/[0.02] transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-brand-accent font-bold text-sm">Long</span>
+                                            <span class="text-slate-500 text-xs font-mono">Day Trade</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-white text-sm font-medium">Discount FVG + SSL</div>
+                                        <div class="text-slate-500 text-[11px] max-w-[200px] leading-tight mt-1">Kỳ vọng hồi phục từ chiết khấu FVG khung HTF.</div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="status-badge">LOSS</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-brand-gold text-sm">1:10.0</td>
+                                    <td class="px-6 py-4">
+                                        <img src='https://opal.google/board/blobs/44bac792-86e0-4a6c-bc8b-e0eeb16ef533' class="w-20 h-12 object-cover rounded-lg border border-white/10 group-hover:scale-150 transition-transform duration-300 origin-right cursor-zoom-in" />
+                                    </td>
+                                </tr>
+                                <!-- Row 6 -->
+                                <tr class="hover:bg-white/[0.02] transition-colors group border-b-0">
+                                    <td class="px-6 py-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-brand-accent font-bold text-sm">Long</span>
+                                            <span class="text-slate-500 text-xs font-mono">Day Trade</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-white text-sm font-medium">Deep OB + Breaker</div>
+                                        <div class="text-slate-500 text-[11px] max-w-[200px] leading-tight mt-1">Bắt đáy tại hợp lưu PD-Array cực đại.</div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="status-badge">LOSS</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-brand-gold text-sm">1:25.0</td>
+                                    <td class="px-6 py-4">
+                                        <img src='https://opal.google/board/blobs/be41fe88-4f2c-42d8-8de9-8ae19894fcb7' class="w-20 h-12 object-cover rounded-lg border border-white/10 group-hover:scale-150 transition-transform duration-300 origin-right cursor-zoom-in" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analysis & Evaluation Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Market Bias -->
+            <div class="glass-card p-6 bento-item glow-red">
+                <div class="w-12 h-12 bg-red-500/10 rounded-2xl flex items-center justify-center mb-4 border border-red-500/20">
+                    <svg class="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2 italic">Bias W + D</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Weekly và Daily bias rõ ràng là Bearish. Market structure liên tục hình thành Lower Lows, cho thấy Smart Money đang ưu tiên Sell-side Delivery.
+                </p>
+            </div>
+
+            <!-- Profile Strategy -->
+            <div class="glass-card p-6 bento-item">
+                <div class="w-12 h-12 bg-brand-accent/10 rounded-2xl flex items-center justify-center mb-4 border border-brand-accent/20">
+                    <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2 italic">Weekly Profile</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Nến tuần đang trong giai đoạn mở rộng xuống (Expanding downwards). Việc cố gắng mua vào giai đoạn này được coi là "bắt dao rơi" khi phe bán chiếm ưu thế tuyệt đối.
+                </p>
+            </div>
+
+            <!-- Execution Flaws -->
+            <div class="glass-card p-6 bento-item">
+                <div class="w-12 h-12 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-4 border border-yellow-500/20">
+                    <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2 italic">Execution Errors</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Thiếu xác nhận MSS (Market Structure Shift) ở khung thời gian thấp (LTF). Lệnh Limit đặt trực tiếp tại vùng Discount mà không có thay đổi xu hướng nội bộ.
+                </p>
+            </div>
+        </div>
+
+        <!-- Recommendations & Conclusion -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="glass-card p-8 bg-gradient-to-br from-brand-red/5 to-transparent">
+                <h3 class="text-2xl font-bold text-white mb-6 border-l-4 border-brand-red pl-4">Kết luận & Bài học</h3>
+                <p class="text-slate-300 mb-6 italic leading-relaxed">
+                    "Tỷ lệ lỗ 100% là kết quả của việc cố chấp tin rằng thị trường sẽ sớm đảo chiều (Emotional Revenge Trading). Kỳ vọng quá cao vào tỷ lệ R:R mà bỏ qua bối cảnh HTF là sai lầm chí mạng."
+                </p>
+                <div class="flex items-center gap-4 text-sm font-mono text-slate-500">
+                    <div class="px-3 py-1 rounded bg-white/5">Session: 29/04/2026</div>
+                    <div class="px-3 py-1 rounded bg-white/5">Asset: Gold</div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 bg-brand-accent/5 border-brand-accent/20">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                    <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Khuyến nghị hành động
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center text-xs font-bold">1</span>
+                        <p class="text-slate-300 text-sm">Chỉ thực hiện lệnh Buy sau khi giá đã hoàn thành thanh khoản SSL và có MSS xác nhận rõ trên M5/M15.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center text-xs font-bold">2</span>
+                        <p class="text-slate-300 text-sm">Luôn kiểm tra Order Flow xem có đồng pha với Daily Bias trước khi mạo hiểm vị thế counter-trend.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center text-xs font-bold">3</span>
+                        <p class="text-slate-300 text-sm">Giới hạn số lệnh lỗ tối đa mỗi phiên giao dịch để tránh rơi vào trạng thái tâm lý tiêu cực.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- External Link Navigation -->
+        <div class="mt-12 text-center">
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="inline-flex items-center gap-2 text-slate-500 hover:text-brand-accent transition-colors text-sm font-mono tracking-tighter">
+                <span>AI SOFTWARE DEVELOPMENT</span>
+                <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                <span>WWW.PHAMHOANGANHTOKENS.COM</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Smooth reveal animations on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.bento-item, .glass-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'all 0.6s ease-out';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
