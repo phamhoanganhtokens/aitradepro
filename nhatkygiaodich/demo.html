@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Nhật ký Giao dịch - Trading Journal Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f2f9',
+                            100: '#dee2f2',
+                            200: '#c3cbe7',
+                            500: '#1a237e',
+                            600: '#151c6a',
+                            700: '#111756',
+                            800: '#0d1245',
+                            900: '#090d33',
+                        },
+                        trading: {
+                            profit: '#2e7d32',
+                            loss: '#c62828',
+                            accent: '#3949ab',
+                            bg: '#f8fafc',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        .report-section {
+            margin-bottom: 3rem;
+        }
+        .text-justify {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .chart-grid img {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .chart-grid .card:hover img {
+            transform: scale(1.03);
+        }
+        .trading-table th {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .status-win {
+            background-color: rgba(46, 125, 50, 0.1);
+            color: #2e7d32;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        /* Custom scrollbar for table */
+        .table-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .table-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 md:py-16 md:px-8">
+
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-16 animate-fade-in">
+            <div class="inline-block px-4 py-1 bg-navy-500 text-white rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                Official Report
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold font-display text-navy-500 mb-4 tracking-tight">
+                BÁO CÁO NHẬT KÝ GIAO DỊCH
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 font-medium italic">
+                Thời gian: 30/04/2026, 12:50 PM (ICT - UTC+7)
+            </p>
+            <div class="w-24 h-1.5 bg-navy-500 mx-auto mt-8 rounded-full"></div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="space-y-12">
+            
+            <!-- Section 1: Thông tin tổng quan -->
+            <section class="report-section glass-card p-6 md:p-10 rounded-3xl animate-slide-up">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-10 h-10 bg-navy-500 text-white rounded-xl flex items-center justify-center font-display font-bold">1</div>
+                    <h2 class="text-2xl md:text-3xl font-bold font-display text-navy-500">Thông tin tổng quan (Overview)</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-justify text-lg leading-relaxed text-slate-700">
+                        <p class="mb-4">Phiên giao dịch ngày hôm nay được thực hiện trên nền tảng <strong>Exness</strong> với trọng tâm là cặp tiền XAU/USD. Kết quả ghi nhận hiệu suất tối ưu với tổng cộng 3 lệnh giao dịch đều đạt lợi nhuận mục tiêu, tương ứng tỷ lệ thắng 100%.</p>
+                        <p>Chiến lược tập trung vào việc xác định thanh khoản và các vùng cung cầu theo phương pháp SMC/ICT, đảm bảo việc tối ưu hóa điểm vào và kiểm soát rủi ro nghiêm ngặt.</p>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-navy-500 to-blue-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                        <figure class="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                            <img src='https://opal.google/board/blobs/6049106f-bd27-4765-b774-d926e66ab923' alt='media_1' class="w-full h-auto rounded-xl shadow-inner" />
+                            <figcaption class="mt-3 text-center text-sm font-medium text-slate-500 italic">
+                                Hình 1: Tổng quan bối cảnh thị trường và các điểm vào lệnh (Primary Context)
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Bảng Nhật ký Giao dịch -->
+            <section class="report-section glass-card p-6 md:p-10 rounded-3xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-10 h-10 bg-navy-500 text-white rounded-xl flex items-center justify-center font-display font-bold">2</div>
+                    <h2 class="text-2xl md:text-3xl font-bold font-display text-navy-500">Bảng Nhật ký Giao dịch (Trading Journal Table)</h2>
+                </div>
+                
+                <div class="table-container overflow-x-auto rounded-2xl border border-slate-200">
+                    <table class="w-full trading-table text-left border-collapse">
+                        <thead class="bg-navy-500 text-white">
+                            <tr>
+                                <th class="p-5 text-sm">Vị thế</th>
+                                <th class="p-5 text-sm">Loại</th>
+                                <th class="p-5 text-sm">Mô hình (Setup)</th>
+                                <th class="p-5 text-sm">Trạng thái</th>
+                                <th class="p-5 text-sm">Tỷ lệ R:R</th>
+                                <th class="p-5 text-sm">Hình ảnh</th>
+                                <th class="p-5 text-sm">Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <!-- Trade 1 -->
+                            <tr class="hover:bg-slate-50 transition duration-150">
+                                <td class="p-5 font-bold text-trading-profit">BUY</td>
+                                <td class="p-5 font-medium">Day Trade</td>
+                                <td class="p-5 text-slate-600">M30 Demand/IRL Sweep</td>
+                                <td class="p-5"><span class="status-win">WIN</span></td>
+                                <td class="p-5 font-semibold text-navy-500">1:1.47</td>
+                                <td class="p-5">
+                                    <div class="w-16 h-10 overflow-hidden rounded shadow-sm border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/020651bb-01a8-4c72-8ecb-1ab927cc9c14' alt='media_2' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                                <td class="p-5 text-sm text-slate-500 italic">Quét thanh khoản nội vùng sau nhịp hồi.</td>
+                            </tr>
+                            <!-- Trade 2 -->
+                            <tr class="hover:bg-slate-50 transition duration-150 bg-slate-50/30">
+                                <td class="p-5 font-bold text-trading-profit">BUY</td>
+                                <td class="p-5 font-medium">Scalp</td>
+                                <td class="p-5 text-slate-600">ERL Sweep/Mitigation</td>
+                                <td class="p-5"><span class="status-win">WIN</span></td>
+                                <td class="p-5 font-semibold text-navy-500">1:0.7</td>
+                                <td class="p-5">
+                                    <div class="w-16 h-10 overflow-hidden rounded shadow-sm border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/b288eb71-cead-4566-91ff-0676e650601f' alt='media_3' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                                <td class="p-5 text-sm text-slate-500 italic">Scalp nhanh tại vùng Mitigation Block.</td>
+                            </tr>
+                            <!-- Trade 3 -->
+                            <tr class="hover:bg-slate-50 transition duration-150">
+                                <td class="p-5 font-bold text-trading-profit">BUY</td>
+                                <td class="p-5 font-medium">Day Trade</td>
+                                <td class="p-5 text-slate-600">Bullish OB/FVG</td>
+                                <td class="p-5"><span class="status-win">WIN</span></td>
+                                <td class="p-5 font-semibold text-navy-500">1:6.0</td>
+                                <td class="p-5">
+                                    <div class="w-16 h-10 overflow-hidden rounded shadow-sm border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/a8964fe3-495c-4577-b09e-8bdb00a4366c' alt='media_4' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                                <td class="p-5 text-sm text-slate-500 italic">Hợp lưu khối lệnh và khoảng trống giá.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 3: Phân tích & Đánh giá -->
+            <section class="report-section glass-card p-6 md:p-10 rounded-3xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-10 h-10 bg-navy-500 text-white rounded-xl flex items-center justify-center font-display font-bold">3</div>
+                    <h2 class="text-2xl md:text-3xl font-bold font-display text-navy-500">Phân tích và Đánh giá (Analysis and Evaluation)</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-12 gap-8 items-start">
+                    <div class="md:col-span-7 text-justify text-lg leading-relaxed text-slate-700 space-y-6">
+                        <p>Dựa trên cấu trúc thị trường hiện tại, <span class="px-2 py-1 bg-navy-50 text-navy-700 rounded font-semibold text-sm">Bias w+d</span> cho thấy một xu hướng tăng mạnh mẽ (Bullish bias) sau khi giá đã hoàn thành các nhịp quét thanh khoản cục bộ.</p>
+                        <p><strong>Weekly Profile</strong> của tuần này di chuyển theo dạng thức mở rộng, cho phép chúng tôi tập trung tìm kiếm các cơ hội mua lên tại những vùng chiết khấu sâu.</p>
+                        <p>Hệ thống <strong>PD-Array</strong> đã hoạt động vô cùng chuẩn xác khi giá tìm về các vùng <strong>FVG (Fair Value Gap)</strong> và các khối lệnh (Order Block) chưa được kiểm chứng. Các lệnh giao dịch đều được thực thi sau khi có tín hiệu quét thanh khoản ngoại vùng (ERL Sweep) hoặc nội vùng (IRL Sweep), cho điểm vào lệnh có độ tin cậy cao và giảm thiểu rủi ro Drawdown.</p>
+                    </div>
+                    <div class="md:col-span-5">
+                        <div class="bg-navy-900 rounded-2xl p-2 shadow-2xl transform rotate-1">
+                            <img src='https://opal.google/board/blobs/f0ea7e69-da31-4d43-b8bf-0f5d1aceb15e' alt='media_8' class="w-full h-auto rounded-xl" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Thumbnail Mini Charts Grid -->
+            <section class="report-section">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-10 h-10 bg-navy-500 text-white rounded-xl flex items-center justify-center font-display font-bold">4</div>
+                    <h2 class="text-2xl md:text-3xl font-bold font-display text-navy-500">Thumbnail Mini Charts</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 chart-grid">
+                    <!-- Chart 1 -->
+                    <div class="card glass-card rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="aspect-video overflow-hidden">
+                            <img src='https://opal.google/board/blobs/020651bb-01a8-4c72-8ecb-1ab927cc9c14' alt='media_5' class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-4 bg-white/50 border-t border-slate-100">
+                            <h3 class="font-display font-bold text-navy-700 text-sm">Giao dịch #1: Buy M30</h3>
+                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wider">Demand Zone Confirmation</p>
+                        </div>
+                    </div>
+                    <!-- Chart 2 -->
+                    <div class="card glass-card rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="aspect-video overflow-hidden">
+                            <img src='https://opal.google/board/blobs/b288eb71-cead-4566-91ff-0676e650601f' alt='media_6' class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-4 bg-white/50 border-t border-slate-100">
+                            <h3 class="font-display font-bold text-navy-700 text-sm">Giao dịch #2: Scalp Buy</h3>
+                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wider">ERL Liquidity Sweep</p>
+                        </div>
+                    </div>
+                    <!-- Chart 3 -->
+                    <div class="card glass-card rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="aspect-video overflow-hidden">
+                            <img src='https://opal.google/board/blobs/a8964fe3-495c-4577-b09e-8bdb00a4366c' alt='media_7' class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-4 bg-white/50 border-t border-slate-100">
+                            <h3 class="font-display font-bold text-navy-700 text-sm">Giao dịch #3: Day Trade Buy</h3>
+                            <p class="text-xs text-slate-500 mt-1 uppercase tracking-wider">Order Block + FVG</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Kết luận & Khuyến nghị -->
+            <section class="report-section glass-card bg-navy-500 text-white p-8 md:p-12 rounded-[2rem] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                </div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-10 h-10 bg-white/20 backdrop-blur text-white rounded-xl flex items-center justify-center font-display font-bold">5</div>
+                        <h2 class="text-2xl md:text-3xl font-bold font-display">Kết luận & Khuyến nghị</h2>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <h4 class="text-navy-100 font-bold uppercase tracking-widest text-sm">Kết luận</h4>
+                            <p class="text-justify text-lg opacity-90 leading-relaxed">
+                                Phiên giao dịch cực kỳ thành công với sự tuân thủ kỷ luật 100%. Việc kiên nhẫn chờ đợi giá chạm vào các PD-Array mục tiêu đã mang lại kết quả xứng đáng, đặc biệt là lệnh số 3 với tỷ lệ R:R vượt trội (1:6.0).
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-navy-100 font-bold uppercase tracking-widest text-sm">Khuyến nghị</h4>
+                            <ul class="space-y-3 text-lg opacity-90">
+                                <li class="flex gap-3">
+                                    <span class="text-blue-300">•</span>
+                                    <span>Duy trì phương pháp giao dịch thuận xu hướng HTF Bias để giữ tỷ lệ thắng cao.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-blue-300">•</span>
+                                    <span>Tiếp tục chú trọng việc quản lý lệnh tại các vùng thanh khoản quan trọng.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-blue-300">•</span>
+                                    <span>Luôn đặt Stop Loss dựa trên cấu trúc mô hình và không dời điểm dừng lỗ tùy tiện.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Company Branding Footer (Simplified) -->
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 font-medium">
+            <p class="mb-2">AI Software Development</p>
+            <p class="text-sm">www.phamhoanganhtokens.com</p>
+        </footer>
+
+    </div>
+
+    <!-- Background Decoration Elements -->
+    <div class="fixed top-0 left-0 -z-10 w-full h-full pointer-events-none opacity-20">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-200 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-navy-200 blur-[120px]"></div>
+    </div>
+
+</body>
+</html>
