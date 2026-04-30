@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Nhật ký Giao dịch - Premium Trading Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',
+                            blue: '#3b82f6',
+                            accent: '#60a5fa',
+                            success: '#10b981',
+                            error: '#ef4444',
+                            bg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 transparent;
+        }
+
+        .table-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .status-win {
+            background-color: #ecfdf5;
+            color: #065f46;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: inline-block;
+        }
+
+        .highlight {
+            color: #3b82f6;
+            font-weight: 700;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .title-main {
+                font-size: 1.75rem;
+            }
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-slate-800 antialiased font-body">
+
+    <!-- Header Section -->
+    <header class="pt-12 pb-8 px-6 max-w-7xl mx-auto text-center fade-in">
+        <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-brand-blue uppercase bg-blue-50 border border-blue-100 rounded-full">
+            TRADING JOURNAL ASSISTANT
+        </span>
+        <h1 class="title-main font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-4 gradient-text">
+            BÁO CÁO NHẬT KÝ GIAO DỊCH
+        </h1>
+        <div class="flex items-center justify-center space-x-2 text-slate-500 font-medium italic">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Thời gian khởi tạo: 30 Tháng 04, 2026, 19:33 (ICT - UTC+7)</span>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-20 space-y-12">
+        
+        <!-- Overview Section (Bento Style) -->
+        <section class="fade-in" style="animation-delay: 0.1s;">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="h-8 w-1.5 bg-brand-blue rounded-full"></div>
+                <h2 class="font-display text-2xl font-bold uppercase tracking-tight">Thông tin tổng quan (Overview)</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Data Stats -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-2xl hover-lift border-l-4 border-l-brand-blue">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Sàn giao dịch</p>
+                        <p class="text-xl font-bold text-brand-navy uppercase">Exness</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl hover-lift border-l-4 border-l-brand-blue">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Nền tảng</p>
+                        <p class="text-xl font-bold text-brand-navy">MetaTrader 5</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl hover-lift border-l-4 border-l-success">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Số lượng vị thế</p>
+                        <p class="text-2xl font-black text-brand-navy">05 Lệnh</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl hover-lift border-l-4 border-l-success">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Winrate</p>
+                        <p class="text-2xl font-black text-brand-success">100%</p>
+                    </div>
+                    <div class="col-span-2 glass-card p-6 rounded-2xl hover-lift bg-gradient-to-br from-white to-blue-50">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Tổng Lợi nhuận (VND)</p>
+                        <p class="text-3xl font-black text-brand-blue">+1,399,279.00</p>
+                    </div>
+                </div>
+
+                <!-- Primary Image Container -->
+                <div class="lg:col-span-7 glass-card p-4 rounded-3xl overflow-hidden flex items-center justify-center">
+                    <div class="image-wrapper shadow-sm w-full">
+                        <img src='https://opal.google/board/blobs/e87da8da-1f95-4e3d-9786-8143dd6f6fa9' alt='Overview Performance Chart' class="object-cover w-full h-full max-h-[350px]" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trading Table Section -->
+        <section class="fade-in" style="animation-delay: 0.2s;">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="h-8 w-1.5 bg-brand-blue rounded-full"></div>
+                    <h2 class="font-display text-2xl font-bold uppercase tracking-tight">Bảng Nhật ký Giao dịch</h2>
+                </div>
+                <span class="hidden md:block text-xs font-medium text-slate-400">Dữ liệu được cập nhật thời gian thực</span>
+            </div>
+            
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="table-container">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-100">
+                                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Thị trường</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Vị thế</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Cấu trúc (Setup)</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Kết quả</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">R:R</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Ghi chú</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-center">Biểu đồ</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-50">
+                            <!-- Trade 1 -->
+                            <tr class="hover:bg-blue-50/30 transition-colors">
+                                <td class="px-6 py-5 font-bold text-brand-navy">USOIL</td>
+                                <td class="px-6 py-5"><span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-[10px] font-bold uppercase">Mua (Buy)</span></td>
+                                <td class="px-6 py-5 text-sm font-medium">Bullish FVG</td>
+                                <td class="px-6 py-5"><span class="status-win">THẮNG</span></td>
+                                <td class="px-6 py-5 font-mono text-sm">1:1.04</td>
+                                <td class="px-6 py-5 text-sm text-slate-600 italic">Giao dịch thuận xu hướng tăng. Đóng lệnh thủ công.</td>
+                                <td class="px-6 py-5">
+                                    <div class="w-20 h-12 rounded bg-slate-100 overflow-hidden mx-auto border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/ff7f3d4d-8f5a-4dab-be13-994bb2da9672' alt='USOIL Chart' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Trade 2 -->
+                            <tr class="hover:bg-blue-50/30 transition-colors">
+                                <td class="px-6 py-5 font-bold text-brand-navy">USOIL</td>
+                                <td class="px-6 py-5"><span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-[10px] font-bold uppercase">Mua (Buy)</span></td>
+                                <td class="px-6 py-5 text-sm font-medium">Order Block</td>
+                                <td class="px-6 py-5"><span class="status-win">THẮNG</span></td>
+                                <td class="px-6 py-5 font-mono text-sm">1:2.24</td>
+                                <td class="px-6 py-5 text-sm text-slate-600 italic">Entry tại vùng cầu (Demand) khung M30.</td>
+                                <td class="px-6 py-5">
+                                    <div class="w-20 h-12 rounded bg-slate-100 overflow-hidden mx-auto border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/62bb28d2-076b-4862-b970-c8da8cf54a76' alt='USOIL Chart 2' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Trade 3 -->
+                            <tr class="hover:bg-blue-50/30 transition-colors">
+                                <td class="px-6 py-5 font-bold text-brand-navy">BTC/USD</td>
+                                <td class="px-6 py-5"><span class="px-2 py-1 rounded bg-red-100 text-red-700 text-[10px] font-bold uppercase">Bán (Sell)</span></td>
+                                <td class="px-6 py-5 text-sm font-medium">Bearish FVG</td>
+                                <td class="px-6 py-5"><span class="status-win">THẮNG</span></td>
+                                <td class="px-6 py-5 font-mono text-sm">1:2.72</td>
+                                <td class="px-6 py-5 text-sm text-slate-600 italic">Khai thác nhịp hồi kỹ thuật tại Premium.</td>
+                                <td class="px-6 py-5">
+                                    <div class="w-20 h-12 rounded bg-slate-100 overflow-hidden mx-auto border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/94f4a121-8961-4d80-8b34-61343d202e2a' alt='BTC Chart' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Trade 4 -->
+                            <tr class="hover:bg-blue-50/30 transition-colors">
+                                <td class="px-6 py-5 font-bold text-brand-navy">XAU/USD</td>
+                                <td class="px-6 py-5"><span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-[10px] font-bold uppercase">Mua (Buy)</span></td>
+                                <td class="px-6 py-5 text-sm font-medium">Breaker Block</td>
+                                <td class="px-6 py-5"><span class="status-win">THẮNG</span></td>
+                                <td class="px-6 py-5 font-mono text-sm">1:2.56</td>
+                                <td class="px-6 py-5 text-sm text-slate-600 italic">Giao dịch Scalping cực ngắn ngay vùng Breaker.</td>
+                                <td class="px-6 py-5">
+                                    <div class="w-20 h-12 rounded bg-slate-100 overflow-hidden mx-auto border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/90bb2385-f5d4-4931-9ee5-bbb50f01a25f' alt='Gold Chart 1' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Trade 5 -->
+                            <tr class="hover:bg-blue-50/30 transition-colors">
+                                <td class="px-6 py-5 font-bold text-brand-navy">XAU/USD</td>
+                                <td class="px-6 py-5"><span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-[10px] font-bold uppercase">Mua (Buy)</span></td>
+                                <td class="px-6 py-5 text-sm font-medium">ERL Sweep</td>
+                                <td class="px-6 py-5"><span class="status-win">THẮNG</span></td>
+                                <td class="px-6 py-5 font-mono text-sm">1:3.80</td>
+                                <td class="px-6 py-5 text-sm text-slate-600 italic">Quét thanh khoản External Range Liquidity.</td>
+                                <td class="px-6 py-5">
+                                    <div class="w-20 h-12 rounded bg-slate-100 overflow-hidden mx-auto border border-slate-200">
+                                        <img src='https://opal.google/board/blobs/7b2e40dc-f70f-4893-b000-f8bb8e9d1f97' alt='Gold Chart 2' class="w-full h-full object-cover" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis & Evaluation -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in" style="animation-delay: 0.3s;">
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3 mb-2">
+                    <div class="h-8 w-1.5 bg-brand-blue rounded-full"></div>
+                    <h2 class="font-display text-2xl font-bold uppercase tracking-tight">Phân tích chuyên sâu</h2>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-4 text-slate-600 leading-relaxed text-justify">
+                    <p>Báo cáo phân tích chuyên sâu dựa trên các thông số kỹ thuật đã ghi nhận:</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1.5 h-2 w-2 rounded-full bg-brand-blue shrink-0"></span>
+                            <span><span class="highlight">Bias w+d:</span> Định hướng khung tuần và ngày hoàn toàn đồng pha với các vị thế thực thi. Việc xác định Narrative tăng trưởng ổn định trên USOIL giúp củng cố niềm tin vào các setup Buy.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1.5 h-2 w-2 rounded-full bg-brand-blue shrink-0"></span>
+                            <span><span class="highlight">Weekly Profile:</span> Các lệnh được triển khai phù hợp với chu kỳ biến động tuần, đặc biệt là việc tận dụng các nhịp Manipulation để vào lệnh tại vùng giá chiết khấu tốt nhất.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1.5 h-2 w-2 rounded-full bg-brand-blue shrink-0"></span>
+                            <span><span class="highlight">FVG (Fair Value Gap):</span> Các vùng mất cân bằng cung cầu (Imbalance) khung M30 được sử dụng như nam châm hút giá và là điểm tựa (POI) chính xác cho các lệnh USOIL và BTC/USD.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1.5 h-2 w-2 rounded-full bg-brand-blue shrink-0"></span>
+                            <span><span class="highlight">PD-Array:</span> Việc vận hành nhất quán Ma trận PD-Array từ Discount đến Premium cho thấy sự am hiểu sâu sắc về cấu trúc thị trường.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3 mb-2">
+                    <div class="h-8 w-1.5 bg-brand-success rounded-full"></div>
+                    <h2 class="font-display text-2xl font-bold uppercase tracking-tight">Kết luận & Khuyến nghị</h2>
+                </div>
+                <div class="glass-card p-8 rounded-3xl bg-gradient-to-br from-white to-green-50/30 space-y-6 border-l-8 border-l-success shadow-xl">
+                    <p class="text-slate-600 leading-relaxed text-justify">
+                        Kế hoạch giao dịch được thực hiện với kỷ luật kỹ thuật cao, thể hiện qua tỷ lệ thắng tuyệt đối trong giai đoạn báo cáo. Chiến thuật Scalping giúp tối ưu hóa vốn trong các khung thời gian ngắn.
+                    </p>
+                    <div class="p-5 bg-white/60 rounded-2xl border border-success/20">
+                        <h4 class="text-brand-success font-bold flex items-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                            KHUYẾN NGHỊ CHIẾN THUẬT
+                        </h4>
+                        <p class="text-sm text-slate-700 text-justify leading-relaxed">
+                            Trader nên tập trung cải thiện việc nắm giữ vị thế (Running trades). Hiện tại, phần lớn các lệnh đều được đóng thủ công sớm trước khi đạt mục tiêu TP dự kiến. Việc áp dụng chiến thuật <span class="highlight italic">"Partial Take Profit"</span> và dời Stop Loss về vùng hòa vốn (Breakeven) sẽ giúp tối ưu hóa Risk:Reward thực tế.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thumbnail Grid Section -->
+        <section class="fade-in" style="animation-delay: 0.4s;">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="h-8 w-1.5 bg-brand-blue rounded-full"></div>
+                <h2 class="font-display text-2xl font-bold uppercase tracking-tight">Thư viện Biểu đồ (Mini Charts)</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- Mini Chart 1 -->
+                <figure class="glass-card p-3 rounded-2xl hover-lift group">
+                    <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200">
+                        <img src='https://opal.google/board/blobs/ff7f3d4d-8f5a-4dab-be13-994bb2da9672' alt='Giao dịch USOIL 1' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <figcaption class="text-center">
+                        <p class="text-xs font-bold text-brand-navy">Giao dịch USOIL #1</p>
+                        <p class="text-[10px] text-slate-400">Setup: Bullish FVG</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Mini Chart 2 -->
+                <figure class="glass-card p-3 rounded-2xl hover-lift group">
+                    <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200">
+                        <img src='https://opal.google/board/blobs/62bb28d2-076b-4862-b970-c8da8cf54a76' alt='Giao dịch USOIL 2' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <figcaption class="text-center">
+                        <p class="text-xs font-bold text-brand-navy">Giao dịch USOIL #2</p>
+                        <p class="text-[10px] text-slate-400">Setup: Order Block</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Mini Chart 3 -->
+                <figure class="glass-card p-3 rounded-2xl hover-lift group">
+                    <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200">
+                        <img src='https://opal.google/board/blobs/94f4a121-8961-4d80-8b34-61343d202e2a' alt='Giao dịch BTC/USD' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <figcaption class="text-center">
+                        <p class="text-xs font-bold text-brand-navy">Giao dịch BTC/USD</p>
+                        <p class="text-[10px] text-slate-400">Setup: Bearish FVG</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Mini Chart 4 -->
+                <figure class="glass-card p-3 rounded-2xl hover-lift group">
+                    <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200">
+                        <img src='https://opal.google/board/blobs/e87da8da-1f95-4e3d-9786-8143dd6f6fa90' alt='Giao dịch XAU/USD 1' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <figcaption class="text-center">
+                        <p class="text-xs font-bold text-brand-navy">Giao dịch XAU/USD #1</p>
+                        <p class="text-[10px] text-slate-400">Setup: Breaker Block</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Mini Chart 5 -->
+                <figure class="glass-card p-3 rounded-2xl hover-lift group">
+                    <div class="aspect-video rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200">
+                        <img src='https://opal.google/board/blobs/e87da8da-1f95-4e3d-9786-8143dd6f6fa91' alt='Giao dịch XAU/USD 2' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <figcaption class="text-center">
+                        <p class="text-xs font-bold text-brand-navy">Giao dịch XAU/USD #2</p>
+                        <p class="text-[10px] text-slate-400">Setup: ERL Sweep</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Final Performance Visual -->
+        <section class="fade-in" style="animation-delay: 0.5s;">
+            <div class="glass-card rounded-[2.5rem] overflow-hidden p-2">
+                <div class="bg-brand-navy rounded-[2.2rem] p-12 text-white relative overflow-hidden">
+                    <!-- Decor elements -->
+                    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-blue opacity-10 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-accent opacity-10 rounded-full blur-3xl"></div>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+                        <div class="md:w-1/2 space-y-6">
+                            <h3 class="text-3xl font-display font-extrabold">Phân tích Hiệu suất Cuối kỳ</h3>
+                            <p class="text-slate-300 leading-relaxed text-justify">
+                                Dữ liệu được chiết xuất trực tiếp từ tài khoản Exness MetaTrader 5, phản ánh chính xác 100% các hoạt động giao dịch. Các lệnh đều tuân thủ nguyên tắc SMC (Smart Money Concepts) và quản lý rủi ro chặt chẽ.
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <div class="px-6 py-3 bg-white/10 rounded-xl backdrop-blur-sm">
+                                    <p class="text-[10px] uppercase font-bold text-slate-400">Risk Used</p>
+                                    <p class="text-xl font-black">0.5% / Trade</p>
+                                </div>
+                                <div class="px-6 py-3 bg-white/10 rounded-xl backdrop-blur-sm border-l-4 border-success">
+                                    <p class="text-[10px] uppercase font-bold text-slate-400">Account Growth</p>
+                                    <p class="text-xl font-black text-brand-success">+4.2%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            <img src='https://opal.google/board/blobs/e87da8da-1f95-4e3d-9786-8143dd6f6fa92' alt='Trading Performance Chart' class="w-full h-auto" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Branding Element (No footer as per instructions) -->
+    <div class="max-w-7xl mx-auto px-6 pb-12 opacity-50 flex justify-between items-center text-xs font-bold tracking-widest text-slate-400 uppercase">
+        <div class="flex items-center space-x-2">
+            <div class="h-4 w-4 bg-slate-300 rounded-sm"></div>
+            <span>AI SOFTWARE DEVELOPMENT</span>
+        </div>
+        <a href="www.phamhoanganhtokens.com" target="_blank" class="hover:text-brand-blue transition-colors">WWW.PHAMHOANGANHTOKENS.COM</a>
+    </div>
+
+</body>
+</html>
