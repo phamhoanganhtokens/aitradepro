@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Journal Report - April 30, 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#C5A059',
+                            dark: '#0A0B10',
+                            card: '#16181D',
+                            success: '#10B981',
+                            error: '#EF4444',
+                            accent: '#6366F1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0B10;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(22, 24, 29, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+        .glow-gold {
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 10px;
+        }
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .trading-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .trading-img:hover img {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Background Elements -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
+        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-brand-gold/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-accent/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-4 py-8 md:py-16">
+        
+        <!-- Header Section -->
+        <header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 fade-in">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-sm font-semibold mb-4">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
+                    </span>
+                    LIVE TRADING JOURNAL
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
+                    Nhật ký Giao dịch <span class="text-brand-gold">April 30, 2026</span>
+                </h1>
+                <p class="text-gray-400 max-w-2xl text-lg">
+                    Phân tích chiến lược ICT/SMC cho cặp BTC/USD và XAU/USD trên nền tảng <span class="text-white font-semibold">Exness</span>. 
+                    Tập trung vào tính thanh khoản và cấu trúc thị trường Daily/M30.
+                </p>
+            </div>
+            <div class="flex flex-col items-end">
+                <div class="text-xs uppercase tracking-widest text-gray-500 font-mono mb-1">Platform</div>
+                <div class="px-4 py-2 bg-white/5 rounded-lg border border-white/10 font-bold text-xl uppercase italic">EXNESS</div>
+            </div>
+        </header>
+
+        <!-- Key Metrics Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12 fade-in" style="animation-delay: 0.2s">
+            <div class="glass-card p-6 flex flex-col justify-between col-span-1 md:col-span-1">
+                <span class="text-gray-400 text-sm font-medium">Win Rate</span>
+                <div class="text-4xl font-bold text-brand-success mt-2">80%</div>
+                <div class="text-xs text-gray-500 mt-1 italic">4 Wins / 1 Loss</div>
+            </div>
+            <div class="glass-card p-6 flex flex-col justify-between col-span-1 md:col-span-1">
+                <span class="text-gray-400 text-sm font-medium">Avg R:R</span>
+                <div class="text-4xl font-bold text-white mt-2">1.4x</div>
+                <div class="text-xs text-gray-500 mt-1 italic">Max RR 2.7 (Loss)</div>
+            </div>
+            <div class="glass-card p-6 flex flex-col justify-between col-span-1 md:col-span-2 bg-brand-gold/5 border-brand-gold/20">
+                <span class="text-brand-gold text-sm font-semibold">Primary Bias</span>
+                <div class="text-3xl font-bold text-white mt-2">XAU/USD: BULLISH</div>
+                <div class="text-xs text-gray-400 mt-1">Institutional Order Flow (IOF) prioritizing Discount arrays.</div>
+            </div>
+        </div>
+
+        <!-- Main Chart & Strategy -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 fade-in" style="animation-delay: 0.3s">
+            <div class="lg:col-span-8">
+                <div class="glass-card overflow-hidden h-full">
+                    <div class="p-4 border-b border-white/10 flex justify-between items-center bg-white/5">
+                        <span class="font-bold text-sm uppercase tracking-wider">Fig 1: General Trading Overview</span>
+                        <span class="text-xs text-gray-400 font-mono">01_OVERVIEW_M30.JPG</span>
+                    </div>
+                    <div class="p-4 trading-img">
+                        <img src='https://opal.google/board/blobs/fc08d9fe-3027-4328-827d-df1014051823' alt='media_1' class="rounded-xl shadow-2xl" />
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-4 flex flex-col gap-4">
+                <div class="glass-card p-6 flex-1">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        ICT/SMC Strategy
+                    </h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold mt-1">•</span>
+                            <div><strong class="text-white block">Liquidity Sweeps</strong> Identification of ERL (External Range Liquidity) before reversals.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold mt-1">•</span>
+                            <div><strong class="text-white block">PD-Arrays</strong> Utilization of Breaker Blocks, FVG, and OB on HTF context.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold mt-1">•</span>
+                            <div><strong class="text-white block">Market Structure</strong> Monitoring MSS (Market Structure Shift) on M30 for execution.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-card p-6 bg-brand-accent/5">
+                    <h3 class="text-xl font-bold mb-4 text-brand-accent">Weekly Profile</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The current cycle indicates continuous expansion. Institutional players are defending discount zones, suggesting further upside potential for Metals.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading Journal Table -->
+        <section class="mb-12 fade-in" style="animation-delay: 0.4s">
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-2xl font-bold">Trading Log Details</h2>
+                <div class="h-[1px] flex-1 bg-white/10"></div>
+            </div>
+            <div class="glass-card overflow-hidden">
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-white/5 border-b border-white/10">
+                                <th class="p-4 font-semibold text-gray-400 uppercase text-xs">Chart Reference</th>
+                                <th class="p-4 font-semibold text-gray-400 uppercase text-xs">Asset</th>
+                                <th class="p-4 font-semibold text-gray-400 uppercase text-xs">Type</th>
+                                <th class="p-4 font-semibold text-gray-400 uppercase text-xs">Setup</th>
+                                <th class="p-4 font-semibold text-gray-400 uppercase text-xs">Status</th>
+                                <th class="p-4 font-semibold text-gray-400 uppercase text-xs">R:R</th>
+                                <th class="p-4 font-semibold text-gray-400 uppercase text-xs">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <!-- Trade 1 -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-4 w-48">
+                                    <div class="trading-img rounded overflow-hidden border border-white/10">
+                                        <img src='https://opal.google/board/blobs/c2b686fd-7e45-4de6-a70c-de346974fee6' alt='media_2' />
+                                    </div>
+                                </td>
+                                <td class="p-4 font-mono font-bold text-white">BTC/USD</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs font-bold uppercase">Sell</span></td>
+                                <td class="p-4 text-sm">Bearish FVG</td>
+                                <td class="p-4"><span class="text-brand-success font-bold">WIN</span></td>
+                                <td class="p-4 font-mono text-gray-300">1:2.0</td>
+                                <td class="p-4 text-xs text-gray-400 leading-snug max-w-xs">Retraced to Bearish FVG, TP at Sell-side target.</td>
+                            </tr>
+                            <!-- Trade 2 -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-4 w-48">
+                                    <div class="trading-img rounded overflow-hidden border border-white/10">
+                                        <img src='https://opal.google/board/blobs/abf1c4ce-7e58-43ca-99bd-04c494f355f5' alt='media_3' />
+                                    </div>
+                                </td>
+                                <td class="p-4 font-mono font-bold text-white">BTC/USD</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs font-bold uppercase">Sell</span></td>
+                                <td class="p-4 text-sm">ERL Sweep / OB</td>
+                                <td class="p-4"><span class="text-brand-success font-bold">WIN</span></td>
+                                <td class="p-4 font-mono text-gray-300">1:0.9</td>
+                                <td class="p-4 text-xs text-gray-400 leading-snug max-w-xs">Swept ERL liquidity before hitting Bearish OB. Scalped IRL.</td>
+                            </tr>
+                            <!-- Trade 3 -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-4 w-48">
+                                    <div class="trading-img rounded overflow-hidden border border-white/10">
+                                        <img src='https://opal.google/board/blobs/f279007e-00d7-490f-a5c2-6a2fbdfba179' alt='media_4' />
+                                    </div>
+                                </td>
+                                <td class="p-4 font-mono font-bold text-white">XAU/USD</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-green-500/10 text-green-400 rounded text-xs font-bold uppercase">Buy</span></td>
+                                <td class="p-4 text-sm">Breaker Block</td>
+                                <td class="p-4"><span class="text-brand-success font-bold">WIN</span></td>
+                                <td class="p-4 font-mono text-gray-300">1:0.6</td>
+                                <td class="p-4 text-xs text-gray-400 leading-snug max-w-xs">Leveraged Bullish Breaker in Discount zone.</td>
+                            </tr>
+                            <!-- Trade 4 -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-4 w-48">
+                                    <div class="trading-img rounded overflow-hidden border border-white/10">
+                                        <img src='https://opal.google/board/blobs/cbd28d10-5e74-4f4f-819b-e51958f1664a' alt='media_5' />
+                                    </div>
+                                </td>
+                                <td class="p-4 font-mono font-bold text-white">XAU/USD</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs font-bold uppercase">Sell</span></td>
+                                <td class="p-4 text-sm">ERL Sweep</td>
+                                <td class="p-4"><span class="text-brand-success font-bold">WIN</span></td>
+                                <td class="p-4 font-mono text-gray-300">1:0.8</td>
+                                <td class="p-4 text-xs text-gray-400 leading-snug max-w-xs">Judas swing swept BSL in Premium zone. Strong reaction.</td>
+                            </tr>
+                            <!-- Trade 5 -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-4 w-48">
+                                    <div class="trading-img rounded overflow-hidden border border-white/10">
+                                        <img src='https://opal.google/board/blobs/e036fbaa-495e-4918-bd4c-aca92f56b6a3' alt='media_6' />
+                                    </div>
+                                </td>
+                                <td class="p-4 font-mono font-bold text-white">XAU/USD</td>
+                                <td class="p-4"><span class="px-2 py-1 bg-red-500/10 text-red-400 rounded text-xs font-bold uppercase">Sell</span></td>
+                                <td class="p-4 text-sm">Bearish OB</td>
+                                <td class="p-4"><span class="text-brand-error font-bold">LOSS</span></td>
+                                <td class="p-4 font-mono text-gray-300">1:2.7</td>
+                                <td class="p-4 text-xs text-gray-400 leading-snug max-w-xs">Counter-trend against HTF Bias. Stopped out.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluation & Analysis -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 fade-in" style="animation-delay: 0.5s">
+            <div class="glass-card p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded bg-brand-gold/20 text-brand-gold flex items-center justify-center text-sm italic">01</span>
+                    Analysis & Evaluation
+                </h2>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-white font-bold mb-2">HTF Bias & Profile</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">XAU/USD maintains an extremely strong Bullish Bias. Institutional Order Flow prioritizes defending Discount arrays over respecting Bearish PD-Arrays in Premium zones.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Liquidity Analysis</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Most winning trades originated from correctly identifying External Range Liquidity (ERL) sweeps before price reversals towards Inner Range Liquidity (IRL).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 bg-brand-gold/5">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-brand-gold">
+                    <span class="w-8 h-8 rounded bg-brand-gold/20 text-brand-gold flex items-center justify-center text-sm italic">02</span>
+                    Recommendations
+                </h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                        <div class="font-bold text-white mb-1 uppercase text-xs tracking-widest">Priority 01</div>
+                        <p class="text-sm text-gray-400">Always prioritize setups aligned with the HTF Bias (Weekly/Daily) for maximum probability.</p>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                        <div class="font-bold text-white mb-1 uppercase text-xs tracking-widest">Priority 02</div>
+                        <p class="text-sm text-gray-400">Counter-trend trades require stronger confirmation (MSS/Displacement) on M30/M15 to avoid failure.</p>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                        <div class="font-bold text-white mb-1 uppercase text-xs tracking-widest">Risk Management</div>
+                        <p class="text-sm text-gray-400">Maintain consistency in R:R. Even with a high win rate, discipline ensures long-term sustainability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / Contact Information -->
+        <div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 fade-in" style="animation-delay: 0.6s">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-brand-gold/20 border border-brand-gold flex items-center justify-center">
+                    <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white leading-none">AI Software Development</h5>
+                    <a href="www.phamhoanganhtokens.com" target="_blank" class="text-sm text-brand-gold hover:underline">www.phamhoanganhtokens.com</a>
+                </div>
+            </div>
+            
+            <div class="flex gap-4 items-center">
+                <div class="text-right">
+                    <div class="text-[10px] text-gray-500 uppercase tracking-tighter">Generated By</div>
+                    <div class="text-xs font-mono text-gray-300">TRADING_SYSTEM_V4.2</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Interactive Layer: Image Fullscreen Hover Effect -->
+    <script>
+        // Simple micro-interaction for rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'translateX(5px)';
+                row.style.transition = 'transform 0.2s ease-out';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
