@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v5.0.0 - Financial Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-gold: #c5a059;
+            --deep-charcoal: #1a1c1e;
+            --slate-gray: #2d3436;
+            --soft-cream: #fdfdfd;
+        }
+
+        /* Force Times New Roman for the entire content as requested */
+        body, .report-font {
+            font-family: 'Times New Roman', Times, serif !important;
+        }
+
+        .justify-text {
+            text-align: justify;
+        }
+
+        /* Styling for the embedded HTML content provided in instructions */
+        .ai-report-container {
+            line-height: 1.8;
+            color: var(--deep-charcoal);
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            padding: 4rem;
+            margin: 2rem auto;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .ai-report-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), #e6c589, var(--primary-gold));
+        }
+
+        .ai-header {
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .ai-header h1 {
+            color: var(--deep-charcoal);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .ai-header p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0.5rem 0 0 0;
+            letter-spacing: 0.1em;
+        }
+
+        .ai-section {
+            margin-bottom: 3rem;
+        }
+
+        .ai-section-title {
+            font-size: 1.25rem;
+            color: var(--slate-gray);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .ai-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ai-table th, .ai-table td {
+            border: 1px solid #efefef;
+            padding: 1rem 1.25rem;
+            text-align: left;
+        }
+
+        .ai-table th {
+            background-color: #f9fafb;
+            color: #4b5563;
+            width: 35%;
+            font-weight: bold;
+        }
+
+        .ai-highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .ai-rationale-box {
+            background-color: #f8fafc;
+            border-left: 4px solid var(--slate-gray);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .ai-status-normal {
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        .ai-badge {
+            background-color: var(--slate-gray);
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-gold);
+        }
+
+        @media (max-width: 768px) {
+            .ai-report-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            .ai-header h1 {
+                font-size: 1.5rem;
+            }
+            .ai-table th {
+                width: 45%;
+            }
+        }
+
+        /* Micro-animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-[#f4f4f4] text-[#1a1c1e] antialiased min-h-screen flex flex-col items-center py-12 px-4 md:px-0">
+
+    <!-- Premium Header -->
+    <header class="w-full max-w-[900px] mb-8 text-center fade-in">
+        <div class="inline-block px-4 py-1 mb-4 text-[10px] uppercase tracking-[0.3em] text-white bg-[#c5a059] rounded-full">
+            Proprietary Intelligence
+        </div>
+        <h2 class="text-3xl md:text-4xl font-light tracking-tight text-gray-900 report-font">
+            AI Trade pro <span class="font-bold text-[#c5a059]">v5.0.0</span>
+        </h2>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mt-2 font-sans">
+            XAU/USD Trade Recommendation & Analysis
+        </p>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full max-w-[900px] justify-text fade-in" style="animation-delay: 0.2s;">
+        <div class="ai-report-container">
+            <div class="ai-header">
+                <h1>HỆ THỐNG AI TRADE PRO V5.0.0</h1>
+                <p>BÁO CÁO KHUYẾN NGHỊ GIAO DỊCH CHUYÊN SÂU</p>
+                <p>Thời gian hệ thống: Ngày 01 tháng 05 năm 2026 | 13:38 PM</p>
+            </div>
+
+            <div class="ai-section">
+                <div class="ai-section-title"><span class="ai-badge">Agent 0 & 1</span> Phân tích Vĩ mô & Trạng thái Thị trường</div>
+                <p>
+                    Tài sản giao dịch: <strong>XAU/USD (Vàng/Đô la Mỹ)</strong>. Mức giá hiện tại đang dao động quanh ngưỡng <strong>$4620</strong>. 
+                    Thị trường đang chịu áp lực giảm giá (Bearish pressure) rõ rệt xuất phát từ "Cú sốc Warsh" (Kevin Warsh được đề cử làm tân Chủ tịch Cục Dự trữ Liên bang Mỹ - Fed). Yếu tố này đang củng cố sức mạnh của đồng Đô la Mỹ (USD) và duy trì mức lợi suất thực tế cao, gây bất lợi cho kim loại quý.
+                </p>
+                <table class="ai-table">
+                    <tr>
+                        <th>Vùng Hỗ trợ (Support)</th>
+                        <td>$4605.00</td>
+                    </tr>
+                    <tr>
+                        <th>Vùng Kháng cự (Resistance)</th>
+                        <td>$4646.00</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="ai-section">
+                <div class="ai-section-title"><span class="ai-badge">Agent 4</span> Tâm lý Giao dịch (Psychology Guard)</div>
+                <div class="ai-highlight-box">
+                    <p><strong>Trạng thái hệ thống:</strong> <span class="ai-status-normal">NORMAL / STABLE (BÌNH THƯỜNG / ỔN ĐỊNH)</span></p>
+                    <p><strong>Kiểm định:</strong> Không phát hiện dấu hiệu giao dịch quá mức (overtrading) hay bất kỳ thiên kiến cảm xúc nào từ các chuỗi giao dịch trước đó. Trạng thái tâm lý tổng thể của hệ thống đạt mức tối ưu.</p>
+                    <p><strong>Lệnh thực thi:</strong> ADHERENCE TO PLAN (TUÂN THỦ KẾ HOẠCH). Tiến hành cung cấp thông số giao dịch chi tiết.</p>
+                </div>
+            </div>
+
+            <div class="ai-section">
+                <div class="ai-section-title"><span class="ai-badge">Agent 2</span> Thiết lập Kỹ thuật (Technical Setup)</div>
+                <table class="ai-table">
+                    <tr>
+                        <th>Chiến lược</th>
+                        <td><strong>Sell Limit</strong> (Bán giới hạn - Dựa trên bối cảnh Short)</td>
+                    </tr>
+                    <tr>
+                        <th>Điểm vào lệnh (Entry)</th>
+                        <td><strong>4638.50</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Chốt lời (TP)</th>
+                        <td><strong>4585.00</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Cắt lỗ (SL)</th>
+                        <td><strong>4662.00</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Tỷ lệ Lợi nhuận/Rủi ro (R/R)</th>
+                        <td><strong>1:2.2</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="ai-section">
+                <div class="ai-section-title"><span class="ai-badge">Agent 3</span> Quản trị Rủi ro (Risk Management)</div>
+                <table class="ai-table">
+                    <tr>
+                        <th>Khối lượng giao dịch</th>
+                        <td>0.01 Lot (Cố định)</td>
+                    </tr>
+                    <tr>
+                        <th>Giới hạn rủi ro</th>
+                        <td>20% tổng ngân sách phân bổ</td>
+                    </tr>
+                    <tr>
+                        <th>Rủi ro ước tính (Max Loss)</th>
+                        <td>~$23.50 cho giao dịch này</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="ai-section">
+                <div class="ai-section-title">Cơ sở Lý luận & Kỷ luật Giao dịch</div>
+                <div class="ai-rationale-box">
+                    <p>
+                        <strong>Nguyên tắc cốt lõi:</strong> Kỷ luật là nền tảng tối thượng của hệ thống AI Trade pro v5.0.0. Quyết định giao dịch này tuân thủ tuyệt đối các cấu trúc và thuật toán đã được thiết lập. 
+                    </p>
+                    <p>
+                        <strong>Cơ sở thực thi:</strong> Lệnh Sell Limit được đặt tại vùng giá trị tối ưu nhằm tận dụng đợt phục hồi kỹ thuật, bỏ qua các nhiễu loạn thị trường (market noise) trong ngắn hạn. Trọng tâm chiến lược được định hình hoàn toàn dựa trên bối cảnh vĩ mô diều hâu (hawkish macro backdrop) do sự thay đổi nhân sự cấp cao tại Fed. Yêu cầu duy trì nguyên tắc quản lý vốn, không can thiệp thủ công trước khi lệnh chạm mức Cắt lỗ (SL) hoặc Chốt lời (TP).
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center text-[10px] text-gray-400 uppercase tracking-widest font-sans">
+                <div>Verified Report ID: #GOLD-2026-0501-A</div>
+                <div>Algorithm Alpha-Theta v5</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Professional Links Section (replacing plain footer) -->
+    <div class="w-full max-w-[900px] mt-8 mb-12 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs px-4 report-font">
+        <div class="hover:text-[#c5a059] transition-colors cursor-default">
+            © 2026 AI Trade Pro. Designed for Precision.
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="hover:text-[#c5a059] transition-colors underline decoration-gray-300 underline-offset-4">
+                Pham Hoang Anh Tokens
+            </a>
+            <span class="text-gray-300">|</span>
+            <span class="italic">Confidential Strategy Document</span>
+        </div>
+    </div>
+
+    <script>
+        // Subtle interaction for the report container
+        const container = document.querySelector('.ai-report-container');
+        container.addEventListener('mouseenter', () => {
+            container.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease';
+            container.style.boxShadow = '0 20px 40px -15px rgba(0, 0, 0, 0.1)';
+        });
+        container.addEventListener('mouseleave', () => {
+            container.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.05)';
+        });
+    </script>
+</body>
+</html>
