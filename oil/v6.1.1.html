@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Phân Tích USOIL - AI Trade Pro v6.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#C5A059',
+                            dark: '#1A1A1A',
+                            muted: '#4A4A4A',
+                            accent: '#0056b3',
+                            bg: '#FCFCFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Force Times New Roman for the entire document as requested */
+        * {
+            font-family: 'Times New Roman', Times, serif !important;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .report-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e1e1e1;
+        }
+
+        @media (max-width: 768px) {
+            .report-container {
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border-bottom: 3px double #333;
+            padding-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #333;
+            padding-left: 15px;
+            background-color: #f9f9f9;
+        }
+
+        p, li {
+            text-align: justify;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .separator {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 2rem 0;
+            color: #ccc;
+            letter-spacing: -2px;
+        }
+
+        .recommendation-box {
+            border: 2px solid #0056b3;
+            background-color: #f0f7ff;
+            padding: 30px;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .recommendation-box::before {
+            content: "OPAL TRADE RECOMMENDATION";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #0056b3;
+            color: white;
+            padding: 2px 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .action-highlight {
+            font-size: 1.4rem;
+            color: #d9534f;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0;
+            text-decoration: underline;
+        }
+
+        .meta-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .meta-header p {
+            text-align: center !important;
+            margin: 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .status-tag {
+            padding: 2px 8px;
+            background: #eee;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .status-fail { color: #d9534f; }
+        .status-pass { color: #5cb85c; }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="report-container">
+        <!-- Header Branding -->
+        <header class="meta-header">
+            <h4 class="text-xl font-bold tracking-widest text-gray-800">AI TRADE PRO v6.1 OIL</h4>
+            <p>Analytical Excellence & Strategic Insights</p>
+            <p class="text-sm"><a href="www.phamhoanganhtokens.com" target="_blank" class="hover:text-blue-700 transition">www.phamhoanganhtokens.com</a></p>
+        </header>
+
+        <article>
+            <h1>BÁO CÁO PHÂN TÍCH VÀ KHUYẾN NGHỊ GIAO DỊCH USOIL</h1>
+
+            <!-- Section 1 -->
+            <section>
+                <h2>1. Tóm tắt dữ liệu thời gian thực (Real-time data summary)</h2>
+                <div class="data-grid">
+                    <div class="p-3 border border-gray-100 bg-gray-50">
+                        <strong>Giá hiện tại:</strong> 103.31 USD<br>
+                        <span class="text-sm italic text-gray-500">(Ghi nhận ngày 02/05/2026)</span>
+                    </div>
+                    <div class="p-3 border border-gray-100 bg-gray-50">
+                        <strong>Khối lượng:</strong> 77,910 (Trung bình cao)
+                    </div>
+                </div>
+                <p><strong>Xu hướng lịch sử:</strong></p>
+                <ul class="list-disc pl-8">
+                    <li><strong>1H:</strong> Đang hồi phục nhẹ từ mức thấp nhất ngày ($102.25).</li>
+                    <li><strong>4H:</strong> Đi ngang tích lũy trong biên độ rộng ($102.00 - $106.00).</li>
+                    <li><strong>Daily:</strong> Xu hướng tăng dài hạn vẫn duy trì (trên EMA 200), nhưng nến ngày gần nhất là một nến điều chỉnh giảm do tin tức.</li>
+                </ul>
+                <p><strong>ATR (14):</strong> 6.73 USD (Biến động thị trường rất lớn).</p>
+                <p><strong>Tin tức chính:</strong> Tồn kho EIA/API báo cáo mức giảm 1.79 triệu thùng (Hỗ trợ giá). Tuy nhiên, tin tức Các Tiểu vương quốc Ả Rập Thống nhất (UAE) rời OPEC+ và căng thẳng tại eo biển Hormuz đang tạo ra sự bất ổn cực lớn.</p>
+            </section>
+
+            <div class="separator">═══════════════════════════════════════════════════════════════════════════════</div>
+
+            <!-- Section 2 -->
+            <section>
+                <h2>2. Quét thị trường (Market Scanner)</h2>
+                <ul class="list-disc pl-8">
+                    <li><strong>Xu hướng đa khung thời gian:</strong> Tăng (Dài hạn) / Giảm điều chỉnh (Ngắn hạn).</li>
+                    <li><strong>Ngưỡng kháng cự mạnh nhất:</strong> 105.70 USD (Đỉnh phiên Á), 108.80 USD.</li>
+                    <li><strong>Ngưỡng hỗ trợ mạnh nhất:</strong> 102.25 USD (Đáy ngày), 101.50 USD, 100.00 USD (Tâm lý).</li>
+                </ul>
+            </section>
+
+            <!-- Section 3 -->
+            <section>
+                <h2>3. Bộ phát hiện Asian Trap & Judas Swing</h2>
+                <p><strong>Trạng thái phiên Á:</strong> Biên độ dao động từ 103.31 đến 105.66 USD. Không phải vùng tích lũy hẹp lý tưởng.</p>
+                <p><strong>Quét thanh khoản:</strong> Giá đã phá vỡ đáy phiên Á (Asia Low - 103.31) để quét thanh khoản tại vùng 102.25 (Daily Low/PDL) vào cuối phiên.</p>
+                <p><strong>Chất lượng thiết lập:</strong> Trung bình. Xác suất đảo chiều: Cao tại vùng hỗ trợ 102.25 nếu lực mua quay trở lại.</p>
+                
+                <div class="bg-gray-50 p-4 border-l-4 border-gray-300 my-4">
+                    <p class="font-bold mb-2">Kiểm chứng điều kiện (1/3):</p>
+                    <ol class="list-decimal pl-6 space-y-1">
+                        <li>Phiên Á đi ngang: <span class="status-tag status-fail">Chưa đạt</span> (Biên độ 2.35 USD là khá rộng).</li>
+                        <li>Quét thanh khoản (London/NY sweep): <span class="status-tag status-pass">Đạt</span> (Quét dưới mức 103.31).</li>
+                        <li>Phá vỡ cấu trúc (BOS): <span class="status-tag status-fail">Chưa đạt</span> (Giá chưa đóng cửa trên mức 104.50 để xác nhận cấu trúc tăng lại).</li>
+                    </ol>
+                    <p class="mt-4 italic"><strong>Kết luận:</strong> Chỉ đạt 1/3 điều kiện chiến lược.</p>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section>
+                <h2>4. Phân tích nâng cao (Advanced Analysis)</h2>
+                <p><strong>Chỉ báo kỹ thuật:</strong></p>
+                <ul class="list-none pl-4 border-l border-gray-200">
+                    <li>• <strong>RSI:</strong> 61.4 (Vẫn duy trì đà tăng nhưng đang nguội dần).</li>
+                    <li>• <strong>MACD:</strong> Dương, nhưng histogram đang thu hẹp.</li>
+                    <li>• <strong>EMA (9/21/50/200):</strong> Giá vẫn nằm trên EMA 50 và 200, khẳng định cấu trúc tăng trưởng dài hạn chưa bị phá vỡ.</li>
+                    <li>• <strong>Bollinger Bands:</strong> Giá đang giao dịch quanh đường trung tâm (103.50), hướng về vùng dưới do áp lực tin tức.</li>
+                </ul>
+                <p><strong>Yếu tố cơ bản:</strong> DXY hiện ở mức 98.23 (Xu hướng giảm), hỗ trợ cho giá hàng hóa. Tồn kho giảm bù đắp một phần lo ngại từ việc UAE rời OPEC+.</p>
+            </section>
+
+            <!-- Section 5 -->
+            <section>
+                <h2>5. Quản trị rủi ro (Risk Management)</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                    <div class="text-center p-3 border">
+                        <span class="block text-xs text-gray-500 uppercase">Số dư</span>
+                        <strong>200 USD</strong>
+                    </div>
+                    <div class="text-center p-3 border">
+                        <span class="block text-xs text-gray-500 uppercase">Khối lượng</span>
+                        <strong>0.01 lot</strong>
+                    </div>
+                    <div class="text-center p-3 border">
+                        <span class="block text-xs text-gray-500 uppercase">Rủi ro (20%)</span>
+                        <strong>40 USD</strong>
+                    </div>
+                </div>
+                <p><strong>Tỷ lệ R/R tối thiểu:</strong> 1:1.8.</p>
+                <p><strong>Xác nhận:</strong> Với 0.01 lot, khoảng cách dừng lỗ 4.00 USD sẽ tương ứng với 40 USD rủi ro.</p>
+            </section>
+
+            <!-- Final Recommendation Box -->
+            <section class="recommendation-box">
+                <h2 class="mt-0 border-none bg-transparent pl-0 text-2xl">6. Khuyến nghị cuối cùng</h2>
+                
+                <div class="mb-6">
+                    <span class="text-gray-600 uppercase text-xs font-bold tracking-widest">Hành động:</span>
+                    <span class="action-highlight">WAIT (CHỜ ĐỢI/THEO DÕI)</span>
+                </div>
+
+                <p><strong>Lý do:</strong> Thị trường hiện đang đóng cửa cuối tuần. Tin tức UAE rời OPEC+ cực kỳ nhạy cảm và thường tạo ra khoảng trống giá (Gap) lớn khi mở cửa phiên Thứ Hai. Chiến lược Asian Trap chưa đủ 2/3 điều kiện xác nhận để vào lệnh ngay tại giá đóng cửa.</p>
+
+                <div class="mt-6 border-t border-blue-200 pt-4">
+                    <p class="font-bold text-blue-900 mb-2">Kế hoạch Entry dự kiến (nếu mở cửa ổn định):</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                        <div><strong>Entry Point:</strong> 102.50 USD</div>
+                        <div><strong>TP Level:</strong> 109.70 USD</div>
+                        <div><strong>SL Level:</strong> 98.50 USD</div>
+                        <div><strong>Lot Size:</strong> 0.01</div>
+                        <div><strong>Rủi ro:</strong> 40 USD</div>
+                        <div><strong>Tỷ lệ R/R:</strong> 1:1.8</div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex items-center justify-between">
+                    <div class="text-sm font-bold uppercase text-blue-800">
+                        Confidence Score: 65/100
+                    </div>
+                    <div class="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-600" style="width: 65%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mt-10 p-4 border-2 border-dashed border-red-200 bg-red-50 text-red-900">
+                <p class="mb-0 font-bold">CẢNH BÁO:</p>
+                <p class="mb-0 italic">Do biến động từ tin tức OPEC+, khuyến nghị không vào lệnh nếu thị trường mở cửa với Gap lớn hơn 2.00 USD. Tuân thủ kỷ luật rủi ro 20% đã đặt ra.</p>
+            </div>
+            
+        </article>
+    </div>
+
+    <!-- Micro-animation for the recommendation box on scroll/load -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const box = document.querySelector('.recommendation-box');
+            box.style.opacity = '0';
+            box.style.transform = 'translateY(20px)';
+            box.style.transition = 'all 0.8s ease-out';
+            
+            setTimeout(() => {
+                box.style.opacity = '1';
+                box.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
+

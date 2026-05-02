@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro - USOIL Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'serif'],
+                        'sans': ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        'opal-blue': '#286a97',
+                        'opal-dark': '#2c3e50',
+                        'opal-light': '#f8f8f8',
+                        'opal-accent': '#3498db',
+                        'warning-red': '#c0392b',
+                        'guard-blue': '#004085',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f4f7f6;
+            color: #333333;
+            line-height: 1.6;
+        }
+        .main-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .content-section {
+            padding: 3rem 4rem;
+        }
+        @media (max-width: 640px) {
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+        p, h1, h2, h3, h4, div {
+            text-align: justify;
+        }
+        .serif-text {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .recommendation-box {
+            border: 2px solid #286a97;
+            background-color: #f9fbfc;
+            border-radius: 4px;
+            margin-top: 2rem;
+            position: relative;
+        }
+        .recommendation-box::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: #286a97;
+        }
+        .key-label {
+            font-weight: 700;
+            color: #2c3e50;
+            min-width: 140px;
+            display: inline-block;
+        }
+        .divider-line {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 1.5rem 0;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Header -->
+    <header class="glass-header py-4 px-6 mb-8">
+        <div class="max-width-[900px] mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-opal-blue rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-xs">AI</span>
+                </div>
+                <span class="font-bold text-opal-dark tracking-tight">AI TRADE PRO <span class="text-opal-accent text-xs font-normal">V6.1</span></span>
+            </div>
+            <div class="hidden sm:block text-xs text-gray-500 uppercase tracking-widest">Market Analysis Intelligence</div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="content-section">
+            <!-- Report Header -->
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold text-opal-dark mb-2 serif-text">PHÂN TÍCH THỊ TRƯỜNG USOIL</h2>
+                <div class="flex items-center text-sm text-gray-500 italic">
+                    <span>Thời gian báo cáo: 02/05/2026 11:14 AM</span>
+                </div>
+            </div>
+
+            <!-- Market Closed Alert -->
+            <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8">
+                <p class="text-amber-800 font-semibold serif-text">
+                    ⚠️ THÔNG BÁO: KHÔNG CÓ KHUYẾN NGHỊ GIAO GIAO DỊCH (MARKET CLOSED)
+                </p>
+            </div>
+
+            <!-- Main Analysis Content -->
+            <article class="serif-text text-lg space-y-6 text-gray-800">
+                <h3 class="text-xl font-bold text-opal-blue border-b border-gray-100 pb-2">Rationale (Cơ sở phân tích)</h3>
+                <p>
+                    Hiện tại, dữ liệu thị trường cho thấy trạng thái đóng cửa phiên giao dịch cuối tuần. Giá đóng cửa ghi nhận tại mức $102.50, sau khi đã chạm mức thấp nhất trong phiên là $99.32. Một đợt bán tháo lớn (large sell-off) đã xảy ra do các rủi ro địa chính trị kết hợp với việc chốt lời hàng loạt của các tổ chức tài chính lớn trước kỳ nghỉ lễ.
+                </p>
+                <p>
+                    Mặc dù xu hướng giảm đang chiếm ưu thế trên khung thời gian H4, tuy nhiên, việc thị trường đóng cửa vào thứ Bảy khiến mọi nỗ lực phân tích tìm kiếm điểm vào lệnh hiện tại là không khả thi. Mọi chỉ số kỹ thuật đều đang ở trạng thái tĩnh.
+                </p>
+
+                <h3 class="text-xl font-bold text-opal-blue border-b border-gray-100 pb-2 mt-12">Asian Trap or Judas Swing Details</h3>
+                <p>
+                    <strong>Asian Trap:</strong> Đầu phiên Á, giá có sự tăng trưởng mạnh mẽ (surge) lên mức $106.62. Đây được xác định là một cái bẫy thanh khoản nhằm quét sạch các lệnh dừng lỗ của phe bán (liquidity sweep). Ngay sau đó, một tín hiệu đảo chiều mạnh mẽ từ Agent 2.5 đã xuất hiện, xác nhận đợt giảm giá sâu.
+                </p>
+                <p>
+                    <strong>Judas Swing:</strong> Một đợt tăng giá giả (fake rally) đã được tạo ra ở đầu phiên Mỹ, đẩy giá lên vùng $105. Đây là nỗ lực cuối cùng của thị trường nhằm thu hút những nhà giao dịch nhỏ lẻ vào lệnh mua (buy-side liquidity), trước khi sụp đổ hoàn toàn xuống dưới mốc $100, loại bỏ hoàn toàn các vị thế bắt đáy sớm.
+                </p>
+            </article>
+
+            <!-- Recommendation Summary Box -->
+            <section class="recommendation-box p-8 mt-12">
+                <h3 class="text-center font-bold text-xl text-opal-blue mb-8 tracking-wide">OPAL TRADE RECOMMENDATION - USOIL</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12 serif-text">
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Thời gian:</span>
+                        <span class="text-gray-700">Cuối tuần (Market Closed)</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Khuyến nghị:</span>
+                        <span class="text-warning-red font-bold uppercase">NO TRADE</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Entry:</span>
+                        <span class="text-warning-red font-bold">KHÔNG</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Lot Size:</span>
+                        <span class="text-gray-700">0.01 (Standard)</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Take Profit:</span>
+                        <span class="text-gray-700">N/A</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Stop Loss:</span>
+                        <span class="text-gray-700">N/A</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Risk:</span>
+                        <span class="text-gray-700">$40 USD (20% Account)</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Risk/Reward:</span>
+                        <span class="text-gray-700">N/A</span>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <span class="key-label">Confidence:</span>
+                        <span class="text-gray-700">0% (Thị trường đóng)</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 serif-text">
+                    <p class="text-gray-600 italic leading-relaxed">
+                        <strong>Rationale Summary:</strong> Thị trường hiện đang trong giai đoạn nghỉ ngơi. Cấu trúc giá hiện tại sau đợt quét thanh khoản Judas Swing đang cho thấy sự kiệt sức của phe mua. Cần quan sát phản ứng giá tại vùng $98 khi thị trường mở cửa lại vào đầu tuần sau.
+                    </p>
+                </div>
+
+                <hr class="divider-line">
+
+                <!-- Discipline Section -->
+                <div class="space-y-4">
+                    <div class="p-4 bg-red-50 border border-red-100 rounded">
+                        <h4 class="text-warning-red font-bold text-md mb-2 flex items-center">
+                            🛑 Canh bao Ky luat (Discipline Enforcement Rule v5.0)
+                        </h4>
+                        <p class="text-warning-red text-sm serif-text">
+                            Việc tìm kiếm lệnh giao dịch vào ngày thứ Bảy là hành vi vi phạm nguyên tắc quản lý thời gian. Yêu cầu dừng mọi hoạt động phân tích và thực thi lệnh ngay lập tức. Bảo toàn khối lượng 0.01 lot cho các thiết lập xác suất cao khi thị trường mở cửa trở lại. Tuyệt đối cấm giao dịch khi không có thanh khoản thực tế.
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-blue-50 border border-blue-100 rounded">
+                        <h4 class="text-guard-blue font-bold text-md mb-2 flex items-center">
+                            🛡️ Canh bao Psychology Guard v2.0
+                        </h4>
+                        <p class="text-guard-blue text-sm serif-text">
+                            Hệ thống phát hiện trạng thái "Over-trading Reflection". Đừng để sự nuối tiếc về các cơ hội trong phiên thứ Sáu (Asian Trap) ảnh hưởng đến tâm lý. Thực hiện "Mental Reset" bằng cách rời xa màn hình máy tính để duy trì sự minh mẫn cho tuần giao dịch kế tiếp.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Branding Footer (Simple as requested) -->
+    <div class="max-w-[900px] mx-auto px-6 py-10 flex flex-col items-center justify-center text-gray-400 text-sm">
+        <p class="font-bold text-gray-500">AI Trade pro</p>
+        <a href="www.phamhoanganhtokens.com" target="_blank" class="hover:text-opal-accent transition-colors">www.phamhoanganhtokens.com</a>
+    </div>
+
+    <script>
+        // Subtle entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.main-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'all 0.8s ease-out';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
