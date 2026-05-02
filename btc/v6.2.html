@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro v6.2 - Financial Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            deep: '#0f172a',
+                            primary: '#1e293b',
+                            accent: '#b59a5d', // Muted Gold
+                            soft: '#f8fafc',
+                            border: '#e2e8f0',
+                            highlight: '#f1f5f9'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f1f5f9;
+            color: #0f172a;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .report-container {
+            max-width: 850px;
+            margin: 2rem auto;
+            background: white;
+            padding: 4rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-top: 6px solid #1e293b;
+        }
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .recommendation-box {
+            border: 1px solid #cbd5e1;
+            background-color: #fcfcfc;
+            position: relative;
+            overflow: hidden;
+        }
+        .recommendation-box::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #b59a5d;
+        }
+        .label-cell {
+            font-weight: bold;
+            color: #1e293b;
+            min-width: 140px;
+        }
+        @media (max-width: 768px) {
+            .report-container {
+                margin: 0;
+                padding: 1.5rem;
+                box-shadow: none;
+            }
+            .label-cell {
+                min-width: 100px;
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="report-container animate-fade-in">
+        <!-- Header Section -->
+        <header class="text-center mb-12 border-b border-gray-100 pb-8">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-brand-deep mb-2 uppercase">AI Trade pro v6.2</h1>
+            <p class="text-lg text-brand-primary font-semibold mb-1">Công ty: AI Trade pro</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-sm text-brand-accent hover:underline italic">Website: www.phamhoanganhtokens.com</a>
+        </header>
+
+        <!-- Report Timestamp -->
+        <section class="mb-8">
+            <p class="text-lg font-bold border-l-4 border-brand-primary pl-4 py-1 bg-brand-soft">
+                Thời gian báo cáo: Ngày 02 tháng 05 năm 2026 - 12:28
+            </p>
+        </section>
+
+        <!-- Detailed Analysis Summary -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-4 text-brand-deep border-b pb-1 inline-block">2. Tóm tắt phân tích chi tiết</h2>
+            <div class="justified-text text-lg space-y-4 text-gray-800">
+                <p>
+                    Thị trường Bitcoin (BTCUSD) vừa ghi nhận một tín hiệu bẫy giá Judas Swing điển hình tại phiên giao dịch London, sau giai đoạn tích lũy biên độ hẹp trong phiên Á (78,050 - 78,500 USD). Một cú quét thanh khoản (Liquidity Sweep) đã được đẩy lên vùng 78,850 - 79,100 USD nhằm kích hoạt các lệnh mua đuổi (bull trap) trước khi thị trường đảo chiều đột ngột.
+                </p>
+                <p>
+                    Cấu trúc giảm giá được xác nhận rõ nét trên khung đồ thị H1 thông qua tổ hợp nến Shooting Star và Bearish Engulfing, đi kèm với sự suy yếu của động lượng thể hiện qua phân kỳ âm trên các chỉ báo RSI và MACD. Hệ thống ghi nhận sự đồng thuận cao (88%) giữa các bộ lọc phân tích kỹ thuật, bộ dò bẫy phiên và quản trị rủi ro chuyên sâu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Recommendation Frame -->
+        <section class="recommendation-box p-6 md:p-8 rounded-sm shadow-sm mb-8">
+            <h2 class="text-xl font-bold text-center text-brand-deep mb-6 uppercase tracking-wider border-b border-gray-200 pb-4">
+                3. OPAL TRADE RECOMMENDATION - BTCUSD
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-8 text-lg">
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">Thời gian:</span>
+                    <span>12:28, 02/05/2026</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">Khuyến nghị:</span>
+                    <span class="font-bold text-red-700">SELL</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">Entry:</span>
+                    <span class="font-bold">78,700 USD</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">Lot Size:</span>
+                    <span>0.01 lot</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">TP1:</span>
+                    <span class="text-green-700 font-bold">77,650 USD</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">TP2:</span>
+                    <span class="text-green-700 font-bold">77,125 USD</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">SL:</span>
+                    <span class="text-red-700 font-bold">79,500 USD</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">Risk:</span>
+                    <span>20% / 40 USD</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">Risk/Reward:</span>
+                    <span class="font-semibold">1:1.97</span>
+                </div>
+                <div class="flex items-baseline border-b border-gray-50 pb-1">
+                    <span class="label-cell">Confidence:</span>
+                    <span class="font-bold text-brand-accent">88%</span>
+                </div>
+            </div>
+
+            <!-- Rationale Section -->
+            <div class="mb-8">
+                <p class="label-cell mb-2 uppercase text-sm tracking-widest text-gray-500">Rationale:</p>
+                <p class="justified-text text-gray-800 leading-relaxed italic">
+                    Xác nhận bẫy giá Judas Swing phiên London; Liquidity Sweep quét sạch vùng thanh khoản vùng cao; nến đảo chiều H1 kết hợp phân kỳ âm RSI/MACD; sự đồng thuận đa tầng từ hệ thống Agent.
+                </p>
+            </div>
+
+            <!-- Alerts -->
+            <div class="space-y-4 border-t border-gray-200 pt-6">
+                <div class="bg-red-50 border-l-4 border-red-500 p-4">
+                    <p class="text-red-800 font-bold mb-1 uppercase text-sm tracking-tighter">Cảnh báo Kỷ luật:</p>
+                    <p class="text-red-900 text-base justified-text">
+                        Tuyệt đối tuân thủ điểm dừng lỗ (SL), không thực hiện dời SL hoặc nhồi thêm lệnh khi giá đi ngược hướng. Duy trì khối lượng giao dịch chuẩn 0.01 lot theo kế hoạch.
+                    </p>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                    <p class="text-blue-800 font-bold mb-1 uppercase text-sm tracking-tighter">Cảnh báo Psychology Guard:</p>
+                    <p class="text-blue-900 text-base justified-text">
+                        Không có cảnh báo kích hoạt. Tâm lý thị trường ổn định cho vị thế hiện tại.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
