@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v6.0 - XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        premium: {
+                            navy: '#0f172a',
+                            gold: '#d4af37',
+                            goldLight: '#f1e5ac',
+                            slate: '#f8fafc',
+                            border: '#e2e8f0',
+                            accent: '#1e293b',
+                            warning: '#fffbeb',
+                            warningBorder: '#fde68a',
+                            critical: '#fef2f2',
+                            criticalBorder: '#fecaca',
+                            criticalText: '#991b1b'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            color: #1e293b;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .justify-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(to bottom, #b8860b, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .recommendation-frame {
+            border-left: 4px solid #d4af37;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        .recommendation-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.1), transparent);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="py-8 px-4 md:py-12">
+
+    <div class="max-w-3xl mx-auto">
+        <!-- Header Section -->
+        <header class="text-center mb-10 animate-fade">
+            <div class="inline-block px-4 py-1 mb-4 border border-premium-gold/30 rounded-full bg-premium-gold/5 text-xs font-bold tracking-widest text-premium-gold uppercase">
+                Financial Intelligence Report
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold text-premium-navy mb-2 tracking-tight">
+                AI Trade Pro v6.0
+            </h1>
+            <h2 class="text-xl md:text-2xl font-medium text-premium-accent">
+                XAU/USD Recommendation
+            </h2>
+            <div class="w-24 h-1 bg-premium-gold mx-auto mt-6 rounded-full"></div>
+        </header>
+
+        <!-- Main Content Wrapper -->
+        <main class="glass-card rounded-2xl p-6 md:p-10 space-y-8 animate-fade" style="animation-delay: 0.2s;">
+            
+            <!-- Report Time -->
+            <div class="flex items-center justify-between border-b border-premium-border pb-4">
+                <span class="text-sm font-bold uppercase tracking-wider text-slate-500">Thời gian báo cáo</span>
+                <span class="text-sm font-bold text-premium-navy">10:39, 02/05/2026</span>
+            </div>
+
+            <!-- Detailed Analysis -->
+            <section>
+                <h3 class="text-lg font-bold text-premium-navy mb-4 border-l-4 border-premium-navy pl-3 italic">
+                    Báo cáo Tổng hợp Chi tiết
+                </h3>
+                <p class="justify-text leading-relaxed text-slate-700 first-letter:text-4xl first-letter:font-bold first-letter:mr-1 first-letter:float-left">
+                    Hệ thống AI Trade pro v6.0 phân hệ Entry Advisor đã thực hiện tổng hợp dữ liệu chuyên sâu từ các Agent thành phần cho cặp tỷ giá XAU/USD. Theo ghi nhận từ Agent 1 và Agent 0, giá vàng hiện tại ở mức 4.614,16 USD đang bám sát cấu trúc giảm điểm trên các khung thời gian trung và dài hạn như H4 và Daily. Đặc biệt, Agent 2.5 đã xác nhận sự xuất hiện của mô hình Asian Trap kết hợp với cú quét thanh khoản Judas Swing thành công tại mức 4.640,25 USD trong phiên London. Sự kiện này đã thanh lọc thanh khoản tại các vùng đỉnh phiên A, thiết lập một nến kiến kiến Bearish Engulfing trên khung H4, cho thấy phe bán đang chiếm quyền kiểm soát tuyệt đối. Về mặt phân tích cơ bản, mối đe dọa từ lạm phát PCE và quan điểm diều hâu của tân Chủ tịch Fed Kevin Warsh đang thúc đẩy sức mạnh cho đồng USD, trực tiếp gây áp lực giảm lên giá vàng bất chấp các lo ngại về địa chính trị tại eo biển Hormuz. Tuy nhiên, các yếu tố kỹ thuật đang cho thấy một cơ hội bán xuống lý tưởng nếu giá hồi quy về vùng mất cân bằng 4.628 - 4.632 USD.
+                </p>
+            </section>
+
+            <!-- Risk & Discipline -->
+            <section class="bg-premium-slate p-6 rounded-xl border border-premium-border">
+                <h3 class="text-lg font-bold text-premium-navy mb-4 italic">Kiểm tra Tâm lý và Kỷ luật</h3>
+                <p class="justify-text leading-relaxed text-slate-700">
+                    Hệ thống đã tiến hành đối soát các thông số rủi ro hiện tại với <strong>Psychology Guard System v2.0</strong> và <strong>Discipline Enforcement Rule v5.0</strong>. Dựa trên báo cáo từ Agent 3, mức sụt giảm tài sản tối đa (Max Drawdown) đang ghi nhận ở mức <strong>20%</strong>. Theo quy tắc kỷ luật nghiêm ngặt của hệ thống, bất kỳ trạng thái nào có mức Max Drawdown vượt quá <strong>8%</strong> đều phải được xếp vào loại <strong>CRITICAL</strong>. Bên cạnh đó, việc thiết lập mức rủi ro 20% (tương đương 40 USD trên tổng vốn 200 USD) cho một vị thế đơn lẻ được coi là hành vi quản trị rủi ro không thích hợp, đe dọa trực tiếp đến sự an toàn của nguồn vốn trong dài hạn và có dấu hiệu vi phạm quy tắc bảo toàn tài sản.
+                </p>
+            </section>
+
+            <!-- Final Decision / Critical Warning -->
+            <section class="bg-premium-critical p-6 rounded-xl border-2 border-premium-criticalBorder">
+                <div class="flex items-start gap-4">
+                    <div class="bg-premium-criticalText text-white p-2 rounded-lg font-bold text-xs uppercase">Warning</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-premium-criticalText mb-2">QUYẾT ĐỊNH CUỐI CÙNG</h3>
+                        <p class="justify-text leading-relaxed font-bold text-premium-criticalText">
+                            CẢNH BÁO QUẢN TRỊ RỦI RO: Hệ thống AI Trade pro v6.0 thông báo trạng thái tài khoản đang ở mức NGUY HIỂM (CRITICAL). Do chỉ số Max Drawdown thực tế đạt mức 20%, vượt xa giới hạn cho phép là 8% theo quy định tại Discipline Enforcement Rule v5.0, chuyên gia Entry Advisor quyết định đình chỉ việc đưa ra khuyến nghị thực hiện lệnh. Việc tiếp tục tham gia thị trường trong trạng thái sụt giảm tài sản lớn như hiện tại sẽ làm gia tăng áp lực tâm lý và nguy cơ cháy tài khoản. Khuyến nghị nhà đầu tư tạm dừng mọi hoạt động giao dịch, thực hiện rà soát lại nhật ký và chỉ quay trở lại thị trường khi các chỉ số tài khoản đã được phục hồi về ngưỡng an toàn quy định.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OPAL Recommendation Frame -->
+            <section class="recommendation-frame rounded-lg shadow-sm p-8 border border-premium-border animate-fade" style="animation-delay: 0.4s;">
+                <h4 class="text-center text-xl font-bold text-premium-gold mb-8 tracking-widest border-b border-premium-gold/20 pb-4">
+                    OPAL TRADE RECOMMENDATION - XAU/USD
+                </h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                        <span class="text-slate-500 font-medium">Khuyến nghị</span>
+                        <span class="font-bold text-premium-criticalText text-lg">WAIT</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                        <span class="text-slate-500 font-medium">Entry</span>
+                        <span class="font-bold text-premium-navy">N/A</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                        <span class="text-slate-500 font-medium">TP1/TP2</span>
+                        <span class="font-bold text-premium-navy">N/A</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                        <span class="text-slate-500 font-medium">Stop Loss</span>
+                        <span class="font-bold text-premium-navy">N/A</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                        <span class="text-slate-500 font-medium">Lot Size</span>
+                        <span class="font-bold text-premium-navy">0.01</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                        <span class="text-slate-500 font-medium">Confidence</span>
+                        <span class="font-bold text-premium-gold">91%</span>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <h5 class="text-sm font-bold text-premium-navy uppercase mb-2">Rationale</h5>
+                    <p class="text-sm italic justify-text text-slate-600">
+                        Hệ thống ưu tiên bảo toàn vốn khi Max Drawdown vượt ngưỡng an toàn. Mặc dù cấu trúc kỹ thuật cho thấy xu hướng giảm rõ rệt, rủi ro tâm lý và rủi ro tài khoản hiện tại không cho phép mở thêm vị thế mới.
+                    </p>
+                </div>
+
+                <!-- Psychology Guard Warning -->
+                <div class="mt-8 bg-premium-warning border border-premium-warningBorder p-4 rounded-lg">
+                    <div class="flex items-center gap-2 mb-1">
+                        <svg class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="font-bold text-amber-800 text-sm">Cảnh báo Psychology Guard</span>
+                    </div>
+                    <p class="text-xs text-amber-700 italic">Áp lực tâm lý từ mức drawdown hiện tại có thể dẫn đến các quyết định giao dịch theo cảm tính (revenge trading). Cần ngắt kết nối với thị trường ngay lập tức.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Minimalist Branding / Subtle Footer Alternative -->
+        <div class="mt-12 text-center opacity-40 hover:opacity-100 transition-opacity duration-500 animate-fade" style="animation-delay: 0.6s;">
+            <div class="flex justify-center items-center gap-4 text-xs font-bold text-premium-navy uppercase tracking-widest">
+                <span>AI Trade Pro</span>
+                <span class="h-1 w-1 bg-premium-navy rounded-full"></span>
+                <span>Systems v6.0</span>
+            </div>
+            <div class="mt-2 text-[10px] text-premium-navy font-medium italic">
+                Precision in Analysis. Discipline in Execution.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
