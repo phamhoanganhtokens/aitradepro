@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro - USOIL Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary: #286a97;
+            --primary-dark: #1e4f72;
+            --accent-red: #c0392b;
+            --accent-orange: #d35400;
+            --bg-subtle: #fcfcfc;
+            --box-bg: #f2f5f8;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #2c3e50;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            padding: 40px 60px;
+        }
+
+        @media (max-width: 640px) {
+            .main-container {
+                padding: 20px;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6, p, div {
+            text-align: justify;
+        }
+
+        .header-line {
+            height: 4px;
+            width: 80px;
+            background: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .recommendation-box {
+            border: 2px solid var(--primary);
+            background-color: var(--box-bg);
+            border-radius: 4px;
+            padding: 30px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .kv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 640px) {
+            .kv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .kv-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(40, 106, 151, 0.1);
+            padding-bottom: 5px;
+        }
+
+        .kv-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .warning-section {
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        .discipline-box {
+            border-left: 4px solid var(--accent-orange);
+            background: rgba(211, 84, 0, 0.05);
+        }
+
+        .psychology-box {
+            border-left: 4px solid var(--primary);
+            background: rgba(40, 106, 151, 0.05);
+        }
+
+        .warning-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Sophisticated UI additions */
+        .glass-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .status-badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<main class="main-container">
+    <!-- Header Section -->
+    <header class="glass-header">
+        <div class="brand-logo">AI TRADE PRO <span class="text-xs align-top opacity-50">V6.1</span></div>
+        <div class="status-badge">Live Market Analysis</div>
+    </header>
+
+    <div class="header-line"></div>
+
+    <section class="content-body">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Thời gian báo cáo: 08:11 AM, ngày 04 tháng 05 năm 2026</h2>
+        
+        <div class="space-y-6 text-lg text-gray-700">
+            <p>
+                Thị trường USOIL đang chịu áp lực bán mạnh sau khi các yếu tố cơ bản hạ nhiệt (Mỹ can thiệp hộ tống tàu tại Hormuz và OPEC+ tăng sản lượng). Về mặt kỹ thuật, cấu trúc 1H và 15m đã chuyển sang giảm hoàn toàn (Bearish). Dữ liệu từ Agent 2.5 xác nhận sự hiện diện của các bẫy tổ chức dày đặc, cho thấy phe Bán đang nắm quyền kiểm soát sau khi quét thanh khoản tại đỉnh phiên Á.
+            </p>
+
+            <h3 class="text-xl font-bold text-sky-800 mt-8 mb-4">Chi tiết Asian Trap & Judas Swing</h3>
+            <p>
+                <strong>Asian Trap (Bẫy phiên Á):</strong> Giá đã tạo một cú Breakout giả (Liquidity Sweep) vượt lên trên mức $104.99 để thu hút các nhà giao dịch mua đuổi, sau đó đảo chiều ngay lập tức. Đây là tín hiệu phân phối mạnh mẽ.
+            </p>
+            <p>
+                <strong>Judas Swing (Cú lừa London):</strong> Tại đầu phiên Âu, thị trường có một nhịp hồi giả lên vùng $102.50 trước khi tiếp tục sụt giảm, xác nhận cấu trúc dịch chuyển thị trường (MSS) sang xu hướng giảm sâu hơn.
+            </p>
+        </div>
+    </section>
+
+    <!-- Recommendation Summary Box -->
+    <section class="recommendation-box shadow-lg">
+        <h3 class="text-center text-xl font-bold mb-8 text-primary uppercase tracking-widest" style="color: var(--primary);">
+            OPAL TRADE RECOMMENDATION - USOIL
+        </h3>
+
+        <div class="kv-grid">
+            <div class="kv-item">
+                <span class="kv-label">Thời gian:</span>
+                <span>04/05/2026</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">Khuyến nghị:</span>
+                <span class="font-bold text-red-700">SELL MARKET</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">Entry:</span>
+                <span class="font-bold">101.10</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">Lot Size:</span>
+                <span>0.01</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">TP (Chốt lời):</span>
+                <span class="font-bold text-green-700">94.85</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">SL (Cắt lỗ):</span>
+                <span class="font-bold text-red-600">105.10</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">Risk:</span>
+                <span>40 USD (20%)</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">Risk/Reward:</span>
+                <span>1:1.56</span>
+            </div>
+            <div class="kv-item">
+                <span class="kv-label">Confidence:</span>
+                <span>75%</span>
+            </div>
+        </div>
+
+        <div class="mt-6 border-t border-gray-200 pt-4">
+            <h4 class="font-bold text-gray-800 mb-2">Rationale:</h4>
+            <p class="text-sm italic text-gray-600">
+                Thị trường đang trong pha phân phối rõ rệt. Sự kết hợp giữa tin tức địa chính trị hạ nhiệt và cấu trúc MSS (Market Structure Shift) tại khung thời gian thấp tạo điều kiện lý tưởng cho một nhịp giảm về vùng demand $94.85. Tỷ lệ R/R đạt mức tối ưu cho chiến lược giao dịch trong ngày.
+            </p>
+        </div>
+
+        <!-- Warning Sections inside Box -->
+        <div class="mt-8 space-y-4">
+            <div class="warning-section discipline-box">
+                <span class="warning-title text-orange-700">⚠️ Cảnh báo Kỷ luật (Discipline Enforcement Rule v5.0)</span>
+                <ul class="text-sm space-y-1 list-disc list-inside text-orange-900 opacity-90">
+                    <li><strong>Khối lượng:</strong> Bắt buộc sử dụng Lot 0.01. Không được phép nhồi lệnh.</li>
+                    <li><strong>Quản lý SL:</strong> Điểm cắt lỗ tại $105.10 (400 pips). Tuyệt đối không dời SL hoặc gồng lỗ.</li>
+                    <li><strong>Nguyên tắc:</strong> Rủi ro cao (20%). Nếu chạm SL, dừng giao dịch trong 24h.</li>
+                </ul>
+            </div>
+
+            <div class="warning-section psychology-box">
+                <span class="warning-title text-blue-800">🧠 Cảnh báo Psychology Guard (System v2.0)</span>
+                <ul class="text-sm space-y-1 list-disc list-inside text-blue-900 opacity-90">
+                    <li><strong>FOMO:</strong> Tránh hoảng loạn khi giá tiếp cận $100.00. Giữ vững mục tiêu $94.85.</li>
+                    <li><strong>Revenge Trading:</strong> Tuyệt đối không thực hiện lệnh trả thù nếu dừng lỗ.</li>
+                    <li><strong>Kiên nhẫn:</strong> Chờ đợi phản ứng tại các vùng Key Levels đã xác định.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <div class="footer pb-10">
+        <p class="text-xs text-gray-400 font-sans">
+            Báo cáo được cung cấp bởi <span class="font-bold">AI Trade Pro</span>
+        </p>
+        <p class="text-xs text-gray-500 mt-1 font-sans">
+            <a href="www.phamhoanganhtokens.com" target="_blank">www.phamhoanganhtokens.com</a>
+        </p>
+    </div>
+</main>
+
+<script>
+    // Add subtle entrance animations
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const container = document.querySelector('.main-container');
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(20px)';
+        container.style.transition = 'all 0.8s ease-out';
+        
+        setTimeout(() => {
+            container.style.opacity = '1';
+            container.style.transform = 'translateY(0)';
+        }, 100);
+    });
+</script>
+
+</body>
+</html>
