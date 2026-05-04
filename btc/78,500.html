@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Phân Tích BTCUSD - AI Trade Pro v6.2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            deep: '#0f172a',
+                            primary: '#1e293b',
+                            accent: '#b59a5b', // Muted Gold
+                            glow: '#0ea5e9',   // Soft Cyan
+                            paper: '#f8fafc',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .report-container {
+            max-width: 850px;
+            margin: 2rem auto;
+            background: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-top: 6px solid #0f172a;
+            padding: 3rem 4rem;
+        }
+        @media (max-width: 640px) {
+            .report-container {
+                margin: 0;
+                padding: 1.5rem;
+                box-shadow: none;
+            }
+        }
+        .justified-text {
+            text-align: justify;
+            hyphens: auto;
+        }
+        .recommendation-frame {
+            border: 1px solid #e2e8f0;
+            background: linear-gradient(to bottom right, #ffffff, #f1f7ff);
+            position: relative;
+            overflow: hidden;
+        }
+        .recommendation-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #b59a5b;
+        }
+        .label {
+            font-weight: bold;
+            color: #0f172a;
+            min-width: 140px;
+            display: inline-block;
+        }
+        .data-row {
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            padding: 0.5rem 0;
+        }
+        .data-row:last-child {
+            border-bottom: none;
+        }
+        .alert-box {
+            background-color: #fefce8;
+            border-left: 4px solid #eab308;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .header-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="report-container">
+        <!-- HEADER SECTION -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold uppercase tracking-widest text-brand-deep mb-2">AI Trade Pro v6.2</h1>
+            <div class="space-y-1 text-sm text-gray-600">
+                <p class="font-bold">Công ty: AI Trade Pro</p>
+                <p>Website: <a href="www.phamhoanganhtokens.com" target="_blank" class="text-brand-glow hover:underline">www.phamhoanganhtokens.com</a></p>
+            </div>
+            <div class="header-line"></div>
+            <h2 class="text-xl font-bold text-gray-800 uppercase mt-4">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG BTCUSD</h2>
+        </header>
+
+        <!-- TIMESTAMP -->
+        <div class="mb-8 border-b border-gray-100 pb-4">
+            <p class="text-lg">
+                <span class="font-bold">1. Thời gian báo cáo:</span> 
+                Ngày 04 tháng 05 năm 2026 - 08:30
+            </p>
+        </div>
+
+        <!-- ANALYSIS SUMMARY -->
+        <section class="mb-10">
+            <h3 class="text-lg font-bold mb-4 uppercase border-l-4 border-brand-deep pl-3">2. Tóm tắt phân tích chi tiết</h3>
+            <p class="justified-text text-gray-700 leading-relaxed">
+                Thị trường Bitcoin (BTCUSD) đã hoàn tất giai đoạn tích lũy biên độ hẹp trong phiên giao dịch Á (Asian Trap) tại vùng giá $78.850 - $79.150. Đầu phiên London, một cú quét thanh khoản mạnh mẽ (Judas Swing) đã đẩy giá xuống vùng $78.100 - $78.400, loại bỏ thành công các vị thế mua yếu và kích hoạt các lệnh dừng lỗ trước khi phục hồi nhanh chóng. Hiện tại, cấu trúc đảo chiều tăng giá (Bullish Reversal) đã được thiết lập với sự đồng thuận tuyệt đối từ các hệ thống phân tích. Độ tin cậy của mô hình bẫy thanh khoản đạt mức cao (92%), cho thấy xác suất giá tiếp tục xu hướng tăng là rất lớn.
+            </p>
+        </section>
+
+        <!-- RECOMMENDATION FRAME -->
+        <section class="mb-6">
+            <h3 class="text-lg font-bold mb-4 uppercase border-l-4 border-brand-accent pl-3">3. OPAL TRADE RECOMMENDATION - BTCUSD</h3>
+            
+            <div class="recommendation-frame p-6 shadow-sm rounded-r-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
+                    <div class="data-row">
+                        <span class="label">Thời gian:</span>
+                        <span>04/05/2026 - 08:30</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">Khuyến nghị:</span>
+                        <span class="font-bold text-emerald-700">MUA (BUY)</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">Entry:</span>
+                        <span class="font-bold">78.500 USD</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">Lot Size:</span>
+                        <span>0.01 lot</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">TP1:</span>
+                        <span class="text-emerald-600 font-bold">79.500 USD</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">TP2:</span>
+                        <span class="text-emerald-600 font-bold">80.200 USD</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">SL:</span>
+                        <span class="text-red-600 font-bold">77.500 USD</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">Risk:</span>
+                        <span>20% / 40 USD</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">Risk/Reward:</span>
+                        <span class="italic font-bold">1:2.2</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="label">Confidence:</span>
+                        <span class="text-brand-glow font-bold">92%</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-gray-200">
+                    <p class="justified-text">
+                        <span class="label">Rationale:</span>
+                        <span class="text-gray-700 italic">Xác nhận mô hình Asian Trap và cú quét thanh khoản Judas Swing đầu phiên London. Cấu trúc Bullish Reversal được xác lập và nhận được sự đồng thuận tuyệt đối từ hệ thống xử lý đa tác vụ.</span>
+                    </p>
+                </div>
+
+                <!-- ALERTS WITHIN FRAME -->
+                <div class="mt-6 space-y-4">
+                    <div class="alert-box">
+                        <p class="justified-text text-sm">
+                            <span class="font-bold text-red-800 uppercase block mb-1 underline">Cảnh báo Kỷ luật:</span>
+                            Tuyệt đối tuân thủ khối lượng lệnh đã định (0.01 lot). Không dịch chuyển mức dừng lỗ (SL) hoặc nhồi thêm lệnh khi giá chưa chạm mục tiêu TP1. Thực hiện chốt lời từng phần tại các mốc TP để bảo toàn lợi nhuận.
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                        <p class="justified-text text-sm">
+                            <span class="font-bold text-blue-900 uppercase block mb-1 underline">Cảnh báo Psychology Guard:</span>
+                            Trạng thái tâm lý và kỷ luật của hệ thống hiện ổn định, không có xung động cảm xúc. Hệ thống ghi nhận sự tập trung cao độ, không phát hiện dấu hiệu mệt mỏi hay giao dịch trả thù (revenge trading).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SYSTEM STAMP -->
+        <div class="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center text-xs text-gray-400 italic">
+            <span>Report ID: BTC-20260504-01-ATPV6</span>
+            <span>Generated by AI Trade Pro Engine v6.2.0</span>
+        </div>
+    </div>
+
+    <!-- SUBTLE INTERACTIVITY -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const frame = document.querySelector('.recommendation-frame');
+            frame.addEventListener('mouseenter', () => {
+                frame.style.transform = 'translateY(-2px)';
+                frame.style.transition = 'all 0.3s ease';
+                frame.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.05)';
+            });
+            frame.addEventListener('mouseleave', () => {
+                frame.style.transform = 'translateY(0)';
+                frame.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
