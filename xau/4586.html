@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v6.0 - XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffdf0',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12',
+                        },
+                        navy: {
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .justify-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gold-gradient-border {
+            border-image: linear-gradient(to right, #a16207, #eab308, #a16207) 1;
+        }
+        .recommendation-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .recommendation-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #ca8a04;
+        }
+        @keyframes subtle-pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.85; }
+            100% { opacity: 1; }
+        }
+        .animate-pulse-slow {
+            animation: subtle-pulse 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header Section -->
+        <header class="mb-10 text-center space-y-2">
+            <div class="inline-block px-4 py-1 mb-2 text-xs font-bold tracking-widest text-white uppercase bg-navy-950 rounded-full">
+                Professional Trading Terminal
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold text-navy-900 tracking-tight">
+                AI Trade Pro v6.0
+            </h1>
+            <div class="h-1 w-32 bg-gold-600 mx-auto rounded-full"></div>
+            <p class="text-xl md:text-2xl text-slate-600 mt-2 italic">XAU/USD Recommendation</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="space-y-8">
+            
+            <!-- Report Metadata -->
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                    <span class="text-sm font-semibold text-slate-500">HỆ THỐNG ĐANG HOẠT ĐỘNG</span>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-slate-500 uppercase tracking-tighter">Thời gian báo cáo</p>
+                    <p class="font-bold text-navy-900">15:01, ngày 04 tháng 05 năm 2026</p>
+                </div>
+            </div>
+
+            <!-- Detailed Analysis -->
+            <section class="glass-card p-6 md:p-10 rounded-2xl shadow-sm">
+                <h2 class="text-2xl font-bold mb-6 text-navy-900 border-l-4 border-gold-500 pl-4 uppercase tracking-wide">
+                    Báo cáo tổng hợp chi tiết
+                </h2>
+                <div class="space-y-6 text-lg leading-relaxed justify-text text-slate-800">
+                    <p>
+                        Kết quả phân tích dữ liệu từ các đơn vị quan sát thị trường thời gian thực và bộ phận phân tích chuyên sâu cho thấy một sự đồng thuận tuyệt đối về xu hướng giảm giá của cặp tiền tệ XAU/USD trên tất cả các khung thời gian từ ngắn hạn đến dài hạn. Sự thống nhất này được củng cố bởi các chỉ báo kỹ thuật như RSI và MACD đều đang nằm trong vùng tiêu cực, đồng thời giá vẫn đang vận hành dưới các đường trung bình động EMA quan trọng.
+                    </p>
+                    <p>
+                        Đặc biệt, hệ thống phát hiện bẫy giá phiên A (Agent 2.5) đã xác nhận sự xuất hiện của mô hình <strong>Judas Swing</strong> tại đầu phiên London. Theo đó, giá đã có một nhịp đẩy giá giả lên vùng 4.605,00 USD để quét thanh khoản trước khi bị bán tháo mạnh mẽ. Hành động giá này xác nhận một thiết lập "Mua giả, Bán thật" với xác suất đảo chiều xuống rất cao. Các yếu tố vĩ mô như lãi suất cao của Fed và sự ổn định của chỉ số Dollar Index tiếp tục gây áp lực lớn lên giá vàng, bất chấp những biến động địa chính trị liên quan đến chiến dịch Project Freedom tại eo biển Hormuz.
+                    </p>
+                </div>
+            </section>
+
+            <!-- OPAL RECOMMENDATION FRAME -->
+            <section class="recommendation-frame bg-white border border-slate-200">
+                <div class="bg-navy-950 p-6 flex flex-col md:flex-row justify-between items-center text-white">
+                    <div>
+                        <h3 class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase">Premium Signal</h3>
+                        <h2 class="text-2xl font-bold">OPAL TRADE RECOMMENDATION</h2>
+                    </div>
+                    <div class="mt-4 md:mt-0 px-8 py-3 bg-red-600 text-white font-black text-2xl skew-x-[-12deg] shadow-lg">
+                        SELL XAU/USD
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Left Column: Key Parameters -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-slate-100 py-2">
+                                <span class="text-slate-500 font-bold uppercase text-sm">Thời gian:</span>
+                                <span class="text-navy-900 font-bold">15:01 - 04/05/2026</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-slate-100 py-2">
+                                <span class="text-slate-500 font-bold uppercase text-sm">Khuyến nghị:</span>
+                                <span class="text-red-600 font-black">BÁN (SELL)</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-slate-100 py-2">
+                                <span class="text-slate-500 font-bold uppercase text-sm text-gold-700">Entry:</span>
+                                <span class="text-2xl font-black text-navy-900">4586,67</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-slate-100 py-2">
+                                <span class="text-slate-500 font-bold uppercase text-sm">Lot Size:</span>
+                                <span class="text-navy-900 font-bold">0.01</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-slate-100 py-2">
+                                <span class="text-slate-500 font-bold uppercase text-sm">TP1/TP2:</span>
+                                <span class="text-green-700 font-black tracking-tight">4569,80 / 4550,00</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-slate-100 py-2">
+                                <span class="text-slate-500 font-bold uppercase text-sm">Stop Loss:</span>
+                                <span class="text-red-600 font-black">4607,00</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Meta Metrics & Rationale -->
+                        <div class="flex flex-col justify-between space-y-6">
+                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                                <h4 class="text-sm font-bold text-slate-400 uppercase mb-4 tracking-widest">Confidence Index</h4>
+                                <div class="flex items-end space-x-2">
+                                    <span class="text-5xl font-black text-navy-900 italic leading-none">94</span>
+                                    <span class="text-2xl font-bold text-gold-600 leading-none pb-1">%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 mt-4 rounded-full overflow-hidden">
+                                    <div class="bg-gold-500 h-full rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="justify-text italic text-slate-600 leading-snug">
+                                <strong class="text-navy-900 block not-italic mb-1">Rationale:</strong>
+                                Thực hiện vị thế BÁN tại vùng giá hiện tại nhằm khai thác đà giảm sau cú quét thanh khoản Judas Swing. Điểm dừng lỗ đặt phía trên đỉnh Judas Swing để bảo vệ tài khoản. Tỷ lệ R/R ưu việt 1:1,8.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Warnings Section -->
+                    <div class="mt-10 space-y-4">
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                            <div class="flex items-center space-x-3 mb-1">
+                                <svg class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                <span class="font-black text-amber-800 uppercase text-sm">Cảnh báo Kỷ luật (Discipline Enforcement)</span>
+                            </div>
+                            <p class="text-amber-900 text-sm justify-text">Trạng thái hệ thống: BINH THUONG (NORMAL). Mọi chỉ số đều nằm trong ngưỡng kiểm soát. Rủi ro tính toán (20,33 USD) đạt 10,165% tổng vốn, nằm trong hạn mức quy định (dưới 20%).</p>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                            <div class="flex items-center space-x-3 mb-1">
+                                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="font-black text-blue-800 uppercase text-sm">Psychology Guard System v2.0</span>
+                            </div>
+                            <p class="text-blue-900 text-sm justify-text">Tâm lý giao dịch ổn định. Không có dấu hiệu giao dịch trả thù (Revenge Trading) hoặc hưng phấn quá độ. Điều kiện kích hoạt đã được phê duyệt.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Decision Block -->
+            <section class="py-6 border-t border-slate-200">
+                <h3 class="font-bold text-navy-900 text-xl mb-4 uppercase italic">Quyết định cuối cùng</h3>
+                <div class="p-6 bg-slate-900 text-white rounded-xl shadow-inner relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gold-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <p class="justify-text leading-relaxed relative z-10">
+                        Thực hiện vị thế BÁN (SELL) cặp XAU/USD tại vùng giá hiện tại nhằm khai thác đà giảm sau cú quét thanh khoản. Điểm dừng lỗ được đặt phía trên đỉnh Judas Swing để bảo vệ tài khoản trước các biến động bất ngờ. Điểm chốt lời được xác định dựa trên các vùng hỗ trợ kỹ thuật và tâm lý quan trọng tại vùng 4.550,00 USD. Tỷ lệ rủi ro trên lợi nhuận đạt mức ưu việt 1:1,8 và chỉ số tin cậy tổng hợp được thiết lập ở mức 94 phần trăm, phản ánh sự tự tin vào cấu trúc thị trường hiện tại.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Minimalist Footer -->
+        <footer class="mt-16 mb-8 pt-8 border-t border-slate-100 flex flex-col items-center justify-center space-y-4">
+            <div class="flex items-center space-x-4 opacity-40 grayscale hover:grayscale-0 transition-all duration-300">
+                 <span class="text-sm font-bold text-navy-900">AI TRADE PRO</span>
+                 <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+                 <a href="www.phamhoanganhtokens.com" target="_blank" class="text-sm text-slate-600 hover:text-gold-700">www.phamhoanganhtokens.com</a>
+            </div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-widest text-center px-4">
+                Phân tích định lượng được cung cấp bởi hệ thống Agentic Workflow Trade v6.0.
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
