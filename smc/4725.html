@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro - Technical Analysis Report (XAU)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',    /* Dark Blue Slate */
+                        secondary: '#1e293b',  /* Slate 800 */
+                        accent: '#d4af37',     /* Muted Gold */
+                        brand: '#0ea5e9',      /* Bright Sky Blue */
+                        background: '#f8fafc', /* Very light gray/slate */
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Noto Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        .section-line {
+            height: 3px;
+            width: 50px;
+            background: linear-gradient(90deg, #0ea5e9, #d4af37);
+            margin-bottom: 1.5rem;
+        }
+        .content-justified {
+            text-align: justify;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="font-body leading-relaxed">
 
+    <!-- Header Section -->
+    <header class="relative bg-primary text-white pt-16 pb-20 px-4 overflow-hidden">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand opacity-10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-accent opacity-5 rounded-full -ml-20 -mb-20 blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="font-display font-800 text-4xl md:text-5xl tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-brand to-white">
+                AI TRADE PRO
+            </h1>
+            <div class="inline-block h-px w-24 bg-accent/50 mb-6"></div>
+            <h2 class="font-display font-700 text-xl md:text-2xl tracking-wide uppercase mb-4 text-slate-100 px-2">
+                BÁO CÁO PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU <span class="text-accent">(XAU)</span>
+            </h2>
+            <p class="text-slate-400 font-medium text-sm md:text-base">
+                Ngày: <span id="currentDate"></span> | Dự án: <span class="text-brand">SMC & ICT</span>
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 -mt-10 mb-20">
+        <div class="glass-card rounded-2xl p-6 md:p-12 space-y-12">
+            
+            <!-- Report Introduction Section (Raw text parse) -->
+            <div class="border-b border-slate-200 pb-8 text-center italic text-slate-500">
+                <p>BÁO CÁO PHÂN TÍCH KỸ THUẬT TÀI SẢN: XAU (VÀNG)</p>
+                <p>NGÀY LẬP BÁO CÁO: 08/05/2026</p>
+            </div>
+
+            <!-- Section I -->
+            <section id="section-1" class="transition-all duration-300 hover:translate-x-1">
+                <div class="section-line"></div>
+                <h3 class="font-display font-700 text-2xl text-secondary mb-6 flex items-center">
+                    I. TỔNG QUAN THỊ TRƯỜNG & BIAS (HTF BIAS & MACRO)
+                </h3>
+                <div class="space-y-6 text-slate-700 content-justified">
+                    <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-brand">
+                        <h4 class="font-bold text-primary mb-3">1. Xu hướng thị trường:</h4>
+                        <p>Trên khung thời gian Weekly (W1), vàng duy trì xu hướng tăng giá chủ đạo. Sự kiện Giao cắt vàng (Golden Cross) được thiết lập từ đầu năm 2026 giữa đường EMA 50 và EMA 200 tiếp tục là động lực vững chắc cho phe mua trong dài hạn. Tuy nhiên, trên khung thời gian Daily (D1), giá đang bước vào giai đoạn tích lũy và điều chỉnh sau khi hình thành vùng từ chối tại mức kháng cự tâm lý 4.765 USD. Hiện tại, giá đang dao động quanh ngưỡng 4.700 USD với trạng thái trung lập đến tăng nhẹ.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-3">2. Các chỉ số kinh tế vĩ mô:</h4>
+                        <ul class="list-none space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-brand mr-2">✦</span>
+                                <span><strong>Cục Dự trữ Liên bang (FED):</strong> Lãi suất hiện tại được duy trì ở mức 3,75%. Các tuyên bố mới nhất từ FED cho thấy cam kết phụ thuộc vào dữ liệu kinh tế để quyết định các đợt cắt giảm lãi suất tiếp theo vào giữa năm 2026 nhằm hỗ trợ thị trường lao động đang có dấu hiệu hạ nhiệt.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand mr-2">✦</span>
+                                <span><strong>Lạm phát (CPI):</strong> Chỉ số CPI tháng 3 năm 2026 đạt mức 3,30%. Mặc dù vẫn cao hơn mục tiêu 2%, nhưng xu hướng ổn định của các chỉ số dẫn dắt đang giảm bớt áp lực cho phe bán.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand mr-2">✦</span>
+                                <span><strong>Chỉ số Đồng đô la Mỹ (DXY):</strong> Đang giao dịch ở mức 98,24, giảm khoảng 2,38% trong vòng 12 tháng qua. Sự suy yếu mang tính cấu trúc của DXY đang tạo ra môi trường thuận lợi cho giá vàng tiếp tục tăng trưởng.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section II -->
+            <section id="section-2" class="transition-all duration-300 hover:translate-x-1">
+                <div class="section-line"></div>
+                <h3 class="font-display font-700 text-2xl text-secondary mb-6 flex items-center">
+                    II. THANH KHOẢN VÀ DÒNG LỆNH (LIQUIDITY & ORDER FLOW)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 content-justified">
+                    <div class="p-6 border border-slate-100 rounded-xl shadow-sm bg-white">
+                        <h4 class="font-bold text-primary mb-3 border-b pb-2">1. Các vùng thanh khoản:</h4>
+                        <p class="mb-4">Vùng thanh khoản phía mua (Buy-side Liquidity) tập trung dày đặc tại các điểm cao gần nhất là 4.765 USD và 4.800 USD. Đây là mục tiêu chính của phe mua nếu giá thoát khỏi vùng tích lũy.</p>
+                        <p>Vùng thanh khoản phía bán (Sell-side Liquidity) được ghi nhận bên dưới các mức đáy thấp tại 4.650 USD và 4.635 USD.</p>
+                    </div>
+                    <div class="p-6 border border-slate-100 rounded-xl shadow-sm bg-white">
+                        <h4 class="font-bold text-primary mb-3 border-b pb-2">2. Bản đồ nhiệt thanh lý & Tỷ lệ tài trợ:</h4>
+                        <p class="mb-4">Mật độ thanh lý các lệnh bán khống (Short) đang tập trung cao ở vùng 4.722 đến 4.725 USD. Nếu giá vượt qua vùng này, một hiệu ứng Short Squeeze có thể đẩy giá lên nhanh chóng.</p>
+                        <p>Tỷ lệ tài trợ (Funding Rate) cho vàng hiện ở mức dương nhẹ (+0.01%), phản ánh tâm lý lạc quan của các nhà giao dịch nhỏ lẻ nhưng chưa đạt đến mức quá nhiệt để gây ra rủi ro đảo chiều mạnh.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section III -->
+            <section id="section-3" class="transition-all duration-300 hover:translate-x-1">
+                <div class="section-line"></div>
+                <h3 class="font-display font-700 text-2xl text-secondary mb-6 flex items-center">
+                    III. CẤU TRÚC SMC VÀ ICT (SMC/ICT STRUCTURES)
+                </h3>
+                <div class="space-y-6 text-slate-700 content-justified">
+                    <div class="p-6 rounded-xl bg-slate-900 text-slate-200">
+                        <h4 class="font-bold text-brand mb-3">1. Thay đổi tính chất (ChoCh) và Phá vỡ cấu trúc (BoS):</h4>
+                        <p>Một tín hiệu ChoCh giảm giá đã xuất hiện trên khung thời gian H1 và H4 sau khi giá chạm mức 4.765 USD, cho thấy sự chuyển dịch sang trạng thái điều chỉnh ngắn hạn. Tuy nhiên, trên khung HTF (Weekly), tín hiệu BoS tăng giá vẫn duy trì ở mức 4.500 USD, xác nhận xu hướng tổng thể vẫn là tăng.</p>
+                    </div>
+                    <div class="p-6 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-primary mb-3">2. Khối lệnh (Order Blocks) & Khoảng trống giá trị (FVG):</h4>
+                        <ul class="space-y-3">
+                            <li><span class="font-semibold text-red-600">Bearish OB:</span> Xác định tại vùng 4.722 đến 4.764 USD, đây là vùng cung quan trọng cần phải chinh phục.</li>
+                            <li><span class="font-semibold text-emerald-600">Bullish OB:</span> Nằm tại vùng 4.665 USD và một vùng OB chiết khấu sâu hơn tại 4.550 USD.</li>
+                            <li><span class="font-semibold text-blue-600">FVG (Fair Value Gap):</span> Một vùng FVG giảm giá trên khung H4 tại 4.710 đến 4.730 USD đang thu hút giá quay trở lại để lấp đầy trước khi có hướng đi mới.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section IV -->
+            <section id="section-4" class="transition-all duration-300 hover:translate-x-1">
+                <div class="section-line"></div>
+                <h3 class="font-display font-700 text-2xl text-secondary mb-6 flex items-center">
+                    IV. XÁC NHẬN VÀ ĐIỂM VÀO LỆNH (CONFIRMATION & ENTRY)
+                </h3>
+                <div class="space-y-6 content-justified">
+                    <div class="bg-blue-50/50 p-6 rounded-xl border border-blue-100">
+                        <h4 class="font-bold text-primary mb-3 uppercase tracking-wider text-sm">1. Chiến lược giao dịch:</h4>
+                        <p class="text-slate-700">Ưu tiên tìm kiếm tín hiệu mua khi giá tiếp cận vùng Bullsih OB quanh 4.650 - 4.665 USD sau khi đã quét thanh khoản sell-side. <strong>Điểm xác nhận:</strong> Cần xuất hiện tín hiệu ChoCh tăng giá trên khung M15 sau khi giá chạm vào vùng hỗ trợ hoặc lấp đầy FVG bên dưới.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
+                            <span class="block text-xs font-bold text-emerald-700 uppercase mb-1">Entry 1 (Mua)</span>
+                            <span class="text-xl font-display font-bold text-emerald-900">4.665 USD</span>
+                        </div>
+                        <div class="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                            <span class="block text-xs font-bold text-orange-700 uppercase mb-1">Entry 2 (Bán lướt sóng)</span>
+                            <span class="text-xl font-display font-bold text-orange-900">4.710 - 4.725 USD</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section V -->
+            <section id="section-5" class="transition-all duration-300 hover:translate-x-1">
+                <div class="section-line"></div>
+                <h3 class="font-display font-700 text-2xl text-secondary mb-6 flex items-center">
+                    V. QUẢN LÝ RỦI RO (RISK MANAGEMENT)
+                </h3>
+                <div class="space-y-6 content-justified">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-primary">1. Thiết lập dừng lỗ và chốt lời:</h4>
+                            <div class="space-y-2 text-sm">
+                                <p class="flex justify-between border-b pb-1"><span>Stop Loss (Dưới):</span> <span class="font-bold text-red-600">4.630 USD</span></p>
+                                <p class="flex justify-between border-b pb-1"><span>Take Profit 1:</span> <span class="font-bold text-emerald-600">4.720 USD</span></p>
+                                <p class="flex justify-between border-b pb-1"><span>Take Profit 2:</span> <span class="font-bold text-emerald-600">4.760 USD</span></p>
+                                <p class="flex justify-between border-b pb-1"><span>Long Term Target:</span> <span class="font-bold text-brand">4.850 USD</span></p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-primary">2. Khuyến nghị tỷ lệ:</h4>
+                            <p class="text-slate-700">Duy trì tỷ lệ Rủi ro/Lợi nhuận (R:R) tối thiểu <strong>1:2</strong>. Tuyệt đối không rủi ro quá <strong>1-2%</strong> tài khoản cho mỗi vị thế giao dịch.</p>
+                            <div class="p-4 bg-accent/10 rounded-lg text-sm border border-accent/20">
+                                <strong>Lưu ý:</strong> Cần đặc biệt theo dõi các động thái gom vàng từ các Ngân hàng Trung ương (như Trung Quốc) và các diễn biến địa chính trị mới hình thành.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Simple Footer (Website only) -->
+    <div class="max-w-4xl mx-auto px-4 pb-12 text-center">
+        <a href="www.phamhoanganhtokens.com" target="_blank" class="inline-flex items-center text-slate-400 hover:text-brand transition-colors font-medium">
+            <span>www.phamhoanganhtokens.com</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+    </div>
+
+    <script>
+        // Set dynamic real time
+        const dateElement = document.getElementById('currentDate');
+        const now = new Date();
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+        dateElement.textContent = now.toLocaleDateString('vi-VN', options);
+
+        // Smooth reveal on scroll (simplified logic)
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
