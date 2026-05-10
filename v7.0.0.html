@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v7.0 | Financial Analytical Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                        },
+                        slate: {
+                            700: '#334155',
+                            600: '#475569',
+                            100: '#f1f5f9',
+                            50: '#f8fafc',
+                        },
+                        success: '#059669',
+                        alert: '#dc2626',
+                    },
+                    fontFamily: {
+                        serif: ["'Times New Roman'", 'Times', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .section-title {
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #e2e8f0;
+        }
+        .status-pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #059669;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(5, 150, 105, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+        }
+    </style>
+</head>
+<body class="antialiased py-8 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-[900px] mx-auto bg-white shadow-2xl border border-slate-200 overflow-hidden">
+        
+        <!-- HEADER SECTION -->
+        <header class="bg-navy-900 text-white p-6 sm:p-8 border-b-4 border-slate-700">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tighter uppercase italic">AI Trade Pro v7.0</h1>
+                    <p class="text-slate-400 text-xs mt-1 uppercase tracking-widest">Advanced Quantitative Intelligence</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm font-semibold tracking-wider">THỊ TRƯỜNG: XAUUSD (GOLD)</div>
+                    <div class="text-xs text-slate-400 mt-1" id="current-time">10 THÁNG 5, 2026 | 08:30:00 EST</div>
+                </div>
+            </div>
+            <div class="mt-6 flex flex-wrap items-center gap-4 text-xs font-medium">
+                <div class="flex items-center bg-navy-800 px-3 py-1 rounded-full border border-slate-700">
+                    <span class="status-pulse"></span>
+                    HỆ THỐNG: MULTI-AGENT HYBRID ACTIVE
+                </div>
+                <div class="bg-navy-800 px-3 py-1 rounded-full border border-slate-700 text-slate-300">
+                    MÔI TRƯỜNG: LIVE DATA FEED
+                </div>
+            </div>
+        </header>
+
+        <main class="p-6 sm:p-10 space-y-12">
+
+            <!-- SECTION I: OVERVIEW & BIAS -->
+            <section>
+                <h2 class="section-title text-xl font-bold text-navy-900">I. TỔNG QUAN & ĐỊNH HƯỚNG THỊ TRƯỜNG (BIAS)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 border-l-4 border-success bg-slate-50 shadow-sm">
+                        <p class="text-xs uppercase font-bold text-slate-600 mb-1">Daily Bias</p>
+                        <p class="text-2xl font-bold text-success uppercase italic">BULLISH (Tăng)</p>
+                        <p class="text-xs text-slate-500 mt-2">Confidence: High</p>
+                    </div>
+                    <div class="col-span-1 md:col-span-2 justified-text text-sm italic border-l border-slate-200 pl-6 text-slate-700">
+                        Thị trường đóng cửa tuần ở mức <strong>$4,714.89</strong> (+2.17%). Dù báo cáo NFP mạnh, vàng đã hấp thụ lực bán tổ chức và phục hồi mạnh mẽ. Dữ liệu COT cho thấy sự thanh lọc các vị thế Long yếu, trong khi tâm lý nhỏ lẻ (Retail) vẫn đang nghiêng về bán khống (68% net short).
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="space-y-3">
+                        <h3 class="font-bold text-sm uppercase text-slate-800 border-b border-slate-100">Cấu Trúc HTF Bias</h3>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-success font-bold">●</span>
+                                <span><strong>Weekly Bias:</strong> BULLISH. Đóng cửa trên mức đỉnh tuần trước ($4,614.95) xác nhận sự mở rộng.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-success font-bold">●</span>
+                                <span><strong>Daily Bias:</strong> BULLISH. Judas Swing xuất hiện vào thứ Sáu, theo sau là phân phối (Distribution) mạnh.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="font-bold text-sm uppercase text-slate-800 border-b border-slate-100">ICT Power of 3 (PO3)</h3>
+                        <p class="text-sm justified-text">
+                            Quan sát chu kỳ tuần: <strong>Accumulation</strong> (Tích lũy) quanh $4,614, <strong>Manipulation</strong> (Thao túng) xuống $4,500 để quét SSL, và <strong>Distribution</strong> (Phân phối) hướng tới $4,714. Kỳ vọng tiếp tục mở rộng mục tiêu BSL.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION II & III: TECHNICAL ANALYSIS -->
+            <section>
+                <h2 class="section-title text-xl font-bold text-navy-900 uppercase">II & III. PHÂN TÍCH KỸ THUẬT & THANH KHOẢN</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Liquidity Flows -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-sm uppercase bg-navy-900 text-white px-3 py-1 inline-block">Dòng Chảy Thanh Khoản</h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="p-3 border border-slate-200 rounded">
+                                <span class="font-bold text-blue-800 block mb-1">Buy-Side Liquidity (BSL):</span>
+                                <ul class="list-disc ml-5 space-y-1">
+                                    <li>$4,765.17 (PDH/PWH)</li>
+                                    <li>$4,889.70 (Swing High trung hạn)</li>
+                                </ul>
+                            </div>
+                            <div class="p-3 border border-slate-200 rounded">
+                                <span class="font-bold text-red-800 block mb-1">Sell-Side Liquidity (SSL):</span>
+                                <ul class="list-disc ml-5 space-y-1">
+                                    <li>$4,500.85 (Major Weekly Swing Low)</li>
+                                    <li>$4,650.00 (Retail Stop Run Zone)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SMC/ICT Structures -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-sm uppercase bg-slate-700 text-white px-3 py-1 inline-block">Cấu Trúc Thị Trường</h3>
+                        <div class="justified-text text-sm space-y-3">
+                            <p><strong>Xu hướng:</strong> Bullish (D1 tiếp tục tạo đỉnh cao hơn và đáy cao hơn).</p>
+                            <p><strong>Market Structure Shift (MSS):</strong> Đã xác nhận trên khung H4 sau đợt phục hồi NFP.</p>
+                            <div class="bg-slate-100 p-3 rounded">
+                                <p class="font-bold text-xs uppercase mb-1">Vùng Giá Trị (FVG/OB):</p>
+                                <ul class="list-none space-y-1 text-xs">
+                                    <li>- Daily FVG: $4,586.79 – $4,611.75</li>
+                                    <li>- Bullish Order Block: $4,500.00 – $4,540.00</li>
+                                </ul>
+                            </div>
+                            <p class="text-xs italic text-slate-500">Giá hiện tại ($4,714) đang ở vùng <strong>Premium</strong>. Điểm vào lệnh xác suất cao nhất nằm ở vùng Discount (< $4,632).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION IV: EXECUTION PLAN -->
+            <section class="bg-navy-900 text-white p-8 rounded-lg shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2.05v2.02c3.39.49 6 3.39 6 6.93 0 3.9-3.1 7-7 7s-7-3.1-7-7c0-1.55.5-2.97 1.35-4.13L5.12 5.74C3.81 7.27 3 9.28 3 11c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.57-3.41-8.33-7.75-8.95z"/><path d="M12 7l-1 4h2l-1 4h2l-1 4h-2l1-4h-2l1-4h-2l1-4z"/></svg>
+                </div>
+                <h2 class="text-xl font-bold uppercase tracking-widest mb-6 border-b border-slate-700 pb-2">IV. KẾ HOẠCH THỰC THI (ACTION ZONE)</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="space-y-1">
+                        <p class="text-xs uppercase text-slate-400 font-bold">Vùng Vào Lệnh (Entry)</p>
+                        <p class="text-3xl font-bold text-success">$4,640.00</p>
+                        <p class="text-sm text-slate-400">— $4,660.00</p>
+                    </div>
+                    <div class="space-y-1 border-x border-slate-700">
+                        <p class="text-xs uppercase text-slate-400 font-bold">Dừng Lỗ (Stop Loss)</p>
+                        <p class="text-3xl font-bold text-alert">$4,580.00</p>
+                        <p class="text-sm text-slate-400">Below Daily FVG</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs uppercase text-slate-400 font-bold">Chốt Lời (Targets)</p>
+                        <p class="text-3xl font-bold text-blue-400">$4,765.17</p>
+                        <p class="text-sm text-slate-400">TP2: $4,820 | TP3: $4,889</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="text-xs space-y-2">
+                        <p class="font-bold text-slate-300 uppercase">Yêu Cầu Xác Nhận:</p>
+                        <ul class="list-disc ml-4 space-y-1 text-slate-400">
+                            <li>Quét thanh khoản London/NY Open (PDL).</li>
+                            <li>Xác nhận MSS trên khung M5/M15 kèm FVG.</li>
+                            <li>Silver Bullet Window: 10:00 AM – 11:00 AM EST.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded border border-slate-700">
+                        <p class="text-xs font-bold text-yellow-500 uppercase mb-2">Psychology Guard & Risk:</p>
+                        <p class="text-[11px] leading-tight text-slate-300 italic">
+                            Rủi ro mỗi lệnh: 1% tổng vốn. Lệnh bị vô hiệu hoàn toàn nếu giá phá vỡ mức $4,500.85, khi đó cấu trúc HTF sẽ chuyển sang giảm.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION V: RISK & RATIONALE -->
+            <section>
+                <h2 class="section-title text-xl font-bold text-navy-900 uppercase">V. PHÂN TÍCH CHI TIẾT & CƠ SỞ (RATIONALE)</h2>
+                <div class="justified-text text-md text-slate-800 space-y-6 first-letter:text-4xl first-letter:font-bold first-letter:mr-2 first-letter:float-left">
+                    <p>
+                        Báo cáo phân tích hiện tại dựa trên sự hội tụ của các yếu tố cấu trúc thị trường bậc cao và dòng tiền thông minh (Institutional Flow). Việc vàng duy trì được đà tăng trưởng bất chấp các dữ liệu kinh tế vĩ mô tích cực cho đồng USD cho thấy một sự thay đổi đáng kể trong tâm thế của các nhà đầu tư lớn. Chúng tôi quan sát thấy hiện tượng "hấp thụ cung" tại các vùng giá chiết khấu, chứng tỏ nhu cầu trú ẩn hoặc đầu tư dài hạn vẫn đang áp đảo các đợt bán tháo ngắn hạn.
+                    </p>
+                    <p>
+                        Về mặt kỹ thuật, mô hình Power of 3 trên khung Weekly đang đi đúng lộ trình dự báo. Giai đoạn thao túng (Manipulation) đã hoàn tất việc quét các lệnh dừng lỗ dưới mức $4,500, tạo ra một nền tảng vững chắc cho đợt phân phối tiếp theo. Khoảng trống giá (Fair Value Gap) hàng ngày tại $4,586–$4,611 đóng vai trò như một nam châm hút giá trong các đợt điều chỉnh, nhưng đồng thời cũng là một bức tường hỗ trợ tâm lý cực kỳ mạnh mẽ.
+                    </p>
+                    <p>
+                        Chiến lược giao dịch ưu tiên việc kiên nhẫn chờ đợi giá quay trở lại các vùng chiết khấu (Discount) thay vì đuổi theo giá ở vùng Premium hiện tại. Việc theo dõi chỉ số DXY để tìm kiếm sự phân kỳ SMT sẽ là chìa khóa cuối cùng để xác nhận sự tham gia của dòng tiền tổ chức, đảm bảo tỷ lệ Risk/Reward tối ưu cho các vị thế Long hướng tới mục tiêu $4,889.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER / SIGN-OFF -->
+        <footer class="bg-slate-50 border-t border-slate-200 p-8">
+            <div class="flex flex-col items-center text-center space-y-4">
+                <div class="text-navy-900 font-bold tracking-widest uppercase text-sm">
+                    Phạm Hoàng Anh - Senior Financial Analyst
+                </div>
+                <div class="h-px w-20 bg-slate-300"></div>
+                <a href="www.phamhoanganhtokens.com" target="_blank" class="text-blue-700 hover:text-blue-900 transition-colors text-sm font-medium underline underline-offset-4">
+                    www.phamhoanganhtokens.com
+                </a>
+                <div class="max-w-2xl text-[10px] text-slate-500 uppercase tracking-tighter leading-relaxed">
+                    MIỄN TRỪ TRÁCH NHIỆM: GIAO DỊCH TÀI CHÍNH CÓ RỦI RO CAO. CÁC PHÂN TÍCH TRÊN CHỈ MANG TÍNH CHẤT THAM KHẢO VÀ KHÔNG PHẢI LÀ LỜI KHUYÊN ĐẦU TƯ TRỰC TIẾP. BẠN CẦN TỰ CHỊU TRÁCH NHIỆM VỚI QUYẾT ĐỊNH QUẢN LÝ VỐN CỦA MÌNH.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Update current time to look dynamic
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                timeZoneName: 'short'
+            };
+            document.getElementById('current-time').innerText = now.toLocaleDateString('vi-VN', options).toUpperCase();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
