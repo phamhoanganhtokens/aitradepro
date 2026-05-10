@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v7.1 - Báo Cáo Phân Tích Kỹ Thuật</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#002147',
+                        slate: '#f4f4f9',
+                        gold: '#b8964d',
+                        success: '#10b981', // Emerald Green
+                        danger: '#e11d48', // Crimson Red
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e5e7eb;
+            font-family: 'Times New Roman', serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .report-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #d1d5db;
+        }
+        /* Watermark effect */
+        .report-container::before {
+            content: "AI TRADE PRO v7.1";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            font-weight: bold;
+            color: rgba(0, 33, 71, 0.03);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .section-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            border-left: 4px solid #002147;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: #002147;
+            letter-spacing: 0.05em;
+            background: linear-gradient(90deg, #f4f4f9 0%, transparent 100%);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        p, .justify-text {
+            text-align: justify;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .badge-bullish { background-color: #d1fae5; color: #065f46; }
+        .badge-bearish { background-color: #fee2e2; color: #991b1b; }
+        .badge-neutral { background-color: #f3f4f6; color: #374151; }
+
+        .execution-box {
+            background-color: #fffbeb;
+            border: 2px solid #b8964d;
+            position: relative;
+        }
+        .execution-box::after {
+            content: "PRIORITY EXECUTION";
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #b8964d;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            font-weight: bold;
+        }
+
+        .confidence-bar-bg {
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .confidence-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #002147, #b8964d);
+            width: 85%; /* Confidence Score Value */
+            transition: width 1.5s ease-in-out;
+        }
+
+        @media (max-width: 640px) {
+            .report-container { margin: 0; border: none; }
+            .header-meta { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body class="p-0 sm:p-4">
+
+    <!-- Psychological Guard Alert Banner -->
+    <div class="max-w-[900px] mx-auto mb-4 bg-danger text-white px-6 py-3 shadow-lg flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 17c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span class="font-bold tracking-wide uppercase text-sm">Psychology Guard: Độ biến động cực cao phát hiện - Yêu cầu kỷ luật tuyệt đối</span>
+        </div>
+    </div>
+
+    <div class="report-container p-8 sm:p-12 relative z-10">
+        
+        <!-- Header Section -->
+        <header class="border-b-4 border-navy pb-6 mb-10">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h2 class="text-navy font-bold text-xl tracking-tighter">AI TRADE PRO <span class="text-gold">v7.1</span></h2>
+                    <h1 class="text-3xl font-bold text-navy mt-2 mb-1">BÁO CÁO PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU</h1>
+                    <p class="italic text-gray-600">Institutional Grade Financial Intelligence</p>
+                </div>
+                <div class="text-right hidden sm:block">
+                    <p class="text-xs font-bold text-gray-400">CLASSIFIED DOCUMENT</p>
+                    <p class="text-xs text-gray-400">ID: #XAU-2026-0510-MAI</p>
+                </div>
+            </div>
+            
+            <div class="header-meta flex flex-wrap gap-6 mt-6 pt-4 border-t border-gray-100 text-sm font-bold text-navy">
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px]">Symbol:</span>
+                    <span>XAU/USD (GOLD)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px]">Date:</span>
+                    <span>MAY 10, 2026</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px]">Status:</span>
+                    <span class="text-success uppercase">Market Open</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section I: Overview -->
+        <section class="mb-12">
+            <h3 class="section-title">I. Tổng quan thị trường & Dữ liệu vĩ mô</h3>
+            <div class="bg-slate p-6 rounded-sm mb-6">
+                <p class="mb-4">
+                    Tính đến ngày 10/05/2026, thị trường vàng (XAU/USD) đang trong giai đoạn tích lũy sau một đợt biến động mạnh đầu năm, hiện giao dịch quanh mức <strong>$4,713 – $4,716/oz</strong>.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border-l-2 border-navy pl-4">
+                        <h4 class="font-bold text-navy text-sm uppercase mb-2">Động lực thị trường</h4>
+                        <ul class="text-sm space-y-2 list-disc ml-4">
+                            <li>Hiệu suất: Duy trì đà tăng trưởng mạnh mẽ 42% YoY.</li>
+                            <li>Địa chính trị: Hy vọng thỏa thuận Mỹ-Iran làm giảm phí bảo hiểm rủi ro.</li>
+                        </ul>
+                    </div>
+                    <div class="border-l-2 border-navy pl-4">
+                        <h4 class="font-bold text-navy text-sm uppercase mb-2">Chỉ số kinh tế</h4>
+                        <ul class="text-sm space-y-2 list-disc ml-4">
+                            <li>DXY & Lợi suất 10Y (1.85%): Xu hướng sụt giảm hỗ trợ lực mua.</li>
+                            <li>Việc làm Mỹ: 115k (Dự báo 62k) gây nhiễu lộ trình lãi suất Fed.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm italic border-t border-gray-200 pt-3">
+                    <strong>Nhu cầu dài hạn:</strong> Các ngân hàng trung ương (Trung Quốc, Ba Lan, Uzbekistan) tiếp tục tích trữ vàng chiến lược trong bối cảnh phi Dollar hóa.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-navy text-white text-xs uppercase tracking-wider">
+                            <th class="p-3 border border-navy">Khung thời gian</th>
+                            <th class="p-3 border border-navy">Định hướng (Bias)</th>
+                            <th class="p-3 border border-navy">Động lực chính</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr>
+                            <td class="p-3 border font-bold">Tháng (Monthly)</td>
+                            <td class="p-3 border"><span class="badge badge-bullish">Tăng giá</span></td>
+                            <td class="p-3 border">Tăng trưởng 42% YoY; Nhu cầu bền vững từ các NH Trung ương.</td>
+                        </tr>
+                        <tr class="bg-slate/50">
+                            <td class="p-3 border font-bold">Tuần (Weekly)</td>
+                            <td class="p-3 border"><span class="badge badge-bullish">Tăng giá</span></td>
+                            <td class="p-3 border">HGNSI chạm đáy cực đoan (tín hiệu đảo chiều); DXY suy yếu.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 border font-bold">Ngày (Daily)</td>
+                            <td class="p-3 border"><span class="badge badge-neutral">Trung lập</span></td>
+                            <td class="p-3 border">Đang tích lũy; chờ phá vỡ đường EMA 50 ngày tại vùng $4,800.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section II: SMC/ICT -->
+        <section class="mb-12">
+            <h3 class="section-title">II. Cấu trúc thị trường & Các vùng giá trị (SMC/ICT)</h3>
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1 p-5 border border-gray-100 shadow-sm bg-white">
+                        <h4 class="font-bold text-success text-sm mb-3 uppercase flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-success"></span> Vùng Cầu (Demand Zones)
+                        </h4>
+                        <div class="space-y-3">
+                            <div>
+                                <span class="font-bold block text-lg">$4,613 – $4,645</span>
+                                <p class="text-xs text-gray-500 italic">Bullish OB + Fibo 38.2%. Điểm khởi đầu của dòng tiền lớn.</p>
+                            </div>
+                            <div class="pt-2 border-t border-gray-50">
+                                <span class="font-bold block text-sm text-gray-700">FVG Tăng (BISI): $4,650 – $4,685</span>
+                                <p class="text-xs text-gray-400">Vùng mất cân bằng giá cần được lấp đầy.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-5 border border-gray-100 shadow-sm bg-white">
+                        <h4 class="font-bold text-danger text-sm mb-3 uppercase flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-danger"></span> Vùng Cung (Supply Zones)
+                        </h4>
+                        <div class="space-y-3">
+                            <div>
+                                <span class="font-bold block text-lg">$4,800 – $4,860</span>
+                                <p class="text-xs text-gray-500 italic">Bearish OB + EMA 50 + Fibo 50%. Kháng cự kỹ thuật then chốt.</p>
+                            </div>
+                            <div class="pt-2 border-t border-gray-50">
+                                <span class="font-bold block text-sm text-gray-700">FVG Giảm (SIBI): $4,920 – $5,050</span>
+                                <p class="text-xs text-gray-400">Nam châm thanh khoản khổng lồ phía trên.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-navy text-white text-sm">
+                    <strong>Xác nhận cấu trúc (CHoCH):</strong> Khung H4 đã chính thức xác nhận dịch chuyển sang xu hướng tăng sau khi phá vỡ mức hỗ trợ quan trọng tại <strong>$4,645</strong>.
+                </div>
+            </div>
+        </section>
+
+        <!-- Section III: Liquidity -->
+        <section class="mb-12">
+            <h3 class="section-title">III. Phân tích Thanh khoản & Bẫy giá (Liquidity & Asian Trap)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h4 class="text-sm font-bold text-gray-600 uppercase mb-4 tracking-widest">Dòng chảy thanh khoản</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-slate border-r-4 border-success">
+                            <span class="font-bold text-navy">Buy-Side Liquidity (BSL)</span>
+                            <span class="font-bold">$4,775 – $4,800</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-slate border-r-4 border-danger">
+                            <span class="font-bold text-navy">Sell-Side Liquidity (SSL)</span>
+                            <span class="font-bold">$4,613 – $4,645</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded border border-dashed border-gray-300">
+                    <h4 class="text-sm font-bold text-navy uppercase mb-3">Kịch bản Bẫy giá châu Á (Asian Trap)</h4>
+                    <p class="text-sm italic mb-3">Dự báo biên độ phiên Á: $4,705 – $4,730</p>
+                    <p class="text-sm leading-relaxed">
+                        Thị trường có khả năng tạo một cú <strong>đẩy giả (Fakeout)</strong> lên mức $4,745 để bẫy phe mua sớm, sau đó quay đầu quét sạch <strong>SSL tại $4,645</strong> trước khi thiết lập đà tăng trưởng bền vững hướng tới mục tiêu trung hạn.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section IV: Execution Plan -->
+        <section class="mb-12">
+            <h3 class="section-title">IV. Kế hoạch Giao dịch (Execution)</h3>
+            <div class="space-y-8">
+                <!-- Aggressive Setup -->
+                <div class="execution-box p-6 shadow-md">
+                    <h4 class="text-gold font-bold text-lg mb-4 border-b border-gold/20 pb-2">SETUP 1: GIAO DỊCH THEO BẪY GIÁ (AGGRESSIVE)</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <span class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Entry Zone</span>
+                            <p class="text-xl font-bold text-navy">$4,635 – $4,642</p>
+                            <p class="text-[10px] italic text-gray-400">Chờ nến rút chân tại $4,645</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Stop Loss</span>
+                            <p class="text-xl font-bold text-danger">$4,595</p>
+                            <p class="text-[10px] italic text-gray-400">Dưới hỗ trợ $4,613</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Take Profit</span>
+                            <p class="text-xl font-bold text-success">$4,775 | $4,800</p>
+                            <p class="text-[10px] italic text-gray-400">Tỷ lệ R:R dự kiến ~ 1:3.5</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conservative Setup -->
+                <div class="border-2 border-navy/10 p-6 bg-slate/30">
+                    <h4 class="text-navy font-bold text-lg mb-4 border-b border-navy/10 pb-2">SETUP 2: XÁC NHẬN CẤU TRÚC (CONSERVATIVE)</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <span class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Entry Zone</span>
+                            <p class="text-xl font-bold text-navy">$4,815</p>
+                            <p class="text-[10px] italic text-gray-400">Đóng nến trên EMA 50</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Stop Loss</span>
+                            <p class="text-xl font-bold text-danger">$4,755</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Take Profit</span>
+                            <p class="text-xl font-bold text-success">$4,895 | $5,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section V: Risk -->
+        <section class="mb-12">
+            <h3 class="section-title">V. Quản trị Rủi ro & Tâm lý Giao dịch</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
+                    <h4 class="text-xs font-bold text-gray-500 uppercase mb-2">Confidence Score</h4>
+                    <div class="text-4xl font-bold text-navy">85%</div>
+                    <div class="confidence-bar-bg">
+                        <div class="confidence-bar-fill"></div>
+                    </div>
+                    <p class="text-[11px] text-gray-400 mt-4 uppercase font-bold">Analysis Strength: HIGH</p>
+                </div>
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex gap-4">
+                        <span class="text-navy font-bold">01.</span>
+                        <p class="text-sm">Hạ tỷ lệ đòn bẩy 50%. Rủi ro mỗi lệnh tối đa <strong>0.25% – 0.5%</strong> tài khoản do biến động giá mạnh (~$47/ngày).</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-navy font-bold">02.</span>
+                        <p class="text-sm">Sử dụng biên độ <strong>1.5x ATR</strong> cho Stop Loss để tránh nhiễu thị trường (Market Noise).</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-navy font-bold">03.</span>
+                        <p class="text-sm">Kỷ luật tin tức: Tuyệt đối không giao dịch 15 phút đầu khi có tin CPI/PPI để tránh trượt giá (Slippage).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rationale Section -->
+        <section class="mt-16 pt-8 border-t-2 border-gray-100">
+            <h3 class="text-lg font-bold text-navy mb-4 text-center">RATIONALE: LOGIC PHÂN TÍCH TỪ 6 AGENTS</h3>
+            <div class="text-gray-700 space-y-4 text-sm leading-relaxed">
+                <p>
+                    Hệ thống AI Trade Pro v7.1 tổng hợp dữ liệu từ 6 tác nhân phân tích độc lập để đưa ra báo cáo này. Logic cốt lõi dựa trên sự hội tụ giữa yếu tố vĩ mô dài hạn (nhu cầu từ các Ngân hàng Trung ương và sự suy yếu của đồng Dollar) và cấu trúc kỹ thuật vi mô (SMC). Việc chỉ số HGNSI chạm đáy cực đoan cho thấy tâm lý bi quan đã đạt đỉnh, thường là dấu hiệu của một đợt đảo chiều mạnh mẽ.
+                </p>
+                <p>
+                    Mặc dù cấu trúc Daily hiện tại là trung lập, sự phá vỡ cấu trúc H4 (CHoCH) là tín hiệu sớm cho thấy dòng tiền thông minh đang bắt đầu tích lũy. Chúng tôi dự đoán một kịch bản "Liquidity Sweep" (quét thanh khoản) điển hình trong phiên Á/Âu để loại bỏ các vị thế yếu trước khi đẩy giá vượt qua ngưỡng cản tâm lý $4,800. Việc duy trì ký quỹ trên 300% là điều kiện tiên quyết để bảo vệ tài khoản trước các biến động địa chính trị bất ngờ từ khu vực Trung Đông.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="mt-20 text-center border-t border-gray-100 pt-8">
+            <p class="text-sm font-bold text-navy mb-2">www.phamhoanganhtokens.com</p>
+            <p class="text-[10px] text-gray-400 uppercase tracking-widest max-w-md mx-auto leading-normal">
+                Bản báo cáo này chỉ mang tính chất tham khảo. Đầu tư tài chính luôn tiềm ẩn rủi ro mất vốn. AI Trade Pro không chịu trách nhiệm cho các quyết định cá nhân của nhà đầu tư.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Script for simple interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("AI Trade Pro v7.1 Report Initialized");
+            // Micro-animation for confidence bar
+            setTimeout(() => {
+                const fill = document.querySelector('.confidence-bar-fill');
+                if(fill) fill.style.width = '85%';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
+
