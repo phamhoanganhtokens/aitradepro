@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v7.1 - Báo Cáo Phân Tích Kỹ Thuật</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary-navy: #002147;
+            --accent-gold: #c5a059;
+            --bg-slate: #f4f4f9;
+            --bullish-green: #065f46;
+            --bearish-red: #991b1b;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Watermark effect */
+        .report-container::before {
+            content: "AI TRADE PRO v7.1";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            opacity: 0.02;
+            z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Times New Roman', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            color: var(--primary-navy);
+            border-left: 4px solid var(--primary-navy);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+            background: linear-gradient(to right, #f4f4f9, #ffffff);
+        }
+
+        p, li {
+            text-align: justify;
+            margin-bottom: 0.75rem;
+        }
+
+        .metadata-bar {
+            border-top: 2px solid var(--primary-navy);
+            border-bottom: 1px solid #ddd;
+            padding: 0.75rem 0;
+            margin: 1.5rem 0 2.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .execution-box {
+            background-color: #f0f7ff;
+            border: 2px solid #002147;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .execution-box::after {
+            content: "OFFICIAL SIGNAL";
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 2px 10px;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+
+        .badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge-green { background-color: #d1fae5; color: var(--bullish-green); border: 1px solid var(--bullish-green); }
+        .badge-red { background-color: #fee2e2; color: var(--bearish-red); border: 1px solid var(--bearish-red); }
+        .badge-navy { background-color: #e0e7ff; color: var(--primary-navy); border: 1px solid var(--primary-navy); }
+
+        .confidence-gauge {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-navy), #3b82f6);
+            width: 75%; /* Based on content sentiment */
+        }
+
+        .risk-alert {
+            background-color: #fff5f5;
+            border: 1px solid var(--bearish-red);
+            color: var(--bearish-red);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .report-container { padding: 1.5rem; }
+            .metadata-bar { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="report-container relative z-10">
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <div class="text-xs tracking-widest text-gray-500 mb-2">INSTITUTIONAL GRADE ANALYSIS</div>
+            <h1 class="text-3xl md:text-4xl font-bold text-navy-900" style="color: #002147;">AI TRADE PRO v7.1</h1>
+            <h2 class="text-xl md:text-2xl mt-2 italic text-gray-700">BÁO CÁO PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU</h2>
+            
+            <div class="metadata-bar">
+                <span>TÀI SẢN: BITCOIN (BTC)</span>
+                <span>GIÁ: ~$80.672</span>
+                <span>CẬP NHẬT: 02:26 AM EDT, 10/05/2026</span>
+            </div>
+        </header>
+
+        <!-- Risk Alert Banner -->
+        <div class="risk-alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <div>
+                <strong class="uppercase">Cảnh báo Tâm lý:</strong> FED chuyển giao quyền lực & rủi ro lạm phát đình trệ có thể kích hoạt biến động mạnh.
+            </div>
+        </div>
+
+        <!-- Section I: HTF Bias -->
+        <section class="mb-10">
+            <h3 class="section-title">I. XU HƯỚNG KHUNG THỜI GIAN LỚN (HTF BIAS)</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-4">
+                <div class="bg-gray-50 p-4 border border-gray-200">
+                    <h4 class="font-bold text-sm text-gray-600 mb-2">XU HƯỚNG CHỦ ĐẠO</h4>
+                    <p class="text-sm">BTC xác nhận breakout khỏi kênh giá giảm. Hiện đang giao dịch trên MA 100 ($72.352) và Bull Market Support Band ($79.000). Trạng thái: <strong>Buy-the-dip.</strong></p>
+                </div>
+                <div class="bg-gray-50 p-4 border border-gray-200">
+                    <h4 class="font-bold text-sm text-gray-600 mb-2">ĐỘNG LƯỢNG VĨ MÔ</h4>
+                    <div class="flex items-center gap-2">
+                        <span class="badge badge-green">Tích cực</span>
+                        <span class="text-sm">Cấu trúc xây dựng bền vững.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <span class="font-bold">Vùng Kháng cự:</span>
+                    <ul class="list-disc ml-5 mt-1">
+                        <li><strong>$82.000 – $83.300:</strong> Hội tụ EMA 200 ngày. Cửa ngõ quan trọng hướng tới $90.000.</li>
+                        <li><strong>$85.000:</strong> Kháng cự tâm lý và cụm nguồn cung (supply cluster).</li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="font-bold">Vùng Hỗ trợ:</span>
+                    <ul class="list-disc ml-5 mt-1">
+                        <li><strong>$79.000:</strong> Hỗ trợ cấu trúc tức thời (S/R Flip).</li>
+                        <li><strong>$78.000:</strong> Sàn thanh khoản (Liquidity floor) trọng yếu.</li>
+                        <li><strong>$72.352:</strong> MA 100 ngày (Ranh giới vĩ mô).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section II: Liquidity -->
+        <section class="mb-10 p-6 bg-slate-50 border-l-4 border-navy-900" style="background-color: #f4f4f9;">
+            <h3 class="section-title">II. THANH KHOẢN & BẪY PHIÊN Á</h3>
+            <div class="space-y-6">
+                <div>
+                    <h4 class="text-navy-800 font-bold mb-1">Thanh khoản phía trên (Buy-side):</h4>
+                    <p>Hình thành "Bức tường Kháng cự" tại <strong>$82.000 - $84.000</strong>. Đây là vùng tập trung lệnh buy-stop của phe Short. Một nhịp Short Squeeze tại đây sẽ đẩy giá mạnh lên $85.500.</p>
+                </div>
+                <div>
+                    <h4 class="text-navy-800 font-bold mb-1">Thanh khoản phía dưới (Sell-side):</h4>
+                    <p>Tại <strong>$78.000</strong> tập trung hơn 3,1 tỷ USD lệnh thanh lý Long. Vùng <strong>$70.000</strong> là bể thanh khoản HTF lớn phục vụ các tổ chức.</p>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <p><strong>Động lượng Phiên Á:</strong> Biên độ hẹp ($79.149 - $80.627). Giá đang tích lũy sát biên trên, cảnh báo khả năng mở rộng biên độ (Expansion) hoặc bẫy thanh khoản (Fakeout) khi vào phiên London/New York.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section III: SMC/ICT -->
+        <section class="mb-10">
+            <h3 class="section-title">III. CẤU TRÚC SMC/ICT</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div class="text-center p-3 border border-gray-200">
+                    <div class="text-xs text-gray-500 uppercase">BOS</div>
+                    <div class="font-bold text-green-700">TĂNG (Daily)</div>
+                </div>
+                <div class="text-center p-3 border border-gray-200">
+                    <div class="text-xs text-gray-500 uppercase">CHoCH</div>
+                    <div class="font-bold text-green-700">TĂNG (4H)</div>
+                </div>
+                <div class="text-center p-3 border border-gray-200">
+                    <div class="text-xs text-gray-500 uppercase">FVG/Gap</div>
+                    <div class="font-bold text-blue-700">CME GAP</div>
+                </div>
+                <div class="text-center p-3 border border-gray-200">
+                    <div class="text-xs text-gray-500 uppercase">Order Flow</div>
+                    <div class="font-bold text-green-700">BULLISH</div>
+                </div>
+            </div>
+            <ul class="space-y-3">
+                <li><strong>Order Blocks:</strong> Bullish OB mạnh tại <strong>$75.000 - $77.000</strong> (Khởi nguồn breakout).</li>
+                <li><strong>Fair Value Gap:</strong> Đang lấp đầy Gap CME giữa <strong>$79.660 - $83.730</strong>. Thị trường tìm kiếm sự cân bằng trong vùng mất cân bằng này.</li>
+            </ul>
+        </section>
+
+        <!-- Section IV: Execution -->
+        <section class="mb-10">
+            <h3 class="section-title">IV. KẾ HOẠCH GIAO DỊCH (EXECUTION)</h3>
+            <div class="execution-box">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-navy-900 border-b border-navy-200 pb-2 mb-4">THIẾT LẬP MUA (LONG)</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Vùng Vào Lệnh:</span>
+                                <span class="font-bold text-lg">$79.000 – $79.600</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Dừng Lỗ (SL):</span>
+                                <span class="font-bold text-red-700 text-lg">Dưới $77.800</span>
+                            </div>
+                            <div class="flex justify-between items-center border-t border-navy-100 pt-2">
+                                <span class="text-gray-600">Chốt Lời (TP1):</span>
+                                <span class="font-bold">$82.000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Chốt Lời (TP2):</span>
+                                <span class="font-bold">$83.300</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Mục tiêu Max:</span>
+                                <span class="font-bold text-green-700">$85.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 border-b border-navy-200 pb-2 mb-4">THÔNG SỐ LỆNH</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-navy-900 rounded-full"></div>
+                                <span>Tỷ lệ R:R kỳ vọng: <strong>1:2.5 – 1:3</strong></span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-navy-900 rounded-full"></div>
+                                <span>Rủi ro đề xuất: <strong>1-2% Vốn</strong></span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-navy-900 rounded-full"></div>
+                                <span>Xác nhận: CHoCH M15 hoặc Pinbar H1</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-navy-900 rounded-full"></div>
+                                <span>Lưu ý: Đánh Breakout nếu đóng nến trên $83.300</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section V: Risk -->
+        <section class="mb-10">
+            <h3 class="section-title">V. QUẢN TRỊ RỦI RO & CHỈ SỐ</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 border border-gray-200 rounded-sm">
+                    <span class="text-xs text-gray-500 uppercase">Chỉ số Tham lam & Sợ hãi</span>
+                    <div class="text-2xl font-bold text-gray-700 mt-1">47 <span class="text-sm font-normal">(Trung lập)</span></div>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-sm">
+                    <span class="text-xs text-gray-500 uppercase">Dòng tiền ETF (7/5)</span>
+                    <div class="text-2xl font-bold text-red-600 mt-1">-$268M <span class="text-sm font-normal">(Rút ròng)</span></div>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-sm">
+                    <span class="text-xs text-gray-500 uppercase">Confidence Score</span>
+                    <div class="text-2xl font-bold text-navy-900 mt-1">75%</div>
+                    <div class="confidence-gauge">
+                        <div class="confidence-fill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 p-4 bg-red-50 border border-red-100 italic text-sm text-red-800">
+                Khuyến nghị: Duy trì kỷ luật nghiêm ngặt với điểm Stop Loss được chỉ định, tuyệt đối không gồng lỗ dưới mức $78.000 để tránh các nhịp "flush" bất ngờ từ biến số vĩ mô.
+            </div>
+        </section>
+
+        <!-- Rationale Section -->
+        <section class="mb-12">
+            <h3 class="section-title">LUẬN ĐIỂM PHÂN TÍCH (RATIONALE)</h3>
+            <div class="bg-gray-50 p-6 border border-gray-200 text-sm leading-relaxed space-y-4">
+                <p>
+                    Hệ thống 6 tác nhân (Agents) của AI Trade Pro v7.1 cho thấy một bức tranh thị trường đang ở giai đoạn chuyển giao quan trọng. Sau một thời gian dài tích lũy và điều chỉnh, Bitcoin đã thành công thiết lập cấu trúc tăng giá (Bullish CHoCH) trên khung 4H và phá vỡ cấu trúc giảm trên khung Daily. Việc lấy lại các mốc MA quan trọng cho thấy phe mua đang dần kiểm soát lại thế trận.
+                </p>
+                <p>
+                    Tuy nhiên, báo cáo nhấn mạnh sự thận trọng do sự tồn tại của các vùng thanh khoản lớn phía dưới ($78.000) và áp lực từ dòng vốn ETF đang có dấu hiệu hạ nhiệt. Thị trường hiện đang nằm trong vùng "mất cân bằng" (CME Gap), điều này thường dẫn đến các nhịp dao động khó lường trước khi tìm được hướng đi thực sự. Sự kiện vĩ mô ngày 15/5 liên quan đến FED và giá dầu leo thang là những biến số có thể làm đảo lộn các phân tích kỹ thuật thuần túy. 
+                </p>
+                <p>
+                    Do đó, chiến lược tối ưu lúc này là tận dụng các nhịp quét thanh khoản tại vùng hỗ trợ cấu trúc $79.000 để tìm kiếm cơ hội mua lên, đồng thời đặt Stop Loss đủ xa để tránh các bẫy quét thanh khoản của Market Makers nhưng vẫn đảm bảo bảo vệ nguồn vốn trước một kịch bản đảo chiều sâu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Signature/Footer Area (Minimalist) -->
+        <div class="mt-20 pt-8 border-t border-gray-300 text-center">
+            <div class="text-navy-900 font-bold tracking-widest text-sm mb-2">PHẠM HOÀNG ANH TOKENS</div>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-blue-600 hover:underline text-xs">www.phamhoanganhtokens.com</a>
+            <div class="mt-4 text-[10px] text-gray-400 uppercase max-w-lg mx-auto leading-tight">
+                Tài liệu này chỉ mang tính chất thông tin và phân tích kỹ thuật. Giao dịch tiền mã hóa chứa đựng rủi ro cao. Chúng tôi không chịu trách nhiệm cho bất kỳ tổn thất tài chính nào phát sinh từ việc sử dụng báo cáo này.
+            </div>
+        </div>
+    </div>
+
+    <!-- Micro-interaction for the report container -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.report-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'all 0.8s ease-out';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
