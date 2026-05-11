@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v5.0.0 - XAU/USD Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#D4AF37',
+                            DEFAULT: '#B8860B',
+                            dark: '#996515',
+                        },
+                        charcoal: '#333333',
+                        slate: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        'serif': ['"Times New Roman"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .document-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 8px rgba(0, 0, 0, 0.02);
+            padding: 60px;
+            position: relative;
+            border-top: 6px solid #B8860B;
+        }
+
+        @media (max-width: 768px) {
+            .document-container {
+                margin: 0;
+                padding: 25px;
+                box-shadow: none;
+            }
+        }
+
+        .trade-content {
+            text-align: justify;
+        }
+
+        /* Overriding inline styles from the provided HTML to ensure seamless integration while keeping the core logic */
+        .trade-content h1 {
+            font-family: 'Playfair Display', serif !important;
+            letter-spacing: 0.05em;
+        }
+
+        .trade-content h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            border-left: 4px solid #B8860B;
+            margin-top: 2rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        /* Subtle Micro-animations */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B8860B;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl pt-12 pb-6 px-6 text-center">
+        <div class="inline-block px-4 py-1 mb-4 bg-gold/10 text-gold font-bold text-xs tracking-widest uppercase rounded-full">
+            Proprietary Trading Algorithm
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-charcoal mb-2" style="font-family: 'Playfair Display', serif;">
+            AI Trade pro v5.0.0
+        </h1>
+        <p class="text-gray-500 italic text-lg">XAU/USD Advanced Trade Recommendation</p>
+        <div class="w-24 h-1 bg-gold mx-auto mt-6"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full px-4 flex-grow">
+        <div class="document-container trade-content hover-lift">
+            
+            <!-- Direct Injection of the provided content -->
+            <div style="font-family: 'Times New Roman', Times, serif; text-align: justify; line-height: 1.6;">
+                <div style="text-align: center; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px;">
+                    <h1 style="margin: 0; color: #b8860b; font-size: 2.2rem;">AI TRADE PRO v5.0.0</h1>
+                    <p style="margin: 10px 0; font-weight: bold; text-transform: uppercase; color: #555; letter-spacing: 1px;">Hệ Thống Phân Tích & Giao Dịch Tài Sản Số Chuyên Nghiệp</p>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="background-color: #f8f8f8; padding: 10px 15px; color: #1a1a1a;">1. THỜI GIAN VÀ TRẠNG THÁI THỊ TRƯỜNG TỔNG QUAN</h3>
+                    <div style="padding: 0 10px;">
+                        <p><strong>Thời gian hệ thống:</strong> 09:23 AM, Ngày 11 tháng 05 năm 2026</p>
+                        <p><strong>Tài sản:</strong> XAU/USD (Vàng giao ngay)</p>
+                        <p><strong>Giá hiện tại:</strong> <span style="font-size: 1.2rem; color: #B8860B;">$4,686.55</span></p>
+                        <p><strong>Tâm lý thị trường:</strong> Cẩn trọng - Tăng trưởng (Cautiously Bullish). Thị trường đang bước vào giai đoạn tích lũy quan trọng trước thềm công bố dữ liệu CPI Mỹ. Xu hướng dài hạn vẫn được hỗ trợ bởi các yếu tố địa chính trị tại Vùng Vịnh và sự chuyển giao quyền lực tại Cục Dự trữ Liên bang (Fed).</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="background-color: #f8f8f8; padding: 10px 15px; color: #1a1a1a;">2. KIỂM SOÁT TÂM LÝ & TRẠNG THÁI KỶ LUẬT</h3>
+                    <div style="padding: 0 10px;">
+                        <p><strong>Trạng thái bảo vệ (Agent 4 Guard):</strong> <span style="color: #059669; font-weight: bold; border: 1px solid #059669; padding: 2px 8px; border-radius: 4px; font-size: 0.9em; background-color: #ecfdf5;">STABLE (ỔN ĐỊNH)</span></p>
+                        <p>Hệ thống đang hoạt động trong môi trường rủi ro được kiểm soát. Không phát hiện dấu hiệu giao dịch quá mức (overtrading) hoặc tác động tiêu cực từ biến động bất thường. Các giao thức kỷ luật đang ở mức tối đa để chuẩn bị cho sự gia tăng biến động vào ngày 12/05.</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="background-color: #f8f8f8; padding: 10px 15px; color: #1a1a1a;">3. PHÂN TÍCH KỸ THUẬT CHI TIẾT</h3>
+                    <div style="padding: 0 10px;">
+                        <p>Cấu trúc kỹ thuật hiện tại cho thấy XAU/USD đang nỗ lực thiết lập vùng đáy tạm thời sau đợt điều chỉnh mạnh từ đầu năm. Giá hiện đang duy trì phía trên đường trung bình động 200 ngày (MA200), cho thấy lực mua tổ chức vẫn tồn tại.</p>
+                        <ul style="margin-top: 10px; list-style-type: square; padding-left: 20px;">
+                            <li><strong>Ngưỡng kháng cự:</strong> $4,765 (Kháng cự tức thời/Bear-flag), $4,800 - $4,850 (Vùng hội tụ MA50 và MA100).</li>
+                            <li><strong>Ngưỡng hỗ trợ:</strong> $4,670 (Đường giữa Bollinger Band 4H), $4,500 - $4,540 (Vùng hỗ trợ cấu trúc quan trọng).</li>
+                            <li><strong>Chỉ số DXY:</strong> Đang ở mức 97.56. Sự suy yếu của đồng USD là điều kiện cần để Vàng bứt phá khỏi vùng tích lũy hiện tại.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin: 40px 0; border: 2px solid #b8860b; padding: 25px; background-color: #fffdf5; position: relative; overflow: hidden;">
+                    <!-- Visual accent for the box -->
+                    <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: #b8860b; transform: rotate(45deg);"></div>
+                    
+                    <h3 style="text-align: center; margin-top: 0; color: #b8860b; font-size: 1.4rem; border: none;">4. THÔNG SỐ TÍN HIỆU GIAO DỊCH (SIGNAL)</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white;">
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; font-weight: bold; background: #fcfcfc; width: 40%;">Loại lệnh:</td>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; color: #2563eb; font-weight: bold;">BUY LIMIT / BUY ON RETEST</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; font-weight: bold; background: #fcfcfc;">Điểm vào lệnh (Entry):</td>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; font-weight: bold; font-size: 1.1rem;">$4,675.00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; font-weight: bold; background: #fcfcfc;">Chốt lời 1 (TP1):</td>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; color: #059669; font-weight: bold;">$4,735.00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; font-weight: bold; background: #fcfcfc;">Chốt lời 2 (TP2):</td>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; color: #059669; font-weight: bold;">$4,765.00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; font-weight: bold; background: #fcfcfc;">Dừng lỗ (SL):</td>
+                            <td style="padding: 12px; border: 1px solid #e2e8f0; color: #dc2626; font-weight: bold;">$4,645.00</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="background-color: #f8f8f8; padding: 10px 15px; color: #1a1a1a;">5. QUẢN TRỊ RỦI RO & KHỐI LƯỢNG</h3>
+                    <div style="padding: 0 10px;">
+                        <p>Tuân thủ nghiêm ngặt quy tắc quản lý vốn từ Agent 3:</p>
+                        <ul style="margin-top: 10px; list-style-type: circle; padding-left: 20px;">
+                            <li><strong>Khối lượng lệnh (Lot size):</strong> 0.01 Lot.</li>
+                            <li><strong>Rủi ro tối đa danh mục:</strong> 20%.</li>
+                            <li><strong>Tỷ lệ R/R (Risk/Reward):</strong> Khoảng 1:2 cho TP1 và 1:3 cho TP2.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 10px; border-top: 1px solid #333; padding-top: 25px;">
+                    <h3 style="background-color: #f8f8f8; padding: 10px 15px; color: #1a1a1a;">6. LUẬN ĐIỂM CHIẾN THUẬT & TỔNG KẾT KỶ LUẬT</h3>
+                    <div style="padding: 0 10px;">
+                        <p>Chiến lược tập trung vào việc tận dụng các đợt điều chỉnh kỹ thuật (pullback) về vùng hỗ trợ ngắn hạn $4,670 - $4,675 trước khi áp lực mua đẩy giá lên kiểm tra lại ngưỡng kháng cự $4,765. Đây là vị thế đón đầu trước biến động mạnh từ CPI vào ngày mai. </p>
+                        <p style="margin-top: 15px; font-style: italic; border-left: 3px solid #dc2626; padding-left: 15px;"><strong>Lưu ý kỷ luật:</strong> Tuyệt đối không dời điểm dừng lỗ. Nếu giá đóng cửa nến ngày dưới mức $4,500, toàn bộ triển vọng tăng giá sẽ bị hủy bỏ. Các nhà giao dịch cần duy trì sự kiên nhẫn và chỉ thực hiện lệnh khi giá chạm đúng vùng Entry đã thiết lập. Hệ thống AI Trade pro v5.0.0 ưu tiên bảo toàn vốn trong môi trường chờ đợi tin tức vĩ mô.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; font-size: 0.75rem; color: #999; margin-top: 40px; letter-spacing: 2px; text-transform: uppercase;">
+                    --- BÁO CÁO KẾT THÚC - HỆ THỐNG AI TRADE PRO V5.0.0 ĐÃ BẢO MẬT ---
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Navigation/Footer section -->
+    <div class="w-full max-w-4xl px-4 pb-16 flex flex-col items-center">
+        <div class="flex flex-wrap justify-center gap-8 mb-8 text-sm uppercase tracking-widest text-charcoal/60">
+            <span class="hover:text-gold cursor-default transition-colors">Precision</span>
+            <span class="hover:text-gold cursor-default transition-colors">Discipline</span>
+            <span class="hover:text-gold cursor-default transition-colors">Reliability</span>
+        </div>
+        
+        <!-- Action Button -->
+        <button onclick="window.print()" class="mb-12 px-8 py-3 bg-charcoal text-white font-bold rounded-sm hover:bg-gold transition-all transform hover:-translate-y-1 shadow-lg flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+              <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+            </svg>
+            TẢI BÁO CÁO (PDF)
+        </button>
+
+        <div class="text-center border-t border-gray-200 pt-8 w-full">
+            <p class="text-xs text-gray-400 mb-1">Bản quyền nội dung thuộc về</p>
+            <p class="text-sm font-bold text-charcoal">AI Trade pro & Pham Hoang Anh Tokens</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-gold hover:text-gold-dark text-xs underline mt-2 inline-block">www.phamhoanganhtokens.com</a>
+        </div>
+    </div>
+
+    <script>
+        // Simple entry animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.document-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
