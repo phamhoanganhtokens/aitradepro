@@ -1,1 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Chiến lược Giao dịch Chuyên sâu - AI TRADE PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        institutional: {
+                            navy: '#1a202c',
+                            charcoal: '#2d3748',
+                            gold: '#b29762',
+                            paper: '#f8f9fa',
+                            accentBlue: '#2c5282'
+                        },
+                        trading: {
+                            bull: '#38a169',
+                            bear: '#e53e3e'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e2e8f0;
+            font-family: "Times New Roman", Times, serif;
+            color: #2d3748;
+            -webkit-font-smoothing: antialiased;
+        }
+        .paper-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 60px 80px;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .paper-container {
+                margin: 0;
+                padding: 30px 20px;
+                box-shadow: none;
+            }
+        }
+        p {
+            text-align: justify;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2px solid #1a202c;
+            padding-bottom: 4px;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            color: #1a202c;
+        }
+        .poi-box {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            border-left: 4px solid #b29762;
+        }
+        .signal-card {
+            background: #fdfcf8;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+        .signal-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            opacity: 0.03;
+            pointer-events: none;
+            font-weight: bold;
+            white-space: nowrap;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="py-10 md:px-4">
+
+    <div class="paper-container relative overflow-hidden">
+        <div class="watermark">AI TRADE PRO</div>
+
+        <!-- HEADER SECTION -->
+        <header class="relative z-10 border-b-4 border-institutional-navy pb-6 mb-10">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-xl font-bold text-institutional-navy tracking-tighter">AI TRADE PRO</h2>
+                    <a href="www.phamhoanganhtokens.com" target="_blank" class="text-sm text-institutional-accentBlue hover:underline">www.phamhoanganhtokens.com</a>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Document Classification</span>
+                    <p class="font-bold text-institutional-navy">PRIVATE & CONFIDENTIAL</p>
+                </div>
+            </div>
+
+            <h1 class="text-4xl font-bold text-center text-institutional-navy mb-8 tracking-tight">
+                BÁO CÁO CHIẾN LƯỢC GIAO DỊCH CHUYÊN SÂU
+            </h1>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 p-4 rounded border border-gray-100">
+                <div>
+                    <span class="block text-[10px] uppercase text-gray-400 font-bold">Execution Date</span>
+                    <span class="text-sm font-semibold">11 Tháng 05, 2026</span>
+                </div>
+                <div>
+                    <span class="block text-[10px] uppercase text-gray-400 font-bold">Asset Symbol</span>
+                    <span class="text-sm font-semibold">XAUUSD (GOLD)</span>
+                </div>
+                <div>
+                    <span class="block text-[10px] uppercase text-gray-400 font-bold">Strategy Type</span>
+                    <span class="text-sm font-semibold">SMC / Price Action</span>
+                </div>
+                <div>
+                    <span class="block text-[10px] uppercase text-gray-400 font-bold">Status</span>
+                    <span class="text-sm font-semibold text-trading-bull">ACTIVE SIGNAL</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="relative z-10">
+            
+            <!-- SECTION I: TOP-DOWN ANALYSIS -->
+            <section>
+                <h2 class="section-title text-xl">I. Phân tích Xu hướng Khung thời gian lớn (HTF Trend)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="p-4 border border-gray-100 bg-white shadow-sm">
+                        <h3 class="font-bold text-institutional-navy border-b mb-2">1 Tháng (1M)</h3>
+                        <p class="text-sm">Xu hướng siêu dài hạn là <strong>Tăng giá mạnh (Strongly Bullish)</strong>. Vàng đã bứt phá khỏi vùng tích lũy 2024-2025, thiết lập nền tảng giá mới quanh mốc $4.700 với cấu trúc Phá vỡ (BOS) liên tục.</p>
+                    </div>
+                    <div class="p-4 border border-gray-100 bg-white shadow-sm">
+                        <h3 class="font-bold text-institutional-navy border-b mb-2">1 Tuần (1W)</h3>
+                        <p class="text-sm">Tăng giá. Sau đỉnh ATH <strong>$4.889,70</strong> vào tháng 4, giá đang điều chỉnh về Khối lệnh (Order Block - OB) tuần tại <strong>$4.650 – $4.680</strong>.</p>
+                    </div>
+                    <div class="p-4 border border-gray-100 bg-white shadow-sm">
+                        <h3 class="font-bold text-institutional-navy border-b mb-2">1 Ngày (1D)</h3>
+                        <p class="text-sm"><strong>Trung lập - Tăng giá</strong>. Nến ngày 10/05 cho thấy sự từ chối giá tại <strong>$4.677</strong>. Bias vẫn ưu tiên tăng chừng nào đáy $4.500 còn được giữ vững.</p>
+                    </div>
+                </div>
+                <div class="poi-box p-4 rounded mb-8">
+                    <p class="font-bold text-institutional-navy mb-0 italic">Thiên hướng HTF: Tăng giá (Canh mua tại các nhịp thoái lui).</p>
+                </div>
+            </section>
+
+            <!-- SECTION II: REFINEMENT & LIQUIDITY -->
+            <section>
+                <h2 class="section-title text-xl">II. Logic Thanh khoản & Tinh chỉnh POI</h2>
+                
+                <div class="mb-8">
+                    <h3 class="font-bold text-institutional-navy mb-3">1. Tinh chỉnh Vùng giá đáng chú ý (MTF POI)</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="font-bold min-w-[80px] text-institutional-accentBlue">4 Giờ (4H):</span>
+                            <p class="mb-0 text-sm">Xuất hiện Khoảng trống Giá trị Hợp lý (FVG) từ <strong>$4.680 đến $4.710</strong>. Cấu trúc 4H giảm nhẹ nhưng đang tiến sát vùng Cầu HTF.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-bold min-w-[80px] text-institutional-accentBlue">1 Giờ (1H):</span>
+                            <p class="mb-0 text-sm">Khối lệnh (OB) tăng giá tiềm năng tại <strong>$4.675,00 – $4.685,00</strong>, hợp lưu với ngưỡng hỗ trợ S1 ($4.687).</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-8">
+                    <h3 class="font-bold text-institutional-navy mb-4 border-b pb-2">2. Phân tích Thanh khoản & SMT</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">Liquidity Pools</span>
+                            <p class="text-sm"><strong>Bên Mua (BSL):</strong> Tập trung tại $4.750 và $4.830. <br><strong>Bên Bán (SSL):</strong> Thanh khoản tiềm năng nằm dưới $4.675, nơi đặt lệnh dừng lỗ của số đông.</p>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2">SMT Divergence</span>
+                            <p class="text-sm">Bạc tạo đáy thấp hơn trong khi Vàng giữ đáy cao hơn trên khung 1H, xác nhận sự <strong>Phân kỳ SMT Tăng giá</strong>. DXY gặp kháng cự mạnh tại 105,00.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION III: TRADE SETUP -->
+            <section class="mb-12">
+                <h2 class="section-title text-xl">III. Thực thi Chiến lược (Trade Setup)</h2>
+                
+                <div class="signal-card p-8 rounded-xl border-2 border-institutional-navy/10">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                        <div class="text-center md:text-left">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Entry Zone (Vùng vào lệnh)</span>
+                            <div class="text-3xl font-bold text-institutional-navy tracking-tight">$4.682,00 — $4.688,00</div>
+                        </div>
+                        <div class="h-12 w-px bg-gray-200 hidden md:block"></div>
+                        <div class="text-center md:text-right">
+                            <span class="text-xs font-bold text-trading-bear uppercase tracking-widest">Stop Loss (Dừng lỗ)</span>
+                            <div class="text-3xl font-bold text-trading-bear tracking-tight">$4.670,00</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 border border-gray-100 rounded text-center">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase">Target 1 (TP1)</span>
+                            <div class="text-xl font-bold text-trading-bull">$4.715</div>
+                            <span class="text-xs text-gray-500 italic">Ratio 1:2</span>
+                        </div>
+                        <div class="bg-white p-4 border border-gray-100 rounded text-center">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase">Target 2 (TP2)</span>
+                            <div class="text-xl font-bold text-trading-bull">$4.750</div>
+                            <span class="text-xs text-gray-500 italic">Ratio 1:4.5</span>
+                        </div>
+                        <div class="bg-white p-4 border border-gray-100 rounded text-center">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase">Target 3 (TP3)</span>
+                            <div class="text-xl font-bold text-trading-bull">$4.830</div>
+                            <span class="text-xs text-gray-500 italic">Macro Target</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <p class="text-sm italic text-gray-600">
+                            <strong>LTF Confirmation:</strong> Chờ đợi Sự Thay đổi Cấu trúc Thị trường (MSS) hoặc Thay đổi Tính chất (ChoCh) trên khung 5 phút tại vùng POI ($4.682,00). Vào lệnh khi giá hồi quy (retest) về FVG 1m.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION IV: RISK MANAGEMENT -->
+            <section class="mb-10">
+                <h2 class="section-title text-xl">IV. Quản lý Rủi ro & Quy tắc An toàn</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-institutional-navy text-white flex items-center justify-center text-xs">1</div>
+                            <span class="text-sm font-semibold">Rủi ro tối đa: 1% vốn trên mỗi vị thế.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-institutional-navy text-white flex items-center justify-center text-xs">2</div>
+                            <span class="text-sm font-semibold">Dời SL về Hòa vốn (Break-even) ngay khi đạt TP1.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-institutional-navy text-white flex items-center justify-center text-xs">3</div>
+                            <span class="text-sm font-semibold">Chốt lời từng phần: Đóng 50% khối lượng tại TP1.</span>
+                        </div>
+                    </div>
+                    <div class="bg-institutional-charcoal text-white p-5 rounded">
+                        <h4 class="text-xs font-bold uppercase tracking-widest mb-2 opacity-70">Ghi chú từ Master AI Trade Pro</h4>
+                        <p class="text-xs leading-relaxed italic mb-0 text-gray-300">
+                            "Kỷ luật là cầu nối giữa mục tiêu và thành tựu. Không bao giờ giao dịch mà không có điểm dừng lỗ rõ ràng. Thị trường luôn đúng, chỉ có cảm xúc của chúng ta là sai lầm."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="mt-16 pt-8 border-t border-gray-200">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h3 class="font-bold text-institutional-navy">AI TRADE PRO ANALYTICS</h3>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest m-0">Institutional Grade Financial Research</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-[10px] leading-tight text-gray-400 max-w-md">
+                        CẢNH BÁO RỦI RO: Giao dịch tài chính luôn đi kèm rủi ro mất vốn. Báo cáo này chỉ mang tính chất tham khảo dựa trên phân tích kỹ thuật, không phải là lời khuyên đầu tư tài chính chính thức.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
 
