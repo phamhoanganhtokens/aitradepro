@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Recommendation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Typography overrides to ensure Times New Roman is used throughout */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #343a40;
+            --text-secondary: #6c757d;
+            --accent-sell: #dc3545;
+            --accent-buy: #28a745;
+            --accent-blue: #007bff;
+            --accent-gold: #c5a059;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 1);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .label-style {
+            color: var(--text-secondary);
+            font-variant: small-caps;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+        }
+
+        .value-style {
+            color: var(--text-main);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dee2e6, transparent);
+            margin: 2rem 0;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge-safe {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        trade: {
+                            sell: '#dc3545',
+                            buy: '#28a745',
+                            neutral: '#6c757d',
+                            brand: '#343a40'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <div class="max-w-4xl w-full animate-fade-in">
+        
+        <!-- Header / Logo Area -->
+        <div class="text-center mb-8">
+            <h1 class="text-sm tracking-[0.3em] uppercase font-bold text-gray-500 mb-2">AI TRADE PRO v2.0</h1>
+            <div class="h-1 w-12 bg-trade-brand mx-auto"></div>
+        </div>
+
+        <div class="glass-card p-8 md:p-12 overflow-hidden relative">
+            
+            <!-- Guard Check Section -->
+            <div class="mb-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-2xl">✓</span>
+                    <h2 class="text-xl font-bold tracking-tight">PSYCHOLOGY GUARD SYSTEM</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-lg border border-gray-100">
+                    <div>
+                        <p class="label-style">Trạng thái tâm lý</p>
+                        <p class="value-style text-green-600 flex items-center gap-2">
+                            BÌNH THĨNH <span class="badge badge-safe">Lý tưởng</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="label-style">Max Drawdown</p>
+                        <p class="value-style">0% (Giới hạn < 8%)</p>
+                    </div>
+                    <div>
+                        <p class="label-style">Chuỗi thắng/thua</p>
+                        <p class="value-style">W: 0/8 | L: 0/5</p>
+                    </div>
+                    <div>
+                        <p class="label-style">Lỗ ngày/tuần</p>
+                        <p class="value-style">0% / 0%</p>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm justified-text italic text-gray-600">
+                    Đánh giá: Các chỉ số an toàn giao dịch đang ở mức lý tưởng. Không phát hiện bất kỳ dấu hiệu nào của trạng thái tâm lý Tilt hay các rủi ro về hành vi quá đà.
+                </p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- Recommendation Header -->
+            <div class="text-center mb-10">
+                <p class="text-trade-sell font-bold tracking-widest text-sm mb-2">AGENT 4 - ENTRY ADVISOR</p>
+                <h3 class="text-4xl md:text-5xl font-black text-trade-sell mb-4">SELL XAU/USD</h3>
+                <div class="inline-flex items-center gap-2 px-4 py-1 bg-red-50 text-trade-sell border border-red-100 rounded-full font-bold">
+                    <span>Độ tin cậy: 85%</span>
+                </div>
+            </div>
+
+            <!-- Key Details Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">Entry</p>
+                    <p class="value-style">4.692,00</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">Lot Size</p>
+                    <p class="value-style">0.01 Lot</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">Stop Loss</p>
+                    <p class="value-style text-trade-sell">4.715,00</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">Risk (USD)</p>
+                    <p class="value-style text-trade-sell">$40.00</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">TP 1</p>
+                    <p class="value-style text-trade-buy">4.669,00</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">TP 2</p>
+                    <p class="value-style text-trade-buy">4.646,00</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">Tỷ lệ R:R</p>
+                    <p class="value-style">1 : 2.0</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <p class="label-style">Symbol</p>
+                    <p class="value-style">GOLD / USD</p>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- Rationale Section -->
+            <div class="space-y-6">
+                <h4 class="text-lg font-bold border-b border-gray-100 pb-2">LÝ DO CHI TIẾT DỰA TRÊN CÁC TÍN HIỆU HỆ THỐNG</h4>
+                
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <span class="text-gray-400 font-bold">01.</span>
+                        <div class="justified-text text-sm md:text-base">
+                            <strong>Phân tích Kỹ thuật:</strong> Giá vàng đã chính thức thực hiện cú phá vỡ (breakout) xuống dưới ngưỡng hỗ trợ tâm lý quan trọng 4.700 USD, xác lập cấu trúc giảm giá rõ rệt trong ngắn hạn. Trên các khung thời gian M15, H1 và H4, thị trường đồng thuận xu hướng giảm. Các chỉ báo kỹ thuật bao gồm MACD và hệ thống đường trung bình động EMA (9/21/50) đã xuất hiện giao cắt tử thần (bearish cross), biến các ngưỡng hỗ trợ cũ thành kháng cự mạnh.
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <span class="text-gray-400 font-bold">02.</span>
+                        <div class="justified-text text-sm md:text-base">
+                            <strong>Phân tích Cơ bản:</strong> Đồng USD đang duy trì sức mạnh vượt trội khi chỉ số DXY đạt mốc 98 điểm, tạo áp lực trực tiếp lên giá vàng. Những diễn biến hạ nhiệt trong căng thẳng địa chính trị đã làm giảm nhu cầu trú ẩn an toàn, khiến dòng tiền rút khỏi kim loại quý. Thị trường đang bước vào giai đoạn chốt lời và chờ đợi các dữ liệu kinh tế vĩ mô quan trọng từ Mỹ.
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <span class="text-gray-400 font-bold">03.</span>
+                        <div class="justified-text text-sm md:text-base">
+                            <strong>Quản trị Rủi ro:</strong> Lệnh giao dịch được thiết lập với tỷ lệ Rủi ro/Lợi nhuận (R:R) là 2,0, đảm bảo hiệu quả sử dụng vốn theo tiêu chuẩn hệ thống. Mức dừng lỗ được đặt phía trên vùng kháng cự quan trọng và được tính toán dựa trên biên độ ATR thực tế để tối ưu hóa khả năng chống chịu biến động.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Advisory Note -->
+            <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                <p class="text-sm justified-text text-blue-900 leading-relaxed">
+                    <strong>Lưu ý từ Hệ thống:</strong> Khuyến nghị thực hiện lệnh bán tại giá thị trường hiện tại. Người dùng cần tuân thủ đúng khối lượng và các mức cắt lỗ đã đề ra để bảo vệ tài khoản trong suốt quá trình giao dịch. Việc quản lý vốn là ưu tiên hàng đầu.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- System Stats Footer (Floating-style) -->
+        <div class="mt-8 flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+            <div class="flex items-center gap-2">
+                <span>Account Balance:</span>
+                <span class="text-gray-600">$200.00</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span>Risk Per Trade:</span>
+                <span class="text-gray-600">20%</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span>System Status:</span>
+                <span class="text-green-500">Active / Secured</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
