@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v7.1 - Technical Analysis Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#002147',
+                        slateBg: '#f4f4f9',
+                        bullish: '#10b981',
+                        bearish: '#dc2626',
+                        goldAccent: '#b8922e'
+                    },
+                    fontFamily: {
+                        serif: ["'Times New Roman'", "serif"],
+                        display: ["'Playfair Display'", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #e5e7eb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .report-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 10rem;
+            font-weight: 900;
+            color: rgba(0, 33, 71, 0.03);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+            user-select: none;
+        }
+        section {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #002147;
+            padding-left: 1.5rem;
+            text-align: justify;
+        }
+        h2 {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #002147;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        .data-card {
+            background-color: #f4f4f9;
+            padding: 1rem;
+            border-radius: 2px;
+            margin-bottom: 0.75rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+        }
+        .badge-bullish { background: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+        .badge-bearish { background: #fee2e2; color: #991b1b; border: 1px solid #dc2626; }
+        .badge-neutral { background: #f3f4f6; color: #374151; border: 1px solid #9ca3af; }
+
+        @media (max-width: 640px) {
+            .report-container { padding: 1.5rem; margin: 0; }
+            section { padding-left: 1rem; }
+        }
+    </style>
+</head>
+<body class="p-2 sm:p-8">
+
+    <div class="report-container">
+        <div class="watermark">AI TRADE PRO</div>
+
+        <!-- Risk Alert Banner -->
+        <div class="mb-8 border-2 border-bearish bg-red-50 p-4 flex items-start space-x-4 animate-pulse">
+            <div class="bg-bearish text-white px-3 py-1 font-bold text-sm">CRITICAL</div>
+            <p class="text-sm text-bearish font-bold uppercase tracking-wide">
+                Cảnh báo: Rủi ro hệ thống cực cao do tin CPI (12/05/2026). Khuyến nghị giảm 50% khối lượng giao dịch chuẩn.
+            </p>
+        </div>
+
+        <!-- Header -->
+        <header class="border-b-4 border-navy pb-6 mb-10">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-4">
+                <h1 class="text-4xl font-display font-bold text-navy tracking-tight">AI Trade Pro <span class="text-goldAccent">v7.1</span></h1>
+                <div class="text-right mt-2 md:mt-0">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 font-bold">Institutional Research Division</p>
+                </div>
+            </div>
+            
+            <div class="bg-navy text-white py-3 px-6 text-center mb-6">
+                <h2 class="text-2xl !text-white !mb-0 !border-0 !p-0">BÁO CÁO PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-bold uppercase tracking-wider text-gray-600">
+                <div class="border-r border-gray-200">
+                    <span class="block text-gray-400 font-normal">Symbol</span>
+                    XAU/USD (Vàng)
+                </div>
+                <div class="md:border-r border-gray-200">
+                    <span class="block text-gray-400 font-normal">Ngày báo cáo</span>
+                    11/05/2026
+                </div>
+                <div class="border-r border-gray-200">
+                    <span class="block text-gray-400 font-normal">Trạng thái</span>
+                    LIVE ANALYSIS
+                </div>
+                <div>
+                    <span class="block text-gray-400 font-normal">Phân loại</span>
+                    HIGHT-VOLATILITY
+                </div>
+            </div>
+        </header>
+
+        <!-- Section I: Overview -->
+        <section id="overview">
+            <h2>I. Tổng quan thị trường & Dữ liệu cơ bản</h2>
+            <p class="mb-4">Vàng đang trải qua giai đoạn biến động mạnh với xu hướng hiệu chỉnh kỹ thuật sau khi đạt các mức cao kỷ lục vào đầu năm. Giá giao ngay hiện dao động trong khoảng <strong>$4,657.89 – $4,684.32</strong> với hiệu suất giảm từ <strong>0.6% đến 1.2%</strong> trong phiên.</p>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="data-card border-t-2 border-goldAccent">
+                    <span class="text-xs font-bold text-gray-500 block mb-1 uppercase">Địa chính trị</span>
+                    <p class="text-sm">Xung đột Mỹ - Iran đẩy giá dầu lên $108/thùng, gây lạm phát "dính" (sticky inflation).</p>
+                </div>
+                <div class="data-card border-t-2 border-navy">
+                    <span class="text-xs font-bold text-gray-500 block mb-1 uppercase">Chính sách tiền tệ</span>
+                    <p class="text-sm">Fed giữ lãi suất 3.50%–3.75%. Kỳ vọng cắt giảm bị đẩy lùi sang tháng 12/2026.</p>
+                </div>
+                <div class="data-card border-t-2 border-bearish">
+                    <span class="text-xs font-bold text-gray-500 block mb-1 uppercase">Sự kiện trọng tâm</span>
+                    <p class="text-sm">Chế độ "de-risking" trước thềm công bố CPI Mỹ ngày 12/05/2026.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section II: HTF Bias -->
+        <section id="htf-bias">
+            <h2>II. Xu hướng khung thời gian lớn (HTF Bias)</h2>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                    <span class="font-bold">Dài hạn (Daily/Weekly)</span>
+                    <span class="badge badge-bullish">Bullish</span>
+                </div>
+                <p class="text-sm">Giá vẫn duy trì trên đường MA 200 ngày ($4,627.95), xác nhận cấu trúc tăng trưởng dài hạn chưa bị phá vỡ hoàn toàn.</p>
+                
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                    <span class="font-bold">Trung hạn (H4/H1)</span>
+                    <span class="badge badge-bearish">Bearish</span>
+                </div>
+                <p class="text-sm">Cú đảo chiều từ mức đỉnh $5,602 và sự từ chối tại ngưỡng $4,765 tuần trước cho thấy phe bán đang kiểm soát nhịp hiệu chỉnh.</p>
+                
+                <div class="bg-gray-50 p-4 border-l-4 border-gray-300 italic">
+                    <p><strong>Đánh giá chung:</strong> Môi trường hiện tại là <strong>"Sell the Rip"</strong> (Bán khi giá hồi). Xu hướng giảm sẽ tiếp diễn cho đến khi giá đóng cửa trên mức $4,744.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section III: Liquidity & SMC -->
+        <section id="smc-ict">
+            <h2>III. Thanh khoản & Cấu trúc SMC/ICT</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-sm font-bold text-navy mb-2 uppercase">Thanh khoản & Bẫy giá</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>• <strong>Buy-side (BSL):</strong> Tập trung tại đỉnh cao dao động <strong>$4,765</strong>.</li>
+                        <li>• <strong>Sell-side (SSL):</strong> Vùng <strong>$4,660</strong> đã bị quét; thanh khoản chính tại <strong>$4,493</strong>.</li>
+                        <li>• <strong>Asian Trap:</strong> Khoảng trống giá (gap) giảm tạo tâm lý fomo sell. Dự kiến nhịp "liquidity grab" lên <strong>$4,700 – $4,720</strong>.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-navy mb-2 uppercase">Cấu trúc thị trường</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>• <strong>MS:</strong> <span class="text-bearish font-bold">Bearish</span> (4H/Daily).</li>
+                        <li>• <strong>BOS:</strong> Phá vỡ ngưỡng <strong>$4,700</strong> xuống dưới.</li>
+                        <li>• <strong>CHoCH:</strong> Chưa xuất hiện. Cần đóng cửa trên <strong>$4,744</strong>.</li>
+                        <li>• <strong>FVG:</strong> Khoảng trống mất cân bằng <strong>$4,685 - $4,715</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="data-card">
+                    <span class="text-xs font-bold text-bearish block mb-1">BEARISH ORDER BLOCK</span>
+                    <p class="font-bold">$4,720 – $4,740</p>
+                </div>
+                <div class="data-card">
+                    <span class="text-xs font-bold text-bullish block mb-1">BULLISH ORDER BLOCK</span>
+                    <p class="font-bold">$4,620 – $4,635</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section IV: Execution Plan -->
+        <section id="execution" class="bg-slateBg !border-goldAccent !pl-8 !pr-8 py-8 shadow-inner">
+            <h2 class="text-center text-2xl mb-6">IV. Kế hoạch giao dịch (Execution Plan)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Scenario 1 -->
+                <div class="border-r-0 md:border-r border-gray-200 pr-0 md:pr-4">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-bearish text-white px-2 py-0.5 text-xs font-bold mr-2">SHORT</span>
+                        <h3 class="font-bold uppercase text-sm">Theo xu hướng chính</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between border-b border-gray-200">
+                            <span class="text-sm">Entry</span>
+                            <span class="font-bold">$4,705 – $4,718</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200">
+                            <span class="text-sm text-bearish font-bold">Stop Loss</span>
+                            <span class="font-bold">$4,748</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200">
+                            <span class="text-sm text-bullish font-bold">TP1 (Target)</span>
+                            <span class="font-bold">$4,660</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-bullish font-bold">TP2 (Extended)</span>
+                            <span class="font-bold">$4,630</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Scenario 2 -->
+                <div class="pl-0 md:pl-4">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-bullish text-white px-2 py-0.5 text-xs font-bold mr-2">LONG</span>
+                        <h3 class="font-bold uppercase text-sm">Mean Reversion</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between border-b border-gray-200">
+                            <span class="text-sm">Entry</span>
+                            <span class="font-bold">$4,628 – $4,635</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200">
+                            <span class="text-sm text-bearish font-bold">Stop Loss</span>
+                            <span class="font-bold">$4,610</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-bullish font-bold">Take Profit</span>
+                            <span class="font-bold">$4,680</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section V: Risk & Confidence -->
+        <section id="risk">
+            <h2>V. Quản trị rủi ro & Tâm lý</h2>
+            <div class="mb-6">
+                <div class="flex justify-between items-end mb-2">
+                    <span class="font-bold uppercase text-xs text-gray-500">Confidence Score</span>
+                    <span class="text-xl font-display font-bold text-navy">78%</span>
+                </div>
+                <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                    <div class="bg-navy h-full" style="width: 78%"></div>
+                </div>
+            </div>
+            
+            <div class="space-y-4 text-sm">
+                <p><strong>Quản lý vốn:</strong> Khuyến nghị rủi ro tối đa <strong>0.5% tài khoản</strong> cho mỗi vị thế. Khoảng dao động thực tế (ATR) đang giãn rộng, cần giảm khối lượng giao dịch.</p>
+                <div class="bg-red-50 p-4 border border-red-100 rounded">
+                    <h4 class="text-bearish font-bold mb-2 uppercase text-xs">Psychology Guard Alerts:</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Tránh "Gap FOMO":</strong> Không bán đuổi tại mức giá thấp $4,657. Hãy kiên nhẫn đợi nhịp hồi (Return to Impulse).</li>
+                        <li><strong>CPI Gambling:</strong> Tuyệt đối không vào lệnh 15 phút trước và sau tin CPI để tránh trượt giá và giãn spread.</li>
+                        <li><strong>Khách quan:</strong> Đừng để niềm tin vào "tài sản trú ẩn" làm mờ mắt trước sức mạnh của đồng USD.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rationale Section -->
+        <section id="rationale" class="border-0 bg-navy text-white !pl-8 !pr-8 py-8 mt-12 rounded-sm">
+            <h2 class="!text-white !border-white/20">Logic Phân Tích (Rationale)</h2>
+            <p class="text-sm leading-relaxed opacity-90 italic">
+                Báo cáo này được tổng hợp từ sự phối hợp của 6 tác nhân AI chuyên biệt. Cốt lõi của chiến lược dựa trên việc xác định sự phân kỳ giữa kỳ vọng lãi suất của Fed và tâm lý trú ẩn địa chính trị. Mặc dù căng thẳng Mỹ-Iran là yếu tố hỗ trợ, nhưng xu hướng dòng tiền (Flow of Funds) đang ưu tiên đồng USD do chênh lệch lãi suất thực tế. Về mặt kỹ thuật, việc quét thanh khoản vùng Asian Gap là kịch bản có xác suất cao nhất trước khi thị trường tìm thấy điểm cân bằng tại đường MA 200 ngày. Ưu tiên canh bán tại vùng hồi quy $4,705-$4,718 với mục tiêu hướng về MA 200 ngày. Mọi quyết định cần được tái đánh giá ngay sau khi dữ liệu CPI được công bố.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <div class="mt-12 pt-6 border-t border-gray-200 text-center">
+            <p class="text-xs text-gray-400 font-bold tracking-widest mb-2">www.phamhoanganhtokens.com</p>
+            <p class="text-[10px] text-gray-400 uppercase leading-tight px-12">
+                Miễn trừ trách nhiệm: Phân tích này chỉ mang tính chất tham khảo kỹ thuật, không phải lời khuyên đầu tư tài chính. Giao dịch ký quỹ đi kèm rủi ro mất vốn cao.
+            </p>
+        </div>
+    </div>
+
+    <!-- Simple Interactivity for the Gauge -->
+    <script>
+        // Subtle animation for the confidence bar
+        window.addEventListener('DOMContentLoaded', () => {
+            const bar = document.querySelector('.bg-navy.h-full');
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.transition = 'width 1.5s ease-out';
+                bar.style.width = '78%';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
