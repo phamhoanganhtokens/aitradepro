@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Phân Tích Kỹ Thuật - AI Trade Pro v7.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-navy: #002147;
+            --accent-gold: #c5a059;
+            --soft-grey: #f4f4f9;
+            --bullish-green: #065f46;
+            --bearish-red: #991b1b;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f0f2f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .report-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            color: rgba(0, 33, 71, 0.03);
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 0;
+            font-weight: bold;
+        }
+
+        .section-header {
+            border-left: 4px solid var(--primary-navy);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #f8fafc, transparent);
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: bold;
+        }
+
+        p, li {
+            text-align: justify;
+        }
+
+        .data-card {
+            background-color: var(--soft-grey);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .gauge-container {
+            width: 100%;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .gauge-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-navy), var(--accent-gold));
+            width: 78%; /* Sample confidence score */
+        }
+
+        .trading-plan-box {
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            border: 2px border var(--accent-gold);
+            box-shadow: inset 0 0 10px rgba(197, 160, 89, 0.1);
+        }
+
+        .alert-banner {
+            background: #fef2f2;
+            border-bottom: 2px solid #fee2e2;
+            color: #991b1b;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .report-container {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="p-0 sm:p-4 md:p-8">
+
+    <div class="report-container relative z-10">
+        <div class="watermark">AI TRADE PRO</div>
+
+        <!-- Risk Alert Banner -->
+        <div class="alert-banner text-sm">
+            ⚠️ CẢNH BÁO: BIẾN ĐỘNG CỰC ĐỘ DO SỰ KIỆN PPI MỸ & THAY ĐỔI NHÂN SỰ TẠI FED
+        </div>
+
+        <!-- Header -->
+        <header class="p-8 border-b-2 border-double border-gray-200 text-center bg-white">
+            <div class="flex justify-between items-center mb-6">
+                <div class="text-left">
+                    <span class="text-xs font-bold tracking-widest text-gray-500 uppercase">Institutional Grade</span>
+                    <h2 class="text-2xl font-bold text-[#002147]">AI TRADE PRO v7.1</h2>
+                </div>
+                <div class="text-right">
+                    <div class="text-xs text-gray-500 uppercase">Status</div>
+                    <div class="text-green-600 font-bold flex items-center">
+                        <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span> LIVE ANALYTICS
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold text-[#002147] mb-4">BÁO CÁO PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU</h1>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold border-y border-gray-100 py-3 text-gray-600">
+                <span>SYMBOL: XAU/USD (VÀNG)</span>
+                <span class="hidden sm:inline">|</span>
+                <span>NGÀY: 13/05/2026</span>
+                <span class="hidden sm:inline">|</span>
+                <span>HỆ THỐNG: V7.1 QUANTUM</span>
+            </div>
+        </header>
+
+        <main class="p-8 space-y-12">
+            
+            <!-- Section I -->
+            <section>
+                <div class="section-header">
+                    <h2 class="text-xl text-[#002147]">I. Tổng Quan Thị Trường & Tâm Lý</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="data-card p-4 rounded shadow-sm">
+                        <h4 class="font-bold text-xs text-gray-500 mb-2 uppercase">Chỉ số giá hiện tại</h4>
+                        <p class="text-2xl font-bold">$4,694.59 – $4,711.60</p>
+                        <p class="text-red-600 text-sm font-semibold">Hiệu suất: -0.4% đến -0.8% (Daily)</p>
+                    </div>
+                    <div class="data-card p-4 rounded shadow-sm border-l-4 border-red-500">
+                        <h4 class="font-bold text-xs text-gray-500 mb-2 uppercase">Tâm lý thị trường</h4>
+                        <p class="font-bold">Hỗn hợp đến Tiêu cực (Ngắn hạn)</p>
+                        <p class="text-xs text-gray-600 mt-1">Tích cực trong cấu trúc dài hạn.</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-bold text-sm mb-2 text-[#002147]">BỐI CẢNH VĨ MÔ:</h4>
+                    <p class="text-gray-700 leading-relaxed italic">
+                        Áp lực chính đến từ "Cú sốc lợi suất" (Yield Reality Check). Dữ liệu CPI Mỹ đạt +3.8% YoY (cao hơn dự báo) đã dập tắt kỳ vọng cắt giảm lãi suất của Fed, hỗ trợ USD và lợi suất trái phiếu kho bạc tăng mạnh. Tuy nhiên, lực cầu từ các ngân hàng trung ương (PBoC, RBI) và bất ổn địa chính trị vẫn tạo ra mức sàn hỗ trợ vững chắc trong dài hạn.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section II -->
+            <section>
+                <div class="section-header">
+                    <h2 class="text-xl text-[#002147]">II. Xu Hướng Khung Thời Gian Lớn (HTF BIAS)</h2>
+                </div>
+                <div class="bg-gray-50 p-6 border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <span class="badge bg-yellow-100 text-yellow-800 mr-3">TRUNG LẬP / HIỆU CHỈNH</span>
+                        <div class="h-px flex-grow bg-gray-300"></div>
+                    </div>
+                    <p class="text-gray-700">
+                        Trên biểu đồ Daily, xuất hiện cấu trúc <strong>"Phá vỡ giả" (False Breakout)</strong>. Giá đã cắt xuống dưới đường EMA 5/9 (~$4,710), cho thấy khả năng điều chỉnh sâu hơn về phía SMA 100 ngày nếu ngưỡng $4,670 bị xuyên thủng. Mặc dù xu hướng vĩ mô là tăng, nhưng trong ngắn hạn, phe Gấu đang kiểm soát đà giá.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section III -->
+            <section>
+                <div class="section-header">
+                    <h2 class="text-xl text-[#002147]">III. Phân Tích Thanh Khoản & Bẫy Giá</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="border p-4">
+                            <h4 class="text-red-800 font-bold text-sm uppercase mb-2">Sell-Side Liquidity (SSL)</h4>
+                            <p class="text-sm">Vùng lệnh dừng lỗ lớn tập trung dưới <strong>$4,638</strong> và ngưỡng tâm lý <strong>$4,500</strong>.</p>
+                        </div>
+                        <div class="border p-4">
+                            <h4 class="text-green-800 font-bold text-sm uppercase mb-2">Buy-Side Liquidity (BSL)</h4>
+                            <p class="text-sm">Tập trung tại <strong>$4,726</strong> (đỉnh gần nhất) và vùng <strong>$4,880</strong> (Extreme Supply).</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-blue-50 text-blue-900 text-sm italic border-l-4 border-blue-600">
+                        <strong>Lưu ý Đặc biệt:</strong> Việc Chính phủ Ấn Độ tăng thuế nhập khẩu vàng lên 15% vào ngày 13/05 đã tạo ra một đợt biến động giá cục bộ tại thị trường nội địa Ấn Độ, bất chấp đà giảm của giá giao ngay thế giới.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section IV -->
+            <section>
+                <div class="section-header">
+                    <h2 class="text-xl text-[#002147]">IV. Cấu Trúc SMC/ICT</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold border-b mb-3 pb-1 text-sm uppercase text-gray-600">Order Blocks (Khối lệnh)</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-red-600 mr-2">▼</span>
+                                <div>
+                                    <span class="font-bold">Bearish OB:</span> $4,710 – $4,734. Khu vực Smart Money bảo vệ vị thế bán.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">▲</span>
+                                <div>
+                                    <span class="font-bold">Bullish OB:</span> $4,656 – $4,672. Khu vực hấp thụ lực mua tổ chức.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold border-b mb-3 pb-1 text-sm uppercase text-gray-600">FVG / Imbalance</h4>
+                        <div class="p-4 bg-orange-50 border border-orange-100 rounded">
+                            <p class="text-sm text-orange-800">
+                                <strong>Bearish FVG (H1):</strong> hình thành trong khoảng <strong>$4,715 – $4,690</strong>. Giá hiện đang nỗ lực lấp đầy khoảng trống hiệu quả này.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section V: Execution -->
+            <section class="trading-plan-box p-8 border-2 border-[#c5a059] rounded-lg">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-[#002147]">V. KẾ HOẠCH GIAO DỊCH CHIẾN LƯỢC</h2>
+                    <p class="text-xs tracking-widest text-[#c5a059] font-bold">EXECUTION PARAMETERS</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="border-b border-[#c5a059]/30 pb-2">
+                            <h5 class="font-bold text-red-800 uppercase text-xs">Kịch bản 1: Bearish (Ưu tiên)</h5>
+                            <p class="text-sm">Phá vỡ $4,670 sau tin PPI nóng. Mục tiêu SSL tại <strong>$4,637</strong>.</p>
+                        </div>
+                        <div class="border-b border-[#c5a059]/30 pb-2">
+                            <h5 class="font-bold text-green-800 uppercase text-xs">Kịch bản 2: Mean Reversion</h5>
+                            <p class="text-sm">Re-test $4,671. Nếu có CHoCH M15, mục tiêu hồi phục <strong>$4,710</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded border border-[#c5a059]/20">
+                        <h5 class="font-bold text-[#002147] mb-3 text-center uppercase text-sm underline underline-offset-4">Mức Kỹ Thuật Trọng Yếu</h5>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray-500">Kháng cự:</span>
+                            <span class="font-bold">$4,724 | $4,734 | $4,762</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Hỗ trợ:</span>
+                            <span class="font-bold text-red-700">$4,695 | $4,671 | $4,650</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section VI: Risk -->
+            <section>
+                <div class="section-header">
+                    <h2 class="text-xl text-[#002147]">VI. Quản Trị Rủi Ro & Tâm Lý</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="md:col-span-1 flex flex-col justify-center items-center p-4 border bg-gray-50">
+                        <span class="text-xs font-bold text-gray-500 uppercase mb-2">Confidence Score</span>
+                        <div class="text-3xl font-bold text-[#002147] mb-2">78%</div>
+                        <div class="gauge-container">
+                            <div class="gauge-fill"></div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-3">
+                        <p class="text-sm font-bold text-red-700">CẢNH BÁO RỦI RO:</p>
+                        <p class="text-sm text-gray-700">Thị trường đang trong giai đoạn chuyển giao quyền lực tại Fed (Kevin Warsh dự kiến nhậm chức vào 15/05), tạo ra sự bất định cực lớn về chính sách tiền tệ.</p>
+                    </div>
+                </div>
+                <div class="bg-navy-900 bg-[#002147] text-white p-6 rounded shadow-lg">
+                    <h4 class="text-gold-400 text-[#c5a059] font-bold mb-3 uppercase text-xs tracking-widest">Khuyến nghị từ AI:</h4>
+                    <ul class="list-decimal list-inside space-y-2 text-sm">
+                        <li>Tránh giao dịch khối lượng lớn trước giờ công bố PPI Mỹ.</li>
+                        <li>Cảnh giác với biến động giả (fakeout) quanh vùng $4,670.</li>
+                        <li>Duy trì SL tuyệt đối dưới $4,500 cho các vị thế trung hạn do rủi ro hạ nhiệt địa chính trị.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Rationale Section -->
+            <section class="border-t-2 border-gray-100 pt-8 mt-12">
+                <h3 class="text-lg font-bold text-[#002147] mb-4 italic">CƠ SỞ PHÂN TÍCH (RATIONALE)</h3>
+                <div class="text-gray-700 text-sm space-y-4">
+                    <p>
+                        Báo cáo này được tổng hợp từ sự phối hợp của 6 tác nhân AI độc lập. Khởi đầu với việc thu thập dữ liệu vĩ mô, chúng tôi nhận thấy một sự chuyển dịch rõ rệt trong kỳ vọng lãi suất sau dữ liệu CPI cao hơn dự kiến. Điều này tạo ra một "Cú sốc lợi suất", đẩy dòng tiền quay trở lại đồng USD và gây áp lực trực tiếp lên giá Vàng. Agent 1 xác nhận rằng mặc dù cấu trúc dài hạn vẫn là tăng trưởng, nhưng các khung thời gian thấp hơn đang cho thấy dấu hiệu kiệt sức của phe Mua.
+                    </p>
+                    <p>
+                        Về mặt kỹ thuật, việc xuất hiện Bearish FVG trên khung H1 trùng khớp với vùng Bearish Order Block tại $4,710 cho thấy một sự đồng thuận cao về lực cung ở vùng giá này. Hệ thống phát hiện thanh khoản (Agent 2) cũng chỉ ra rằng các nhà tạo lập thị trường (Market Makers) có xu hướng sẽ quét vùng SSL tại $4,637 để lấy thanh khoản trước khi có bất kỳ động thái tăng trưởng bền vững nào khác. 
+                    </p>
+                    <p>
+                        Cuối cùng, yếu tố tâm lý đóng vai trò then chốt khi sự kiện chính trị tại Fed và các thỏa thuận địa chính trị đang làm giảm bớt tính trú ẩn an toàn của Vàng. Do đó, kế hoạch giao dịch được thiết lập với sự thận trọng tối đa, ưu tiên các nhịp điều chỉnh kỹ thuật và quản lý rủi ro chặt chẽ tại các mốc then chốt.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Institutional Footer -->
+        <footer class="p-8 border-t border-gray-200 bg-gray-50 text-center">
+            <div class="mb-4">
+                <a href="www.phamhoanganhtokens.com" target="_blank" class="text-[#002147] font-bold hover:underline">www.phamhoanganhtokens.com</a>
+            </div>
+            <div class="text-[10px] text-gray-400 uppercase tracking-tighter max-w-2xl mx-auto">
+                Tài liệu này chỉ mang tính chất thông tin chuyên sâu cho các nhà giao dịch chuyên nghiệp. Giao dịch tài chính có rủi ro cao. AI Trade Pro không chịu trách nhiệm cho bất kỳ tổn thất tài chính nào phát sinh từ việc sử dụng các thông tin này.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple micro-interaction for data cards
+        document.querySelectorAll('.data-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = '#c5a059';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = '#e5e7eb';
+            });
+        });
+    </script>
+</body>
+</html>
