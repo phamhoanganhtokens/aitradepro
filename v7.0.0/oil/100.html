@@ -1,1 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v7.0.0 - Báo Cáo Phân Tích Dầu Thô</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#002366',
+                        charcoal: '#333333',
+                        paper: '#F9F9F9',
+                        success: '#28a745',
+                        danger: '#dc3545',
+                        gold: '#B8860B',
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'serif'],
+                        mono: ['"Courier New"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; }
+            .shadow-custom { box-shadow: none !important; }
+        }
+        body {
+            background-color: #F0F2F5;
+            font-family: "Times New Roman", serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .report-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        .section-divider {
+            border-top: 3px double #002366;
+            margin: 2rem 0;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+        .technical-marker {
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            background: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05rem;
+        }
+        .badge-buy { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .badge-sell { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .badge-wait { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        
+        .header-rule {
+            height: 2px;
+            background: #002366;
+            width: 100%;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
 
+    <div class="report-container">
+        <!-- Print / Export Action -->
+        <div class="absolute top-6 right-6 no-print">
+            <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 border border-navy text-navy hover:bg-navy hover:text-white transition-all text-sm font-bold uppercase tracking-wider">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                  <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                </svg>
+                Xuất PDF
+            </button>
+        </div>
+
+        <!-- Institutional Header -->
+        <header class="mb-10">
+            <div class="flex flex-col items-center justify-center text-center">
+                <h1 class="text-4xl font-bold text-navy uppercase tracking-tighter italic">AI Trade pro v7.0.0</h1>
+                <div class="header-rule"></div>
+                <h2 class="text-2xl font-bold text-charcoal">BÁO CÁO PHÂN TÍCH THỊ TRƯỜNG DẦU THÔ</h2>
+                <div class="flex gap-4 mt-2 text-sm text-gray-600 uppercase tracking-widest font-semibold">
+                    <span>SYMBOL: CRUDE OIL (WTI/BRENT)</span>
+                    <span>•</span>
+                    <span>NGÀY CẬP NHẬT: 20/05/2026</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Executive Summary Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 border-y-2 border-charcoal py-6 bg-paper">
+            <div class="text-center border-r-0 md:border-r border-gray-300">
+                <span class="block text-xs uppercase text-gray-500 font-bold mb-1">Khuyến Nghị</span>
+                <span class="status-badge badge-buy text-lg px-6">BUY / LONG</span>
+            </div>
+            <div class="text-center border-r-0 md:border-r border-gray-300">
+                <span class="block text-xs uppercase text-gray-500 font-bold mb-1">Độ Tin Cậy</span>
+                <span class="text-2xl font-bold text-navy">78%</span>
+            </div>
+            <div class="text-center">
+                <span class="block text-xs uppercase text-gray-500 font-bold mb-1">Trạng Thái Rủi Ro</span>
+                <span class="text-lg font-bold text-gold uppercase italic">Moderate</span>
+            </div>
+        </div>
+
+        <!-- Psychology/Alert Box -->
+        <div class="mb-8 border-l-4 border-gold bg-amber-50 p-4">
+            <div class="flex items-start">
+                <div class="mr-3 text-gold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+                        <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gold uppercase text-sm mb-1">Cảnh Báo Tâm Lý Giao Dịch</h4>
+                    <p class="text-sm text-gray-700 m-0 italic">Thị trường đang phản ứng mạnh với tin tức địa chính trị. Tuyệt đối không giao dịch trả thù nếu Stop Loss bị quét. Kiên nhẫn đợi xác nhận đóng nến H4 trước khi kích hoạt vị thế.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main>
+            <!-- SECTION I -->
+            <section class="mb-10">
+                <h3 class="text-xl font-bold text-navy mb-4 border-b-2 border-navy pb-1 italic">I. TỔNG QUAN (Market Overview)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-charcoal mb-2 uppercase text-sm tracking-wider">Động Lực Chính</h4>
+                        <p>Thị trường dầu thô đang ở giai đoạn chuyển giao cực kỳ nhạy cảm giữa các yếu tố kỹ thuật và địa chính trị. Sau khi điều chỉnh khoảng <span class="technical-marker">6%</span> vào đầu tháng, giá dầu <span class="technical-marker">WTI</span> hiện đang ổn định quanh mức <span class="technical-marker">$80.00</span> và <span class="technical-marker">Brent</span> quanh mức <span class="technical-marker">$84.00</span>.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-charcoal mb-2 uppercase text-sm tracking-wider">Tâm Lý Thị Trường</h4>
+                        <p>Nhà đầu tư đang thận trọng chờ đợi quyết định gia hạn cắt giảm sản lượng <span class="technical-marker">2.2 triệu thùng/ngày</span> từ <span class="technical-marker">OPEC+</span> để cân bằng lại nhu cầu toàn cầu đang có dấu hiệu chậm lại, đặc biệt trước thềm cuộc họp ngày 02/06/2024.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION II -->
+            <section class="mb-10">
+                <h3 class="text-xl font-bold text-navy mb-4 border-b-2 border-navy pb-1 italic">II. CẤU TRÚC (SMC/ICT Structure)</h3>
+                <div class="space-y-4">
+                    <div>
+                        <span class="font-bold block text-charcoal mb-1">Thiên kiến khung thời gian lớn (HTF Bias):</span>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="status-badge badge-wait">Neutral-Bearish</span>
+                        </div>
+                        <p>Trên khung Daily và Weekly, thị trường vẫn nằm trong kênh giá điều chỉnh kể từ đỉnh tháng 4. Xu hướng chính vẫn chịu áp lực bán từ vùng cung phía trên.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                        <div class="p-4 bg-gray-50 border border-gray-200">
+                            <h4 class="font-bold text-sm uppercase text-navy mb-2">Sự Dịch Chuyển Cấu Trúc (MSS)</h4>
+                            <p class="text-sm">Đã có sự dịch chuyển cấu trúc thị trường (<span class="technical-marker">MSS</span>) từ giảm sang tăng khi giá vượt qua mốc <span class="technical-marker">$79.60</span> trên khung H4.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 border border-gray-200">
+                            <h4 class="font-bold text-sm uppercase text-navy mb-2">Xác Nhận (BOS)</h4>
+                            <p class="text-sm">Một nến đóng cửa trên <span class="technical-marker">$80.30</span> sẽ xác nhận <span class="technical-marker">Break of Structure (BOS)</span> theo chiều tăng, mở đường cho một nhịp hồi phục mạnh hơn.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION III -->
+            <section class="mb-10">
+                <h3 class="text-xl font-bold text-navy mb-4 border-b-2 border-navy pb-1 italic">III. XÁC NHẬN (Confirmation)</h3>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-charcoal mb-2">Thanh Khoản (Liquidity Pools):</h4>
+                        <ul class="list-disc ml-6 space-y-2">
+                            <li><span class="font-bold">Buy-side Liquidity (BSL):</span> Tập trung cao độ tại vùng <span class="technical-marker">$81.50 - $82.20</span> (đỉnh cũ).</li>
+                            <li><span class="font-bold">Sell-side Liquidity (SSL):</span> Nằm dưới mức đáy gần nhất tại <span class="technical-marker">$77.00 - $77.50</span>.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-charcoal mb-2">Khoảng Trống Giá (Fair Value Gap):</h4>
+                        <p>Xuất hiện một vùng <span class="technical-marker">FVG</span> giảm giá đáng kể trên khung Daily trong khoảng <span class="technical-marker">$81.00 - $83.00</span>. Đây là "vùng nam châm" hút giá lên nhưng cũng là kháng cự mạnh nơi phe bán có thể quay trở lại mạnh mẽ.</p>
+                    </div>
+                    <div class="p-4 border border-dashed border-gray-400">
+                        <span class="text-xs uppercase font-bold text-gray-500">Tương quan tài sản</span>
+                        <p class="m-0">Chỉ số <span class="font-bold">DXY</span> duy trì quanh mức <span class="technical-marker">104.50</span>, tiếp tục gây áp lực lên giá dầu (tương quan nghịch biến). Sự suy yếu của DXY là điều kiện cần để lệnh Long đạt hiệu quả tối ưu.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION IV -->
+            <section class="mb-10">
+                <h3 class="text-xl font-bold text-navy mb-4 border-b-2 border-navy pb-1 italic">IV. KẾ HOẠCH GIAO DỊCH (Trading Plan)</h3>
+                <div class="mb-6">
+                    <p class="mb-4 italic">Dựa trên phân tích AI Trade pro, chúng tôi thiết lập kịch bản ưu tiên như sau:</p>
+                    <div class="overflow-hidden border border-charcoal hover:shadow-lg transition-shadow duration-300">
+                        <table class="w-full text-center">
+                            <thead class="bg-navy text-white uppercase text-sm">
+                                <tr>
+                                    <th class="py-3 border-r border-navy-700">Thông Số</th>
+                                    <th class="py-3">Giá Trị Kỹ Thuật</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-lg">
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 font-bold bg-gray-50 border-r border-gray-200">ENTRY (Buy Stop)</td>
+                                    <td class="py-3 font-mono font-bold text-success">$80.35</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 font-bold bg-gray-50 border-r border-gray-200">STOP LOSS</td>
+                                    <td class="py-3 font-mono font-bold text-danger">$78.80</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 font-bold bg-gray-50 border-r border-gray-200">TAKE PROFIT (Target)</td>
+                                    <td class="py-3 font-mono font-bold text-navy">$82.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 font-bold bg-gray-50 border-r border-gray-200">R:R RATIO</td>
+                                    <td class="py-3 font-bold">1:2.1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-4 border border-gray-300">
+                    <h4 class="font-bold text-sm uppercase mb-2">Kịch bản dự phòng (Short):</h4>
+                    <p class="text-sm m-0 italic">Nếu giá tiếp cận vùng <span class="technical-marker">$81.50 - $82.00</span> và xuất hiện tín hiệu từ chối mạnh (Rejection) trên H1/H4. Mục tiêu quay lại vùng hỗ trợ <span class="technical-marker">$78.50</span>.</p>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- SECTION V -->
+            <section class="mb-10">
+                <h3 class="text-xl font-bold text-navy mb-4 border-b-2 border-navy pb-1 italic">V. QUẢN TRỊ RỦI RO (Risk Management)</h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="border-2 border-danger p-6">
+                        <h4 class="font-bold text-danger uppercase mb-4 text-center tracking-widest">Nguyên Tắc Bắt Buộc</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-navy rounded-full"></span>
+                                    <span class="font-bold">Khối lượng:</span>
+                                </div>
+                                <p class="text-sm">Rủi ro tối đa <span class="font-bold">1-2%</span> tài khoản cho mỗi vị thế. Không nhồi lệnh khi giá chưa đi đúng hướng.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-navy rounded-full"></span>
+                                    <span class="font-bold">Điều kiện hủy:</span>
+                                </div>
+                                <p class="text-sm">Nếu chỉ số <span class="font-bold">DXY</span> tăng mạnh vượt <span class="technical-marker">105.00</span>, kịch bản Long sẽ bị vô hiệu hóa (Invalidated).</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-sm font-bold italic mb-1">Ghi chú vận hành:</p>
+                            <p class="text-xs text-gray-600">Cần theo dõi sát sao báo cáo tồn kho của EIA và các tuyên bố từ Saudi Arabia trước thềm cuộc họp OPEC+. Biến động có thể tăng cao đột ngột.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Institutional Footer -->
+        <footer class="mt-16 pt-8 border-t-2 border-navy flex flex-col items-center justify-center text-center">
+            <div class="text-sm font-bold text-navy tracking-widest mb-2 uppercase">
+                <a href="www.phamhoanganhtokens.com" target="_blank" class="hover:underline">www.phamhoanganhtokens.com</a>
+            </div>
+            <div class="max-w-2xl">
+                <p class="text-[10px] text-gray-500 uppercase leading-tight">
+                    Disclaimer: Giao dịch tài chính có rủi ro cao. Báo cáo này được tạo ra bởi hệ thống AI Trade Pro v7.0.0 chỉ nhằm mục đích tham khảo và không cấu thành lời khuyên đầu tư cá nhân. Chúng tôi không chịu trách nhiệm cho bất kỳ tổn thất tài chính nào phát sinh từ việc sử dụng thông tin này.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
