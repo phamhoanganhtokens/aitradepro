@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v7.0.0 - Báo Cáo Phân Tích Kỹ Thuật</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#002366',
+                        charcoal: '#333333',
+                        paper: '#F9F9F9',
+                        success: '#28a745',
+                        danger: '#dc3545',
+                        gold: '#B8860B',
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'serif'],
+                        mono: ['"Courier New"', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e5e7eb;
+            font-family: "Times New Roman", serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .document-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d1d5db;
+            position: relative;
+        }
+        .justified-text {
+            text-align: justify;
+        }
+        .section-divider {
+            border: none;
+            border-top: 3px double #002366;
+            margin: 2rem 0;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            opacity: 0.03;
+            pointer-events: none;
+            white-space: nowrap;
+            font-weight: bold;
+            z-index: 0;
+        }
+        .trade-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .trade-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: #002366;
+        }
+        @media print {
+            body { background: white; margin: 0; }
+            .document-container { box-shadow: none; border: none; margin: 0; max-width: 100%; padding: 1rem; }
+            .no-print { display: none; }
+        }
+        .mono-text {
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            background: #f3f4f6;
+            padding: 0 4px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="document-container relative overflow-hidden">
+        <div class="watermark">AI TRADE PRO</div>
+
+        <!-- Utility Buttons -->
+        <div class="absolute top-6 right-6 no-print">
+            <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 bg-navy text-white text-sm rounded hover:bg-charcoal transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                    <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                </svg>
+                XUẤT PDF / IN BÁO CÁO
+            </button>
+        </div>
+
+        <!-- Header -->
+        <header class="text-center mb-12 border-b-4 border-navy pb-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-navy uppercase tracking-widest mb-2">AI Trade pro v7.0.0</h1>
+            <h2 class="text-xl text-charcoal font-semibold tracking-wide italic">Institutional Financial Research Document</h2>
+            <div class="mt-4 flex flex-col md:flex-row justify-between items-center text-sm font-bold text-charcoal uppercase">
+                <span>SYMBOL: <span class="text-navy">BTC/USDT</span></span>
+                <span>NGÀY BÁO CÁO: 24 THÁNG 05, 2026</span>
+                <span>TRẠNG THÁI: <span class="text-danger">CAUTIOUSLY BEARISH</span></span>
+            </div>
+        </header>
+
+        <!-- Psychology Guard Alert -->
+        <div class="mb-8 border-2 border-gold bg-yellow-50 p-4 rounded-sm flex items-start gap-4">
+            <div class="text-gold text-2xl">⚠️</div>
+            <div>
+                <h4 class="font-bold text-gold uppercase text-sm">Cảnh báo Tâm lý Giao dịch (Psychology Guard)</h4>
+                <p class="text-xs italic text-gray-700">Chỉ số Fear & Greed đang ở mức 25 (Extreme Fear). Tuyệt đối tuân thủ khối lượng giao dịch. Không thực hiện FOMO khi giá biến động mạnh quanh vùng hỗ trợ tâm lý.</p>
+            </div>
+        </div>
+
+        <!-- Executive Summary Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 bg-paper p-6 border-y border-gray-200">
+            <div class="text-center">
+                <span class="block text-xs uppercase text-gray-500 font-bold mb-1">Hướng Giao Dịch</span>
+                <span class="inline-block px-6 py-1 bg-danger text-white font-bold rounded">BÁN / THEO DÕI</span>
+            </div>
+            <div class="text-center border-x border-gray-300">
+                <span class="block text-xs uppercase text-gray-500 font-bold mb-1">Độ Tin Cậy AI</span>
+                <span class="text-2xl font-bold text-navy">78.4%</span>
+            </div>
+            <div class="text-center">
+                <span class="block text-xs uppercase text-gray-500 font-bold mb-1">Giá Thị Trường</span>
+                <span class="text-2xl font-mono mono-text text-charcoal">$76,720</span>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <main class="space-y-12">
+            
+            <!-- I. TỔNG QUAN -->
+            <section>
+                <h3 class="text-2xl font-bold text-navy mb-4 border-l-4 border-navy pl-4">I. TỔNG QUAN (MARKET OVERVIEW)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="justified-text">
+                        <h4 class="font-bold text-charcoal mb-2 underline decoration-navy">Bối Cảnh Vĩ Mô</h4>
+                        <p class="text-sm">
+                            Tâm lý thị trường hiện đang bị đè nặng bởi các yếu tố chính trị và kinh tế vĩ mô. Sự xuất hiện của tân Chủ tịch Fed, <span class="font-bold">Kevin Warsh</span>, với quan điểm diều hâu đã gây áp lực trực tiếp lên các tài sản rủi ro. Đặc biệt, dòng tiền rút ròng từ các quỹ ETF Bitcoin giao ngay tại Hoa Kỳ đạt con số kỷ lục <span class="mono-text">1,26 tỷ USD</span> chỉ trong vòng một tuần, phản ánh sự thận trọng cực độ của các định chế tài chính lớn.
+                        </p>
+                    </div>
+                    <div class="justified-text">
+                        <h4 class="font-bold text-charcoal mb-2 underline decoration-navy">Trạng Thái Thị Trường</h4>
+                        <p class="text-sm">
+                            Chỉ số <span class="font-bold">Fear & Greed</span> đạt mức <span class="text-danger font-bold">25</span>, rơi vào vùng <span class="italic">"Cực kỳ sợ hãi"</span>. Dù vậy, tiến trình của đạo luật "Clarity Act" tại Thượng viện Mỹ đang là điểm tựa tâm lý duy nhất, hứa hẹn một khung pháp lý minh bạch hơn, có thể kích hoạt lực cầu bắt đáy trong trung hạn.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <!-- II. CẤU TRÚC -->
+            <section>
+                <h3 class="text-2xl font-bold text-navy mb-4 border-l-4 border-navy pl-4">II. CẤU TRÚC (SMC/ICT STRUCTURE)</h3>
+                <div class="justified-text space-y-4">
+                    <p>
+                        Trên khung thời gian cao (HTF), cấu trúc đang thể hiện sự suy yếu rõ rệt khi giá liên tục đóng nến dưới ngưỡng <span class="mono-text">$80,000</span>. Đây được xác định là vùng <span class="italic font-bold">Bearish POI</span> chính yếu. Hiện tại, chúng ta đang quan sát một vùng <span class="font-bold">FVG (Fair Value Gap)</span> chưa được lấp đầy tại vùng giá <span class="mono-text">$78,500</span>, đóng vai trò là kháng cự kỹ thuật ngắn hạn.
+                    </p>
+                    <div class="bg-paper p-4 rounded-sm border-l-4 border-charcoal">
+                        <ul class="text-sm space-y-2">
+                            <li><strong>Hỗ trợ then chốt:</strong> Vùng <span class="mono-text">$75,000 – $76,000</span>. Đây là cấu trúc đáy cũ (Old Low). Nếu bị phá vỡ hoàn toàn, mục tiêu giá tiếp theo sẽ là <span class="mono-text">$70,000</span>.</li>
+                            <li><strong>Vùng Thanh Khoản (Liquidity):</strong> Một lượng lớn lệnh <span class="italic">Sell-side Liquidity (SSL)</span> đang tập trung dày đặc dưới mốc <span class="mono-text">$74,600</span>. AI dự báo có khả năng xảy ra một pha <span class="italic text-danger font-bold">Stop Run</span> trước khi có sự đảo chiều thật sự.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <!-- III. XÁC NHẬN -->
+            <section>
+                <h3 class="text-2xl font-bold text-navy mb-4 border-l-4 border-navy pl-4">III. XÁC NHẬN (CONFIRMATION)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="border p-4 bg-gray-50">
+                        <h4 class="font-bold text-success mb-2 uppercase text-xs">Lệnh Mua (Long Confirmation)</h4>
+                        <p class="text-xs justified-text italic">
+                            Yêu cầu nến 4H đóng cửa dứt khoát trên mức <span class="mono-text">$78,500</span> với khối lượng gia tăng, hoặc xuất hiện mô hình <span class="font-bold uppercase">Spring</span> (quét thanh khoản dưới $75,000 và rút chân mạnh mẽ) kèm theo phân kỳ dương trên chỉ báo RSI.
+                        </p>
+                    </div>
+                    <div class="border p-4 bg-gray-50">
+                        <h4 class="font-bold text-danger mb-2 uppercase text-xs">Lệnh Bán (Short Confirmation)</h4>
+                        <p class="text-xs justified-text italic">
+                            Xác nhận khi giá kiểm định lại (retest) vùng kháng cự <span class="mono-text">$78,500</span> tạo ra mô hình <span class="font-bold uppercase">UTAD</span> (Upthrust After Distribution), hoặc phá vỡ cấu trúc giảm giá (MSS) khi nến ngày đóng dưới <span class="mono-text">$75,000</span>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <!-- IV. KẾ HOẠCH -->
+            <section>
+                <h3 class="text-2xl font-bold text-navy mb-6 border-l-4 border-navy pl-4">IV. KẾ HOẠCH GIAO DỊCH (TRADING PLAN)</h3>
+                <div class="trade-card overflow-hidden">
+                    <div class="bg-charcoal text-white p-3 text-center font-bold uppercase tracking-widest">
+                        Kịch bản Ưu tiên Tích lũy (Buy/Long Setup)
+                    </div>
+                    <table class="w-full text-left border-collapse">
+                        <tr class="border-b">
+                            <td class="p-4 bg-paper font-bold w-1/3">ĐIỂM VÀO LỆNH (ENTRY)</td>
+                            <td class="p-4 text-xl font-mono font-bold text-navy">$75,800</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4 bg-paper font-bold">DỪNG LỖ (STOP LOSS)</td>
+                            <td class="p-4 text-xl font-mono font-bold text-danger text-opacity-80">$74,000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4 bg-paper font-bold">CHỐT LỜI 1 (TARGET 1)</td>
+                            <td class="p-4 text-xl font-mono font-bold text-success">$80,000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4 bg-paper font-bold">CHỐT LỜI 2 (TARGET 2)</td>
+                            <td class="p-4 text-xl font-mono font-bold text-success">$83,500</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 bg-paper font-bold">TỶ LỆ R:R (RISK/REWARD)</td>
+                            <td class="p-4 text-xl font-bold text-gold">1 : 2.5</td>
+                        </tr>
+                    </table>
+                </div>
+                <p class="mt-4 text-xs italic text-gray-500 text-center">
+                    *Kịch bản phòng vệ: Đứng ngoài thị trường nếu giá đóng nến ngày dưới $75,000 và chờ đợi phản ứng tại vùng $72,350 (MA100).
+                </p>
+            </section>
+
+            <hr class="section-divider">
+
+            <!-- V. QUẢN TRỊ RỦI RO -->
+            <section class="mb-10">
+                <h3 class="text-2xl font-bold text-navy mb-4 border-l-4 border-navy pl-4">V. QUẢN TRỊ RỦI RO (RISK MANAGEMENT)</h3>
+                <div class="justified-text space-y-4">
+                    <p class="text-sm">
+                        Hệ thống <span class="font-bold">AI Trade pro v7.0.0</span> khuyến nghị rủi ro tối đa cho mỗi vị thế không quá <span class="text-danger font-bold">1% - 1.5%</span> tổng vốn khả dụng. Trong bối cảnh tâm lý thị trường cực kỳ nhạy cảm, việc bảo toàn vốn phải được đặt lên hàng đầu.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-paper p-4 border border-dashed border-charcoal">
+                            <h5 class="font-bold mb-2">Chiến thuật thoát lệnh:</h5>
+                            <p>Sử dụng <span class="italic font-bold">Trailing Stop</span> ngay sau khi đạt TP1. Nếu giá quay đầu, lệnh sẽ được đóng ở mức hòa vốn (BE).</p>
+                        </div>
+                        <div class="bg-paper p-4 border border-dashed border-charcoal">
+                            <h5 class="font-bold mb-2">Đòn bẩy khuyến nghị:</h5>
+                            <p>Tuyệt đối không sử dụng đòn bẩy vượt quá <span class="font-bold">10x</span> để tránh các pha biến động quét thanh khoản (wick) mạnh.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Signature/Footer Area -->
+        <footer class="mt-16 pt-8 border-t border-gray-300">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6">
+                <div class="text-xs text-gray-500 space-y-1">
+                    <p class="font-bold text-charcoal">PHÂN TÍCH BỞI: MASTER AI TRADER SYSTEM</p>
+                    <p>Hệ thống: AI Trade pro v7.0.0 Standard</p>
+                    <p>Website: <a href="www.phamhoanganhtokens.com" target="_blank" class="text-navy underline">www.phamhoanganhtokens.com</a></p>
+                </div>
+                <div class="text-right">
+                    <p class="text-[10px] text-gray-400 max-w-md italic">
+                        Cảnh báo rủi ro: Giao dịch tiền điện tử chứa đựng rủi ro cao và không phù hợp với tất cả nhà đầu tư. Các phân tích trên chỉ mang tính chất tham khảo dựa trên dữ liệu kỹ thuật, không phải lời khuyên tài chính trực tiếp.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
