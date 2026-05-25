@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v8.0.0 - Financial Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#001f3f',
+                        charcoal: '#333333',
+                        emerald: '#10b981',
+                        crimson: '#dc2626',
+                        gold: '#b8860b',
+                        offwhite: '#f9f9f9'
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        display: ['"Crimson Pro"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: "Times New Roman", Times, serif;
+            color: #333;
+        }
+        .report-container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        .justified-text {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .section-divider {
+            border-top: 2px solid #001f3f;
+            margin: 2rem 0 1.5rem 0;
+            position: relative;
+        }
+        .section-number {
+            background: #001f3f;
+            color: white;
+            padding: 2px 12px;
+            font-weight: bold;
+            position: absolute;
+            top: -15px;
+            left: 0;
+            font-size: 0.875rem;
+        }
+        .action-card {
+            border-left: 5px solid #10b981;
+            background: #f0fdf4;
+            padding: 24px;
+            border-radius: 4px;
+        }
+        .system-banner {
+            border-top: 4px double #b8860b;
+            border-bottom: 4px double #b8860b;
+            padding: 10px 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .report-container {
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+            }
+            .header-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-8">
+
+    <div class="report-container">
+        <!-- TOP BRANDING -->
+        <div class="system-banner">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-widest text-navy uppercase">
+                AI Trade pro™ v8.0.0
+            </h1>
+            <p class="text-xs tracking-[0.3em] text-gray-500 mt-2 uppercase font-semibold">Institutional Grade Predictive Analytics</p>
+        </div>
+
+        <!-- METADATA BAR -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 bg-offwhite p-4 border border-gray-200 rounded text-sm font-semibold uppercase">
+            <div>
+                <span class="text-gray-500 block text-[10px]">DOCUMENT TYPE</span>
+                BÁO CÁO PHÂN TÍCH
+            </div>
+            <div>
+                <span class="text-gray-500 block text-[10px]">INSTRUMENT</span>
+                XAU/USD (VÀNG)
+            </div>
+            <div>
+                <span class="text-gray-500 block text-[10px]">DATE</span>
+                25/05/2026
+            </div>
+            <div>
+                <span class="text-gray-500 block text-[10px]">CAPITAL</span>
+                $50.00 USD
+            </div>
+        </div>
+
+        <!-- SUMMARY DASHBOARD -->
+        <div class="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="border border-gray-200 p-4 rounded flex items-center justify-between">
+                <span class="text-lg font-bold">DAILY BIAS:</span>
+                <span class="bg-emerald text-white px-4 py-1 rounded-full text-sm font-bold animate-pulse">BULLISH SHIFT (H4)</span>
+            </div>
+            <div class="border border-gray-200 p-4 rounded flex items-center justify-between">
+                <span class="text-lg font-bold">CONFIDENCE:</span>
+                <div class="w-1/2 bg-gray-200 h-2 rounded-full overflow-hidden">
+                    <div class="bg-navy h-full" style="width: 82%"></div>
+                </div>
+                <span class="text-sm font-bold ml-2">82%</span>
+            </div>
+        </div>
+
+        <!-- SECTION 0: DATA COLLECTION -->
+        <section class="mb-10">
+            <div class="section-divider"><span class="section-number">SEC 0</span></div>
+            <h2 class="text-xl font-bold text-navy mb-4 uppercase">I. THU THẬP DỮ LIỆU (DATA COLLECTION)</h2>
+            <div class="justified-text grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>Giá hiện tại:</strong> ~$4,579.07 <span class="text-emerald font-bold">(+1.54%)</span></li>
+                    <li><strong>Asian High (Đỉnh Á):</strong> $4,582.40</li>
+                    <li><strong>Asian Low (Đáy Á):</strong> $4,571.42</li>
+                </ul>
+                <div class="text-sm italic border-l-2 border-gray-300 pl-4 text-gray-600">
+                    Thị trường mở cửa với khoảng trống giá (Gap) tăng do tin tức đàm phán Mỹ-Iran. Cảnh báo: Ngày lễ Memorial Day (Mỹ) - Thanh khoản thấp dự kiến.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: HTF BIAS -->
+        <section class="mb-10">
+            <div class="section-divider"><span class="section-number">SEC I</span></div>
+            <h2 class="text-xl font-bold text-navy mb-4 uppercase">II. XU HƯỚNG KHUNG THỜI GIAN LỚN (HTF BIAS)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-bold border-b border-gray-200 mb-2">Khung Daily (D1)</h3>
+                    <p class="justified-text text-sm">
+                        Trạng thái: <strong>Bearish-Neutral</strong>. Cấu trúc chính vẫn đang trong giai đoạn điều chỉnh sau khi đạt đỉnh $5,600. Tuy nhiên, lực mua đang xuất hiện mạnh mẽ tại vùng hỗ trợ tâm lý $4,500.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold border-b border-gray-200 mb-2 text-emerald">Khung 4-Hour (4H)</h3>
+                    <p class="justified-text text-sm">
+                        Trạng thái: <strong>Bullish Shift</strong>. Cấu trúc nội bộ (Internal Structure) đã chuyển sang tăng sau mô hình Double Bottom tại $4,500. Giá duy trì ổn định trên vùng Gap tuần đầu phiên.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 & 3: LIQUIDITY & SMC -->
+        <section class="mb-10">
+            <div class="section-divider"><span class="section-number">SEC II & III</span></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h2 class="text-xl font-bold text-navy mb-4 uppercase">THANH KHOẢN & BẪY GIÁ</h2>
+                    <p class="justified-text text-sm mb-4">
+                        Asian Low ($4,571.42) được xác định là vùng <strong>Sell-side Liquidity (SSL)</strong>. Trong điều kiện thanh khoản mỏng, thuật toán thường thực hiện cú "Judas Swing" quét qua đáy này để loại bỏ các lệnh mua sớm trước khi đẩy giá lên cao hơn.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-navy mb-4 uppercase">CẤU TRÚC SMC</h2>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>Internal CHoCH:</strong> Đã xác nhận trên khung H1.</li>
+                        <li><strong>POI:</strong> FVG H1 ($4,565 - $4,575).</li>
+                        <li><strong>Target:</strong> Order Block M15 tại $4,571 (Hợp lưu Asian Low).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TRADING PLAN (ACTION CARD) -->
+        <section class="mb-10">
+            <div class="section-divider"><span class="section-number">SEC IV</span></div>
+            <h2 class="text-xl font-bold text-navy mb-4 uppercase text-center underline decoration-gold underline-offset-8">CHIẾN LƯỢC GIAO DỊCH CHI TIẾT</h2>
+            
+            <div class="action-card mt-6">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-2xl font-black text-emerald uppercase tracking-tighter">BUY LIMIT / CONFIRMATION</span>
+                    <span class="text-navy font-bold">R:R Ratio 1:14</span>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b-2 border-emerald/20 text-xs uppercase tracking-widest text-gray-500">
+                                <th class="pb-2">Thông số</th>
+                                <th class="pb-2">Mức giá / Giá trị</th>
+                                <th class="pb-2 text-right">Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-lg">
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 font-semibold text-gray-600">ENTRY (Điểm vào)</td>
+                                <td class="py-3 font-bold text-navy font-display">$4,572.50</td>
+                                <td class="py-3 text-right text-xs italic">Quét Asian Low</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 font-semibold text-gray-600">STOP LOSS (Dừng lỗ)</td>
+                                <td class="py-3 font-bold text-crimson font-display">$4,567.50</td>
+                                <td class="py-3 text-right text-xs italic">Cố định $5.00</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-3 font-semibold text-gray-600">TAKE PROFIT (Chốt lời)</td>
+                                <td class="py-3 font-bold text-emerald font-display">$4,642.50</td>
+                                <td class="py-3 text-right text-xs italic">Pivot 4H Target</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 font-semibold text-gray-600">LOT SIZE</td>
+                                <td class="py-3 font-bold text-navy font-display">0.01 LOT</td>
+                                <td class="py-3 text-right text-xs italic">Tài khoản $50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="text-[11px] mt-4 text-gray-500 italic justified-text">
+                *Điều kiện xác nhận (LTM): Chờ đợi Market Structure Shift (MSS) trên khung M1/M5 sau khi quét thanh khoản tại Asian Low. Một cây nến xung lực tăng mạnh đóng cửa trên đỉnh gần nhất là tín hiệu kích hoạt.
+            </p>
+        </section>
+
+        <!-- SECTION 5: RISK & PSYCHOLOGY -->
+        <section class="mb-10">
+            <div class="section-divider"><span class="section-number">SEC V</span></div>
+            <h2 class="text-xl font-bold text-navy mb-4 uppercase">V. QUẢN TRỊ RỦI RO & TÂM LÝ</h2>
+            <div class="bg-red-50 border-2 border-crimson p-5 rounded-sm">
+                <div class="flex items-start gap-4">
+                    <div class="text-crimson text-3xl font-bold">!</div>
+                    <div>
+                        <h4 class="font-bold text-crimson uppercase mb-1">Cảnh báo thanh khoản ngày lễ</h4>
+                        <p class="justified-text text-sm text-charcoal">
+                            Do là <strong>Memorial Day</strong>, chênh lệch Spread có thể giãn rộng. Khoản dừng lỗ 10% vốn ($5) cần được bảo vệ nghiêm ngặt. Tuyệt đối không thực hiện FOMO nếu giá không quay về vùng POI thiết lập. Kỷ luật là yếu tố sống còn cho tài khoản quy mô nhỏ.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RATIONALE EXPLANATION -->
+        <div class="bg-navy text-white p-8 mt-12 rounded-sm">
+            <h3 class="text-gold font-bold mb-3 uppercase tracking-wider">Cơ sở lập luận (Rationale)</h3>
+            <p class="justified-text text-sm leading-relaxed opacity-90">
+                Mô hình phân tích dựa trên sự kết hợp giữa ICT (Inner Circle Trader) và thuật toán AI Trade Pro. Việc quét thanh khoản phiên Á (Asian Sweep) trong môi trường thanh khoản thấp của ngày lễ thường là dấu hiệu của việc "tái phân phối" trước khi xu hướng thật sự diễn ra. Với việc cấu trúc H4 đã dịch chuyển sang tăng, chúng ta tìm kiếm cơ hội thuận xu hướng ở khung thời gian thấp hơn.
+            </p>
+        </div>
+
+        <!-- FOOTER LINKS -->
+        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+            <p class="text-xs text-gray-400 mb-2 uppercase tracking-widest">Official Analysis Document • Confidential</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-navy font-bold hover:text-gold transition-colors text-sm">
+                WWW.PHAMHOANGANHTOKENS.COM
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
 
