@@ -1,1 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v8.0.0 - Financial Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        /* Strict adherence to Times New Roman for formal institutional feel */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f3f4f6;
+            color: #1a1a1a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
+        .report-container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            padding: 60px 80px;
+            position: relative;
+            border: 1px solid #e5e7eb;
+        }
+
+        @media (max-width: 768px) {
+            .report-container {
+                margin: 0;
+                padding: 30px 20px;
+                box-shadow: none;
+            }
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+
+        .section-divider {
+            border-top: 2px solid #001f3f;
+            margin: 2rem 0 1.5rem 0;
+            position: relative;
+        }
+
+        .section-number {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #001f3f;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .brand-accent {
+            color: #b8860b; /* Gold */
+        }
+
+        .trading-card {
+            background-color: #f9fafb;
+            border-left: 4px solid #001f3f;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge-bearish { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+        .badge-neutral { background-color: #f3f4f6; color: #374151; border: 1px solid #9ca3af; }
+        .badge-bullish { background-color: #dcfce7; color: #166534; border: 1px solid #4ade80; }
+
+        .double-line {
+            border-top: 3px double #001f3f;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th {
+            background-color: #f3f4f6;
+            text-align: left;
+            padding: 12px;
+            font-weight: bold;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .warning-box {
+            border: 2px solid #dc2626;
+            background-color: #fff1f2;
+            padding: 15px;
+            color: #991b1b;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-container">
+        <!-- HEADER SECTION -->
+        <header class="text-center mb-12">
+            <div class="text-sm tracking-widest uppercase text-gray-500 mb-2">Institutional Trading Intelligence</div>
+            <h1 class="text-4xl font-bold tracking-tight text-[#001f3f] mb-2 uppercase">
+                AI Trade pro<span class="brand-accent">™</span> v8.0.0
+            </h1>
+            <div class="double-line"></div>
+            <div class="flex flex-wrap justify-between items-center text-sm font-bold px-2 py-1 uppercase bg-gray-50 border border-gray-200">
+                <span>Ngày: 25/05/2026</span>
+                <span>Thị trường: BTC/USD</span>
+                <span>Vốn khả dụng: 50.00 USD</span>
+                <span>Mã báo cáo: #BTC-2026-0525-INST</span>
+            </div>
+            <h2 class="mt-8 text-2xl font-bold text-gray-800 underline underline-offset-8">BÁO CÁO PHÂN TÍCH KỸ THUẬT TOÀN DIỆN</h2>
+        </header>
+
+        <!-- SUMMARY DASHBOARD -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="border border-gray-200 p-4 rounded bg-white">
+                <div class="text-xs text-gray-500 uppercase font-bold mb-1">Daily Bias</div>
+                <div class="status-badge badge-bearish inline-block">Bearish / Giảm giá</div>
+            </div>
+            <div class="border border-gray-200 p-4 rounded bg-white">
+                <div class="text-xs text-gray-500 uppercase font-bold mb-1">Confidence Score</div>
+                <div class="w-full bg-gray-200 h-2 rounded-full mt-2">
+                    <div class="bg-[#001f3f] h-2 rounded-full" style="width: 78%"></div>
+                </div>
+                <div class="text-right text-[10px] mt-1">78% Analysis Alignment</div>
+            </div>
+            <div class="border border-gray-200 p-4 rounded bg-white">
+                <div class="text-xs text-gray-500 uppercase font-bold mb-1">System Status</div>
+                <div class="flex items-center text-green-700 font-bold text-sm">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></span>
+                    ACTIVE - READY TO EXECUTE
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 0 -->
+        <section class="mb-8">
+            <div class="section-number">Section (0): Thu thập dữ liệu</div>
+            <div class="section-divider"></div>
+            <p class="text-justify italic text-gray-700">
+                Dữ liệu thị trường BTC tính đến ngày 25/05/2026 đã được tổng hợp từ nguồn thời gian thực. Giá hiện giao dịch quanh mức 77,051 USD. Thị trường Mỹ đang nghỉ lễ Memorial Day, dẫn đến thanh khoản mỏng và biến động bất thường. Các vùng thanh khoản chính đã được xác định phía trên mức 80,995 USD (BSL) và phía dưới mức 73,786 USD (SSL).
+            </p>
+        </section>
+
+        <!-- SECTION I -->
+        <section class="mb-8">
+            <div class="section-number">Section (I): Xu hướng Khung Thời Gian Lớn (HTF Bias)</div>
+            <div class="section-divider"></div>
+            <ul class="list-disc ml-5 text-justify space-y-2">
+                <li><strong>Xu hướng Ngày (D1):</strong> <span class="text-red-700 font-bold">Bearish (Giảm)</span>. Giá đang nằm trong nhịp điều chỉnh dưới đường EMA 200 ($82,228).</li>
+                <li><strong>Xu hướng 4 Giờ (4H):</strong> <span class="text-gray-600 font-bold">Neutral-Bearish (Trung lập - Giảm)</span>. Dòng tiền ETF âm và cấu trúc chưa thể phá vỡ kháng cự $80,000. Dòng tiền lớn đang thận trọng.</li>
+            </ul>
+        </section>
+
+        <!-- SECTION II -->
+        <section class="mb-8">
+            <div class="section-number">Section (II): Phân tích Thanh khoản & Bẫy phiên Á</div>
+            <div class="section-divider"></div>
+            <p class="text-justify mb-4">
+                Phiên Á thiết lập biên độ giữa $76,100 (Đáy) và $77,400 (Đỉnh). Thanh khoản mỏng trong ngày lễ tạo điều kiện cho các nhịp quét râu nến (whipsaw).
+            </p>
+            <div class="bg-gray-50 p-4 border border-dashed border-gray-400">
+                <strong>Chiến lược Liquidity:</strong> Dự kiến giá sẽ quét Đỉnh phiên Á ($77,400) để lấy thanh khoản Short trước khi tiếp tục đà giảm về các vùng kỹ thuật thấp hơn như mức Gamma $75,000.
+            </div>
+        </section>
+
+        <!-- SECTION III -->
+        <section class="mb-8">
+            <div class="section-number">Section (III): Cấu trúc SMC (Smart Money Concepts)</div>
+            <div class="section-divider"></div>
+            <ul class="list-disc ml-5 text-justify space-y-2">
+                <li><strong>Điểm POI chính:</strong> Fair Value Gap (FVG) khung 1H tại vùng <span class="font-bold">$77,500 – $77,800</span>.</li>
+                <li><strong>Vùng cung (Supply):</strong> Bearish FVG 4H tại $79,300 – $81,200.</li>
+                <li><strong>Vùng cấu trúc:</strong> Mức $74,950 là điểm <strong>CHoCH</strong> (Change of Character) quan trọng. Nếu nến đóng dưới mức này, xu hướng giảm mạnh sẽ bắt đầu.</li>
+            </ul>
+        </section>
+
+        <!-- SECTION IV -->
+        <section class="mb-8">
+            <div class="section-number">Section (IV): Xác nhận vào lệnh (Entry Confirmation)</div>
+            <div class="section-divider"></div>
+            <div class="trading-card">
+                <div class="text-xl font-bold text-[#001f3f] mb-4 uppercase tracking-wider">Lệnh Giao Dịch: <span class="text-red-700">BÁN (SHORT) BTC/USD</span></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tham số</th>
+                            <th>Giá trị mục tiêu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Entry (Điểm vào)</td>
+                            <td class="font-bold">$77,800 <span class="text-xs text-gray-500 font-normal ml-2">(Vùng kháng cự FVG)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Stop Loss (Cắt lỗ)</td>
+                            <td class="font-bold text-red-700">$78,300</td>
+                        </tr>
+                        <tr>
+                            <td>Take Profit (Chốt lời)</td>
+                            <td class="font-bold text-green-700">$75,300</td>
+                        </tr>
+                        <tr>
+                            <td>RR Ratio (Tỉ lệ)</td>
+                            <td class="font-bold">1:5.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION V -->
+        <section class="mb-8">
+            <div class="section-number">Section (V): Quản lý rủi ro (Risk Management)</div>
+            <div class="section-divider"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="text-justify">
+                    Để bảo vệ tài khoản 50 USD, các tham số sau được thực thi nghiêm ngặt. Với khối lượng 0.01 lot, khoảng cách giá 500 USD tương ứng với mức lỗ tối đa 5 USD (10% tài khoản). Đây là giới hạn rủi ro cao nhất cho phép.
+                </div>
+                <div class="border-2 border-[#001f3f] p-4 bg-white text-sm">
+                    <div class="flex justify-between mb-1"><span>Vốn rủi ro (Risk):</span> <span class="font-bold">5.00 USD</span></div>
+                    <div class="flex justify-between mb-1"><span>Khối lượng (Lot):</span> <span class="font-bold">0.01 Lot</span></div>
+                    <div class="flex justify-between"><span>Max Drawdown:</span> <span class="font-bold text-red-700">10%</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RATIONALE & PSYCHOLOGY -->
+        <section class="mb-12">
+            <div class="section-number">Xác thực & Tâm lý giao dịch</div>
+            <div class="section-divider"></div>
+            <div class="space-y-4">
+                <p class="text-justify">
+                    <strong>Xác thực:</strong> Lệnh chỉ có hiệu lực nếu giá quét qua Đỉnh phiên Á và có phản ứng tại vùng POI. Nếu giá giảm trực tiếp từ mức hiện tại mà không chạm Entry, hãy bỏ qua giao dịch.
+                </p>
+                <p class="text-justify">
+                    <strong>Tâm lý:</strong> Giao dịch trong ngày nghỉ lễ đòi hỏi sự kiên nhẫn cực độ. Không FOMO khi thấy giá dao động mạnh do thanh khoản thấp. Duy trì kỷ luật với mức dừng lỗ 5 USD, tuyệt đối không nới lỏng Stop Loss khi giá đi ngược hướng.
+                </p>
+            </div>
+            
+            <!-- Warning Box Mockup if needed -->
+            <div class="warning-box flex items-center gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <div>
+                    TUÂN THỦ KỶ LUẬT: KHÔNG GIAO DỊCH QUÁ KHỐI LƯỢNG KHI THANH KHOẢN THẤP.
+                </div>
+            </div>
+        </section>
+
+        <!-- REPORT FOOTER -->
+        <div class="mt-20 pt-8 border-t border-gray-200">
+            <div class="flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-400 uppercase tracking-widest">
+                <div>© 2026 AI TRADE PRO ANALYTICS DIVISION</div>
+                <div class="my-4 md:my-0">
+                    <a href="www.phamhoanganhtokens.com" target="_blank" class="hover:text-[#001f3f] transition-colors">www.phamhoanganhtokens.com</a>
+                </div>
+                <div>CONFIDENTIAL // INTERNAL USE ONLY</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for subtle interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add a subtle fade-in effect to the report
+            const report = document.querySelector('.report-container');
+            report.style.opacity = '0';
+            report.style.transform = 'translateY(20px)';
+            report.style.transition = 'all 1s ease-out';
+            
+            setTimeout(() => {
+                report.style.opacity = '1';
+                report.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
