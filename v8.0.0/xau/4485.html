@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro™ v8.0.0 | Báo cáo Phân tích Tài chính</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f0f2f5;
+        }
+        .report-paper {
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .border-gold {
+            border-color: #c5a059;
+        }
+        .text-gold {
+            color: #c5a059;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <main class="max-w-4xl mx-auto bg-white p-8 md:p-16 report-paper">
+        
+        <!-- Header -->
+        <header class="border-b-4 border-[#001f3f] pb-6 mb-8">
+            <div class="flex justify-between items-end mb-4">
+                <div>
+                    <h1 class="text-4xl font-bold text-[#001f3f]">AI Trade pro™ <span class="text-xl font-normal">v8.0.0</span></h1>
+                    <p class="text-sm uppercase tracking-widest text-gray-500 mt-2">Báo cáo Phân tích Kỹ thuật Chuyên sâu</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold text-[#001f3f]">TÀI SẢN: XAU/USD</p>
+                    <p class="text-sm">Vốn khả dụng: $200.00</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Dashboard -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            <div class="bg-gray-50 p-6 border-l-4 border-red-700">
+                <h3 class="text-lg font-bold mb-2">Daily Bias</h3>
+                <span class="px-4 py-1 bg-red-700 text-white text-sm font-bold uppercase tracking-wider">Bearish (Giảm)</span>
+            </div>
+            <div class="bg-gray-50 p-6 border-l-4 border-[#c5a059]">
+                <h3 class="text-lg font-bold mb-2">Confidence Score</h3>
+                <div class="w-full bg-gray-200 h-4 mt-2">
+                    <div class="bg-[#c5a059] h-4" style="width: 85%;"></div>
+                </div>
+                <p class="text-xs mt-1 text-gray-600">Mức độ tự tin: 85%</p>
+            </div>
+        </section>
+
+        <!-- Main Body -->
+        <div class="space-y-8 text-lg">
+            
+            <section>
+                <h2 class="text-2xl font-bold border-b border-gray-300 pb-2 mb-4 text-[#001f3f]">(0) Thu thập dữ liệu</h2>
+                <ul class="list-disc pl-5 space-y-2 text-justify">
+                    <li>Giá hiện tại: <strong>$4477.30 – $4481.78</strong>.</li>
+                    <li>Biên độ ngày: Cao $4498.80 | Thấp $4460.00.</li>
+                    <li>Tâm lý thị trường: <strong>Trung lập đến Tiêu cực</strong>.</li>
+                    <li>Tin tức: Chỉ số DXY mạnh trên 99.2; Dầu Brent tăng gây áp lực lạm phát lên Vàng.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold border-b border-gray-300 pb-2 mb-4 text-[#001f3f]">(1) HTF Bias & (2) Bẫy giá</h2>
+                <p class="text-justify mb-4">Khung D1/H4 cho thấy xu hướng chính đã chuyển sang giảm sau khi phá vỡ ngưỡng $4500. Các nhịp hồi lên vùng $4485-$4490 hiện tại được nhận diện là Bull Trap (Bẫy tăng giá) nhằm quét thanh khoản BSL trước khi tiếp tục chu kỳ giảm.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold border-b border-gray-300 pb-2 mb-4 text-[#001f3f]">(3) Cấu trúc SMC</h2>
+                <p class="text-justify">Phá vỡ cấu trúc (BOS) tại $4500. Vùng cung (Supply Zone) quan trọng xác định tại $4490 - $4495. Khoảng trống giá (FVG) tại H1 ($4490 - $4482) là mục tiêu hồi phục kỹ thuật trước khi giá tiếp tục giảm mạnh.</p>
+            </section>
+
+            <!-- Trading Plan Highlight -->
+            <section class="bg-[#001f3f] text-white p-8 rounded-sm">
+                <h2 class="text-2xl font-bold text-gold mb-6 border-b border-gold pb-2">(4) Chiến lược vào lệnh (Action Card)</h2>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="p-4 bg-white/10">
+                        <p class="text-sm text-gray-300 uppercase">Entry</p>
+                        <p class="text-2xl font-bold text-emerald-400">$4486.50</p>
+                    </div>
+                    <div class="p-4 bg-white/10">
+                        <p class="text-sm text-gray-300 uppercase">Stop Loss</p>
+                        <p class="text-2xl font-bold text-red-500">$4491.50</p>
+                    </div>
+                    <div class="col-span-2 p-4 bg-white/10">
+                        <p class="text-sm text-gray-300 uppercase">Take Profit (TP1)</p>
+                        <p class="text-2xl font-bold text-emerald-400">$4461.50</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold border-b border-gray-300 pb-2 mb-4 text-[#001f3f]">(5) Quản trị rủi ro</h2>
+                <p class="text-justify">Sử dụng khối lượng <strong>0.01 lot</strong>. Mức dừng lỗ cố định tại <strong>$5.00</strong>. Với số dư $200, tỷ lệ rủi ro/lệnh được kiểm soát ở mức 2.5%, đảm bảo an toàn tài khoản trước biến động mạnh của Vàng.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold border-b border-gray-300 pb-2 mb-4 text-[#001f3f]">(6) Tâm lý & Kỷ luật</h2>
+                <p class="text-justify">Kỷ luật là yếu tố cốt lõi. Tuyệt đối không giao dịch trả thù, không nhồi lệnh. Duy trì tâm thế trung lập, chờ đợi giá chạm vùng Entry đã thiết lập. Tuân thủ tuyệt đối lot size 0.01 bất chấp diễn biến thị trường phiên Âu.</p>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-gray-200 text-center text-xs text-gray-400">
+            <p>BẢO MẬT: Báo cáo này dành riêng cho phân tích kỹ thuật của hệ thống AI Trade pro™.</p>
+            <p class="mt-2">Truy cập thêm tại: <a href="www.phamhoanganhtokens.com" target="_blank" class="text-[#001f3f] hover:underline font-bold">www.phamhoanganhtokens.com</a></p>
+        </footer>
+
+    </main>
+</body>
+</html>
