@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro v2.0 - Analysis Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+        body {
+            font-family: "Times New Roman", serif;
+            background-color: #f8f9fa;
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
 
+    <div class="max-w-3xl mx-auto bg-white rounded-xl card-shadow p-6 md:p-10 border border-gray-100">
+        
+        <!-- Header -->
+        <header class="mb-8 border-b border-gray-200 pb-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800 uppercase tracking-wide text-center">
+                HỆ THỐNG CỐ VẤN VÀO LỆNH (ENTRY ADVISOR)
+            </h1>
+            <p class="text-center text-gray-500 mt-2 italic">BÁO CÁO PHÂN TÍCH VÀ ĐỀ XUẤT CHIẾN LƯỢC GIAO DỊCH</p>
+        </header>
+
+        <!-- Psychology Guard Section -->
+        <section class="mb-10">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <span class="text-[#28a745]">✓</span> KẾT QUẢ KIỂM TRA TÂM LÝ
+            </h3>
+            <p class="text-gray-700 text-justify leading-relaxed">
+                Dựa trên các dữ liệu đầu vào hiện tại, hệ thống ghi nhận số trận thắng và thua liên tiếp của người dùng đều ở mức không. Các chỉ số về tỷ lệ lỗ ngày, tỷ lệ lỗ tuần và mức sụt giảm tài khoản tối đa (Max Drawdown) hiện tại đều duy trì ở mức không phần trăm. Hệ thống xác nhận trạng thái tâm lý ổn định, không phát hiện dấu hiệu hưng phấn quá đà (Euphoria) hay tâm lý trả thù thị trường (Revenge) hay trạng thái Tilt nguy hiểm. Môi trường tâm lý hiện tại hoàn toàn phù hợp để thực thi các quyết định giao dịch mới theo đúng kế hoạch.
+            </p>
+        </section>
+
+        <!-- Consensus Section -->
+        <section class="mb-10 bg-blue-50 p-6 rounded-lg border-l-4 border-[#007bff]">
+            <h3 class="text-xl font-bold text-gray-800 mb-3">KIỂM TRA SỰ ĐỒNG THUẬN CỦA HỆ THỐNG</h3>
+            <p class="text-gray-700 text-justify leading-relaxed">
+                Hệ thống ghi nhận sự đồng thuận cao từ bốn tác nhân phân tích chính. Tác nhân dữ liệu thị trường và tác nhân quét thị trường xác nhận sự nhất quán của xu hướng giảm trong ngắn hạn trên các khung thời gian M15, H1 và H4. Tác nhân phân tích nâng cao cung cấp độ tin cậy đạt 80 phần trăm cho vị thế bán. Tác nhân quản trị rủi ro cũng đồng thuận với mức tin cậy 80 phần trăm và xác nhận các điều kiện an toàn tài khoản. Với ít nhất ba tác nhân có độ tin cậy vượt ngưỡng 65 phần trăm, hệ thống phê duyệt thực hiện đề xuất vào lệnh.
+            </p>
+        </section>
+
+        <!-- Trade Recommendation Section -->
+        <section>
+            <h2 class="text-3xl font-black text-[#dc3545] mb-6 border-b-2 border-[#dc3545] pb-2">
+                Khuyến nghị: SELL (BÁN) - XAU
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="space-y-3">
+                    <p class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500 font-semibold">Điểm vào lệnh (Entry):</span>
+                        <span class="text-gray-800 font-bold">4.485,00 USD</span>
+                    </p>
+                    <p class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500 font-semibold">Khối lượng (Lot):</span>
+                        <span class="text-gray-800 font-bold">0,01 lot</span>
+                    </p>
+                    <p class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500 font-semibold">Chốt lời 1 (TP1):</span>
+                        <span class="text-gray-800 font-bold">4.400,00 USD</span>
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <p class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500 font-semibold">Chốt lời 2 (TP2):</span>
+                        <span class="text-gray-800 font-bold">4.340,00 USD</span>
+                    </p>
+                    <p class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500 font-semibold">Dừng lỗ (SL):</span>
+                        <span class="text-gray-800 font-bold text-[#dc3545]">4.557,00 USD</span>
+                    </p>
+                    <p class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500 font-semibold">Độ tin cậy:</span>
+                        <span class="text-gray-800 font-bold">80%</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Lý do chi tiết (Rationale):</h4>
+                <p class="text-gray-700 text-justify leading-relaxed">
+                    Về mặt kỹ thuật, giá vàng hiện đang di chuyển trong một kênh giảm giá ngắn hạn trên khung đồ thị H4 và dao động dưới đường trung bình động EMA 200 tại vùng 4.598,83 USD. Sự đồng thuận về xu hướng giảm trên các khung thời gian ngắn hạn kết hợp với các chỉ báo động lượng như RSI và MACD cho thấy lực bán đang chiếm ưu thế vượt trội sau giai đoạn chốt lời từ đỉnh. Chỉ số biến động ATR 14 ở mức cao (57,78 USD) đòi hỏi khoảng dừng lỗ rộng để tránh các đợt quét giá ngắn hạn, do đó mức cắt lỗ được tối ưu hóa tại 4.557,00 USD (tương đương 1,25 lần giá trị ATR).
+                    <br><br>
+                    Về mặt cơ bản, mặc dù vàng nhận được hỗ trợ từ nhu cầu trú ẩn an toàn do căng thẳng địa chính trị và lực mua của các ngân hàng trung ương, nhưng sức ép từ lập trường diều hâu của Fed cùng sự phục hồi của lợi suất trái phiếu Mỹ đang tạo áp lực giảm giá đáng kể. Thị trường đang trong trạng thái chờ đợi dữ liệu kinh tế PCE, tạo điều kiện cho các đợt điều chỉnh kỹ thuật sâu hơn.
+                    <br><br>
+                    Về quản trị rủi ro, lệnh giao dịch đảm bảo tỷ lệ Rủi ro trên Lợi nhuận (R:R) đạt mức 1:2,01. Đây là mức tỷ lệ tối ưu, vượt qua yêu cầu tối thiểu là 1,8 của hệ thống, đảm bảo tính bền vững cho danh mục đầu tư.
+                </p>
+            </div>
+        </section>
+
+        <footer class="mt-10 pt-6 border-t border-gray-100 text-center text-sm text-gray-400">
+            Hệ thống khuyến nghị thực hiện lệnh đúng theo các thông số đã tính toán để đảm bảo hiệu quả quản trị vốn và kỷ luật giao dịch.
+        </footer>
+    </div>
+
+</body>
+</html>
