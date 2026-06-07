@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro™ v8.0.0 | Báo cáo Phân tích Tài chính</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        .report-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 60px;
+        }
+
+        h1, h2, h3 {
+            color: #001f3f;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .gold-text { color: #b8860b; }
+        .emerald-text { color: #065f46; }
+        .crimson-text { color: #991b1b; }
+
+        .text-justify { text-align: justify; }
+
+        @media (max-width: 768px) {
+            .report-container { padding: 30px; margin: 10px; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <div class="report-container">
+        <!-- Header -->
+        <header class="border-b-2 border-gray-800 pb-8 mb-8">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-4xl font-bold italic mb-2">AI Trade pro<span class="gold-text">™</span> v8.0.0</h1>
+                    <p class="text-sm font-semibold tracking-widest text-gray-600">HỆ THỐNG PHÂN TÍCH THỊ TRƯỜNG TỰ ĐỘNG</p>
+                </div>
+                <div class="text-right text-sm">
+                    <p><strong>Ngày:</strong> 07/06/2026</p>
+                    <p><strong>Tài sản:</strong> XAU/USD</p>
+                    <p><strong>Vốn:</strong> 200 USD</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Dashboard -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div class="bg-gray-50 p-6 border-l-4 border-red-800">
+                <h3 class="text-lg font-bold mb-2">Tình trạng thị trường</h3>
+                <span class="inline-block bg-red-100 text-red-800 px-4 py-1 rounded font-bold text-sm">BEARISH (GẤU CHIẾM ƯU THẾ)</span>
+            </div>
+            <div class="bg-gray-50 p-6 border-l-4 border-emerald-700">
+                <h3 class="text-lg font-bold mb-2">Confidence Score</h3>
+                <div class="w-full bg-gray-200 h-4 rounded-full overflow-hidden">
+                    <div class="bg-emerald-700 h-full w-[85%]"></div>
+                </div>
+                <p class="text-xs mt-2 text-gray-600 italic">Mức độ tin cậy: 85% - Dữ liệu NFP củng cố xu hướng.</p>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <article class="space-y-8 text-justify leading-relaxed">
+            <section>
+                <h2 class="text-xl font-bold mb-4 border-b border-gray-300 pb-2">I. THU THẬP DỮ LIỆU & DỊCH CHUYỂN HTF</h2>
+                <p>Giá hiện tại đang dao động ở mức 4328.40 USD sau đợt biến động mạnh từ tin tức NFP. Việc phá vỡ đường EMA 200 tại mốc 4380 trên khung D1 đánh dấu sự chuyển đổi cấu trúc quan trọng. Xu hướng dài hạn đang cho thấy tín hiệu đảo chiều từ Bullish sang Bearish.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 border-b border-gray-300 pb-2">II. PHÂN TÍCH CẤU TRÚC & LIQUIDITY</h2>
+                <p>Thanh khoản phiên Á đã bị quét sạch (Sell-side Liquidity). Mục tiêu tiếp theo của thị trường là vùng hỗ trợ tâm lý 4300. Cấu trúc SMC đang hình thành các Lower High, xác nhận phe bán đang kiểm soát hoàn toàn vùng giá phía trên 4360.</p>
+            </section>
+
+            <!-- Trading Plan Section -->
+            <section class="bg-gray-900 text-white p-8 rounded-lg shadow-inner">
+                <h2 class="text-xl font-bold mb-6 text-gold-500 gold-text">IV. CHIẾN LƯỢC GIAO DỊCH (ACTION PLAN)</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="border border-gray-700 p-3">
+                        <p class="text-xs uppercase text-gray-400">Entry</p>
+                        <p class="font-bold text-xl">4355 - 4360</p>
+                    </div>
+                    <div class="border border-gray-700 p-3">
+                        <p class="text-xs uppercase text-gray-400">Stop Loss</p>
+                        <p class="font-bold text-xl crimson-text">5 USD</p>
+                    </div>
+                    <div class="border border-gray-700 p-3">
+                        <p class="text-xs uppercase text-gray-400">TP1 / TP2</p>
+                        <p class="font-bold text-xl emerald-text">4311 / 4300</p>
+                    </div>
+                    <div class="border border-gray-700 p-3">
+                        <p class="text-xs uppercase text-gray-400">R:R</p>
+                        <p class="font-bold text-xl">1:3</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-sm italic text-gray-300">Lưu ý: Chỉ thực hiện lệnh khi có xác nhận nến Pin Bar hoặc Engulfing tại khung M15.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 border-b border-gray-300 pb-2">V. QUẢN TRỊ RỦI RO & TÂM LÝ</h2>
+                <p>Với số vốn 200 USD, việc tuân thủ lot size 0.01 là bắt buộc. Cắt lỗ cố định 5 USD giúp triệt tiêu cảm xúc tiêu cực. Tuyệt đối không FOMO khi giá đã rời xa vùng Entry. Kiên nhẫn là chìa khóa để bảo vệ tài khoản trong giai đoạn biến động mạnh.</p>
+            </section>
+        </article>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-gray-200 text-center">
+            <p class="text-xs text-gray-500 italic">Báo cáo mang tính chất tham khảo kỹ thuật. Giao dịch tài chính tiềm ẩn rủi ro cao.</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-blue-900 font-bold hover:underline mt-2 block">www.phamhoanganhtokens.com</a>
+        </footer>
+    </div>
+
+</body>
+</html>
