@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro™ v8.0.0 | Báo cáo tài chính</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#001f3f',
+                        charcoal: '#333333',
+                        emerald: '#059669',
+                        crimson: '#dc2626',
+                        gold: '#d4af37',
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f9f9f9; font-family: 'Times New Roman', Times, serif; }
+        .report-container { background-color: white; }
+        .text-justify { text-align: justify; }
+        .border-double { border-style: double; }
+        .divider { border-bottom: 2px solid #001f3f; }
+    </style>
+</head>
+<body class="py-10">
+
+    <main class="report-container max-w-4xl mx-auto shadow-2xl p-8 md:p-16 border border-gray-200">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-navy uppercase tracking-widest border-b-4 border-double border-gold pb-4">AI Trade pro™ v8.0.0</h1>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm uppercase text-charcoal bg-gray-50 p-4 border border-gray-200">
+                <p><strong>Ngày:</strong> 10/06/2026</p>
+                <p><strong>Cặp:</strong> XAU/USD</p>
+                <p><strong>Vốn:</strong> 50 USD</p>
+            </div>
+        </header>
+
+        <!-- (0) Data Collection -->
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-navy uppercase border-l-4 border-navy pl-3 mb-4">(0) Thu thập dữ liệu (Data Collection)</h2>
+            <ul class="list-disc ml-6 space-y-2 text-charcoal text-justify">
+                <li><strong>Giá hiện tại:</strong> Dao động trong khoảng $4,200.62 – $4,326.78. Thị trường đang chịu áp lực bán tháo mạnh mẽ, ghi nhận mức giảm từ -0.50% đến -1.88% trong phiên.</li>
+                <li><strong>Biên độ ngày:</strong> Cao nhất tại $4,330.16 và thấp nhất tại $4,200.62.</li>
+                <li><strong>Xu hướng chính:</strong> Bearish (Giảm giá) trên cả khung đồ thị H4 và Daily. Chỉ báo RSI (14) dưới mức 50 và MACD duy trì phân kỳ âm.</li>
+                <li><strong>Tin tức tiêu điểm:</strong> Chỉ số CPI Mỹ dự kiến tăng lên 4.2%; DXY ổn định quanh mốc 100; Căng thẳng địa chính trị hạ nhiệt.</li>
+            </ul>
+        </section>
+
+        <!-- (1) & (2) -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <section>
+                <h2 class="text-xl font-bold text-navy uppercase border-l-4 border-navy pl-3 mb-4">(I) Định hướng HTF</h2>
+                <div class="bg-navy text-white p-4 text-center rounded">
+                    <span class="text-lg font-bold">Strong Bearish (Giảm mạnh)</span>
+                </div>
+                <p class="text-justify mt-3 text-sm text-charcoal">Giá nằm dưới SMA 200 ($4,441), SMA 21 ($4,509) và SMA 50 ($4,620). "Red Friday" ngày 05/06 phá vỡ hỗ trợ dài hạn.</p>
+            </section>
+            <section>
+                <h2 class="text-xl font-bold text-navy uppercase border-l-4 border-navy pl-3 mb-4">(II) Thanh khoản</h2>
+                <p class="text-justify text-sm text-charcoal italic">AI dự báo một nhịp quét thanh khoản (Liquidity Sweep) tại $4,300 – $4,330 trước khi tin CPI công bố, sau đó giá sẽ tiếp tục rơi.</p>
+            </section>
+        </div>
+
+        <!-- (3) SMC -->
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-navy uppercase border-l-4 border-navy pl-3 mb-4">(III) Cấu trúc SMC</h2>
+            <div class="space-y-3 text-sm text-charcoal text-justify">
+                <p><strong>BOS:</strong> Xác nhận phá vỡ tại $4,352 (H4).</p>
+                <p><strong>Order Block:</strong> Vùng cung quan trọng tại $4,355 – $4,366.</p>
+                <p><strong>Fair Value Gap (FVG):</strong> Vùng $4,280 – $4,310 đóng vai trò là nam châm hút giá hồi phục kỹ thuật.</p>
+            </div>
+        </section>
+
+        <!-- (4) Trading Plan (Action Card) -->
+        <section class="mb-8 border-2 border-emerald p-6 bg-emerald-50">
+            <h2 class="text-2xl font-bold text-emerald uppercase mb-6 border-b border-emerald pb-2">IV. Kế hoạch giao dịch (Action Card)</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="text-emerald border-b border-emerald">
+                            <th class="py-2">Thông số</th>
+                            <th class="py-2">Giá trị</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-emerald/20"><td class="py-2 font-bold">Chiến lược</td><td class="py-2 text-crimson font-bold uppercase">SELL</td></tr>
+                        <tr class="border-b border-emerald/20"><td class="py-2">Vùng POI</td><td class="py-2">$4,280 – $4,300</td></tr>
+                        <tr class="border-b border-emerald/20"><td class="py-2">TP1 / TP2</td><td class="py-2">$4,210 / $4,185</td></tr>
+                        <tr><td class="py-2">Xác nhận</td><td class="py-2">Mô hình nến đảo chiều tại POI (M5/M15)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- (5) Risk Management -->
+        <section class="mb-8 border border-crimson p-6">
+            <h2 class="text-xl font-bold text-crimson uppercase mb-4">(V) Quản trị rủi ro</h2>
+            <div class="grid grid-cols-2 gap-4 text-sm text-charcoal">
+                <p><strong>Số dư:</strong> $50.00</p>
+                <p><strong>Khối lượng:</strong> 0.01 lot</p>
+                <p><strong>Cắt lỗ:</strong> $5.00</p>
+                <p><strong>Tỷ lệ R:R:</strong> 1:3</p>
+            </div>
+        </section>
+
+        <!-- (6) Psychology -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold text-navy uppercase border-l-4 border-navy pl-3 mb-4">(VI) Tâm lý & Xác thực</h2>
+            <p class="text-justify text-sm text-charcoal">Tránh FOMO khi giá giảm mạnh. Tuân thủ tuyệt đối quy tắc "No Confirmation, No Entry". Hệ thống đã sẵn sàng thực thi khi giá chạm vùng cung.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center pt-8 border-t border-gray-300">
+            <p class="text-xs text-gray-500 uppercase">Báo cáo bảo mật cấp độ chuyên gia</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-navy font-bold hover:underline">www.phamhoanganhtokens.com</a>
+        </footer>
+    </main>
+
+</body>
+</html>
