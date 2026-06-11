@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Pro™ v8.0.0 - Báo cáo Phân tích Tài chính</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .report-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 60px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            color: #001f3f;
+        }
+
+        .justified-text {
+            text-align: justify;
+        }
+
+        .gold-border {
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .action-card {
+            border: 2px solid #001f3f;
+            background: #fdfdfd;
+        }
+
+        .status-badge {
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 640px) {
+            .report-container {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-container">
+        <!-- Header -->
+        <header class="mb-10 pb-6 border-b-2 border-double border-gray-800">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h1 class="text-3xl font-bold uppercase tracking-widest text-[#001f3f]">AI Trade Pro™</h1>
+                    <span class="text-sm text-gray-500 font-bold tracking-[0.2em]">VERSION 8.0.0</span>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm font-bold">SYMBOL: XAU/USD</p>
+                    <p class="text-sm text-emerald-700">CAPITAL: 50 USD</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Dashboard -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            <div class="bg-gray-100 p-4 rounded shadow-inner">
+                <h3 class="font-bold text-lg mb-2">Daily Bias</h3>
+                <span class="status-badge bg-red-100 text-red-700 border border-red-300">BEARISH (XU HƯỚNG GIẢM)</span>
+            </div>
+            <div class="bg-gray-100 p-4 rounded shadow-inner">
+                <h3 class="font-bold text-lg mb-2">Confidence Score</h3>
+                <div class="w-full bg-gray-300 h-4 rounded-full overflow-hidden">
+                    <div class="bg-emerald-600 h-full w-[85%]"></div>
+                </div>
+                <p class="text-xs mt-1 text-right italic">85% - Institutional Grade</p>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <article class="space-y-8">
+            <section>
+                <h2 class="text-xl font-bold border-b border-gray-300 mb-4">(0) THU THẬP DỮ LIỆU</h2>
+                <ul class="list-disc pl-5 space-y-2 text-justify">
+                    <li><strong>Giá hiện tại:</strong> ~$4,089.12</li>
+                    <li><strong>Biên độ:</strong> $4,022.09 – $4,118.00</li>
+                    <li><strong>Vĩ mô:</strong> PPI Mỹ 6.4%, ECB lãi suất 2.25%, địa chính trị căng thẳng.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold border-b border-gray-300 mb-4">(1) XU HƯỚNG KHUNG THỜI GIAN LỚN</h2>
+                <p class="justified-text mb-2">Khung tuần (W1) thể hiện áp lực bán điều chỉnh mạnh. Khung D1 xác nhận cấu trúc giảm giá với chỉ số RSI tiệm cận vùng quá bán, tiềm ẩn nhịp hồi kỹ thuật ngắn hạn. Khung H4 đang trong pha tích lũy hình đáy tròn (Rounding Bottom).</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold border-b border-gray-300 mb-4">(2) THANH KHOẢN & CẠM BẪY PHIÊN Á</h2>
+                <p class="justified-text">Thanh khoản phe bán (SSL) tập trung mạnh dưới ngưỡng $4,000. Ngược lại, thanh khoản phe mua (BSL) nằm tại vùng $4,118 - $4,125. Cần thận trọng với các hành vi quét thanh khoản tại đỉnh phiên Á trước khi xu hướng chính tiếp diễn.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold border-b border-gray-300 mb-4">(3) CẤU TRÚC SMC</h2>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1 bg-gray-50 p-4 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-800">Bearish OB (Cung)</h4>
+                        <p>$4,154 – $4,197</p>
+                    </div>
+                    <div class="flex-1 bg-gray-50 p-4 border-l-4 border-emerald-500">
+                        <h4 class="font-bold text-emerald-800">Bullish OB (Cầu)</h4>
+                        <p>$4,025 – $4,045</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="action-card p-6">
+                <h2 class="text-2xl font-bold text-[#001f3f] mb-6 border-b border-gold pb-2">(4) TRADING PLAN - ACTION SETUP</h2>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-2">Params</th>
+                            <th class="p-2">Target/Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="p-2 font-bold">ENTRY (Sell)</td>
+                            <td class="p-2 text-red-700 font-bold">$4,154</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2 font-bold">STOP LOSS</td>
+                            <td class="p-2 text-red-600">5 USD</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2 font-bold">TP1 (Target)</td>
+                            <td class="p-2 text-emerald-700">$4,045</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2 font-bold">RISK/REWARD</td>
+                            <td class="p-2">High (0.01 Lot)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold border-b border-gray-300 mb-4">(5) QUẢN TRỊ RỦI RO & TÂM LÝ</h2>
+                <p class="justified-text italic">Với số dư 50 USD, dừng lỗ tuyệt đối ở mức 5 USD là bắt buộc. Hệ thống cảnh báo không thực hiện Revenge Trading khi lệnh đầu tiên chạm SL. Mọi giao dịch cần sự xác thực của tín hiệu đảo chiều (Pin bar/Engulfing) tại vùng OB mục tiêu.</p>
+            </section>
+        </article>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-6 border-t text-center">
+            <p class="text-sm text-gray-400">Hệ thống AI Trade Pro v8.0.0 | Phân tích tự động</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-[#001f3f] font-bold underline hover:text-emerald-700">www.phamhoanganhtokens.com</a>
+        </footer>
+    </div>
+
+</body>
+</html>
