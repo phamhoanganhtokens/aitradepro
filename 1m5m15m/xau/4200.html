@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro | XAU/USD Market Analysis Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#1a1a1a',
+                        navy: '#002d72',
+                        gold: '#af9500',
+                        offwhite: '#f9f9f9',
+                        bullish: '#2d5a27',
+                        bearish: '#8b0000',
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #e5e7eb; }
+        .paper {
+            background-color: #f9f9f9;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        .justify { text-align: justify; line-height: 1.6; }
+        .node-card { border: 1px solid #e5e7eb; padding: 20px; border-radius: 4px; }
+        .border-left-gold { border-left: 4px solid #af9500; }
+        @media (max-width: 640px) { .paper { padding: 20px; } }
+    </style>
+</head>
+<body class="font-serif">
 
+    <div class="paper">
+        <!-- Header -->
+        <header class="border-b-2 border-charcoal pb-6 mb-8">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h1 class="text-3xl font-bold text-navy tracking-tight">AI TRADE PRO</h1>
+                    <p class="text-sm text-gray-600 uppercase tracking-widest mt-1">Báo cáo phân tích cấu trúc thị trường</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-xl font-bold text-charcoal">ASSET: XAU/USD</p>
+                    <p class="text-sm text-gray-500">Ngày: 13 Tháng 6, 2026</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Executive Summary -->
+        <section class="mb-10 p-6 bg-white border border-gray-200">
+            <h2 class="text-xl font-bold text-navy mb-4 border-b border-gray-300 pb-2">TÓM TẮT CHIẾN LƯỢC</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <p class="text-sm text-gray-600 font-bold">Market Consensus (Đồng thuận):</p>
+                    <span class="text-lg text-bearish font-bold">BEARISH (XU HƯỚNG GIẢM)</span>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-600 font-bold">Reliability Score (Độ tin cậy):</p>
+                    <span class="text-lg text-gold font-bold">92/100 (HIGH)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multi-Timeframe Grid -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-navy mb-6">PHÂN TÍCH ĐA KHUNG THỜI GIAN</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- M1 -->
+                <div class="node-card bg-white">
+                    <h3 class="font-bold text-charcoal border-b mb-2">M1 (Micro)</h3>
+                    <p class="text-sm justify italic text-gray-700">Tích lũy giảm giá với áp lực bán mạnh trong phút cuối phiên.</p>
+                </div>
+                <!-- M5 -->
+                <div class="node-card bg-white border-l-4 border-bearish">
+                    <h3 class="font-bold text-charcoal border-b mb-2">M5 (Intermediate)</h3>
+                    <p class="text-sm justify italic text-gray-700">Đà giảm mạnh, phản ứng mạnh tại vùng cung $4,213.</p>
+                </div>
+                <!-- M15 -->
+                <div class="node-card bg-white border-l-4 border-bearish">
+                    <h3 class="font-bold text-charcoal border-b mb-2">M15 (Primary)</h3>
+                    <p class="text-sm justify italic text-gray-700">Cấu trúc Bearish xác nhận, BOS dưới $4,200.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synthesis -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-navy mb-4">TỔNG HỢP LOGIC MASTER AGENT</h2>
+            <div class="justify text-charcoal text-lg">
+                <p class="mb-4">Dựa trên dữ liệu hội tụ từ M15, M5 và M1, thị trường hiện đang ở trạng thái <strong>Bearish (Giảm)</strong> chủ đạo. Việc phá vỡ cấu trúc (BOS) tại mức $4,200 trên khung M15 cho thấy sự thất bại của phe mua tại vùng hỗ trợ tâm lý quan trọng.</p>
+                <p>Xu hướng hiện tại là "Sell on Rallies" (Bán khi giá hồi). Các đợt sóng hồi phục hiện nay đang được phe bán sử dụng làm thanh khoản để tiếp tục đẩy giá xuống dưới mức đáy thấp nhất trong phiên.</p>
+            </div>
+        </section>
+
+        <!-- Actionable Insights -->
+        <section class="bg-charcoal text-white p-8 mb-10 shadow-lg">
+            <h2 class="text-gold font-bold text-2xl mb-6">KHUYẾN NGHỊ GIAO DỊCH</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-lg">
+                <div class="border-left-gold pl-4">
+                    <p class="text-gray-400">Entry Zone:</p>
+                    <p class="font-bold">$4,195.00 - $4,200.00</p>
+                </div>
+                <div class="border-left-gold pl-4">
+                    <p class="text-gray-400">Stop Loss (SL):</p>
+                    <p class="font-bold">$4,218.00</p>
+                </div>
+                <div class="border-left-gold pl-4">
+                    <p class="text-gray-400">Take Profit (TP1):</p>
+                    <p class="font-bold">$4,171.00</p>
+                </div>
+                <div class="border-left-gold pl-4">
+                    <p class="text-gray-400">Take Profit (TP2):</p>
+                    <p class="font-bold">$4,135.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Warning -->
+        <section class="p-6 bg-red-50 border border-red-200 rounded text-bearish">
+            <h3 class="font-bold mb-2">CẢNH BÁO RỦI RO:</h3>
+            <p class="justify text-sm text-red-900">XAU/USD hiện chịu biến động cao do kỳ vọng Fed và đàm phán địa chính trị. Giao dịch cuối tuần mang theo "Gap Risk" (Rủi ro khoảng trống giá). Vui lòng kiểm soát rủi ro ở mức 1-2% tài khoản cho mỗi lệnh.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t border-gray-300 text-center text-gray-500 italic text-xs">
+            Phân tích bởi AI Trade pro - www.phamhoanganhtokens.com
+        </footer>
+    </div>
+
+</body>
+</html>
