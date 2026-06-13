@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade pro™ v8.0.0 | Financial Intelligence Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .report-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .section-divider {
+            border-bottom: 2px solid #001f3f;
+            margin: 20px 0;
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .premium-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .premium-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .premium-table td, .premium-table th {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        .accent-gold { color: #b8860b; }
+        .bg-navy { background-color: #001f3f; }
+        .text-emerald { color: #059669; }
+        .text-crimson { color: #dc2626; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="report-container">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-[#001f3f] tracking-tight uppercase">AI Trade pro™ v8.0.0</h1>
+            <p class="text-sm uppercase tracking-[0.2em] mt-2 text-gray-600 italic">Institutional Trading Analysis Report</p>
+            <div class="flex justify-center gap-6 mt-6 border-y border-gray-300 py-4 text-sm font-semibold">
+                <span>DATE: 12/06/2026</span>
+                <span>SYMBOL: XAUUSD</span>
+                <span>CAPITAL: $50.00 USD</span>
+            </div>
+        </header>
+
+        <!-- Summary Dashboard -->
+        <section class="mb-10 p-6 bg-gray-50 border-l-4 border-[#001f3f]">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl font-bold uppercase mb-2">Tóm tắt Dashboard</h2>
+                    <p class="text-sm">Xu hướng: <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full font-bold">BEARISH (GIẢM)</span></p>
+                </div>
+                <div class="text-right">
+                    <p class="text-xs uppercase font-bold text-gray-500">Confidence Score</p>
+                    <div class="w-48 h-2 bg-gray-200 rounded-full mt-2 overflow-hidden">
+                        <div class="w-[85%] h-full bg-[#001f3f]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <main class="space-y-8 text-justify">
+            
+            <section>
+                <h3 class="text-lg font-bold border-b pb-2 mb-4">I. Định hướng HTF (Khung thời gian lớn)</h3>
+                <p>Thị trường đang trong pha giảm mạnh. D1 xác lập chuỗi đỉnh thấp dần và đáy thấp dần, giao dịch quanh đường MA 200 ($4.195). H4 cho thấy sự tích lũy điều chỉnh sau nhịp quét sâu về $4.023. Tổng thể: Giảm (Bearish), ưu tiên canh bán tại các vùng cung.</p>
+            </section>
+
+            <section>
+                <h3 class="text-lg font-bold border-b pb-2 mb-4">II. Phân tích Thanh khoản & Bẫy phiên Á</h3>
+                <p>Giá đóng cửa Thứ Sáu ($4.219,32) đã quét thanh khoản mua tại đỉnh phiên Á ($4.210). Thanh khoản bán vẫn còn nguyên dưới vùng $4.175. Cần lưu ý các điểm:</p>
+                <ul class="list-disc ml-5 mt-2 space-y-1">
+                    <li><strong>External Buyside:</strong> Đỉnh Thứ Sáu $4.235,57.</li>
+                    <li><strong>External Sellside:</strong> Đáy phiên Á $4.175 và Đáy Thứ Sáu $4.170,12.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="text-lg font-bold border-b pb-2 mb-4">III. Cấu trúc SMC</h3>
+                <p>Cấu trúc chính (D1/H4) vẫn giữ nhịp giảm (BOS giảm). Nhịp hồi hiện tại chỉ là CHoCH nội bộ trên khung nhỏ. Vùng cung (Supply Zone) then chốt được xác định tại <strong>$4.245 – $4.250</strong>, nơi hội tụ khối lệnh (OB) và khoảng trống giá (FVG).</p>
+            </section>
+
+            <section>
+                <h3 class="text-lg font-bold border-b pb-2 mb-4">IV. Trading Plan (Action Card)</h3>
+                <div class="bg-[#001f3f] text-white p-6 rounded-lg shadow-xl">
+                    <h4 class="text-xl font-bold mb-4 italic text-gold">Setup: Institutional Short</h4>
+                    <table class="premium-table text-white w-full">
+                        <tr class="border-gray-700"><td>Entry Zone</td><td>$4.245 – $4.250</td></tr>
+                        <tr class="border-gray-700"><td>Stop Loss</td><td>$4.251,00</td></tr>
+                        <tr class="border-gray-700"><td>Risk</td><td>$5.00</td></tr>
+                        <tr class="border-gray-700"><td>Lot Size</td><td>0.01</td></tr>
+                    </table>
+                    <p class="mt-4 text-sm opacity-80">* Chỉ vào lệnh sau khi xác nhận CHoCH giảm trên M5 tại vùng POI.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-lg font-bold border-b pb-2 mb-4">V. Quản trị Rủi ro & Tâm lý</h3>
+                <div class="border border-red-500 p-4 bg-red-50">
+                    <p class="text-sm"><strong>CẢNH BÁO:</strong> Tuân thủ nghiêm ngặt rủi ro $5.00. Tránh giao dịch ngay khi mở cửa Thứ Hai do rủi ro Gap. Chỉ thực hiện khi Spread trở lại bình thường và điều kiện thị trường ổn định sau các tin tức FOMC.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-gray-200 text-center">
+            <p class="text-xs text-gray-500 mb-2">Tài liệu phân tích chuyên sâu bởi AI Trade pro v8.0.0</p>
+            <a href="www.phamhoanganhtokens.com" target="_blank" class="text-sm font-bold text-[#001f3f] underline">www.phamhoanganhtokens.com</a>
+        </footer>
+    </div>
+
+</body>
+</html>
