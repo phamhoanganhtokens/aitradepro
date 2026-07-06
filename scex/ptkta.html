@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Phân Tích Tài Chính | AI Software Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f1f5f9;
+        }
 
+        .report-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #002366;
+            font-weight: bold;
+        }
+
+        p {
+            text-align: justify;
+            color: #4a4a4a;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .table-custom th, .table-custom td {
+            border: 1px solid #e5e7eb;
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        .table-custom th {
+            background-color: #f9fafb;
+        }
+
+        .disclaimer-box {
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            background: #fafafa;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <article class="report-container">
+        <!-- Header -->
+        <header class="border-b-2 border-navy-900 pb-8 mb-8">
+            <div class="text-center">
+                <h2 class="text-lg uppercase tracking-widest text-[#002366]">AI Software Development</h2>
+                <p class="text-sm text-gray-500">AI Trading Simulator | <a href="www.phamhoanganhtokens.com" class="underline hover:text-[#002366]">www.phamhoanganhtokens.com</a></p>
+                <h1 class="text-3xl mt-6 font-bold uppercase">BÁO CÁO PHÂN TÍCH & CHIẾN LƯỢC GIAO DỊCH</h1>
+                <p class="mt-4 italic">Ngày báo cáo: 06 tháng 07, 2026</p>
+            </div>
+        </header>
+
+        <!-- 1. Tóm tắt tình hình tài khoản -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold mb-4 uppercase border-l-4 border-[#002366] pl-3">1. Tóm tắt tình hình tài khoản</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-4 border border-gray-200">
+                    <p class="text-sm text-gray-500 mb-1">Tổng Tài Sản (NAV)</p>
+                    <p class="text-xl font-bold">1,087,596,425 VND</p>
+                </div>
+                <div class="bg-gray-50 p-4 border border-gray-200">
+                    <p class="text-sm text-gray-500 mb-1">Lợi nhuận (PnL)</p>
+                    <p class="text-xl font-bold text-green-600">+87,596,425 (+8.75%)</p>
+                </div>
+                <div class="bg-gray-50 p-4 border border-gray-200">
+                    <p class="text-sm text-gray-500 mb-1">Trạng thái</p>
+                    <p class="text-xl font-bold">100% Tiền mặt</p>
+                </div>
+            </div>
+            <p class="mt-4">Danh mục hiện đang nắm giữ 100% tiền mặt. Mặc dù đạt lợi nhuận lịch sử tích cực, việc không triển khai vốn sẽ ảnh hưởng đến chỉ số hiệu quả đầu tư trong kỳ thi. Cần phân bổ vốn chiến lược ngay lập tức.</p>
+        </section>
+
+        <!-- 2. Phân tích thị trường -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold mb-4 uppercase border-l-4 border-[#002366] pl-3">2. Phân tích thị trường</h2>
+            <p>Tâm lý thị trường đang chuyển dịch từ sợ hãi sang "Tham lam" (chỉ số Fear & Greed ở mức 59). Dòng tiền đang quay trở lại các tài sản rủi ro nhờ chính sách nới lỏng từ FED. Tuy nhiên, các áp lực pháp lý từ MiCA (EU) và các dự luật mới tại Mỹ yêu cầu sự thận trọng cao độ.</p>
+            <ul class="list-disc ml-5 space-y-2 mt-2">
+                <li><strong>SBTC/VND:</strong> Bullish trung hạn, hỗ trợ cứng tại vùng 60k USD.</li>
+                <li><strong>SETH/VND:</strong> Đang thử thách MA50, kỳ vọng từ bản nâng cấp "Glamsterdam".</li>
+                <li><strong>SSOL/VND:</strong> Cổ phiếu/tài sản có sức mạnh tương đối (Relative Strength) tốt nhất.</li>
+            </ul>
+        </section>
+
+        <!-- 3. Đánh giá rủi ro -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold mb-4 uppercase border-l-4 border-[#002366] pl-3">3. Đánh giá rủi ro</h2>
+            <table class="table-custom">
+                <thead>
+                    <tr><th>Loại rủi ro</th><th>Mức độ</th><th>Đánh giá</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Biến động thị trường</td><td><span class="text-red-600 font-bold">Rất cao</span></td><td>Nhạy cảm với tin tức pháp lý</td></tr>
+                    <tr><td>Ràng buộc cuộc thi</td><td>Trung bình</td><td>Cần quản lý PnL và rủi ro chặt chẽ</td></tr>
+                    <tr><td>Thanh khoản</td><td>Thấp</td><td>Dự phòng 15% tiền mặt</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 4. Chiến lược tối ưu -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold mb-4 uppercase border-l-4 border-[#002366] pl-3">4. Chiến lược tối ưu: Core-Satellite</h2>
+            <table class="table-custom">
+                <tr class="bg-gray-100"><th>Danh mục</th><th>Tỷ trọng</th><th>Tài sản</th></tr>
+                <tr><td>Core (Anchors)</td><td>60%</td><td>SBTC (35%), SETH (25%)</td></tr>
+                <tr><td>Satellite (Alpha)</td><td>25%</td><td>SSOL (15%), SBNB (10%)</td></tr>
+                <tr><td>Cash (Tactical)</td><td>15%</td><td>VND</td></tr>
+            </table>
+        </section>
+
+        <!-- 5. Kế hoạch quản trị -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold mb-4 uppercase border-l-4 border-[#002366] pl-3">5. Kế hoạch quản trị & Hành động</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="border p-4">
+                    <h3 class="font-bold mb-2">Giai đoạn 1: Triển khai</h3>
+                    <p class="text-sm">Thực hiện lệnh Limit khớp 50% vị thế mục tiêu cho SBTC, SETH, SSOL trong 24-48 giờ tới.</p>
+                </div>
+                <div class="border p-4">
+                    <h3 class="font-bold mb-2">Giai đoạn 2: Quản trị</h3>
+                    <p class="text-sm">Thiết lập Stop-loss 7-10% cho các vị thế Satellite và chốt lời từng phần tại các vùng kháng cự.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Disclaimer -->
+        <footer class="mt-12 pt-8 border-t border-gray-300">
+            <p class="font-bold">Phạm Hoàng Anh</p>
+            <p class="text-sm">Master AI Agent — AI Software Development</p>
+            
+            <div class="disclaimer-box">
+                <h4 class="font-bold mb-2 uppercase text-sm">Miễn trừ trách nhiệm:</h4>
+                <p class="text-[12px] italic">Báo cáo này được tạo ra cho mục đích giáo dục và giao dịch mô phỏng trong môi trường "Phổ cập tài sản số 2026" (SCEX Simulator). Điều kiện thị trường tài sản kỹ thuật số có tính biến động rất cao. Việc thực hiện các chiến lược này trong thị trường thực tế tiềm ẩn rủi ro tài chính đáng kể. Master AI Agent Phạm Hoàng Anh không chịu trách nhiệm cho bất kỳ tổn thất tài sản nào trong thực tế.</p>
+            </div>
+        </footer>
+    </article>
+
+</body>
+</html>
